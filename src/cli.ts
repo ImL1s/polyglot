@@ -1,8 +1,8 @@
 #!/usr/bin/env bun
 import { Command } from "commander";
-import { existsSync, mkdirSync, writeFileSync, unlinkSync, readFileSync, copyFileSync, renameSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync, unlinkSync, readFileSync, copyFileSync, renameSync, appendFileSync } from "node:fs";
 import { homedir } from "node:os";
-import { join } from "node:path";
+import { join, dirname } from "node:path";
 import { Database } from "bun:sqlite";
 
 import { CONFIG_DIR, IMMERSION_FLAG, LOG_FILE, DB_FILE } from "./paths.ts";
@@ -255,6 +255,25 @@ program
     console.log(msg);
   });
 
+export function renderPlist(template: string, vars: { LT_BIN: string; HOUR: number; MINUTE: number }): string {
+  return template
+    .replaceAll("${LT_BIN}", vars.LT_BIN)
+    .replaceAll("${HOUR}", String(vars.HOUR))
+    .replaceAll("${MINUTE}", String(vars.MINUTE));
+}
+
+export function findPlistTemplate(): string {
+  const candidates = [
+    join(import.meta.dir, "..", "templates", "com.polyglot.daily.plist"),
+    join(dirname(process.execPath), "..", "templates", "com.polyglot.daily.plist"),
+    join(homedir(), ".local", "share", "polyglot", "templates", "com.polyglot.daily.plist"),
+  ];
+  for (const c of candidates) {
+    if (existsSync(c)) return c;
+  }
+  throw new Error(`plist template not found, looked in:\n  ${candidates.join("\n  ")}`);
+}
+
 program
   .command("install-cron")
   .description("Install macOS launchd plist based on profile.daily_cron")
@@ -265,30 +284,42 @@ program
       return;
     }
     const [hh, mm] = profile.daily_cron.split(":").map((s) => parseInt(s, 10));
-    const plistPath = join(homedir(), "Library", "LaunchAgents", "com.polyglot.daily.plist");
+    const launchAgentsDir = join(homedir(), "Library", "LaunchAgents");
+    const plistPath = join(launchAgentsDir, "com.polyglot.daily.plist");
+    const oldPlistPath = join(launchAgentsDir, "com.jp-trainer.daily.plist");
     const binPath = join(homedir(), ".local", "bin", "lt");
-    const plist = `<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-  <key>Label</key><string>com.polyglot.daily</string>
-  <key>ProgramArguments</key>
-  <array><string>${binPath}</string><string>daily-push</string></array>
-  <key>StartCalendarInterval</key>
-  <dict>
-    <key>Hour</key><integer>${hh}</integer>
-    <key>Minute</key><integer>${mm}</integer>
-  </dict>
-  <key>StandardOutPath</key><string>/tmp/polyglot.log</string>
-  <key>StandardErrorPath</key><string>/tmp/polyglot.err</string>
-  <key>RunAtLoad</key><false/>
-</dict>
-</plist>`;
-    if (!existsSync(join(homedir(), "Library", "LaunchAgents"))) {
-      mkdirSync(join(homedir(), "Library", "LaunchAgents"), { recursive: true });
+
+    if (!existsSync(launchAgentsDir)) {
+      mkdirSync(launchAgentsDir, { recursive: true });
     }
+
+    if (existsSync(oldPlistPath)) {
+      try {
+        await Bun.spawn(["launchctl", "unload", oldPlistPath]).exited;
+      } catch {
+        // best-effort; old plist might already be unloaded
+      }
+      try {
+        unlinkSync(oldPlistPath);
+      } catch {
+        // best-effort
+      }
+      try {
+        appendFileSync(
+          LOG_FILE,
+          JSON.stringify({ event: "old_plist_migrated", from: oldPlistPath, to: plistPath, ts: Date.now() }) + "\n",
+          "utf-8",
+        );
+      } catch {
+        // best-effort logging
+      }
+    }
+
+    const templatePath = findPlistTemplate();
+    const template = readFileSync(templatePath, "utf-8");
+    const plist = renderPlist(template, { LT_BIN: binPath, HOUR: hh, MINUTE: mm });
     writeFileSync(plistPath, plist, "utf-8");
-    Bun.spawn(["launchctl", "unload", plistPath]).exited;
+    await Bun.spawn(["launchctl", "unload", plistPath]).exited;
     await Bun.spawn(["launchctl", "load", "-w", plistPath]).exited;
     console.log(`installed: ${plistPath} @ ${profile.daily_cron}`);
   });
@@ -366,4 +397,6 @@ async function readStdin(): Promise<string> {
   return Buffer.concat(chunks).toString("utf-8");
 }
 
-program.parseAsync(process.argv);
+if (import.meta.main) {
+  program.parseAsync(process.argv);
+}

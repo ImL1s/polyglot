@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.polyglot.daily</string>
+  <key>ProgramArguments</key>
+  <array><string>${LT_BIN}</string><string>daily-push</string></array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>${HOUR}</integer>
+    <key>Minute</key><integer>${MINUTE}</integer>
+  </dict>
+  <key>StandardOutPath</key><string>/tmp/polyglot.log</string>
+  <key>StandardErrorPath</key><string>/tmp/polyglot.err</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>
