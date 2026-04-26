@@ -79,7 +79,7 @@ concepts:
     examples:
       - ja: 卒業アルバム
         zh: 毕业纪念册
-  - id: ja-vocab-n3-osshyaru
+  - id: ja-vocab-n3-ossharu
     type: vocab
     level: N3
     ja: おっしゃる
@@ -279,7 +279,7 @@ concepts:
     examples:
       - ja: CD付きラジカセ
         zh: 激光唱盘收录机
-  - id: ja-vocab-n3-inshyoku
+  - id: ja-vocab-n3-inshoku
     type: vocab
     level: N3
     ja: 飲食
@@ -469,7 +469,7 @@ concepts:
     examples:
       - ja: 童話作家
         zh: 童话作家
-  - id: ja-vocab-n3-jidoushya
+  - id: ja-vocab-n3-jidousha
     type: vocab
     level: N3
     ja: 自動車
@@ -479,7 +479,7 @@ concepts:
     examples:
       - ja: 自動車教習所
         zh: 驾校
-  - id: ja-vocab-n3-shyakai
+  - id: ja-vocab-n3-shakai
     type: vocab
     level: N3
     ja: 社会
@@ -489,7 +489,7 @@ concepts:
     examples:
       - ja: 学校を卒業して社会の一員となる
         zh: 从学校毕业成为社会的一员
-  - id: ja-vocab-n3-shyujin
+  - id: ja-vocab-n3-shujin
     type: vocab
     level: N3
     ja: 主人
@@ -499,7 +499,7 @@ concepts:
     examples:
       - ja: 店の主人
         zh: 店主
-  - id: ja-vocab-n3-shyucchyou
+  - id: ja-vocab-n3-shutchou
     type: vocab
     level: N3
     ja: 出張
@@ -509,7 +509,7 @@ concepts:
     examples:
       - ja: 公用で中国へ出張する
         zh: 因公到中国出差
-  - id: ja-vocab-n3-shyorui
+  - id: ja-vocab-n3-shorui
     type: vocab
     level: N3
     ja: 書類
@@ -529,7 +529,7 @@ concepts:
     examples:
       - ja: 小石
         zh: 小石头
-  - id: ja-vocab-n3-jyoubu
+  - id: ja-vocab-n3-joubu
     type: vocab
     level: N3
     ja: 丈夫
@@ -609,7 +609,7 @@ concepts:
     examples:
       - ja: 人の代わりに行く
         zh: 代别人去
-  - id: ja-vocab-n3-chyuukaryouri
+  - id: ja-vocab-n3-chuukaryouri
     type: vocab
     level: N3
     ja: 中華料理
@@ -859,7 +859,7 @@ concepts:
     examples:
       - ja: あちらこちらへ遠出をして遊ぶ
         zh: 四处远游
-  - id: ja-vocab-n3-acchikocchi
+  - id: ja-vocab-n3-atchikotchi
     type: vocab
     level: N3
     ja: あっちこっち
@@ -1129,7 +1129,7 @@ concepts:
     examples:
       - ja: 彼は昔のクラスメートだ
         zh: 他是我的老同学
-  - id: ja-vocab-n3-koshyou
+  - id: ja-vocab-n3-koshou
     type: vocab
     level: N3
     ja: こしょう
@@ -1659,7 +1659,7 @@ concepts:
     examples:
       - ja: おととい
         zh: 前天
-  - id: ja-vocab-n3-isshyoukenmei
+  - id: ja-vocab-n3-isshoukenmei
     type: vocab
     level: N3
     ja: 一生懸命
@@ -1749,7 +1749,7 @@ concepts:
     examples:
       - ja: 子どもを殴る
         zh: 打孩子
-  - id: ja-vocab-n3-okujyou
+  - id: ja-vocab-n3-okujou
     type: vocab
     level: N3
     ja: 屋上
@@ -1869,7 +1869,7 @@ concepts:
     examples:
       - ja: 大学で経済学を学ぶ
         zh: 在大学学习经济学
-  - id: ja-vocab-n3-gakushyuu
+  - id: ja-vocab-n3-gakushuu
     type: vocab
     level: N3
     ja: 学習
@@ -1909,7 +1909,7 @@ concepts:
     examples:
       - ja: 洗濯物が乾く
         zh: 洗的衣物干了
-  - id: ja-vocab-n3-kanjya
+  - id: ja-vocab-n3-kanja
     type: vocab
     level: N3
     ja: 患者
@@ -2169,7 +2169,7 @@ concepts:
     examples:
       - ja: 研究室の室長
         zh: 研究室主任
-  - id: ja-vocab-n3-kenkyuushya
+  - id: ja-vocab-n3-kenkyuusha
     type: vocab
     level: N3
     ja: 研究者
@@ -2179,7 +2179,7 @@ concepts:
     examples:
       - ja: 教師であると同時にまた研究者でもある
         zh: 既是教师，同时也搞研究
-  - id: ja-vocab-n3-kenkyuujyo
+  - id: ja-vocab-n3-kenkyuujo
     type: vocab
     level: N3
     ja: 研究所
@@ -2609,7 +2609,7 @@ concepts:
     examples:
       - ja: 主な内容
         zh: 主要内容
-  - id: ja-vocab-n3-shyufu
+  - id: ja-vocab-n3-shufu
     type: vocab
     level: N3
     ja: 主婦
@@ -2619,7 +2619,7 @@ concepts:
     examples:
       - ja: うちの母は専業主婦です
         zh: 我妈妈是家庭主妇
-  - id: ja-vocab-n3-shyuunyuu
+  - id: ja-vocab-n3-shuunyuu
     type: vocab
     level: N3
     ja: 収入
@@ -2629,7 +2629,7 @@ concepts:
     examples:
       - ja: 収入を得る
         zh: 获得收入
-  - id: ja-vocab-n3-shyuukan
+  - id: ja-vocab-n3-shuukan
     type: vocab
     level: N3
     ja: 習慣
@@ -2639,7 +2639,7 @@ concepts:
     examples:
       - ja: 悪い習慣を直すのは簡単ではない
         zh: 矫正坏毛病不是一件简单的事情
-  - id: ja-vocab-n3-shyuugou
+  - id: ja-vocab-n3-shuugou
     type: vocab
     level: N3
     ja: 集合
@@ -2659,7 +2659,7 @@ concepts:
     examples:
       - ja: 手触りが柔らかい
         zh: 手感柔软
-  - id: ja-vocab-n3-jyuudou
+  - id: ja-vocab-n3-juudou
     type: vocab
     level: N3
     ja: 柔道
@@ -2669,7 +2669,7 @@ concepts:
     examples:
       - ja: 柔道家
         zh: 柔道家
-  - id: ja-vocab-n3-jyuutai
+  - id: ja-vocab-n3-juutai
     type: vocab
     level: N3
     ja: 渋滞
@@ -2679,7 +2679,7 @@ concepts:
     examples:
       - ja: 交通渋滞
         zh: 交通堵塞
-  - id: ja-vocab-n3-jyuuyou
+  - id: ja-vocab-n3-juuyou
     type: vocab
     level: N3
     ja: 重要
@@ -2689,7 +2689,7 @@ concepts:
     examples:
       - ja: きみに重要な話がある
         zh: 有要紧的话对你说
-  - id: ja-vocab-n3-shyusseki
+  - id: ja-vocab-n3-shusseki
     type: vocab
     level: N3
     ja: 出席
@@ -2729,7 +2729,7 @@ concepts:
     examples:
       - ja: 小鳥を飼う
         zh: 养鸟
-  - id: ja-vocab-n3-shyoushyou
+  - id: ja-vocab-n3-shoushou
     type: vocab
     level: N3
     ja: 少々
@@ -2749,7 +2749,7 @@ concepts:
     examples:
       - ja: 冗談を言ってみんなを笑わせる
         zh: 说笑话逗大家笑
-  - id: ja-vocab-n3-jyoushi
+  - id: ja-vocab-n3-joushi
     type: vocab
     level: N3
     ja: 上司
@@ -2949,7 +2949,7 @@ concepts:
     examples:
       - ja: 洗ったような青空
         zh: 碧空如洗
-  - id: ja-vocab-n3-akachyan
+  - id: ja-vocab-n3-akachan
     type: vocab
     level: N3
     ja: 赤ちゃん
@@ -2999,7 +2999,7 @@ concepts:
     examples:
       - ja: 眠りが浅い
         zh: 睡得浅
-  - id: ja-vocab-n3-senshyu
+  - id: ja-vocab-n3-senshu
     type: vocab
     level: N3
     ja: 選手
@@ -3189,7 +3189,7 @@ concepts:
     examples:
       - ja: 暖房を入れる
         zh: 打开暖气设备
-  - id: ja-vocab-n3-danjyo
+  - id: ja-vocab-n3-danjo
     type: vocab
     level: N3
     ja: 男女
@@ -3239,7 +3239,7 @@ concepts:
     examples:
       - ja: 親指・人差し指・薬指・小指
         zh: 拇指・食指・无名指・小指
-  - id: ja-vocab-n3-chyuushi
+  - id: ja-vocab-n3-chuushi
     type: vocab
     level: N3
     ja: 中止
@@ -3259,7 +3259,7 @@ concepts:
     examples:
       - ja: 昼間は暖かいが夜になると寒くなる
         zh: 白天很暖和，但到了晚上就会变冷
-  - id: ja-vocab-n3-chyuushyoku
+  - id: ja-vocab-n3-chuushoku
     type: vocab
     level: N3
     ja: 昼食
@@ -3269,7 +3269,7 @@ concepts:
     examples:
       - ja: 先生は毎日昼食にそばを食べる
         zh: 老师每天午饭都吃荞麦面
-  - id: ja-vocab-n3-chyuushya
+  - id: ja-vocab-n3-chuusha
     type: vocab
     level: N3
     ja: 駐車
@@ -3279,7 +3279,7 @@ concepts:
     examples:
       - ja: 駐車料金はいくらですか
         zh: 停车费是多少钱？
-  - id: ja-vocab-n3-chyuushyajyou
+  - id: ja-vocab-n3-chuushajou
     type: vocab
     level: N3
     ja: 駐車場
@@ -3399,7 +3399,7 @@ concepts:
     examples:
       - ja: 憧れを抱く
         zh: 抱有憧憬
-  - id: ja-vocab-n3-dokushyo
+  - id: ja-vocab-n3-dokusho
     type: vocab
     level: N3
     ja: 読書
@@ -3579,7 +3579,7 @@ concepts:
     examples:
       - ja: 普段の状態
         zh: 平时的状态
-  - id: ja-vocab-n3-fukushyuu
+  - id: ja-vocab-n3-fukushuu
     type: vocab
     level: N3
     ja: 復習
@@ -3899,7 +3899,7 @@ concepts:
     examples:
       - ja: 夕飯は寿司でした
         zh: 晚餐是寿司
-  - id: ja-vocab-n3-yoshyuu
+  - id: ja-vocab-n3-yoshuu
     type: vocab
     level: N3
     ja: 予習
@@ -3979,7 +3979,7 @@ concepts:
     examples:
       - ja: 列に並ぶ
         zh: 排队
-  - id: ja-vocab-n3-resshya
+  - id: ja-vocab-n3-ressha
     type: vocab
     level: N3
     ja: 列車
@@ -4209,7 +4209,7 @@ concepts:
     examples:
       - ja: 丁寧にお辞儀をする
         zh: 恭恭敬敬地鞠躬
-  - id: ja-vocab-n3-oshyare
+  - id: ja-vocab-n3-oshare
     type: vocab
     level: N3
     ja: おしゃれ
@@ -4369,7 +4369,7 @@ concepts:
     examples:
       - ja: 注文をキャンセルする
         zh: 取消订购
-  - id: ja-vocab-n3-kushyami
+  - id: ja-vocab-n3-kushami
     type: vocab
     level: N3
     ja: くしゃみ
@@ -4559,7 +4559,7 @@ concepts:
     examples:
       - ja: タイトなジーンズ
         zh: 紧身牛仔裤
-  - id: ja-vocab-n3-shyakkuri
+  - id: ja-vocab-n3-shakkuri
     type: vocab
     level: N3
     ja: しゃっくり
@@ -5419,7 +5419,7 @@ concepts:
     examples:
       - ja: その本はいま印刷中です
         zh: 这本书正在印刷中
-  - id: ja-vocab-n3-inshyou
+  - id: ja-vocab-n3-inshou
     type: vocab
     level: N3
     ja: 印象
@@ -5619,7 +5619,7 @@ concepts:
     examples:
       - ja: 受験科目
         zh: 考试科目
-  - id: ja-vocab-n3-kashyu
+  - id: ja-vocab-n3-kashu
     type: vocab
     level: N3
     ja: 歌手
@@ -5769,7 +5769,7 @@ concepts:
     examples:
       - ja: 絵葉書を出す
         zh: 寄美术明信片
-  - id: ja-vocab-n3-gaishyutsu
+  - id: ja-vocab-n3-gaishutsu
     type: vocab
     level: N3
     ja: 外出
@@ -5789,7 +5789,7 @@ concepts:
     examples:
       - ja: なべに蓋をして弱火で煮込む
         zh: 盖上锅盖，用小火慢炖
-  - id: ja-vocab-n3-kakuekiteishya
+  - id: ja-vocab-n3-kakuekiteisha
     type: vocab
     level: N3
     ja: 各駅停車
@@ -5959,7 +5959,7 @@ concepts:
     examples:
       - ja: 洗濯物を干す
         zh: 把洗好的衣物晾晒
-  - id: ja-vocab-n3-kanjyou
+  - id: ja-vocab-n3-kanjou
     type: vocab
     level: N3
     ja: 感情
@@ -6279,7 +6279,7 @@ concepts:
     examples:
       - ja: 運賃を計算する
         zh: 计算运费
-  - id: ja-vocab-n3-geijyutsu
+  - id: ja-vocab-n3-geijutsu
     type: vocab
     level: N3
     ja: 芸術
@@ -6439,7 +6439,7 @@ concepts:
     examples:
       - ja: 人数を減らす
         zh: 减少人数
-  - id: ja-vocab-n3-genshyou
+  - id: ja-vocab-n3-genshou
     type: vocab
     level: N3
     ja: 減少
@@ -6509,7 +6509,7 @@ concepts:
     examples:
       - ja: 故郷を離れる
         zh: 离开故乡
-  - id: ja-vocab-n3-koshyou-e69585
+  - id: ja-vocab-n3-koshou-e69585
     type: vocab
     level: N3
     ja: 故障
@@ -6719,7 +6719,7 @@ concepts:
     examples:
       - ja: 左右を見てから横断歩道を渡りなさい
         zh: 过马路前请先左右看看
-  - id: ja-vocab-n3-saishyuu
+  - id: ja-vocab-n3-saishuu
     type: vocab
     level: N3
     ja: 最終
@@ -6869,7 +6869,7 @@ concepts:
     examples:
       - ja: 青物市場
         zh: 菜市场
-  - id: ja-vocab-n3-shijyou
+  - id: ja-vocab-n3-shijou
     type: vocab
     level: N3
     ja: 市場
@@ -6979,7 +6979,7 @@ concepts:
     examples:
       - ja: 歯磨きする子は丈夫な子
         zh: 刷牙的孩子才是健康的孩子
-  - id: ja-vocab-n3-jijyou
+  - id: ja-vocab-n3-jijou
     type: vocab
     level: N3
     ja: 事情
@@ -7069,7 +7069,7 @@ concepts:
     examples:
       - ja: 計画を実行する
         zh: 实行计划
-  - id: ja-vocab-n3-jisshyuu
+  - id: ja-vocab-n3-jisshuu
     type: vocab
     level: N3
     ja: 実習
@@ -7119,7 +7119,7 @@ concepts:
     examples:
       - ja: 大根を煮る
         zh: 煮萝卜
-  - id: ja-vocab-n3-shyanai
+  - id: ja-vocab-n3-shanai
     type: vocab
     level: N3
     ja: 車内
@@ -7129,7 +7129,7 @@ concepts:
     examples:
       - ja: 車内放送
         zh: 车内广播
-  - id: ja-vocab-n3-shyuchyou
+  - id: ja-vocab-n3-shuchou
     type: vocab
     level: N3
     ja: 主張
@@ -7139,7 +7139,7 @@ concepts:
     examples:
       - ja: 自分の主張を通す
         zh: 坚持自己的主张
-  - id: ja-vocab-n3-shyuyou
+  - id: ja-vocab-n3-shuyou
     type: vocab
     level: N3
     ja: 主要
@@ -7169,7 +7169,7 @@ concepts:
     examples:
       - ja: 注文を取り消す
         zh: 取消订货
-  - id: ja-vocab-n3-shyujyutsu
+  - id: ja-vocab-n3-shujutsu
     type: vocab
     level: N3
     ja: 手術
@@ -7179,7 +7179,7 @@ concepts:
     examples:
       - ja: 胃の手術をする
         zh: 做胃的手术
-  - id: ja-vocab-n3-shyudan
+  - id: ja-vocab-n3-shudan
     type: vocab
     level: N3
     ja: 手段
@@ -7189,7 +7189,7 @@ concepts:
     examples:
       - ja: 手段を選ばない
         zh: 不择手段
-  - id: ja-vocab-n3-shyushyou
+  - id: ja-vocab-n3-shushou
     type: vocab
     level: N3
     ja: 首相
@@ -7199,7 +7199,7 @@ concepts:
     examples:
       - ja: 首相としてリーダーシップを発揮する
         zh: 作为首相发挥领导能力
-  - id: ja-vocab-n3-shyuto
+  - id: ja-vocab-n3-shuto
     type: vocab
     level: N3
     ja: 首都
@@ -7209,7 +7209,7 @@ concepts:
     examples:
       - ja: 日本の首都は東京である
         zh: 日本的首都是东京
-  - id: ja-vocab-n3-jyuken
+  - id: ja-vocab-n3-juken
     type: vocab
     level: N3
     ja: 受験
@@ -7219,7 +7219,7 @@ concepts:
     examples:
       - ja: 大学を受験する
         zh: 报考大学
-  - id: ja-vocab-n3-shyuushyoku
+  - id: ja-vocab-n3-shuushoku
     type: vocab
     level: N3
     ja: 就職
@@ -7229,7 +7229,7 @@ concepts:
     examples:
       - ja: 就職活動
         zh: 找工作的一系列活动
-  - id: ja-vocab-n3-shyuuryou
+  - id: ja-vocab-n3-shuuryou
     type: vocab
     level: N3
     ja: 終了
@@ -7239,7 +7239,7 @@ concepts:
     examples:
       - ja: 試合が終了する
         zh: 比赛结束
-  - id: ja-vocab-n3-shyuuchyuu
+  - id: ja-vocab-n3-shuuchuu
     type: vocab
     level: N3
     ja: 集中
@@ -7269,7 +7269,7 @@ concepts:
     examples:
       - ja: 本を重ねる
         zh: 把书叠放在一起
-  - id: ja-vocab-n3-jyuudai
+  - id: ja-vocab-n3-juudai
     type: vocab
     level: N3
     ja: 重大
@@ -7289,7 +7289,7 @@ concepts:
     examples:
       - ja: 祝いの言葉を述べる
         zh: 致贺词；致祝辞
-  - id: ja-vocab-n3-jyuku
+  - id: ja-vocab-n3-juku
     type: vocab
     level: N3
     ja: 塾
@@ -7299,7 +7299,7 @@ concepts:
     examples:
       - ja: 進学塾
         zh: 升学补习班
-  - id: ja-vocab-n3-shyukkin
+  - id: ja-vocab-n3-shukkin
     type: vocab
     level: N3
     ja: 出勤
@@ -7309,7 +7309,7 @@ concepts:
     examples:
       - ja: 地下鉄で出勤する
         zh: 坐地铁上班
-  - id: ja-vocab-n3-shyusshin
+  - id: ja-vocab-n3-shusshin
     type: vocab
     level: N3
     ja: 出身
@@ -7319,7 +7319,7 @@ concepts:
     examples:
       - ja: ご出身はどちらですか
         zh: 您是哪里人？
-  - id: ja-vocab-n3-jyunban
+  - id: ja-vocab-n3-junban
     type: vocab
     level: N3
     ja: 順番
@@ -7329,7 +7329,7 @@ concepts:
     examples:
       - ja: 順番に答える
         zh: 依次回答
-  - id: ja-vocab-n3-shyokyuu
+  - id: ja-vocab-n3-shokyuu
     type: vocab
     level: N3
     ja: 初級
@@ -7339,7 +7339,7 @@ concepts:
     examples:
       - ja: これは初級の教科書です
         zh: 这是初级教科书
-  - id: ja-vocab-n3-jyoshi
+  - id: ja-vocab-n3-joshi
     type: vocab
     level: N3
     ja: 女子
@@ -7349,7 +7349,7 @@ concepts:
     examples:
       - ja: 女子高生
         zh: 女高中生
-  - id: ja-vocab-n3-shyouten
+  - id: ja-vocab-n3-shouten
     type: vocab
     level: N3
     ja: 商店
@@ -7359,7 +7359,7 @@ concepts:
     examples:
       - ja: 駅前はにぎやかな商店街になっている
         zh: 车站前是热闹的商店街
-  - id: ja-vocab-n3-shyouhin
+  - id: ja-vocab-n3-shouhin
     type: vocab
     level: N3
     ja: 商品
@@ -7369,7 +7369,7 @@ concepts:
     examples:
       - ja: 商品を注文する
         zh: 订货
-  - id: ja-vocab-n3-shyougakukin
+  - id: ja-vocab-n3-shougakukin
     type: vocab
     level: N3
     ja: 奨学金
@@ -7409,7 +7409,7 @@ concepts:
     examples:
       - ja: 少しも痛くない
         zh: 一点也不疼
-  - id: ja-vocab-n3-shyoutai
+  - id: ja-vocab-n3-shoutai
     type: vocab
     level: N3
     ja: 招待
@@ -7419,7 +7419,7 @@ concepts:
     examples:
       - ja: パーティーに招待する
         zh: 邀请参加派对
-  - id: ja-vocab-n3-shyoukyokuteki
+  - id: ja-vocab-n3-shoukyokuteki
     type: vocab
     level: N3
     ja: 消極的
@@ -7429,7 +7429,7 @@ concepts:
     examples:
       - ja: 消極的な態度
         zh: 消极的态度
-  - id: ja-vocab-n3-shyouhi
+  - id: ja-vocab-n3-shouhi
     type: vocab
     level: N3
     ja: 消費
@@ -7439,7 +7439,7 @@ concepts:
     examples:
       - ja: この車はガソリンの消費量が少ない
         zh: 这辆车耗油量低
-  - id: ja-vocab-n3-shyoumei
+  - id: ja-vocab-n3-shoumei
     type: vocab
     level: N3
     ja: 証明
@@ -7449,7 +7449,7 @@ concepts:
     examples:
       - ja: 無罪を証明する
         zh: 证明无罪
-  - id: ja-vocab-n3-jyoukyuu
+  - id: ja-vocab-n3-joukyuu
     type: vocab
     level: N3
     ja: 上級
@@ -7509,7 +7509,7 @@ concepts:
     examples:
       - ja: 手で軽く触れる
         zh: 用手轻轻摸一下
-  - id: ja-vocab-n3-shyokki
+  - id: ja-vocab-n3-shokki
     type: vocab
     level: N3
     ja: 食器
@@ -7519,7 +7519,7 @@ concepts:
     examples:
       - ja: 洋食器
         zh: 西式餐具
-  - id: ja-vocab-n3-shyokuhin
+  - id: ja-vocab-n3-shokuhin
     type: vocab
     level: N3
     ja: 食品
@@ -7529,7 +7529,7 @@ concepts:
     examples:
       - ja: 冷凍食品
         zh: 冷冻食品
-  - id: ja-vocab-n3-shyokuyoku
+  - id: ja-vocab-n3-shokuyoku
     type: vocab
     level: N3
     ja: 食欲
@@ -7629,7 +7629,7 @@ concepts:
     examples:
       - ja: 大きな病院で診察してもらうほうがいいよ
         zh: 最好到大医院去检查检查
-  - id: ja-vocab-n3-shinchyou
+  - id: ja-vocab-n3-shinchou
     type: vocab
     level: N3
     ja: 身長
@@ -7989,7 +7989,7 @@ concepts:
     examples:
       - ja: この情報は知っていて損はない
         zh: 知道这些资讯没有坏处
-  - id: ja-vocab-n3-tashyou
+  - id: ja-vocab-n3-tashou
     type: vocab
     level: N3
     ja: 多少
@@ -7999,7 +7999,7 @@ concepts:
     examples:
       - ja: 多少にかかわらずご注文ください
         zh: 无论量多量少，均请订购
-  - id: ja-vocab-n3-taijyuu
+  - id: ja-vocab-n3-taijuu
     type: vocab
     level: N3
     ja: 体重
@@ -8069,7 +8069,7 @@ concepts:
     examples:
       - ja: 陸上競技大会
         zh: 田径运动会
-  - id: ja-vocab-n3-daishyou
+  - id: ja-vocab-n3-daishou
     type: vocab
     level: N3
     ja: 大小
@@ -8159,7 +8159,7 @@ concepts:
     examples:
       - ja: 二人は仲がいい
         zh: 他们俩感情很好
-  - id: ja-vocab-n3-chyuumon
+  - id: ja-vocab-n3-chuumon
     type: vocab
     level: N3
     ja: 注文
@@ -8179,7 +8179,7 @@ concepts:
     examples:
       - ja: 車窓から眺める
         zh: 从车窗眺望
-  - id: ja-vocab-n3-chyousa
+  - id: ja-vocab-n3-chousa
     type: vocab
     level: N3
     ja: 調査
@@ -8429,7 +8429,7 @@ concepts:
     examples:
       - ja: 富士登山をする
         zh: 攀登富士山
-  - id: ja-vocab-n3-toujyou
+  - id: ja-vocab-n3-toujou
     type: vocab
     level: N3
     ja: 登場
@@ -8519,7 +8519,7 @@ concepts:
     examples:
       - ja: 信頼を得る
         zh: 受到信任
-  - id: ja-vocab-n3-tokuchyou
+  - id: ja-vocab-n3-tokuchou
     type: vocab
     level: N3
     ja: 特徴
@@ -8559,7 +8559,7 @@ concepts:
     examples:
       - ja: 日帰りの旅行
         zh: 当天就回来的旅行
-  - id: ja-vocab-n3-nichijyou
+  - id: ja-vocab-n3-nichijou
     type: vocab
     level: N3
     ja: 日常
@@ -8799,7 +8799,7 @@ concepts:
     examples:
       - ja: お金持ちが必ずしも幸せではない
         zh: 有钱人不一定幸福
-  - id: ja-vocab-n3-hisshya
+  - id: ja-vocab-n3-hissha
     type: vocab
     level: N3
     ja: 筆者
@@ -9069,7 +9069,7 @@ concepts:
     examples:
       - ja: 横断歩道
         zh: 人行横道，斑马线
-  - id: ja-vocab-n3-boshyuu
+  - id: ja-vocab-n3-boshuu
     type: vocab
     level: N3
     ja: 募集
@@ -9089,7 +9089,7 @@ concepts:
     examples:
       - ja: 包みを開く
         zh: 打开包装
-  - id: ja-vocab-n3-houchyou
+  - id: ja-vocab-n3-houchou
     type: vocab
     level: N3
     ja: 包丁
@@ -9169,7 +9169,7 @@ concepts:
     examples:
       - ja: 明るい未来
         zh: 光明的未来
-  - id: ja-vocab-n3-muchyuu
+  - id: ja-vocab-n3-muchuu
     type: vocab
     level: N3
     ja: 夢中
@@ -9269,7 +9269,7 @@ concepts:
     examples:
       - ja: 目標を達成する
         zh: 达成目标
-  - id: ja-vocab-n3-yakushyo
+  - id: ja-vocab-n3-yakusho
     type: vocab
     level: N3
     ja: 役所
@@ -9299,7 +9299,7 @@ concepts:
     examples:
       - ja: 訳がわからない
         zh: 莫名其妙
-  - id: ja-vocab-n3-yuushyou
+  - id: ja-vocab-n3-yuushou
     type: vocab
     level: N3
     ja: 優勝
@@ -9509,7 +9509,7 @@ concepts:
     examples:
       - ja: みんなで話し合ってから決める
         zh: 大家商量以后再决定
-  - id: ja-vocab-n3-shyare
+  - id: ja-vocab-n3-share
     type: vocab
     level: N3
     ja: 洒落[しゃれ]
@@ -9529,7 +9529,7 @@ concepts:
     examples:
       - ja: 蚊に刺されたところがかゆい
         zh: 被蚊子叮的地方很痒
-  - id: ja-vocab-n3-kashyo
+  - id: ja-vocab-n3-kasho
     type: vocab
     level: N3
     ja: 箇所
@@ -9609,7 +9609,7 @@ concepts:
     examples:
       - ja: 法隆寺
         zh: （世界遗产，位于日本奈良）法隆寺
-  - id: ja-vocab-n3-shyo
+  - id: ja-vocab-n3-sho
     type: vocab
     level: N3
     ja: 〜所
@@ -9619,7 +9619,7 @@ concepts:
     examples:
       - ja: 事務所
         zh: 事务所
-  - id: ja-vocab-n3-shyo-e3809c
+  - id: ja-vocab-n3-sho-e3809c
     type: vocab
     level: N3
     ja: 〜書
@@ -9629,7 +9629,7 @@ concepts:
     examples:
       - ja: 請求書
         zh: 账单
-  - id: ja-vocab-n3-jyou
+  - id: ja-vocab-n3-jou
     type: vocab
     level: N3
     ja: 場
@@ -10099,7 +10099,7 @@ concepts:
     examples:
       - ja: 長財布を愛用する
         zh: 喜欢用长款的钱包
-  - id: ja-vocab-n3-anshyoubangou
+  - id: ja-vocab-n3-anshoubangou
     type: vocab
     level: N3
     ja: 暗証番号
@@ -10289,7 +10289,7 @@ concepts:
     examples:
       - ja: 車輪の回りが速い
         zh: 车轮转得快
-  - id: ja-vocab-n3-kaishyuu
+  - id: ja-vocab-n3-kaishuu
     type: vocab
     level: N3
     ja: 回収
@@ -10299,7 +10299,7 @@ concepts:
     examples:
       - ja: 資源ゴミを回収する
         zh: 回收资源垃圾
-  - id: ja-vocab-n3-gaishyoku
+  - id: ja-vocab-n3-gaishoku
     type: vocab
     level: N3
     ja: 外食
@@ -10549,7 +10549,7 @@ concepts:
     examples:
       - ja: 最多出場記録
         zh: 最多出场记录
-  - id: ja-vocab-n3-saichyuu
+  - id: ja-vocab-n3-saichuu
     type: vocab
     level: N3
     ja: 最中
@@ -10589,7 +10589,7 @@ concepts:
     examples:
       - ja: きのうは3時間残業した
         zh: 昨天加了三个小时的班
-  - id: ja-vocab-n3-shiyakushyo
+  - id: ja-vocab-n3-shiyakusho
     type: vocab
     level: N3
     ja: 市役所
@@ -10609,7 +10609,7 @@ concepts:
     examples:
       - ja: 彼の様子が変に思える
         zh: 觉得他的样子奇怪
-  - id: ja-vocab-n3-shishyutsu
+  - id: ja-vocab-n3-shishutsu
     type: vocab
     level: N3
     ja: 支出
@@ -10619,7 +10619,7 @@ concepts:
     examples:
       - ja: 支出を抑える
         zh: 缩减支出
-  - id: ja-vocab-n3-shishyoku
+  - id: ja-vocab-n3-shishoku
     type: vocab
     level: N3
     ja: 試食
@@ -10719,7 +10719,7 @@ concepts:
     examples:
       - ja: 実家に帰る
         zh: 回老家
-  - id: ja-vocab-n3-shyako
+  - id: ja-vocab-n3-shako
     type: vocab
     level: N3
     ja: 車庫
@@ -10729,7 +10729,7 @@ concepts:
     examples:
       - ja: 車庫入れ
         zh: 倒车入库
-  - id: ja-vocab-n3-shyakkin
+  - id: ja-vocab-n3-shakkin
     type: vocab
     level: N3
     ja: 借金
@@ -10779,7 +10779,7 @@ concepts:
     examples:
       - ja: 提案を受け入れる
         zh: 采纳建议
-  - id: ja-vocab-n3-shyuuri
+  - id: ja-vocab-n3-shuuri
     type: vocab
     level: N3
     ja: 修理
@@ -10789,7 +10789,7 @@ concepts:
     examples:
       - ja: 自転車を修理する
         zh: 修理自行车
-  - id: ja-vocab-n3-shyuuten
+  - id: ja-vocab-n3-shuuten
     type: vocab
     level: N3
     ja: 終点
@@ -10809,7 +10809,7 @@ concepts:
     examples:
       - ja: 運命の出会い
         zh: 命中注定的邂逅
-  - id: ja-vocab-n3-shyukkoku
+  - id: ja-vocab-n3-shukkoku
     type: vocab
     level: N3
     ja: 出国
@@ -10829,7 +10829,7 @@ concepts:
     examples:
       - ja: 作文を書き直す
         zh: 重写作文
-  - id: ja-vocab-n3-jyouhin
+  - id: ja-vocab-n3-jouhin
     type: vocab
     level: N3
     ja: 上品
@@ -10839,7 +10839,7 @@ concepts:
     examples:
       - ja: 上品な人
         zh: 高雅的人
-  - id: ja-vocab-n3-shyokugo
+  - id: ja-vocab-n3-shokugo
     type: vocab
     level: N3
     ja: 食後
@@ -10849,7 +10849,7 @@ concepts:
     examples:
       - ja: 食後の休憩時間
         zh: 饭后休息时间
-  - id: ja-vocab-n3-shinchyou-e6858e
+  - id: ja-vocab-n3-shinchou-e6858e
     type: vocab
     level: N3
     ja: 慎重
@@ -10969,7 +10969,7 @@ concepts:
     examples:
       - ja: 制服を着て登校する
         zh: 穿校服上学
-  - id: ja-vocab-n3-seijyou
+  - id: ja-vocab-n3-seijou
     type: vocab
     level: N3
     ja: 正常
@@ -11179,7 +11179,7 @@ concepts:
     examples:
       - ja: パジャマに着替える
         zh: 换上睡衣
-  - id: ja-vocab-n3-chyuuko
+  - id: ja-vocab-n3-chuuko
     type: vocab
     level: N3
     ja: 中古
@@ -11189,7 +11189,7 @@ concepts:
     examples:
       - ja: 中古車
         zh: 二手车
-  - id: ja-vocab-n3-chyuuibukai
+  - id: ja-vocab-n3-chuuibukai
     type: vocab
     level: N3
     ja: 注意深い
@@ -11199,7 +11199,7 @@ concepts:
     examples:
       - ja: この人はとても注意深い
         zh: 这个人心很细
-  - id: ja-vocab-n3-chyousei
+  - id: ja-vocab-n3-chousei
     type: vocab
     level: N3
     ja: 調整
@@ -11209,7 +11209,7 @@ concepts:
     examples:
       - ja: 価格を調整する
         zh: 调节价格
-  - id: ja-vocab-n3-chyoumiryou
+  - id: ja-vocab-n3-choumiryou
     type: vocab
     level: N3
     ja: 調味料
@@ -11219,7 +11219,7 @@ concepts:
     examples:
       - ja: 調味料を加える
         zh: 加调料
-  - id: ja-vocab-n3-chyoujikan
+  - id: ja-vocab-n3-choujikan
     type: vocab
     level: N3
     ja: 長時間
@@ -11249,7 +11249,7 @@ concepts:
     examples:
       - ja: 挨拶もしないで通り過ぎる
         zh: 连招呼都没打就走过去
-  - id: ja-vocab-n3-tsuuchyou
+  - id: ja-vocab-n3-tsuuchou
     type: vocab
     level: N3
     ja: 通帳
@@ -11269,7 +11269,7 @@ concepts:
     examples:
       - ja: 星の数程ある
         zh: 数不胜数，非常多
-  - id: ja-vocab-n3-tenjyou
+  - id: ja-vocab-n3-tenjou
     type: vocab
     level: N3
     ja: 天井
@@ -11279,7 +11279,7 @@ concepts:
     examples:
       - ja: この部屋は天井が低い
         zh: 这间屋子天棚低
-  - id: ja-vocab-n3-tenchyou
+  - id: ja-vocab-n3-tenchou
     type: vocab
     level: N3
     ja: 店長
@@ -11359,7 +11359,7 @@ concepts:
     examples:
       - ja: 高校時代の同級生
         zh: 高中时代的同学
-  - id: ja-vocab-n3-tokuchyou-e789b9
+  - id: ja-vocab-n3-tokuchou-e789b9
     type: vocab
     level: N3
     ja: 特長
@@ -11469,7 +11469,7 @@ concepts:
     examples:
       - ja: 反作用
         zh: 反作用
-  - id: ja-vocab-n3-hishyo
+  - id: ja-vocab-n3-hisho
     type: vocab
     level: N3
     ja: 秘書
@@ -11479,7 +11479,7 @@ concepts:
     examples:
       - ja: 社長秘書
         zh: 总裁秘书
-  - id: ja-vocab-n3-hijyou
+  - id: ja-vocab-n3-hijou
     type: vocab
     level: N3
     ja: 非常
@@ -11609,7 +11609,7 @@ concepts:
     examples:
       - ja: 返信をお待ちします
         zh: 盼您回信
-  - id: ja-vocab-n3-hokoushya
+  - id: ja-vocab-n3-hokousha
     type: vocab
     level: N3
     ja: 歩行者
@@ -11749,7 +11749,7 @@ concepts:
     examples:
       - ja: 洋式トイレ
         zh: 西式厕所，坐便
-  - id: ja-vocab-n3-youshyoku
+  - id: ja-vocab-n3-youshoku
     type: vocab
     level: N3
     ja: 洋食
@@ -11779,7 +11779,7 @@ concepts:
     examples:
       - ja: 翌年の計画
         zh: 下一年的计划
-  - id: ja-vocab-n3-ryoushyuushyo
+  - id: ja-vocab-n3-ryoushuusho
     type: vocab
     level: N3
     ja: 領収書
@@ -11879,7 +11879,7 @@ concepts:
     examples:
       - ja: 高価な化粧品
         zh: 高价化妆品
-  - id: ja-vocab-n3-shyukushyou
+  - id: ja-vocab-n3-shukushou
     type: vocab
     level: N3
     ja: 縮小
@@ -11919,7 +11919,7 @@ concepts:
     examples:
       - ja: 右折禁止
         zh: 禁止右转
-  - id: ja-vocab-n3-nyuushya
+  - id: ja-vocab-n3-nyuusha
     type: vocab
     level: N3
     ja: 入社
@@ -11939,7 +11939,7 @@ concepts:
     examples:
       - ja: 「人々」は「人」の複数です
         zh: “人々”是“人”的复数
-  - id: ja-vocab-n3-chyokugo
+  - id: ja-vocab-n3-chokugo
     type: vocab
     level: N3
     ja: 直後
@@ -12909,7 +12909,7 @@ concepts:
     examples:
       - ja: 実物を見てから判断する
         zh: 见过实物之后再判断
-  - id: ja-vocab-n3-shyadou
+  - id: ja-vocab-n3-shadou
     type: vocab
     level: N3
     ja: 車道
@@ -12949,7 +12949,7 @@ concepts:
     examples:
       - ja: レモンの汁
         zh: 柠檬汁
-  - id: ja-vocab-n3-shyousuu
+  - id: ja-vocab-n3-shousuu
     type: vocab
     level: N3
     ja: 少数
@@ -12959,7 +12959,7 @@ concepts:
     examples:
       - ja: 少数派
         zh: 少数派
-  - id: ja-vocab-n3-jyouge
+  - id: ja-vocab-n3-jouge
     type: vocab
     level: N3
     ja: 上下
@@ -13109,7 +13109,7 @@ concepts:
     examples:
       - ja: 帯を結ぶ
         zh: 系带子
-  - id: ja-vocab-n3-tanjyun
+  - id: ja-vocab-n3-tanjun
     type: vocab
     level: N3
     ja: 単純
@@ -13119,7 +13119,7 @@ concepts:
     examples:
       - ja: 仕事が単純でつまらない
         zh: 工作单调乏味
-  - id: ja-vocab-n3-chyuukan
+  - id: ja-vocab-n3-chuukan
     type: vocab
     level: N3
     ja: 中間
@@ -13139,7 +13139,7 @@ concepts:
     examples:
       - ja: 虫歯を予防する
         zh: 预防蛀牙
-  - id: ja-vocab-n3-chyoukan
+  - id: ja-vocab-n3-choukan
     type: vocab
     level: N3
     ja: 朝刊
@@ -13149,7 +13149,7 @@ concepts:
     examples:
       - ja: 夕刊
         zh: 晚报
-  - id: ja-vocab-n3-chyokuzen
+  - id: ja-vocab-n3-chokuzen
     type: vocab
     level: N3
     ja: 直前
@@ -13169,7 +13169,7 @@ concepts:
     examples:
       - ja: 前の車を追い抜く
         zh: 超车
-  - id: ja-vocab-n3-teishya
+  - id: ja-vocab-n3-teisha
     type: vocab
     level: N3
     ja: 停車
@@ -13379,7 +13379,7 @@ concepts:
     examples:
       - ja: 製品に関する問い合わせ
         zh: 有关产品的一些咨询
-  - id: ja-vocab-n3-yuujyou
+  - id: ja-vocab-n3-yuujou
     type: vocab
     level: N3
     ja: 友情
@@ -13579,7 +13579,7 @@ concepts:
     examples:
       - ja: 包装紙
         zh: 包装纸
-  - id: ja-vocab-n3-chyou
+  - id: ja-vocab-n3-chou
     type: vocab
     level: N3
     ja: 〜帳
@@ -13879,7 +13879,7 @@ concepts:
     examples:
       - ja: 大好物
         zh: 特别喜欢的东西
-  - id: ja-vocab-n3-shichyou
+  - id: ja-vocab-n3-shichou
     type: vocab
     level: N3
     ja: 市長
@@ -13939,7 +13939,7 @@ concepts:
     examples:
       - ja: 重ねてお願いいたします
         zh: 再次恳请
-  - id: ja-vocab-n3-jyun
+  - id: ja-vocab-n3-jun
     type: vocab
     level: N3
     ja: 順
@@ -14069,7 +14069,7 @@ concepts:
     examples:
       - ja: 石の段
         zh: 石阶
-  - id: ja-vocab-n3-chyuujyun
+  - id: ja-vocab-n3-chuujun
     type: vocab
     level: N3
     ja: 中旬
@@ -14079,7 +14079,7 @@ concepts:
     examples:
       - ja: 7月の中旬に休暇を取る予定だ
         zh: 计划在7月中旬休假
-  - id: ja-vocab-n3-chyuu
+  - id: ja-vocab-n3-chuu
     type: vocab
     level: N3
     ja: 注
@@ -14139,7 +14139,7 @@ concepts:
     examples:
       - ja: 聞き取り調査
         zh: 询问调查
-  - id: ja-vocab-n3-kikijyouzu
+  - id: ja-vocab-n3-kikijouzu
     type: vocab
     level: N3
     ja: 聞き上手
@@ -14589,7 +14589,7 @@ concepts:
     examples:
       - ja: ここに朝市が立つ
         zh: 这里有早市
-  - id: ja-vocab-n3-teishyoku
+  - id: ja-vocab-n3-teishoku
     type: vocab
     level: N3
     ja: 定食
@@ -14609,7 +14609,7 @@ concepts:
     examples:
       - ja: （射撃で）弾の当たりが悪い
         zh: 子弹打得不准
-  - id: ja-vocab-n3-naishyo
+  - id: ja-vocab-n3-naisho
     type: vocab
     level: N3
     ja: 内緒
@@ -14819,7 +14819,7 @@ concepts:
     examples:
       - ja: このクラブの会費は月に2000円です
         zh: 这个俱乐部的会费是每月2000日元
-  - id: ja-vocab-n3-kyuujyou
+  - id: ja-vocab-n3-kyuujou
     type: vocab
     level: N3
     ja: 球場
@@ -14859,7 +14859,7 @@ concepts:
     examples:
       - ja: 入場者合わせて50万人
         zh: 入场人数共计50万人次
-  - id: ja-vocab-n3-saijyou
+  - id: ja-vocab-n3-saijou
     type: vocab
     level: N3
     ja: 最上
@@ -14879,7 +14879,7 @@ concepts:
     examples:
       - ja: 万全の策を講じる
         zh: 寻求万全之策
-  - id: ja-vocab-n3-jyoukuu
+  - id: ja-vocab-n3-joukuu
     type: vocab
     level: N3
     ja: 上空
@@ -14889,7 +14889,7 @@ concepts:
     examples:
       - ja: 飛行機が関東の上空を飛んでいる
         zh: 飞机正在关东地区的上空飞行
-  - id: ja-vocab-n3-jyoujyou
+  - id: ja-vocab-n3-joujou
     type: vocab
     level: N3
     ja: 上場
@@ -14929,7 +14929,7 @@ concepts:
     examples:
       - ja: 前方に進む
         zh: 向前方进发
-  - id: ja-vocab-n3-souchyou
+  - id: ja-vocab-n3-souchou
     type: vocab
     level: N3
     ja: 早朝
@@ -15119,7 +15119,7 @@ concepts:
     examples:
       - ja: 北海道へ旅行する
         zh: 去北海道旅行
-  - id: ja-vocab-n3-toshyoshitsu
+  - id: ja-vocab-n3-toshoshitsu
     type: vocab
     level: N3
     ja: 図書室
@@ -15159,7 +15159,7 @@ concepts:
     examples:
       - ja: 新聞紙で弁当箱を包む
         zh: 用报纸把便当盒包起来
-  - id: ja-vocab-n3-geijyutsuka
+  - id: ja-vocab-n3-geijutsuka
     type: vocab
     level: N3
     ja: 芸術家
@@ -15179,7 +15179,7 @@ concepts:
     examples:
       - ja: 朝近くの公園を一回り散歩する
         zh: 早晨在附近的公园溜达一圈
-  - id: ja-vocab-n3-inshyokuten
+  - id: ja-vocab-n3-inshokuten
     type: vocab
     level: N3
     ja: 飲食店
@@ -15199,7 +15199,7 @@ concepts:
     examples:
       - ja: 竿で木の実を打ち落とす
         zh: 用竿子打落树上的果实
-  - id: ja-vocab-n3-aichyaku
+  - id: ja-vocab-n3-aichaku
     type: vocab
     level: N3
     ja: 愛着
@@ -15259,7 +15259,7 @@ concepts:
     examples:
       - ja: 煮物に味付けをする
         zh: 给炖菜调味
-  - id: ja-vocab-n3-shyouhishya
+  - id: ja-vocab-n3-shouhisha
     type: vocab
     level: N3
     ja: 消費者
@@ -15269,7 +15269,7 @@ concepts:
     examples:
       - ja: 農産物は地方から都会の消費者に送られる
         zh: 农产品从产地送到都市的消费者手上
-  - id: ja-vocab-n3-kaijyou
+  - id: ja-vocab-n3-kaijou
     type: vocab
     level: N3
     ja: 開場
@@ -15349,7 +15349,7 @@ concepts:
     examples:
       - ja: 一般的に言って親の方に問題がある
         zh: 一般来说，问题出在父母身上
-  - id: ja-vocab-n3-chyoushyoku
+  - id: ja-vocab-n3-choushoku
     type: vocab
     level: N3
     ja: 朝食
@@ -15579,7 +15579,7 @@ concepts:
     examples:
       - ja: 僕は観光地に行くより、地図を持って、自分の知らない町を歩くのが好きなんだ
         zh: 比起去观光景点，我更喜欢拿着地图，在自己不熟悉的城镇里漫步
-  - id: ja-vocab-n3-chyounai
+  - id: ja-vocab-n3-chounai
     type: vocab
     level: N3
     ja: 町内
@@ -15589,7 +15589,7 @@ concepts:
     examples:
       - ja: 町内活動
         zh: 街道活动
-  - id: ja-vocab-n3-kesshyuu
+  - id: ja-vocab-n3-kesshuu
     type: vocab
     level: N3
     ja: 結集
@@ -15649,7 +15649,7 @@ concepts:
     examples:
       - ja: 白菜の漬物
         zh: 腌白菜
-  - id: ja-vocab-n3-chyourui
+  - id: ja-vocab-n3-chourui
     type: vocab
     level: N3
     ja: 鳥類
@@ -15669,7 +15669,7 @@ concepts:
     examples:
       - ja: それはもう不用です
         zh: 那个已经没用了
-  - id: ja-vocab-n3-kichyou
+  - id: ja-vocab-n3-kichou
     type: vocab
     level: N3
     ja: 機長
@@ -15719,7 +15719,7 @@ concepts:
     examples:
       - ja: 美術館の休館日
         zh: 美术馆休馆日
-  - id: ja-vocab-n3-hanashijyouzu
+  - id: ja-vocab-n3-hanashijouzu
     type: vocab
     level: N3
     ja: 話し上手
@@ -15749,7 +15749,7 @@ concepts:
     examples:
       - ja: パンクロック
         zh: 朋克摇滚
-  - id: ja-vocab-n3-kanjyouteki
+  - id: ja-vocab-n3-kanjouteki
     type: vocab
     level: N3
     ja: 感情的
@@ -15789,7 +15789,7 @@ concepts:
     examples:
       - ja: はあ、かしこまりました
         zh: 是，知道了
-  - id: ja-vocab-n3-chyuukyuu
+  - id: ja-vocab-n3-chuukyuu
     type: vocab
     level: N3
     ja: 中級

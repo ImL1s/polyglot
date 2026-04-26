@@ -103,7 +103,7 @@ const HIRAGANA_TO_ROMAJI: Record<string, string> = {
 
 const KATAKANA_OFFSET = "ア".charCodeAt(0) - "あ".charCodeAt(0);
 
-function katakanaToHiragana(s: string): string {
+export function katakanaToHiragana(s: string): string {
   let out = "";
   for (const ch of s) {
     const code = ch.charCodeAt(0);
@@ -116,7 +116,7 @@ function katakanaToHiragana(s: string): string {
   return out;
 }
 
-function readingToRomaji(reading: string): string {
+export function readingToRomaji(reading: string): string {
   // strip leading tilde / parenthetical / non-kana noise
   const cleaned = katakanaToHiragana(reading)
     .replace(/[〜~]/g, "")
@@ -124,13 +124,28 @@ function readingToRomaji(reading: string): string {
     .trim();
   if (!cleaned) return "";
 
+  // explicit yōon table — sh/ch/j strip TWO chars not just trailing 'i'.
+  // (e.g. shi+ya is sha not shya; ki+ya is kya — different shape.)
+  const YOUON: Record<string, Record<string, string>> = {
+    し: { ゃ: "sha", ゅ: "shu", ょ: "sho" },
+    ち: { ゃ: "cha", ゅ: "chu", ょ: "cho" },
+    じ: { ゃ: "ja",  ゅ: "ju",  ょ: "jo"  },
+    ぢ: { ゃ: "ja",  ゅ: "ju",  ょ: "jo"  },
+  };
+
   let out = "";
   const chars = [...cleaned];
   for (let i = 0; i < chars.length; i++) {
     const ch = chars[i]!;
     const next = chars[i + 1];
-    // small ya/yu/yo combo
-    if (next && (next === "ゃ" || next === "ゅ" || next === "ょ")) {
+    // yōon (small ya/yu/yo combo)
+    if (next === "ゃ" || next === "ゅ" || next === "ょ") {
+      const explicit = YOUON[ch]?.[next];
+      if (explicit) {
+        out += explicit;
+        i++;
+        continue;
+      }
       const base = HIRAGANA_TO_ROMAJI[ch];
       const small = HIRAGANA_TO_ROMAJI[next];
       if (base && small) {
@@ -143,8 +158,9 @@ function readingToRomaji(reading: string): string {
     // sokuon (small tsu) doubles next consonant
     if (ch === "っ" && next) {
       const nr = HIRAGANA_TO_ROMAJI[next];
-      if (nr) {
-        out += nr[0] || "";
+      if (nr && nr[0]) {
+        // 「っ + chi」→ "tchi" (tsu doubles t for chi too)
+        out += nr[0] === "c" ? "t" : nr[0];
         continue;
       }
     }
@@ -158,7 +174,7 @@ function readingToRomaji(reading: string): string {
   return out;
 }
 
-function slugify(reading: string, fallback: string): string {
+export function slugify(reading: string, fallback: string): string {
   const r = readingToRomaji(reading);
   if (r) return r;
   // last resort: hash-like fallback (kanji bytes)
@@ -241,7 +257,10 @@ async function main() {
   console.log(`total vocab: ${seeds.length}`);
 }
 
-main().catch((err) => {
-  console.error(err instanceof Error ? err.stack ?? err.message : String(err));
-  process.exit(1);
-});
+// only run when invoked as a script, not when imported by tests
+if (import.meta.main) {
+  main().catch((err) => {
+    console.error(err instanceof Error ? err.stack ?? err.message : String(err));
+    process.exit(1);
+  });
+}

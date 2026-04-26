@@ -89,7 +89,7 @@ concepts:
     examples:
       - ja: 私は雨の日以外は自転車で学校に行く
         zh: 除了下雨天，我都是骑自行车上学
-  - id: ja-vocab-n4-ijyou
+  - id: ja-vocab-n4-ijou
     type: vocab
     level: N4
     ja: 以上
@@ -119,7 +119,7 @@ concepts:
     examples:
       - ja: うちへ帰る
         zh: 回家
-  - id: ja-vocab-n4-kachyou
+  - id: ja-vocab-n4-kachou
     type: vocab
     level: N4
     ja: 課長
@@ -249,7 +249,7 @@ concepts:
     examples:
       - ja: 今日が夏休み最後の日だ
         zh: 今天是暑假最后一天
-  - id: ja-vocab-n4-saishyo
+  - id: ja-vocab-n4-saisho
     type: vocab
     level: N4
     ja: 最初
@@ -309,7 +309,7 @@ concepts:
     examples:
       - ja: きりんの首は長い
         zh: 长颈鹿的脖子很长
-  - id: ja-vocab-n4-jyosei
+  - id: ja-vocab-n4-josei
     type: vocab
     level: N4
     ja: 女性
@@ -319,7 +319,7 @@ concepts:
     examples:
       - ja: 女性パイロット
         zh: 女飞行员
-  - id: ja-vocab-n4-shyougakkou
+  - id: ja-vocab-n4-shougakkou
     type: vocab
     level: N4
     ja: 小学校
@@ -479,7 +479,7 @@ concepts:
     examples:
       - ja: 読む本を探す
         zh: 寻找要读的书
-  - id: ja-vocab-n4-chyuugakkou
+  - id: ja-vocab-n4-chuugakkou
     type: vocab
     level: N4
     ja: 中学校
@@ -539,7 +539,7 @@ concepts:
     examples:
       - ja: 彼は絵がうまい
         zh: 他擅长画画
-  - id: ja-vocab-n4-kanojyo
+  - id: ja-vocab-n4-kanojo
     type: vocab
     level: N4
     ja: 彼女
@@ -679,7 +679,7 @@ concepts:
     examples:
       - ja: 彼があんな人だとは思わなかった
         zh: 没想到他是那样的人
-  - id: ja-vocab-n4-irasshyaru
+  - id: ja-vocab-n4-irassharu
     type: vocab
     level: N4
     ja: いらっしゃる
@@ -1149,7 +1149,7 @@ concepts:
     examples:
       - ja: 引き出しを開ける
         zh: 拉开抽屉
-  - id: ja-vocab-n4-untenshyu
+  - id: ja-vocab-n4-untenshu
     type: vocab
     level: N4
     ja: 運転手
@@ -1219,7 +1219,7 @@ concepts:
     examples:
       - ja: 年月が過ぎる
         zh: 岁月流逝
-  - id: ja-vocab-n4-kaijyou
+  - id: ja-vocab-n4-kaijou
     type: vocab
     level: N4
     ja: 会場
@@ -1319,7 +1319,7 @@ concepts:
     examples:
       - ja: この問題に関係する人
         zh: 与这件事有关系的人
-  - id: ja-vocab-n4-omochya
+  - id: ja-vocab-n4-omocha
     type: vocab
     level: N4
     ja: おもちゃ
@@ -1389,7 +1389,7 @@ concepts:
     examples:
       - ja: 今日は最高にいい気分だよ
         zh: 今天的心情好到极点
-  - id: ja-vocab-n4-gijyutsu
+  - id: ja-vocab-n4-gijutsu
     type: vocab
     level: N4
     ja: 技術
@@ -1449,7 +1449,7 @@ concepts:
     examples:
       - ja: 大声に驚く
         zh: 因大声而吓一跳
-  - id: ja-vocab-n4-kinjyo
+  - id: ja-vocab-n4-kinjo
     type: vocab
     level: N4
     ja: 近所
@@ -1869,7 +1869,7 @@ concepts:
     examples:
       - ja: 試合に勝つ
         zh: 比赛胜利
-  - id: ja-vocab-n4-haishya
+  - id: ja-vocab-n4-haisha
     type: vocab
     level: N4
     ja: 歯医者
@@ -1879,7 +1879,7 @@ concepts:
     examples:
       - ja: 歯医者にかかる
         zh: 看牙医
-  - id: ja-vocab-n4-jimushyo
+  - id: ja-vocab-n4-jimusho
     type: vocab
     level: N4
     ja: 事務所
@@ -1969,7 +1969,7 @@ concepts:
     examples:
       - ja: ごみを捨てる
         zh: 扔垃圾
-  - id: ja-vocab-n4-shyachyou
+  - id: ja-vocab-n4-shachou
     type: vocab
     level: N4
     ja: 社長
@@ -1999,7 +1999,7 @@ concepts:
     examples:
       - ja: 家事を手伝う
         zh: 帮忙做家务
-  - id: ja-vocab-n4-shyumi
+  - id: ja-vocab-n4-shumi
     type: vocab
     level: N4
     ja: 趣味
@@ -2059,7 +2059,7 @@ concepts:
     examples:
       - ja: 全校の生徒を集める
         zh: 召集全校学生
-  - id: ja-vocab-n4-jyuushyo
+  - id: ja-vocab-n4-juusho
     type: vocab
     level: N4
     ja: 住所
@@ -2069,7 +2069,7 @@ concepts:
     examples:
       - ja: 荷物は会社の住所に送ってください
         zh: 请将货物寄到公司地址
-  - id: ja-vocab-n4-jyuubun
+  - id: ja-vocab-n4-juubun
     type: vocab
     level: N4
     ja: 十分
@@ -2089,7 +2089,7 @@ concepts:
     examples:
       - ja: 試合に勝つ
         zh: 赢得比赛
-  - id: ja-vocab-n4-shyourai
+  - id: ja-vocab-n4-shourai
     type: vocab
     level: N4
     ja: 将来
@@ -2099,7 +2099,7 @@ concepts:
     examples:
       - ja: 将来はパイロットになりたいです
         zh: 将来我想当飞行员
-  - id: ja-vocab-n4-shyousetsu
+  - id: ja-vocab-n4-shousetsu
     type: vocab
     level: N4
     ja: 小説
@@ -2129,7 +2129,7 @@ concepts:
     examples:
       - ja: パンを焼く
         zh: 烤面包
-  - id: ja-vocab-n4-shyoukai
+  - id: ja-vocab-n4-shoukai
     type: vocab
     level: N4
     ja: 紹介
@@ -2159,7 +2159,7 @@ concepts:
     examples:
       - ja: わからない場合は私に聞いてください
         zh: 有不懂的地方请问我
-  - id: ja-vocab-n4-bashyo
+  - id: ja-vocab-n4-basho
     type: vocab
     level: N4
     ja: 場所
@@ -2179,7 +2179,7 @@ concepts:
     examples:
       - ja: 部屋に花を飾る
         zh: 在房间里装饰花朵
-  - id: ja-vocab-n4-shyokuryouhin
+  - id: ja-vocab-n4-shokuryouhin
     type: vocab
     level: N4
     ja: 食料品
@@ -2219,7 +2219,7 @@ concepts:
     examples:
       - ja: 雪が深く積もっている
         zh: 雪积得很厚
-  - id: ja-vocab-n4-jinjya
+  - id: ja-vocab-n4-jinja
     type: vocab
     level: N4
     ja: 神社
@@ -2519,7 +2519,7 @@ concepts:
     examples:
       - ja: 昼休みは12時から1時までの1時間です
         zh: 午休为十二点至一点的一小时
-  - id: ja-vocab-n4-chyuui
+  - id: ja-vocab-n4-chuui
     type: vocab
     level: N4
     ja: 注意
@@ -2609,7 +2609,7 @@ concepts:
     examples:
       - ja: 文に点を打つ
         zh: 给句子打上标点
-  - id: ja-vocab-n4-tochyuu
+  - id: ja-vocab-n4-tochuu
     type: vocab
     level: N4
     ja: 途中
@@ -2839,7 +2839,7 @@ concepts:
     examples:
       - ja: 美しい景色
         zh: 美丽的风景
-  - id: ja-vocab-n4-bijyutsukan
+  - id: ja-vocab-n4-bijutsukan
     type: vocab
     level: N4
     ja: 美術館
@@ -2919,7 +2919,7 @@ concepts:
     examples:
       - ja: 普通の人
         zh: 一般人
-  - id: ja-vocab-n4-buchyou
+  - id: ja-vocab-n4-buchou
     type: vocab
     level: N4
     ja: 部長

@@ -59,7 +59,7 @@ concepts:
     examples:
       - ja: 午後一時過ぎ
         zh: 下午一点多
-  - id: ja-vocab-n5-chyan
+  - id: ja-vocab-n5-chan
     type: vocab
     level: N5
     ja: 〜ちゃん
@@ -179,7 +179,7 @@ concepts:
     examples:
       - ja: 子ども達
         zh: 孩子们
-  - id: ja-vocab-n5-jyuu
+  - id: ja-vocab-n5-juu
     type: vocab
     level: N5
     ja: 〜中
@@ -189,7 +189,7 @@ concepts:
     examples:
       - ja: 一日中
         zh: 一整天
-  - id: ja-vocab-n5-chyuu
+  - id: ja-vocab-n5-chuu
     type: vocab
     level: N5
     ja: 中
@@ -339,7 +339,7 @@ concepts:
     examples:
       - ja: あちらに行ってみよう
         zh: 去那边看看吧
-  - id: ja-vocab-n5-acchi
+  - id: ja-vocab-n5-atchi
     type: vocab
     level: N5
     ja: あっち
@@ -709,7 +709,7 @@ concepts:
     examples:
       - ja: 昨日、あなたのお姉さんに会ったよ
         zh: 昨天我见到你姐姐了
-  - id: ja-vocab-n5-ochya
+  - id: ja-vocab-n5-ocha
     type: vocab
     level: N5
     ja: お茶
@@ -879,7 +879,7 @@ concepts:
     examples:
       - ja: 受付はこちらです
         zh: 接待处在这里
-  - id: ja-vocab-n5-kocchi
+  - id: ja-vocab-n5-kotchi
     type: vocab
     level: N5
     ja: こっち
@@ -999,7 +999,7 @@ concepts:
     examples:
       - ja: 努力はした。しかし成功はしなかった
         zh: 努力了。但是没有成功
-  - id: ja-vocab-n5-jya
+  - id: ja-vocab-n5-ja
     type: vocab
     level: N5
     ja: じゃ
@@ -1039,7 +1039,7 @@ concepts:
     examples:
       - ja: オレンジジュース
         zh: 橙汁
-  - id: ja-vocab-n5-shyouyu
+  - id: ja-vocab-n5-shouyu
     type: vocab
     level: N5
     ja: しょうゆ
@@ -1229,7 +1229,7 @@ concepts:
     examples:
       - ja: 夕方そちらに着きます
         zh: 傍晚会抵达那边
-  - id: ja-vocab-n5-socchi
+  - id: ja-vocab-n5-sotchi
     type: vocab
     level: N5
     ja: そっち
@@ -1429,7 +1429,7 @@ concepts:
     examples:
       - ja: チケットを予約する
         zh: 预订票
-  - id: ja-vocab-n5-chyoudo
+  - id: ja-vocab-n5-choudo
     type: vocab
     level: N5
     ja: ちょうど
@@ -1449,7 +1449,7 @@ concepts:
     examples:
       - ja: ミルクチョコレート
         zh: 牛奶巧克力
-  - id: ja-vocab-n5-chyotto
+  - id: ja-vocab-n5-chotto
     type: vocab
     level: N5
     ja: ちょっと
@@ -1639,7 +1639,7 @@ concepts:
     examples:
       - ja: どちらへ行きましたか
         zh: 往哪边去了？
-  - id: ja-vocab-n5-docchi
+  - id: ja-vocab-n5-dotchi
     type: vocab
     level: N5
     ja: どっち
@@ -2259,7 +2259,7 @@ concepts:
     examples:
       - ja: 考え方が違う
         zh: 想法不同
-  - id: ja-vocab-n5-ishya
+  - id: ja-vocab-n5-isha
     type: vocab
     level: N5
     ja: 医者
@@ -2279,7 +2279,7 @@ concepts:
     examples:
       - ja: 一つ・二つ・三つ・四つ・五つ・六つ・七つ・八つ・九つ・十
         zh: 1〜10个的说法
-  - id: ja-vocab-n5-isshyo
+  - id: ja-vocab-n5-issho
     type: vocab
     level: N5
     ja: 一緒
@@ -2399,7 +2399,7 @@ concepts:
     examples:
       - ja: 運動会で一位になった
         zh: 我在运动会上得了第一名
-  - id: ja-vocab-n5-undoujyou
+  - id: ja-vocab-n5-undoujou
     type: vocab
     level: N5
     ja: 運動場
@@ -2779,7 +2779,7 @@ concepts:
     examples:
       - ja: また会いましょう
         zh: 下次见
-  - id: ja-vocab-n5-kaishya
+  - id: ja-vocab-n5-kaisha
     type: vocab
     level: N5
     ja: 会社
@@ -2789,7 +2789,7 @@ concepts:
     examples:
       - ja: 彼は小さな会社に勤めています
         zh: 他在一间小公司上班
-  - id: ja-vocab-n5-kaishyain
+  - id: ja-vocab-n5-kaishain
     type: vocab
     level: N5
     ja: 会社員
@@ -3579,7 +3579,7 @@ concepts:
     examples:
       - ja: 私はワインが好きです
         zh: 我喜欢红酒
-  - id: ja-vocab-n5-koujyou
+  - id: ja-vocab-n5-koujou
     type: vocab
     level: N5
     ja: 工場
@@ -3599,7 +3599,7 @@ concepts:
     examples:
       - ja: 広い道路
         zh: 宽阔的道路
-  - id: ja-vocab-n5-kouchya
+  - id: ja-vocab-n5-koucha
     type: vocab
     level: N5
     ja: 紅茶
@@ -3699,7 +3699,7 @@ concepts:
     examples:
       - ja: 今月はとても忙しい
         zh: 这个月非常忙碌
-  - id: ja-vocab-n5-konshyuu
+  - id: ja-vocab-n5-konshuu
     type: vocab
     level: N5
     ja: 今週
@@ -3809,7 +3809,7 @@ concepts:
     examples:
       - ja: 公園のベンチに座る
         zh: 坐在公园的长椅上
-  - id: ja-vocab-n5-saraishyuu
+  - id: ja-vocab-n5-saraishuu
     type: vocab
     level: N5
     ja: 再来週
@@ -4149,7 +4149,7 @@ concepts:
     examples:
       - ja: ウサギの耳は長い
         zh: 兔子的耳朵很长
-  - id: ja-vocab-n5-jitenshya
+  - id: ja-vocab-n5-jitensha
     type: vocab
     level: N5
     ja: 自転車
@@ -4169,7 +4169,7 @@ concepts:
     examples:
       - ja: 宿題は自分でやりなさい
         zh: 作业要自己写
-  - id: ja-vocab-n5-jishyo
+  - id: ja-vocab-n5-jisho
     type: vocab
     level: N5
     ja: 辞書
@@ -4209,7 +4209,7 @@ concepts:
     examples:
       - ja: 質問に答える
         zh: 回答问题
-  - id: ja-vocab-n5-shyashin
+  - id: ja-vocab-n5-shashin
     type: vocab
     level: N5
     ja: 写真
@@ -4219,7 +4219,7 @@ concepts:
     examples:
       - ja: 写真を撮る
         zh: 照相
-  - id: ja-vocab-n5-shyain
+  - id: ja-vocab-n5-shain
     type: vocab
     level: N5
     ja: 社員
@@ -4319,7 +4319,7 @@ concepts:
     examples:
       - ja: 手洗いに行く
         zh: 去洗手间；上厕所
-  - id: ja-vocab-n5-shyurui
+  - id: ja-vocab-n5-shurui
     type: vocab
     level: N5
     ja: 種類
@@ -4349,7 +4349,7 @@ concepts:
     examples:
       - ja: 寿司を握る
         zh: 捏寿司
-  - id: ja-vocab-n5-jyugyou
+  - id: ja-vocab-n5-jugyou
     type: vocab
     level: N5
     ja: 授業
@@ -4389,7 +4389,7 @@ concepts:
     examples:
       - ja: バイオリンを習う
         zh: 学习小提琴
-  - id: ja-vocab-n5-shyuu
+  - id: ja-vocab-n5-shuu
     type: vocab
     level: N5
     ja: 週
@@ -4399,7 +4399,7 @@ concepts:
     examples:
       - ja: 週3日だけアルバイトをやっている
         zh: 每周只干三天临时工
-  - id: ja-vocab-n5-shyuumatsu
+  - id: ja-vocab-n5-shuumatsu
     type: vocab
     level: N5
     ja: 週末
@@ -4439,7 +4439,7 @@ concepts:
     examples:
       - ja: このかばんは重いです
         zh: 这个包包很重
-  - id: ja-vocab-n5-shyukudai
+  - id: ja-vocab-n5-shukudai
     type: vocab
     level: N5
     ja: 宿題
@@ -4599,7 +4599,7 @@ concepts:
     examples:
       - ja: 小さなこと
         zh: 小事
-  - id: ja-vocab-n5-shyougakusei
+  - id: ja-vocab-n5-shougakusei
     type: vocab
     level: N5
     ja: 小学生
@@ -4679,7 +4679,7 @@ concepts:
     examples:
       - ja: 手を上げる
         zh: 举手
-  - id: ja-vocab-n5-jyouzu
+  - id: ja-vocab-n5-jouzu
     type: vocab
     level: N5
     ja: 上手
@@ -4729,7 +4729,7 @@ concepts:
     examples:
       - ja: 日本の食べ物はとてもおいしいです
         zh: 日本的食物非常好吃
-  - id: ja-vocab-n5-shyokudou
+  - id: ja-vocab-n5-shokudou
     type: vocab
     level: N5
     ja: 食堂
@@ -4849,7 +4849,7 @@ concepts:
     examples:
       - ja: 人気がある
         zh: 很红；有人缘；有人望；受欢迎；有人气
-  - id: ja-vocab-n5-toshyokan
+  - id: ja-vocab-n5-toshokan
     type: vocab
     level: N5
     ja: 図書館
@@ -5079,7 +5079,7 @@ concepts:
     examples:
       - ja: 先月の電話料金
         zh: 上个月的电话费
-  - id: ja-vocab-n5-senshyuu
+  - id: ja-vocab-n5-senshuu
     type: vocab
     level: N5
     ja: 先週
@@ -5299,7 +5299,7 @@ concepts:
     examples:
       - ja: 娘は大学1年生です
         zh: 女儿在读大一
-  - id: ja-vocab-n5-daijyoubu
+  - id: ja-vocab-n5-daijoubu
     type: vocab
     level: N5
     ja: 大丈夫
@@ -5389,7 +5389,7 @@ concepts:
     examples:
       - ja: 髪の毛を短く切る
         zh: 剪短头发
-  - id: ja-vocab-n5-tanjyoubi
+  - id: ja-vocab-n5-tanjoubi
     type: vocab
     level: N5
     ja: 誕生日
@@ -5499,7 +5499,7 @@ concepts:
     examples:
       - ja: もう遅い
         zh: 为时已晚
-  - id: ja-vocab-n5-chyairo
+  - id: ja-vocab-n5-chairo
     type: vocab
     level: N5
     ja: 茶色
@@ -5539,7 +5539,7 @@ concepts:
     examples:
       - ja: 父は家の中にいます
         zh: 父亲在家里
-  - id: ja-vocab-n5-chyuugaku
+  - id: ja-vocab-n5-chuugaku
     type: vocab
     level: N5
     ja: 中学
@@ -5549,7 +5549,7 @@ concepts:
     examples:
       - ja: 息子は中学に通っています
         zh: 儿子在上初中
-  - id: ja-vocab-n5-chyuugakusei
+  - id: ja-vocab-n5-chuugakusei
     type: vocab
     level: N5
     ja: 中学生
@@ -5559,7 +5559,7 @@ concepts:
     examples:
       - ja: 息子は中学生です
         zh: 儿子是初中生
-  - id: ja-vocab-n5-chyuugoku
+  - id: ja-vocab-n5-chuugoku
     type: vocab
     level: N5
     ja: 中国
@@ -5719,7 +5719,7 @@ concepts:
     examples:
       - ja: この車は電気で動く
         zh: 这辆汽车是电动的
-  - id: ja-vocab-n5-denshya
+  - id: ja-vocab-n5-densha
     type: vocab
     level: N5
     ja: 電車
@@ -5949,7 +5949,7 @@ concepts:
     examples:
       - ja: 一つ・二つ・三つ・四つ・五つ・六つ・七つ・八つ・九つ・十
         zh: 1〜10个的说法
-  - id: ja-vocab-n5-nijyuu
+  - id: ja-vocab-n5-nijuu
     type: vocab
     level: N5
     ja: 二十
@@ -6679,7 +6679,7 @@ concepts:
     examples:
       - ja: 毎月30万円かせぐ
         zh: 每月挣三十万日元
-  - id: ja-vocab-n5-maishyuu
+  - id: ja-vocab-n5-maishuu
     type: vocab
     level: N5
     ja: 毎週
@@ -6959,7 +6959,7 @@ concepts:
     examples:
       - ja: 来月から大学生になります
         zh: 下个月开始就是大学生了
-  - id: ja-vocab-n5-raishyuu
+  - id: ja-vocab-n5-raishuu
     type: vocab
     level: N5
     ja: 来週
@@ -7149,7 +7149,7 @@ concepts:
     examples:
       - ja: 飲み物は冷蔵庫にあります
         zh: 饮料在冰箱里
-  - id: ja-vocab-n5-renshyuu
+  - id: ja-vocab-n5-renshuu
     type: vocab
     level: N5
     ja: 練習
@@ -7259,7 +7259,7 @@ concepts:
     examples:
       - ja: 取り出す
         zh: 取出来
-  - id: ja-vocab-n5-chyou
+  - id: ja-vocab-n5-chou
     type: vocab
     level: N5
     ja: 町
@@ -8029,7 +8029,7 @@ concepts:
     examples:
       - ja: 休み時間になる
         zh: 到了休息时间
-  - id: ja-vocab-n5-kyoukashyo
+  - id: ja-vocab-n5-kyoukasho
     type: vocab
     level: N5
     ja: 教科書
@@ -8419,7 +8419,7 @@ concepts:
     examples:
       - ja: 駅前に人が集まっています
         zh: 车站前聚集了很多人
-  - id: ja-vocab-n5-shyuppatsu
+  - id: ja-vocab-n5-shuppatsu
     type: vocab
     level: N5
     ja: 出発
@@ -8429,7 +8429,7 @@ concepts:
     examples:
       - ja: あと15分で出発です
         zh: 再过十五分钟就要出发了
-  - id: ja-vocab-n5-jyunbi
+  - id: ja-vocab-n5-junbi
     type: vocab
     level: N5
     ja: 準備
@@ -8479,7 +8479,7 @@ concepts:
     examples:
       - ja: 床を掃く
         zh: 扫地
-  - id: ja-vocab-n5-shyouchi
+  - id: ja-vocab-n5-shouchi
     type: vocab
     level: N5
     ja: 承知
@@ -8509,7 +8509,7 @@ concepts:
     examples:
       - ja: 上着を着る
         zh: 穿外套
-  - id: ja-vocab-n5-jyoudan
+  - id: ja-vocab-n5-joudan
     type: vocab
     level: N5
     ja: 冗談
@@ -8519,7 +8519,7 @@ concepts:
     examples:
       - ja: 冗談を言う
         zh: 开玩笑
-  - id: ja-vocab-n5-jyouhou
+  - id: ja-vocab-n5-jouhou
     type: vocab
     level: N5
     ja: 情報
@@ -8529,7 +8529,7 @@ concepts:
     examples:
       - ja: インターネットで最新の情報を収集する
         zh: 用互联网收集最新信息
-  - id: ja-vocab-n5-shyokuji
+  - id: ja-vocab-n5-shokuji
     type: vocab
     level: N5
     ja: 食事
@@ -8589,7 +8589,7 @@ concepts:
     examples:
       - ja: ついに実験が成功した
         zh: 实验终于成功了
-  - id: ja-vocab-n5-shyougatsu
+  - id: ja-vocab-n5-shougatsu
     type: vocab
     level: N5
     ja: 正月
@@ -8749,7 +8749,7 @@ concepts:
     examples:
       - ja: 外国の地を踏む
         zh: 踏上外国土地
-  - id: ja-vocab-n5-chyairoi
+  - id: ja-vocab-n5-chairoi
     type: vocab
     level: N5
     ja: 茶色い
@@ -8759,7 +8759,7 @@ concepts:
     examples:
       - ja: 泥で手が茶色くなる
         zh: 手上沾满了泥土，变成了褐色
-  - id: ja-vocab-n5-chyuugokugo
+  - id: ja-vocab-n5-chuugokugo
     type: vocab
     level: N5
     ja: 中国語
@@ -8769,7 +8769,7 @@ concepts:
     examples:
       - ja: 日本語を中国語に訳す
         zh: 把日文翻译成中文
-  - id: ja-vocab-n5-chyuushin
+  - id: ja-vocab-n5-chuushin
     type: vocab
     level: N5
     ja: 中心
@@ -8779,7 +8779,7 @@ concepts:
     examples:
       - ja: 公園の中心に池がある
         zh: 公园的中央有一座水池
-  - id: ja-vocab-n5-chyou-e995b7
+  - id: ja-vocab-n5-chou-e995b7
     type: vocab
     level: N5
     ja: 長
@@ -8999,7 +8999,7 @@ concepts:
     examples:
       - ja: 次の文を読んで設問に答えなさい
         zh: 阅读以下文章并回答问题
-  - id: ja-vocab-n5-bunshyou
+  - id: ja-vocab-n5-bunshou
     type: vocab
     level: N5
     ja: 文章
@@ -9179,7 +9179,7 @@ concepts:
     examples:
       - ja: エレベーターで下に降りましょう
         zh: 搭电梯下楼吧
-  - id: ja-vocab-n5-oshyaberi
+  - id: ja-vocab-n5-oshaberi
     type: vocab
     level: N5
     ja: おしゃべり
@@ -9249,7 +9249,7 @@ concepts:
     examples:
       - ja: 新緑のシーズン
         zh: 新绿的季节
-  - id: ja-vocab-n5-shyaberu
+  - id: ja-vocab-n5-shaberu
     type: vocab
     level: N5
     ja: しゃべる
@@ -9339,7 +9339,7 @@ concepts:
     examples:
       - ja: これはすばらしいチャンスだ
         zh: 这是个好机会
-  - id: ja-vocab-n5-chyanto
+  - id: ja-vocab-n5-chanto
     type: vocab
     level: N5
     ja: ちゃんと
@@ -9559,7 +9559,7 @@ concepts:
     examples:
       - ja: 有利な位置を占める
         zh: 占有利地位
-  - id: ja-vocab-n5-isshyou
+  - id: ja-vocab-n5-isshou
     type: vocab
     level: N5
     ja: 一生
@@ -9679,7 +9679,7 @@ concepts:
     examples:
       - ja: 楽な仕事
         zh: 轻松的工作
-  - id: ja-vocab-n5-kanshya
+  - id: ja-vocab-n5-kansha
     type: vocab
     level: N5
     ja: 感謝
@@ -9739,7 +9739,7 @@ concepts:
     examples:
       - ja: このプロジェクトにはみんなの協力が必要です
         zh: 这个计划需要大家的协助
-  - id: ja-vocab-n5-kinchyou
+  - id: ja-vocab-n5-kinchou
     type: vocab
     level: N5
     ja: 緊張
@@ -9909,7 +9909,7 @@ concepts:
     examples:
       - ja: 自動ドア
         zh: 自动门
-  - id: ja-vocab-n5-techyou
+  - id: ja-vocab-n5-techou
     type: vocab
     level: N5
     ja: 手帳
@@ -9929,7 +9929,7 @@ concepts:
     examples:
       - ja: 仕事を終える
         zh: 结束工作
-  - id: ja-vocab-n5-shyoujyo
+  - id: ja-vocab-n5-shoujo
     type: vocab
     level: N5
     ja: 少女
@@ -9939,7 +9939,7 @@ concepts:
     examples:
       - ja: それは少女向けの雑誌です
         zh: 那是面向少女的杂志
-  - id: ja-vocab-n5-shyounen
+  - id: ja-vocab-n5-shounen
     type: vocab
     level: N5
     ja: 少年
@@ -9959,7 +9959,7 @@ concepts:
     examples:
       - ja: もっと詳しく説明してください
         zh: 请再详细说明一下
-  - id: ja-vocab-n5-jyoutai
+  - id: ja-vocab-n5-joutai
     type: vocab
     level: N5
     ja: 状態
@@ -9969,7 +9969,7 @@ concepts:
     examples:
       - ja: ここは道の状態がとても悪いです
         zh: 这里的路况非常差
-  - id: ja-vocab-n5-shyokuryou
+  - id: ja-vocab-n5-shokuryou
     type: vocab
     level: N5
     ja: 食料
@@ -10039,7 +10039,7 @@ concepts:
     examples:
       - ja: 正確に発音する
         zh: 准确发音
-  - id: ja-vocab-n5-shyoujiki
+  - id: ja-vocab-n5-shoujiki
     type: vocab
     level: N5
     ja: 正直
@@ -10189,7 +10189,7 @@ concepts:
     examples:
       - ja: 昼寝の習慣はない
         zh: 没有午睡的习惯
-  - id: ja-vocab-n5-chyokin
+  - id: ja-vocab-n5-chokin
     type: vocab
     level: N5
     ja: 貯金
@@ -10199,7 +10199,7 @@ concepts:
     examples:
       - ja: 毎月2万円ずつ貯金する
         zh: 每个月存两万日元
-  - id: ja-vocab-n5-chyoushi
+  - id: ja-vocab-n5-choushi
     type: vocab
     level: N5
     ja: 調子
@@ -10209,7 +10209,7 @@ concepts:
     examples:
       - ja: バイオリンの調子を合わせる
         zh: 给小提琴调音
-  - id: ja-vocab-n5-chyokusetsu
+  - id: ja-vocab-n5-chokusetsu
     type: vocab
     level: N5
     ja: 直接
@@ -10269,7 +10269,7 @@ concepts:
     examples:
       - ja: 借りたお金を返すのは当たり前だ
         zh: 欠债还钱是理所当然的
-  - id: ja-vocab-n5-touchyaku
+  - id: ja-vocab-n5-touchaku
     type: vocab
     level: N5
     ja: 到着
@@ -10449,7 +10449,7 @@ concepts:
     examples:
       - ja: 命令を下す
         zh: 下命令
-  - id: ja-vocab-n5-yushyutsu
+  - id: ja-vocab-n5-yushutsu
     type: vocab
     level: N5
     ja: 輸出
@@ -10529,7 +10529,7 @@ concepts:
     examples:
       - ja: 夫婦の和
         zh: 夫妇和睦
-  - id: ja-vocab-n5-washyoku
+  - id: ja-vocab-n5-washoku
     type: vocab
     level: N5
     ja: 和食
@@ -10559,7 +10559,7 @@ concepts:
     examples:
       - ja: 非常口
         zh: 安全出口
-  - id: ja-vocab-n5-shyu
+  - id: ja-vocab-n5-shu
     type: vocab
     level: N5
     ja: 手
@@ -10779,7 +10779,7 @@ concepts:
     examples:
       - ja: 子供に絵本を読んであげる
         zh: 给小孩子读绘本
-  - id: ja-vocab-n5-kyuukyuushya
+  - id: ja-vocab-n5-kyuukyuusha
     type: vocab
     level: N5
     ja: 救急車
@@ -10829,7 +10829,7 @@ concepts:
     examples:
       - ja: 最も好きな食べ物
         zh: 最喜爱的食物
-  - id: ja-vocab-n5-jikoshyoukai
+  - id: ja-vocab-n5-jikoshoukai
     type: vocab
     level: N5
     ja: 自己紹介
@@ -10869,7 +10869,7 @@ concepts:
     examples:
       - ja: 今日はこれでおしまい
         zh: 今天到此为止
-  - id: ja-vocab-n5-shyuukan
+  - id: ja-vocab-n5-shuukan
     type: vocab
     level: N5
     ja: 週間
@@ -11089,7 +11089,7 @@ concepts:
     examples:
       - ja: 図書室に本を戻す
         zh: 归还图书室的书
-  - id: ja-vocab-n5-yuushyoku
+  - id: ja-vocab-n5-yuushoku
     type: vocab
     level: N5
     ja: 夕食
@@ -11199,7 +11199,7 @@ concepts:
     examples:
       - ja: 早起きして散歩する
         zh: 早早起来散步
-  - id: ja-vocab-n5-tanjyou
+  - id: ja-vocab-n5-tanjou
     type: vocab
     level: N5
     ja: 誕生
@@ -11539,7 +11539,7 @@ concepts:
     examples:
       - ja: 一・二・三・四・五・六・七・八・九・十
         zh: 數字1〜10的叫法
-  - id: ja-vocab-n5-jyuu-e58d81
+  - id: ja-vocab-n5-juu-e58d81
     type: vocab
     level: N5
     ja: 十
@@ -11749,7 +11749,7 @@ concepts:
     examples:
       - ja: 一月・二月・三月・四月・五月・六月・七月・八月・九月・十月・十一月・十二月
         zh: 1～12月的叫法
-  - id: ja-vocab-n5-jyuugatsu
+  - id: ja-vocab-n5-juugatsu
     type: vocab
     level: N5
     ja: 十月
@@ -11759,7 +11759,7 @@ concepts:
     examples:
       - ja: 一月・二月・三月・四月・五月・六月・七月・八月・九月・十月・十一月・十二月
         zh: 1～12月的叫法
-  - id: ja-vocab-n5-jyuuichigatsu
+  - id: ja-vocab-n5-juuichigatsu
     type: vocab
     level: N5
     ja: 十一月
@@ -11769,7 +11769,7 @@ concepts:
     examples:
       - ja: 一月・二月・三月・四月・五月・六月・七月・八月・九月・十月・十一月・十二月
         zh: 1～12月的叫法
-  - id: ja-vocab-n5-jyuunigatsu
+  - id: ja-vocab-n5-juunigatsu
     type: vocab
     level: N5
     ja: 十二月
@@ -12009,7 +12009,7 @@ concepts:
     examples:
       - ja: 外国語で話す
         zh: 用外语说
-  - id: ja-vocab-n5-irasshyaimase
+  - id: ja-vocab-n5-irasshaimase
     type: vocab
     level: N5
     ja: いらっしゃいませ
