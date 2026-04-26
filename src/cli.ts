@@ -6,6 +6,7 @@ import { join, dirname } from "node:path";
 import { Database } from "bun:sqlite";
 
 import { CONFIG_DIR, IMMERSION_FLAG, LOG_FILE, DB_FILE } from "./paths.ts";
+import { runDoctor, formatReport } from "./doctor.ts";
 import { readProfile, writeProfile, patchProfile, DEFAULT_PROFILE, type Profile } from "./profile.ts";
 import { recordAnswer } from "./srs.ts";
 import { getNextDue, dueCount, getStats, listDueConcepts } from "./concepts.ts";
@@ -388,6 +389,17 @@ program
       }
     }
     console.log(JSON.stringify({ ok: true, restored_from: src, db: DB_FILE }));
+  });
+
+program
+  .command("doctor")
+  .description("Audit polyglot install health: bun, lt binary, profile, db, settings.json hooks, launchd plists, double-trigger")
+  .option("--json", "machine-readable JSON output")
+  .action((opts) => {
+    const r = runDoctor();
+    if (opts.json) console.log(JSON.stringify(r, null, 2));
+    else console.log(formatReport(r));
+    process.exit(r.exit_code);
   });
 
 async function readStdin(): Promise<string> {
