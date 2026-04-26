@@ -1,10 +1,11 @@
 #!/usr/bin/env bun
 import { Command } from "commander";
-import { existsSync, mkdirSync, writeFileSync, unlinkSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync, unlinkSync, readFileSync, copyFileSync, renameSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
+import { Database } from "bun:sqlite";
 
-import { CONFIG_DIR, IMMERSION_FLAG } from "./paths.ts";
+import { CONFIG_DIR, IMMERSION_FLAG, LOG_FILE, DB_FILE } from "./paths.ts";
 import { readProfile, writeProfile, patchProfile, DEFAULT_PROFILE, type Profile } from "./profile.ts";
 import { recordAnswer } from "./srs.ts";
 import { getNextDue, dueCount, getStats, listDueConcepts } from "./concepts.ts";
@@ -290,6 +291,72 @@ program
     Bun.spawn(["launchctl", "unload", plistPath]).exited;
     await Bun.spawn(["launchctl", "load", "-w", plistPath]).exited;
     console.log(`installed: ${plistPath} @ ${profile.daily_cron}`);
+  });
+
+program
+  .command("logs")
+  .description("Tail NDJSON events from lt.log, optionally filtered by event name")
+  .option("--tail <n>", "show last N matching lines", (v) => parseInt(v, 10), 20)
+  .option("--event <name>", "filter by event field")
+  .action((opts) => {
+    if (!existsSync(LOG_FILE)) return;
+    const lines = readFileSync(LOG_FILE, "utf-8").split(/\r?\n/).filter((l) => l.trim().length > 0);
+    const filtered = opts.event
+      ? lines.filter((l) => {
+          try {
+            const o = JSON.parse(l);
+            return o && o.event === opts.event;
+          } catch {
+            return false;
+          }
+        })
+      : lines;
+    const tail = filtered.slice(-Math.max(0, opts.tail));
+    for (const l of tail) console.log(l);
+  });
+
+program
+  .command("restore")
+  .description("Restore reviews.db from a backup created by scripts/daily-backup.sh")
+  .requiredOption("--from <ref>", "weekday (Mon..Sun) or absolute backup file path")
+  .action((opts) => {
+    const backupDir = join(CONFIG_DIR, "backup");
+    const ref: string = opts.from;
+    let src = ref;
+    if (!ref.includes("/")) src = join(backupDir, `reviews.db.bak.${ref}`);
+    if (!existsSync(src)) {
+      console.error(`backup not found: ${src}`);
+      process.exit(2);
+    }
+    const tmp = `${DB_FILE}.tmp`;
+    if (existsSync(tmp)) unlinkSync(tmp);
+    copyFileSync(src, tmp);
+
+    // verify the snapshot opens and has the expected schema. We open RW (not
+    // readonly) because bun:sqlite readonly mode can't create the auxiliary
+    // -shm file SQLite needs for journal_mode=WAL recovery, even if we never
+    // intend to write. The file will be renamed-into-place on success anyway.
+    try {
+      const db = new Database(tmp);
+      db.query("SELECT 1 FROM reviews LIMIT 1").all();
+      db.query("SELECT 1 FROM attempts LIMIT 1").all();
+      db.query("SELECT 1 FROM concepts LIMIT 1").all();
+      db.close();
+    } catch (err) {
+      try { unlinkSync(tmp); } catch {}
+      console.error(`backup verification failed: ${err instanceof Error ? err.message : String(err)}`);
+      process.exit(2);
+    }
+
+    renameSync(tmp, DB_FILE);
+    // .backup output is a self-contained DB; drop any stale WAL/SHM left over
+    // from the previous live database so the next open doesn't replay them.
+    for (const sidecar of [`${DB_FILE}-wal`, `${DB_FILE}-shm`]) {
+      if (existsSync(sidecar)) {
+        try { unlinkSync(sidecar); } catch {}
+      }
+    }
+    console.log(JSON.stringify({ ok: true, restored_from: src, db: DB_FILE }));
   });
 
 async function readStdin(): Promise<string> {

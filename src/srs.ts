@@ -75,19 +75,22 @@ export function recordAnswer(input: AnswerInput): { card: Card; nextDueAt: numbe
   const nextCard = result.card;
   const f = cardToRowFields(nextCard);
 
-  db.run(
-    `UPDATE reviews
-     SET due_at=?, stability=?, difficulty=?, elapsed_days=?, scheduled_days=?,
-         reps=?, lapses=?, state=?, last_review=?
-     WHERE concept_id=?`,
-    [f.due_at, f.stability, f.difficulty, f.elapsed_days, f.scheduled_days, f.reps, f.lapses, f.state, f.last_review, input.conceptId],
-  );
-
-  db.run(
-    `INSERT INTO attempts (concept_id, rating, user_answer, llm_feedback, source, created_at)
-     VALUES (?, ?, ?, ?, ?, ?)`,
-    [input.conceptId, input.rating, input.userAnswer ?? null, input.llmFeedback ?? null, input.source ?? "manual", now.getTime()],
-  );
+  // Atomic: never leave reviews updated without an attempt logged, or vice versa.
+  const txn = db.transaction(() => {
+    db.run(
+      `UPDATE reviews
+       SET due_at=?, stability=?, difficulty=?, elapsed_days=?, scheduled_days=?,
+           reps=?, lapses=?, state=?, last_review=?
+       WHERE concept_id=?`,
+      [f.due_at, f.stability, f.difficulty, f.elapsed_days, f.scheduled_days, f.reps, f.lapses, f.state, f.last_review, input.conceptId],
+    );
+    db.run(
+      `INSERT INTO attempts (concept_id, rating, user_answer, llm_feedback, source, created_at)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      [input.conceptId, input.rating, input.userAnswer ?? null, input.llmFeedback ?? null, input.source ?? "manual", now.getTime()],
+    );
+  });
+  txn();
 
   return { card: nextCard, nextDueAt: f.due_at };
 }

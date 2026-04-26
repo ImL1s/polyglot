@@ -12,6 +12,9 @@ export function getDb(): Database {
   _db = new Database(DB_FILE);
   _db.exec("PRAGMA journal_mode = WAL;");
   _db.exec("PRAGMA foreign_keys = ON;");
+  _db.exec("PRAGMA busy_timeout = 5000;");
+  _db.exec("PRAGMA synchronous = NORMAL;");
+  _db.exec("PRAGMA wal_autocheckpoint = 1000;");
   migrate(_db);
   return _db;
 }
