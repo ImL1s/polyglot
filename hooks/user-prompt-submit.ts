@@ -19,46 +19,13 @@ import { shouldThrottle, recordInject } from "./lib/limiter.ts";
 import { readProfile, type Profile } from "../src/profile.ts";
 import { IMMERSION_FLAG } from "../src/paths.ts";
 import { looksLikeCodeContext } from "../src/utils/code-context.ts";
+import { buildImmersionPrompt } from "../src/utils/immersion.ts";
 
 interface PromptPayload {
   user_message?: string;
   session_id?: string;
   cwd?: string;
   is_new_session?: boolean;
-}
-
-export interface ImmersionContext {
-  level: number;
-  language: string;
-  isCode: boolean;
-}
-
-/**
- * Pure builder used by both runtime and tests/immersion-wire.test.ts.
- * Returns null when nothing should be injected (level=0 or code context).
- */
-export function buildImmersionPrompt(ctx: ImmersionContext): string | null {
-  if (ctx.isCode) return null;
-  const lang = ctx.language || "ja";
-  if (ctx.level <= 0) return null;
-  if (ctx.level < 0.5) {
-    const limit = Math.max(1, Math.ceil(ctx.level * 10));
-    return (
-      `[沉浸 mix lv=${ctx.level.toFixed(2)}] 你的回答中可以适当夹带至多 ${limit} 个 ${lang} 已学单词，` +
-      `括号内加注音和中文翻译。例：「这个 bug 已经修了（直しました：fixed it）。」`
-    );
-    // TODO(Phase 1.1b): swap to `lt mix-vocab --limit N --json` for real 80/20 mastered/weak pool.
-  }
-  if (ctx.level < 1.0) {
-    return (
-      `[沉浸 lv=0.50 双语句法] 在你的回答中，短句尾部用一句完整的 ${lang}，再附中文翻译。` +
-      `例：「这个 bug 修了。直しました（fixed it）。」`
-    );
-  }
-  return (
-    `[沉浸 lv=1.00 全沉浸] 全部用 ${lang}（含 furigana 假名注音），` +
-    `中文译文附在每段末尾。`
-  );
 }
 
 function detectDueOnSessionStart(): string | null {
