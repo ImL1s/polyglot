@@ -1,0 +1,302 @@
+#!/usr/bin/env bun
+import { Command } from "commander";
+import { existsSync, mkdirSync, writeFileSync, unlinkSync } from "node:fs";
+import { homedir } from "node:os";
+import { join } from "node:path";
+
+import { CONFIG_DIR, IMMERSION_FLAG } from "./paths.ts";
+import { readProfile, writeProfile, patchProfile, DEFAULT_PROFILE, type Profile } from "./profile.ts";
+import { recordAnswer } from "./srs.ts";
+import { getNextDue, dueCount, getStats, listDueConcepts } from "./concepts.ts";
+import { importSeeds } from "./seeds.ts";
+import { isWithinWorkHours } from "./work-hours.ts";
+
+const program = new Command();
+program
+  .name("jp")
+  .description("AI-native Japanese N2 trainer (Claude Code / Codex / Gemini)")
+  .version("0.1.0");
+
+program
+  .command("setup")
+  .description("Write default profile.yaml if missing; prefer running /jp-setup in Claude Code for interactive setup")
+  .option("--force", "overwrite existing profile with defaults")
+  .action((opts) => {
+    if (!existsSync(CONFIG_DIR)) mkdirSync(CONFIG_DIR, { recursive: true });
+    if (existsSync(join(CONFIG_DIR, "profile.yaml")) && !opts.force) {
+      console.log("profile.yaml already exists. Use --force to overwrite.");
+      return;
+    }
+    writeProfile(DEFAULT_PROFILE);
+    console.log(`profile written to ${join(CONFIG_DIR, "profile.yaml")}`);
+    console.log("Run /jp-setup in Claude Code for the interactive onboarding.");
+  });
+
+program
+  .command("next")
+  .description("Pick the next concept to practice")
+  .option("--json", "output JSON")
+  .option("--quiet", "suppress error output if nothing due")
+  .option("--type <type>", "vocab | grammar | kanji | expression")
+  .option("--level <level>", "N5 | N4 | N3 | N2 | N1")
+  .option("--difficulty <d>", "easy | hard")
+  .action((opts) => {
+    const concept = getNextDue({
+      type: opts.type,
+      level: opts.level,
+      difficulty: opts.difficulty,
+    });
+    if (!concept) {
+      if (!opts.quiet) console.error("No concepts due and daily new quota reached");
+      process.exit(opts.quiet ? 0 : 2);
+    }
+    if (opts.json) {
+      console.log(JSON.stringify(concept));
+    } else {
+      console.log(`[${concept.level}/${concept.type}] ${concept.ja} ${concept.reading ? `(${concept.reading})` : ""} — ${concept.zh}`);
+      if (concept.examples.length) {
+        console.log(`  例：${concept.examples[0].ja}\n      ${concept.examples[0].zh}`);
+      }
+      console.log(`(id: ${concept.id})`);
+    }
+  });
+
+program
+  .command("answer")
+  .description("Record an answer and update FSRS schedule")
+  .requiredOption("--concept-id <id>", "concept id")
+  .requiredOption("--rating <r>", "1=Again 2=Hard 3=Good 4=Easy", parseInt)
+  .option("--user-answer <text>", "what the user said")
+  .option("--feedback <text>", "LLM feedback")
+  .option("--source <s>", "manual | stop-hook | post-tool | cron | review", "manual")
+  .action((opts) => {
+    if (![1, 2, 3, 4].includes(opts.rating)) {
+      console.error("rating must be 1-4");
+      process.exit(2);
+    }
+    const result = recordAnswer({
+      conceptId: opts.conceptId,
+      rating: opts.rating,
+      userAnswer: opts.userAnswer,
+      llmFeedback: opts.feedback,
+      source: opts.source,
+    });
+    const due = new Date(result.nextDueAt);
+    console.log(JSON.stringify({
+      ok: true,
+      next_due_at: due.toISOString(),
+      stability: result.card.stability.toFixed(2),
+      difficulty: result.card.difficulty.toFixed(2),
+    }));
+  });
+
+program
+  .command("review")
+  .description("List concepts due now (default 20)")
+  .option("--json", "JSON output")
+  .option("--limit <n>", "max concepts", (v) => parseInt(v, 10), 20)
+  .action((opts) => {
+    const list = listDueConcepts(opts.limit);
+    if (opts.json) {
+      console.log(JSON.stringify(list));
+      return;
+    }
+    if (list.length === 0) {
+      console.log("Nothing due. ✨");
+      return;
+    }
+    console.log(`Due: ${list.length}`);
+    for (const c of list) {
+      console.log(`  [${c.level}/${c.type}] ${c.ja} (${c.reading ?? ""}) — ${c.zh}`);
+    }
+  });
+
+program
+  .command("due-count")
+  .description("Print number of concepts due now")
+  .action(() => {
+    console.log(dueCount());
+  });
+
+program
+  .command("stats")
+  .description("Show progress")
+  .option("--json", "JSON output")
+  .action((opts) => {
+    const s = getStats();
+    if (opts.json) {
+      console.log(JSON.stringify(s));
+      return;
+    }
+    console.log(`Total concepts: ${s.total_concepts}`);
+    console.log(`Introduced: ${s.introduced}`);
+    console.log(`Due now: ${s.due_now}`);
+    console.log(`Today: ${s.today_attempts} attempts, ${s.today_correct} correct (${(s.today_accuracy * 100).toFixed(0)}%)`);
+    console.log("By level:");
+    for (const r of s.by_level) {
+      console.log(`  ${r.level}: ${r.introduced}/${r.n}`);
+    }
+  });
+
+program
+  .command("config")
+  .description("Read/update profile fields. Format: key=value (multiple allowed)")
+  .argument("[fields...]", "key=value pairs")
+  .option("--show", "print current profile")
+  .action((fields: string[], opts) => {
+    if (opts.show || fields.length === 0) {
+      console.log(JSON.stringify(readProfile(), null, 2));
+      return;
+    }
+    const patch: Partial<Profile> = {};
+    for (const kv of fields) {
+      const [k, ...rest] = kv.split("=");
+      const v = rest.join("=");
+      if (!k || v === undefined) {
+        console.error(`bad format: ${kv}`);
+        process.exit(2);
+      }
+      (patch as Record<string, unknown>)[k.trim()] = parseValue(v);
+    }
+    const next = patchProfile(patch);
+    console.log(JSON.stringify(next, null, 2));
+  });
+
+function parseValue(raw: string): unknown {
+  const v = raw.trim();
+  if (v === "true") return true;
+  if (v === "false") return false;
+  if (v === "null") return null;
+  if (/^-?\d+(\.\d+)?$/.test(v)) return Number(v);
+  if (v.startsWith("[") && v.endsWith("]")) {
+    return v.slice(1, -1).split(",").map((s) => s.trim()).filter(Boolean);
+  }
+  return v;
+}
+
+program
+  .command("immersion")
+  .description("toggle immersion mode flag")
+  .argument("<state>", "on | off | toggle | status")
+  .action((state: string) => {
+    const exists = existsSync(IMMERSION_FLAG);
+    if (state === "status") {
+      console.log(exists ? "on" : "off");
+      return;
+    }
+    const wantOn = state === "on" || (state === "toggle" && !exists);
+    if (wantOn) {
+      if (!existsSync(CONFIG_DIR)) mkdirSync(CONFIG_DIR, { recursive: true });
+      writeFileSync(IMMERSION_FLAG, String(Date.now()), "utf-8");
+      console.log("immersion: on");
+    } else {
+      if (exists) unlinkSync(IMMERSION_FLAG);
+      console.log("immersion: off");
+    }
+  });
+
+program
+  .command("inject-decide")
+  .description("Probabilistic decision for hooks. Exits 0 if should inject, 1 otherwise")
+  .option("--rate <r>", "probability override (0-1)", parseFloat)
+  .option("--respect-work-hours", "only inject within profile.work_hours", false)
+  .action((opts) => {
+    const profile = readProfile();
+    const rate = opts.rate ?? profile.inject_rate;
+    if (opts.respectWorkHours && !isWithinWorkHours(profile)) {
+      process.exit(1);
+    }
+    process.exit(Math.random() < rate ? 0 : 1);
+  });
+
+program
+  .command("detect-cn")
+  .description("Detect a meaningful Chinese line in stdin or --text. Exits 0 if probe should fire.")
+  .option("--text <text>")
+  .option("--probe-rate <r>", "override profile.cn_probe_rate", parseFloat)
+  .action(async (opts) => {
+    const profile = readProfile();
+    const rate = opts.probeRate ?? profile.cn_probe_rate;
+    const text = opts.text ?? (await readStdin());
+    const cnRegex = /[一-鿿]/;
+    const lines = text.split(/\r?\n/).map((l) => l.trim()).filter((l) => l.length >= 5 && cnRegex.test(l));
+    if (lines.length === 0) process.exit(1);
+    if (Math.random() >= rate) process.exit(1);
+    console.log(lines[0]);
+    process.exit(0);
+  });
+
+program
+  .command("seed-import")
+  .description("Import seed concepts from data/seeds and ~/.config/jp-trainer/seeds")
+  .option("--dir <dir>", "additional dir to scan")
+  .action((opts) => {
+    const summary = importSeeds(opts.dir);
+    console.log(JSON.stringify(summary, null, 2));
+  });
+
+program
+  .command("daily-push")
+  .description("Trigger daily notification (called from launchd)")
+  .action(() => {
+    const profile = readProfile();
+    if (!isWithinWorkHours(profile)) {
+      console.log("Outside work hours, skip");
+      return;
+    }
+    const due = dueCount();
+    const msg = due > 0
+      ? `今日 ${due} 题待复习。打开 Claude Code 输入 /jp 开始`
+      : `今日没有待复习。/jp 抽一道新题保持手感`;
+    if (profile.notification_channel === "macos") {
+      Bun.spawn(["osascript", "-e", `display notification "${msg}" with title "jp-trainer" sound name "Glass"`]);
+    }
+    console.log(msg);
+  });
+
+program
+  .command("install-cron")
+  .description("Install macOS launchd plist based on profile.daily_cron")
+  .action(async () => {
+    const profile = readProfile();
+    if (!profile.daily_cron) {
+      console.log("daily_cron empty in profile, nothing to install");
+      return;
+    }
+    const [hh, mm] = profile.daily_cron.split(":").map((s) => parseInt(s, 10));
+    const plistPath = join(homedir(), "Library", "LaunchAgents", "com.jp-trainer.daily.plist");
+    const binPath = join(homedir(), ".local", "bin", "jp");
+    const plist = `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.jp-trainer.daily</string>
+  <key>ProgramArguments</key>
+  <array><string>${binPath}</string><string>daily-push</string></array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>${hh}</integer>
+    <key>Minute</key><integer>${mm}</integer>
+  </dict>
+  <key>StandardOutPath</key><string>/tmp/jp-trainer.log</string>
+  <key>StandardErrorPath</key><string>/tmp/jp-trainer.err</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>`;
+    if (!existsSync(join(homedir(), "Library", "LaunchAgents"))) {
+      mkdirSync(join(homedir(), "Library", "LaunchAgents"), { recursive: true });
+    }
+    writeFileSync(plistPath, plist, "utf-8");
+    Bun.spawn(["launchctl", "unload", plistPath]).exited;
+    await Bun.spawn(["launchctl", "load", "-w", plistPath]).exited;
+    console.log(`installed: ${plistPath} @ ${profile.daily_cron}`);
+  });
+
+async function readStdin(): Promise<string> {
+  if (process.stdin.isTTY) return "";
+  const chunks: Uint8Array[] = [];
+  for await (const chunk of process.stdin) chunks.push(chunk as Uint8Array);
+  return Buffer.concat(chunks).toString("utf-8");
+}
+
+program.parseAsync(process.argv);
