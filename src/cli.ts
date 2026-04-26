@@ -13,9 +13,9 @@ import { isWithinWorkHours } from "./work-hours.ts";
 
 const program = new Command();
 program
-  .name("jp")
-  .description("AI-native Japanese N2 trainer (Claude Code / Codex / Gemini)")
-  .version("0.1.0");
+  .name("lt")
+  .description("AI-native polyglot trainer (Claude Code / Codex / Gemini)")
+  .version("polyglot 0.1.0");
 
 program
   .command("setup")
@@ -228,7 +228,7 @@ program
 
 program
   .command("seed-import")
-  .description("Import seed concepts from data/seeds and ~/.config/jp-trainer/seeds")
+  .description("Import seed concepts from data/seeds and ~/.config/polyglot/seeds")
   .option("--dir <dir>", "additional dir to scan")
   .action((opts) => {
     const summary = importSeeds(opts.dir);
@@ -249,7 +249,7 @@ program
       ? `今日 ${due} 题待复习。打开 Claude Code 输入 /jp 开始`
       : `今日没有待复习。/jp 抽一道新题保持手感`;
     if (profile.notification_channel === "macos") {
-      Bun.spawn(["osascript", "-e", `display notification "${msg}" with title "jp-trainer" sound name "Glass"`]);
+      Bun.spawn(["osascript", "-e", `display notification "${msg}" with title "polyglot" sound name "Glass"`]);
     }
     console.log(msg);
   });
@@ -264,13 +264,13 @@ program
       return;
     }
     const [hh, mm] = profile.daily_cron.split(":").map((s) => parseInt(s, 10));
-    const plistPath = join(homedir(), "Library", "LaunchAgents", "com.jp-trainer.daily.plist");
-    const binPath = join(homedir(), ".local", "bin", "jp");
+    const plistPath = join(homedir(), "Library", "LaunchAgents", "com.polyglot.daily.plist");
+    const binPath = join(homedir(), ".local", "bin", "lt");
     const plist = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>Label</key><string>com.jp-trainer.daily</string>
+  <key>Label</key><string>com.polyglot.daily</string>
   <key>ProgramArguments</key>
   <array><string>${binPath}</string><string>daily-push</string></array>
   <key>StartCalendarInterval</key>
@@ -278,8 +278,8 @@ program
     <key>Hour</key><integer>${hh}</integer>
     <key>Minute</key><integer>${mm}</integer>
   </dict>
-  <key>StandardOutPath</key><string>/tmp/jp-trainer.log</string>
-  <key>StandardErrorPath</key><string>/tmp/jp-trainer.err</string>
+  <key>StandardOutPath</key><string>/tmp/polyglot.log</string>
+  <key>StandardErrorPath</key><string>/tmp/polyglot.err</string>
   <key>RunAtLoad</key><false/>
 </dict>
 </plist>`;

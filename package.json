@@ -1,15 +1,16 @@
 {
-  "name": "jp-trainer",
+  "name": "polyglot",
   "version": "0.1.0",
-  "description": "AI-native Japanese N2 training that piggybacks on Claude Code / Codex / Gemini workflows",
+  "description": "AI-native polyglot trainer (jp/ko/...) that piggybacks on Claude Code / Codex / Gemini workflows",
   "type": "module",
   "module": "src/cli.ts",
   "bin": {
+    "lt": "src/cli.ts",
     "jp": "src/cli.ts"
   },
   "scripts": {
-    "build": "bun build src/cli.ts --compile --outfile dist/jp",
-    "install-bin": "bun build src/cli.ts --compile --outfile ~/.local/bin/jp",
+    "build": "bun build src/cli.ts --compile --outfile dist/lt",
+    "install-bin": "bun build src/cli.ts --compile --outfile ~/.local/bin/lt",
     "test": "bun test",
     "dev": "bun run src/cli.ts"
   },
