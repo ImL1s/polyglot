@@ -1,0 +1,3501 @@
+concepts:
+  - id: ja-vocab-n4-koukou
+    type: vocab
+    level: N4
+    ja: 高校
+    reading: こうこう
+    zh: 高中
+    pos: 名
+    examples:
+      - ja: 妹は高校に通っています
+        zh: 妹妹在上高中
+  - id: ja-vocab-n4-a
+    type: vocab
+    level: N4
+    ja: あ
+    reading: あ
+    zh: （吃惊、感动）啊，呀；（打招呼）喂
+    pos: 感
+    examples:
+      - ja: あ、きみ、ちょっと来て
+        zh: 啊！你来一下
+  - id: ja-vocab-n4-aa
+    type: vocab
+    level: N4
+    ja: ああ
+    reading: ああ
+    zh: （悲伤、快乐或惊讶时）啊，哎呀；（答应时）啊
+    pos: 感
+    examples:
+      - ja: ああ、そうでしたか
+        zh: 啊！是吗！
+  - id: ja-vocab-n4-ippai
+    type: vocab
+    level: N4
+    ja: いっぱい
+    reading: いっぱい
+    zh: ⓪（いっぱい）充满，很多；①一杯，一碗
+    pos: ナ形・副・名
+    examples:
+      - ja: プールは人でいっぱいです
+        zh: 游泳池里人山人海
+  - id: ja-vocab-n4-kudasaru
+    type: vocab
+    level: N4
+    ja: くださる
+    reading: くださる
+    zh: 给予，赐予
+    pos: 他動1・補動
+    examples:
+      - ja: 先生が手紙を下さいました
+        zh: 老师寄信给我
+  - id: ja-vocab-n4-e382b1e383bce382
+    type: vocab
+    level: N4
+    ja: ケーキ
+    reading: cake
+    zh: 蛋糕
+    pos: 名
+    examples:
+      - ja: 誕生日にケーキを食べました
+        zh: 生日那天吃了蛋糕
+  - id: ja-vocab-n4-e38386e382ade382
+    type: vocab
+    level: N4
+    ja: テキスト
+    reading: text
+    zh: 教科书；文本
+    pos: 名
+    examples:
+      - ja: テキストを読んでください
+        zh: 请阅读课文
+  - id: ja-vocab-n4-mazu
+    type: vocab
+    level: N4
+    ja: まず
+    reading: まず
+    zh: 首先
+    pos: 副
+    examples:
+      - ja: 帰ったらまず手を洗いましょう
+        zh: 回家后先洗手吧
+  - id: ja-vocab-n4-igai
+    type: vocab
+    level: N4
+    ja: 以外
+    reading: いがい
+    zh: 以外
+    pos: 名
+    examples:
+      - ja: 私は雨の日以外は自転車で学校に行く
+        zh: 除了下雨天，我都是骑自行车上学
+  - id: ja-vocab-n4-ijyou
+    type: vocab
+    level: N4
+    ja: 以上
+    reading: いじょう
+    zh: 以上
+    pos: 名
+    examples:
+      - ja: 飛行機が１時間以上遅れた
+        zh: 飞机延误了一个多小时
+  - id: ja-vocab-n4-inai
+    type: vocab
+    level: N4
+    ja: 以内
+    reading: いない
+    zh: 以内，之内
+    pos: 名
+    examples:
+      - ja: 二時間以内に着く
+        zh: 两小时之内到达
+  - id: ja-vocab-n4-uchi
+    type: vocab
+    level: N4
+    ja: うち
+    reading: うち
+    zh: 家，家庭，自己家（家人）
+    pos: 名
+    examples:
+      - ja: うちへ帰る
+        zh: 回家
+  - id: ja-vocab-n4-kachyou
+    type: vocab
+    level: N4
+    ja: 課長
+    reading: かちょう
+    zh: 课长，处长
+    pos: 名
+    examples:
+      - ja: 課長に昇進する
+        zh: 晋升为课长
+  - id: ja-vocab-n4-kaigi
+    type: vocab
+    level: N4
+    ja: 会議
+    reading: かいぎ
+    zh: 会议
+    pos: 名・自他動3
+    examples:
+      - ja: 今日の午後、大事な会議があります
+        zh: 今天下午有重要的会议
+  - id: ja-vocab-n4-kaigishitsu
+    type: vocab
+    level: N4
+    ja: 会議室
+    reading: かいぎしつ
+    zh: 会议室
+    pos: 名
+    examples:
+      - ja: 会議室を準備する
+        zh: 准备会议室
+  - id: ja-vocab-n4-kaiwa
+    type: vocab
+    level: N4
+    ja: 会話
+    reading: かいわ
+    zh: 会话；对话，谈话
+    pos: 名・自動3
+    examples:
+      - ja: 日本語の会話を習っている
+        zh: 正在学习日语对话
+  - id: ja-vocab-n4-aku
+    type: vocab
+    level: N4
+    ja: 開く
+    reading: あく
+    zh: 打开；开始营业
+    pos: 自動1
+    examples:
+      - ja: ドアが開く
+        zh: 门开了
+  - id: ja-vocab-n4-kakeru
+    type: vocab
+    level: N4
+    ja: 掛ける
+    reading: かける
+    zh: 挂；带上；打（电话）；花费；坐；上锁
+    pos: 他動2
+    examples:
+      - ja: 鍵を掛ける
+        zh: 上锁
+  - id: ja-vocab-n4-kaeri
+    type: vocab
+    level: N4
+    ja: 帰り
+    reading: かえり
+    zh: 回来，回程
+    pos: 名
+    examples:
+      - ja: 学校からの帰りに買い物をした
+        zh: 从学校回来的时候买了东西
+  - id: ja-vocab-n4-kisetsu
+    type: vocab
+    level: N4
+    ja: 季節
+    reading: きせつ
+    zh: 季节
+    pos: 名
+    examples:
+      - ja: 私の一番好きな季節は春です
+        zh: 我最喜欢的季节是春天
+  - id: ja-vocab-n4-naku
+    type: vocab
+    level: N4
+    ja: 泣く
+    reading: なく
+    zh: 哭，哭泣
+    pos: 自動1
+    examples:
+      - ja: うれしくて泣く
+        zh: 高兴得哭起来
+  - id: ja-vocab-n4-kyoumi
+    type: vocab
+    level: N4
+    ja: 興味
+    reading: きょうみ
+    zh: 兴趣
+    pos: 名
+    examples:
+      - ja: 興味を持つ
+        zh: 感兴趣
+  - id: ja-vocab-n4-kibishii
+    type: vocab
+    level: N4
+    ja: 厳しい
+    reading: きびしい
+    zh: 严格的，严厉的；厉害的，严峻的
+    pos: イ形
+    examples:
+      - ja: 私の上司はとても厳しい
+        zh: 我的上司非常严厉
+  - id: ja-vocab-n4-komu
+    type: vocab
+    level: N4
+    ja: 込む
+    reading: こむ
+    zh: （混）拥挤；（込）费事，精巧
+    pos: 自動1
+    examples:
+      - ja: 道が混む
+        zh: 道路拥挤
+  - id: ja-vocab-n4-saigo
+    type: vocab
+    level: N4
+    ja: 最後
+    reading: さいご
+    zh: 最后
+    pos: 名
+    examples:
+      - ja: 今日が夏休み最後の日だ
+        zh: 今天是暑假最后一天
+  - id: ja-vocab-n4-saishyo
+    type: vocab
+    level: N4
+    ja: 最初
+    reading: さいしょ
+    zh: 第一，开始，最初
+    pos: 名
+    examples:
+      - ja: 最初に出会った人
+        zh: 初次见到的人
+  - id: ja-vocab-n4-omou
+    type: vocab
+    level: N4
+    ja: 思う
+    reading: おもう
+    zh: 思考；认为
+    pos: 他動1
+    examples:
+      - ja: 私もそう思う
+        zh: 我也这样想
+  - id: ja-vocab-n4-yubi
+    type: vocab
+    level: N4
+    ja: 指
+    reading: ゆび
+    zh: 手指，脚趾
+    pos: 名
+    examples:
+      - ja: 指の先
+        zh: 指尖
+  - id: ja-vocab-n4-shiken
+    type: vocab
+    level: N4
+    ja: 試験
+    reading: しけん
+    zh: 考试；测验
+    pos: 名・他動3
+    examples:
+      - ja: 試験に合格する
+        zh: 考试及格
+  - id: ja-vocab-n4-sabishii
+    type: vocab
+    level: N4
+    ja: 寂しい
+    reading: さびしい
+    zh: 寂寞的，无聊的；荒凉的，冷清的
+    pos: イ形
+    examples:
+      - ja: 友だちがいなくて寂しい
+        zh: 没有朋友感到寂寞
+  - id: ja-vocab-n4-kubi
+    type: vocab
+    level: N4
+    ja: 首
+    reading: くび
+    zh: 脖子；颈；头
+    pos: 名
+    examples:
+      - ja: きりんの首は長い
+        zh: 长颈鹿的脖子很长
+  - id: ja-vocab-n4-jyosei
+    type: vocab
+    level: N4
+    ja: 女性
+    reading: じょせい
+    zh: 女性，女人
+    pos: 名
+    examples:
+      - ja: 女性パイロット
+        zh: 女飞行员
+  - id: ja-vocab-n4-shyougakkou
+    type: vocab
+    level: N4
+    ja: 小学校
+    reading: しょうがっこう
+    zh: 小学
+    pos: 名
+    examples:
+      - ja: うちの子は小学校3年生です
+        zh: 我家孩子上小学三年级
+  - id: ja-vocab-n4-warau
+    type: vocab
+    level: N4
+    ja: 笑う
+    reading: わらう
+    zh: 笑；嘲笑
+    pos: 自他動1
+    examples:
+      - ja: 大声で笑う
+        zh: 大声笑
+  - id: ja-vocab-n4-kokoro
+    type: vocab
+    level: N4
+    ja: 心
+    reading: こころ
+    zh: 心；心情；意愿
+    pos: 名
+    examples:
+      - ja: 心の中で笑う
+        zh: 心中窃笑
+  - id: ja-vocab-n4-mousu
+    type: vocab
+    level: N4
+    ja: 申す
+    reading: もうす
+    zh: 叫作
+    pos: 他動1・補動
+    examples:
+      - ja: 私は田中と申します
+        zh: 敝姓田中
+  - id: ja-vocab-n4-oya
+    type: vocab
+    level: N4
+    ja: 親
+    reading: おや
+    zh: 父母
+    pos: 名
+    examples:
+      - ja: 親を失う
+        zh: 失去双亲
+  - id: ja-vocab-n4-sekai
+    type: vocab
+    level: N4
+    ja: 世界
+    reading: せかい
+    zh: 地球，世界，社会
+    pos: 名
+    examples:
+      - ja: 私は世界旅行をしたい
+        zh: 我想环游世界
+  - id: ja-vocab-n4-seikatsu
+    type: vocab
+    level: N4
+    ja: 生活
+    reading: せいかつ
+    zh: 生活
+    pos: 名・自動3
+    examples:
+      - ja: クジラは海で生活する
+        zh: 鲸鱼生活在海里
+  - id: ja-vocab-n4-seki
+    type: vocab
+    level: N4
+    ja: 席
+    reading: せき
+    zh: 座位，席位
+    pos: 名
+    examples:
+      - ja: 席に着く
+        zh: 就座；入席
+  - id: ja-vocab-n4-senpai
+    type: vocab
+    level: N4
+    ja: 先輩
+    reading: せんぱい
+    zh: 前辈；学长，学姐
+    pos: 名
+    examples:
+      - ja: 日本人は先輩、後輩の関係をとても大切に考えます
+        zh: 日本人非常重视前辈、后辈的关系
+  - id: ja-vocab-n4-erabu
+    type: vocab
+    level: N4
+    ja: 選ぶ
+    reading: えらぶ
+    zh: 选择，挑选
+    pos: 他動1
+    examples:
+      - ja: 正しい答えを選ぶ
+        zh: 选择正确答案
+  - id: ja-vocab-n4-kusa
+    type: vocab
+    level: N4
+    ja: 草
+    reading: くさ
+    zh: 草，杂草
+    pos: 名
+    examples:
+      - ja: 草が枯れる
+        zh: 草枯萎了
+  - id: ja-vocab-n4-okuru
+    type: vocab
+    level: N4
+    ja: 送る
+    reading: おくる
+    zh: 邮寄，发送；派遣；送别；度过
+    pos: 他動1
+    examples:
+      - ja: 本を郵便で送ってください
+        zh: 请把书邮来
+  - id: ja-vocab-n4-musuko
+    type: vocab
+    level: N4
+    ja: 息子
+    reading: むすこ
+    zh: 儿子
+    pos: 名
+    examples:
+      - ja: うちの息子は大学１年生です
+        zh: 我家儿子是大学一年级
+  - id: ja-vocab-n4-dame
+    type: vocab
+    level: N4
+    ja: だめ
+    reading: だめ
+    zh: 没用；做不到；不可以
+    pos: 名・ナ形
+    examples:
+      - ja: 彼はだめな男だ
+        zh: 他是个没用的男人
+  - id: ja-vocab-n4-daigakusei
+    type: vocab
+    level: N4
+    ja: 大学生
+    reading: だいがくせい
+    zh: 大学生
+    pos: 名
+    examples:
+      - ja: 姉は大学生です
+        zh: 姐姐是大学生
+  - id: ja-vocab-n4-sagasu
+    type: vocab
+    level: N4
+    ja: 探す
+    reading: さがす
+    zh: 寻找（想要的东西）
+    pos: 他動1
+    examples:
+      - ja: 読む本を探す
+        zh: 寻找要读的书
+  - id: ja-vocab-n4-chyuugakkou
+    type: vocab
+    level: N4
+    ja: 中学校
+    reading: ちゅうがっこう
+    zh: 初中
+    pos: 名
+    examples:
+      - ja: 息子の中学校は家から5分です
+        zh: 儿子的初中离家五分钟
+  - id: ja-vocab-n4-teinei
+    type: vocab
+    level: N4
+    ja: 丁寧
+    reading: ていねい
+    zh: 礼貌；细心周到
+    pos: 名・ナ形
+    examples:
+      - ja: 丁寧な言葉
+        zh: 礼貌的语言
+  - id: ja-vocab-n4-tsutaeru
+    type: vocab
+    level: N4
+    ja: 伝える
+    reading: つたえる
+    zh: 通知，传达；传授
+    pos: 他動2
+    examples:
+      - ja: みんなにこのことを伝えてください
+        zh: 请把这件事告诉大家
+  - id: ja-vocab-n4-dougu
+    type: vocab
+    level: N4
+    ja: 道具
+    reading: どうぐ
+    zh: 工具
+    pos: 名
+    examples:
+      - ja: 釣り道具
+        zh: 钓具；鱼具
+  - id: ja-vocab-n4-kami
+    type: vocab
+    level: N4
+    ja: 髪
+    reading: かみ
+    zh: 头发
+    pos: 名
+    examples:
+      - ja: 髪を切る
+        zh: 剪头发
+  - id: ja-vocab-n4-kare
+    type: vocab
+    level: N4
+    ja: 彼
+    reading: かれ
+    zh: 他；男朋友
+    pos: 代・名
+    examples:
+      - ja: 彼は絵がうまい
+        zh: 他擅长画画
+  - id: ja-vocab-n4-kanojyo
+    type: vocab
+    level: N4
+    ja: 彼女
+    reading: かのじょ
+    zh: 她；女朋友
+    pos: 名・代
+    examples:
+      - ja: 彼女はクラスメートです
+        zh: 她是我的同班同学
+  - id: ja-vocab-n4-otto
+    type: vocab
+    level: N4
+    ja: 夫
+    reading: おっと
+    zh: 丈夫
+    pos: 名
+    examples:
+      - ja: 私の夫はサラリーマンです
+        zh: 我的丈夫是上班族
+  - id: ja-vocab-n4-makeru
+    type: vocab
+    level: N4
+    ja: 負ける
+    reading: まける
+    zh: 输，不如；难以忍受
+    pos: 自動2
+    examples:
+      - ja: 相手に負ける
+        zh: 输给对手
+  - id: ja-vocab-n4-boku
+    type: vocab
+    level: N4
+    ja: 僕
+    reading: ぼく
+    zh: （男子自称）我
+    pos: 代
+    examples:
+      - ja: 僕は学生です
+        zh: 我是学生
+  - id: ja-vocab-n4-manga
+    type: vocab
+    level: N4
+    ja: 漫画
+    reading: まんが
+    zh: 漫画，连环画
+    pos: 名
+    examples:
+      - ja: 少女漫画
+        zh: 少女漫画
+  - id: ja-vocab-n4-yume
+    type: vocab
+    level: N4
+    ja: 夢
+    reading: ゆめ
+    zh: 梦；理想；幻想；虚幻
+    pos: 名
+    examples:
+      - ja: 夢を見る
+        zh: 做梦
+  - id: ja-vocab-n4-musume
+    type: vocab
+    level: N4
+    ja: 娘
+    reading: むすめ
+    zh: 女儿；未婚年轻女性
+    pos: 名
+    examples:
+      - ja: うちの娘は去年結婚しました
+        zh: 我女儿去年结婚了
+  - id: ja-vocab-n4-ashita
+    type: vocab
+    level: N4
+    ja: 明日
+    reading: あした
+    zh: 明天
+    pos: 名
+    examples:
+      - ja: 明日は晴れるだろう
+        zh: 明天是晴天吧
+  - id: ja-vocab-n4-tateru
+    type: vocab
+    level: N4
+    ja: 立てる
+    reading: たてる
+    zh: 制订；竖起；发出，冒起
+    pos: 他動2
+    examples:
+      - ja: 計画を立てる
+        zh: 制订计划
+  - id: ja-vocab-n4-aa-e38182
+    type: vocab
+    level: N4
+    ja: ああ
+    reading: ああ
+    zh: 那样，那么
+    pos: 副
+    examples:
+      - ja: ああいうことをしてはいけない
+        zh: 不可以做那种事
+  - id: ja-vocab-n4-ageru
+    type: vocab
+    level: N4
+    ja: あげる
+    reading: あげる
+    zh: 给予，赠送
+    pos: 他動2・補動
+    examples:
+      - ja: プレゼントをあげる
+        zh: 赠送礼物
+  - id: ja-vocab-n4-e382a2e3838ae382
+    type: vocab
+    level: N4
+    ja: アナウンサー
+    reading: announcer
+    zh: 播音员
+    pos: 名
+    examples:
+      - ja: ラジオのアナウンサー
+        zh: 广播播音员
+  - id: ja-vocab-n4-do
+    type: vocab
+    level: N4
+    ja: アルバイト
+    reading: (ド) Arbeit
+    zh: 兼职，打工
+    pos: 名・自動3
+    examples:
+      - ja: レストランでアルバイトをする
+        zh: 在餐馆打工
+  - id: ja-vocab-n4-anna
+    type: vocab
+    level: N4
+    ja: あんな
+    reading: あんな
+    zh: 那样；那种
+    pos: 連体・ナ形
+    examples:
+      - ja: 彼があんな人だとは思わなかった
+        zh: 没想到他是那样的人
+  - id: ja-vocab-n4-irasshyaru
+    type: vocab
+    level: N4
+    ja: いらっしゃる
+    reading: いらっしゃる
+    zh: 来；去；在
+    pos: 自動1・補動
+    examples:
+      - ja: お客様がいらっしゃいました
+        zh: 有客人来了
+  - id: ja-vocab-n4-e382aae383bce383
+    type: vocab
+    level: N4
+    ja: オートバイ
+    reading: (和) auto＋bicycle
+    zh: 摩托车
+    pos: 名
+    examples:
+      - ja: オートバイに乗る
+        zh: 骑摩托车
+  - id: ja-vocab-n4-okashii
+    type: vocab
+    level: N4
+    ja: おかしい
+    reading: おかしい
+    zh: 可笑的；奇怪的，可疑的
+    pos: イ形
+    examples:
+      - ja: おかしい話を聞いて大笑いする
+        zh: 聽了可笑的故事而哈哈大笑
+  - id: ja-vocab-n4-kitto
+    type: vocab
+    level: N4
+    ja: きっと
+    reading: きっと
+    zh: 一定，必定
+    pos: 副
+    examples:
+      - ja: 明日はきっと雨が降ります
+        zh: 明天一定会下雨
+  - id: ja-vocab-n4-kureru
+    type: vocab
+    level: N4
+    ja: くれる
+    reading: くれる
+    zh: 给（我）
+    pos: 他動2・補動
+    examples:
+      - ja: 友達が誕生日プレゼントをくれた
+        zh: 朋友送我生日礼物
+  - id: ja-vocab-n4-kega
+    type: vocab
+    level: N4
+    ja: けが
+    reading: けが
+    zh: 伤，受伤
+    pos: 名・自動3
+    examples:
+      - ja: けがの程度がひどい
+        zh: 伤势严重
+  - id: ja-vocab-n4-keredo
+    type: vocab
+    level: N4
+    ja: けれど
+    reading: けれど
+    zh: 不过，可是
+    pos: 接・接助・終助
+    examples:
+      - ja: 読めるけれど書けない
+        zh: 会念可是不会写
+  - id: ja-vocab-n4-kou
+    type: vocab
+    level: N4
+    ja: こう
+    reading: こう
+    zh: 这样，这么
+    pos: 副
+    examples:
+      - ja: こう小さい字は読めない
+        zh: 这么小的字我读不了
+  - id: ja-vocab-n4-gomi
+    type: vocab
+    level: N4
+    ja: ごみ
+    reading: ごみ
+    zh: 垃圾
+    pos: 名
+    examples:
+      - ja: ごみを捨てる
+        zh: 丢垃圾
+  - id: ja-vocab-n4-korekara
+    type: vocab
+    level: N4
+    ja: これから
+    reading: これから
+    zh: 从现在起，之后
+    pos: 名・副
+    examples:
+      - ja: これからはもっと気を付けます
+        zh: 我以后会更加注意
+  - id: ja-vocab-n4-e382b3e383b3e382
+    type: vocab
+    level: N4
+    ja: コンサート
+    reading: concert
+    zh: 音乐会，演奏会
+    pos: 名
+    examples:
+      - ja: 友達とジャズのコンサートに行きました
+        zh: 和朋友一起去听了爵士音乐会
+  - id: ja-vocab-n4-e382b5e383a9e383
+    type: vocab
+    level: N4
+    ja: サラダ
+    reading: salad
+    zh: 沙拉
+    pos: 名
+    examples:
+      - ja: フルーツサラダ
+        zh: 水果沙拉
+  - id: ja-vocab-n4-shikkari
+    type: vocab
+    level: N4
+    ja: しっかり
+    reading: しっかり
+    zh: 紧紧地；好好地，牢牢地；坚固，坚强；可靠
+    pos: 副・自動3
+    examples:
+      - ja: 靴ひもをしっかりと結ぶ
+        zh: 把鞋带牢牢系好
+  - id: ja-vocab-n4-e382b8e383a3e383
+    type: vocab
+    level: N4
+    ja: ジャム
+    reading: jam
+    zh: 果酱
+    pos: 名
+    examples:
+      - ja: このイチゴでジャムを作りましょう
+        zh: 用这些草莓做果酱吧
+  - id: ja-vocab-n4-e382b9e383bce383
+    type: vocab
+    level: N4
+    ja: スーツ
+    reading: suit
+    zh: 西装，西服
+    pos: 名
+    examples:
+      - ja: スーツを着る
+        zh: 穿西装
+  - id: ja-vocab-n4-e382b9e383bce383-e382b9
+    type: vocab
+    level: N4
+    ja: スーツケース
+    reading: suitcase
+    zh: 旅行箱，行李箱
+    pos: 名
+    examples:
+      - ja: 軽いスーツケースが欲しい
+        zh: 我想要一个轻便的行李箱
+  - id: ja-vocab-n4-sukkari
+    type: vocab
+    level: N4
+    ja: すっかり
+    reading: すっかり
+    zh: 完全，全部
+    pos: 副
+    examples:
+      - ja: 買い物をすっかり忘れていた
+        zh: 完全忘了要买东西
+  - id: ja-vocab-n4-sorede
+    type: vocab
+    level: N4
+    ja: それで
+    reading: それで
+    zh: 因此，所以；（表示催促）那么，后来
+    pos: 接
+    examples:
+      - ja: 電車が遅れた。それで、会議に間に合わなかった
+        zh: 因为电车晚点，所以没能赶上会议
+  - id: ja-vocab-n4-soreni
+    type: vocab
+    level: N4
+    ja: それに
+    reading: それに
+    zh: 而且，还有
+    pos: 接
+    examples:
+      - ja: 熱があるし、それにせきも出る
+        zh: 不仅发烧，还咳嗽不止
+  - id: ja-vocab-n4-sorosoro
+    type: vocab
+    level: N4
+    ja: そろそろ
+    reading: そろそろ
+    zh: 快要，就要（做某事）
+    pos: 副
+    examples:
+      - ja: そろそろ始めましょうか
+        zh: 差不多该开始了
+  - id: ja-vocab-n4-sonna
+    type: vocab
+    level: N4
+    ja: そんな
+    reading: そんな
+    zh: 那样；（不）那样
+    pos: ナ形・連体・感
+    examples:
+      - ja: そんなやり方ではだめだ
+        zh: 那样做是不行的
+  - id: ja-vocab-n4-e38381e382a7e383
+    type: vocab
+    level: N4
+    ja: チェック
+    reading: check
+    zh: 核对，检查
+    pos: 他動3・名
+    examples:
+      - ja: 人数をチェックする
+        zh: 核对人数
+  - id: ja-vocab-n4-tsumori
+    type: vocab
+    level: N4
+    ja: つもり
+    reading: つもり
+    zh: 意图，打算
+    pos: 名
+    examples:
+      - ja: 明日からタバコをやめるつもりです
+        zh: 我打算从明天开始戒烟
+  - id: ja-vocab-n4-e38386e3838be382
+    type: vocab
+    level: N4
+    ja: テニス
+    reading: tennis
+    zh: 网球
+    pos: 名
+    examples:
+      - ja: 彼らはよくテニスをしています
+        zh: 他们经常打网球
+  - id: ja-vocab-n4-dondon
+    type: vocab
+    level: N4
+    ja: どんどん
+    reading: どんどん
+    zh: 咚咚声；不断地，顺利地
+    pos: 副
+    examples:
+      - ja: ドアをどんどんとたたいた
+        zh: 咚咚敲门
+  - id: ja-vocab-n4-nasaru
+    type: vocab
+    level: N4
+    ja: なさる
+    reading: なさる
+    zh: 做
+    pos: 他動1・補動
+    examples:
+      - ja: お申し込みなさるのでしたら、こちらにお並びください
+        zh: 如果要申请的话，请在这边排队
+  - id: ja-vocab-n4-e38391e382bde382
+    type: vocab
+    level: N4
+    ja: パソコン
+    reading: personal computer
+    zh: （个人）电脑
+    pos: 名
+    examples:
+      - ja: 一日中パソコンを打っている
+        zh: 一整天都在敲电脑
+  - id: ja-vocab-n4-hakkiri
+    type: vocab
+    level: N4
+    ja: はっきり
+    reading: はっきり
+    zh: 清楚；爽快；明确
+    pos: 副・自動3
+    examples:
+      - ja: 今日は山がはっきり見える
+        zh: 今天可以清楚地看到山
+  - id: ja-vocab-n4-e38394e382a2e383
+    type: vocab
+    level: N4
+    ja: ピアノ
+    reading: piano
+    zh: 钢琴
+    pos: 名
+    examples:
+      - ja: ピアノを弾く
+        zh: 弹钢琴
+  - id: ja-vocab-n4-hidoi
+    type: vocab
+    level: N4
+    ja: ひどい
+    reading: ひどい
+    zh: 残酷的，过分的；激烈的
+    pos: イ形
+    examples:
+      - ja: ひどいことを言う
+        zh: 说过分的话
+  - id: ja-vocab-n4-e38393e383ab
+    type: vocab
+    level: N4
+    ja: ビル
+    reading: building
+    zh: 高楼，大厦
+    pos: 名
+    examples:
+      - ja: 私の会社はあのビルの8階です
+        zh: 我的公司就在那栋大楼的八楼
+  - id: ja-vocab-n4-e38397e383ace382
+    type: vocab
+    level: N4
+    ja: プレゼント
+    reading: present
+    zh: 礼物，赠品
+    pos: 他動3・名
+    examples:
+      - ja: プレゼントを贈る
+        zh: 送礼物
+  - id: ja-vocab-n4-hotondo
+    type: vocab
+    level: N4
+    ja: ほとんど
+    reading: ほとんど
+    zh: 大部分；几乎
+    pos: 名・副
+    examples:
+      - ja: ほとんどの学生は帰った
+        zh: 大部分学生回去了
+  - id: ja-vocab-n4-mousugu
+    type: vocab
+    level: N4
+    ja: もうすぐ
+    reading: もうすぐ
+    zh: 马上就要
+    pos: 副
+    examples:
+      - ja: もうすぐ終わる
+        zh: 马上就结束
+  - id: ja-vocab-n4-moshi
+    type: vocab
+    level: N4
+    ja: もし
+    reading: もし
+    zh: 如果，假如
+    pos: 副
+    examples:
+      - ja: もし雨が降ったら、行きません
+        zh: 如果下雨的话，我就不去了
+  - id: ja-vocab-n4-mochiron
+    type: vocab
+    level: N4
+    ja: もちろん
+    reading: もちろん
+    zh: 当然
+    pos: 副
+    examples:
+      - ja: もちろん一緒に行きます
+        zh: 我当然会一起去
+  - id: ja-vocab-n4-morau
+    type: vocab
+    level: N4
+    ja: もらう
+    reading: もらう
+    zh: 得到，获得
+    pos: 他動1・補動
+    examples:
+      - ja: 彼女からプレゼントをもらいました
+        zh: 我收到了她送的礼物
+  - id: ja-vocab-n4-yatto
+    type: vocab
+    level: N4
+    ja: やっと
+    reading: やっと
+    zh: 终于
+    pos: 副
+    examples:
+      - ja: やっと仕事が終わりました
+        zh: 终于把工作做完了
+  - id: ja-vocab-n4-yoroshii
+    type: vocab
+    level: N4
+    ja: よろしい
+    reading: よろしい
+    zh: 可以，好
+    pos: イ形・補形
+    examples:
+      - ja: レポートはこれでよろしいですか
+        zh: 报告这样写可以吗？
+  - id: ja-vocab-n4-e383ace382b8
+    type: vocab
+    level: N4
+    ja: レジ
+    reading: register
+    zh: 收银机；收银台；收银员
+    pos: 名
+    examples:
+      - ja: レジを打つ
+        zh: 操作收银机
+  - id: ja-vocab-n4-anshin
+    type: vocab
+    level: N4
+    ja: 安心
+    reading: あんしん
+    zh: 放心，安心
+    pos: 名・ナ形・自動3
+    examples:
+      - ja: それを聞いて安心しました
+        zh: 听到这个我就放心了
+  - id: ja-vocab-n4-anzen
+    type: vocab
+    level: N4
+    ja: 安全
+    reading: あんぜん
+    zh: 安全
+    pos: 名・ナ形
+    examples:
+      - ja: 安全が第一です
+        zh: 安全第一
+  - id: ja-vocab-n4-ika
+    type: vocab
+    level: N4
+    ja: 以下
+    reading: いか
+    zh: 下述，接下来的；以下
+    pos: 名
+    examples:
+      - ja: 以下の問いに答えよ
+        zh: 请回答以下问题
+  - id: ja-vocab-n4-iken
+    type: vocab
+    level: N4
+    ja: 意見
+    reading: いけん
+    zh: （提）意见；劝告
+    pos: 名・自他動3
+    examples:
+      - ja: あなたの意見が聞きたいです
+        zh: 我想听听你的意见
+  - id: ja-vocab-n4-sodateru
+    type: vocab
+    level: N4
+    ja: 育てる
+    reading: そだてる
+    zh: 养育，培育，饲养
+    pos: 他動2
+    examples:
+      - ja: 大きくなるまで育てる
+        zh: 扶养成人
+  - id: ja-vocab-n4-ichido
+    type: vocab
+    level: N4
+    ja: 一度
+    reading: いちど
+    zh: 一次，一回
+    pos: 名・副
+    examples:
+      - ja: 一度見たことがある
+        zh: 看过一次
+  - id: ja-vocab-n4-hikidashi
+    type: vocab
+    level: N4
+    ja: 引き出し
+    reading: ひきだし
+    zh: 抽屉；提取
+    pos: 名
+    examples:
+      - ja: 引き出しを開ける
+        zh: 拉开抽屉
+  - id: ja-vocab-n4-untenshyu
+    type: vocab
+    level: N4
+    ja: 運転手
+    reading: うんてんしゅ
+    zh: 司机
+    pos: 名
+    examples:
+      - ja: 彼はタクシーの運転手です
+        zh: 他是出租车司机
+  - id: ja-vocab-n4-kumo
+    type: vocab
+    level: N4
+    ja: 雲
+    reading: くも
+    zh: 云，云彩
+    pos: 名
+    examples:
+      - ja: 雲が晴れた
+        zh: 天晴了；云散了
+  - id: ja-vocab-n4-tooku
+    type: vocab
+    level: N4
+    ja: 遠く
+    reading: とおく
+    zh: 远处，远方
+    pos: 名・副
+    examples:
+      - ja: 遠くから人が来た
+        zh: 有人从远处过来了
+  - id: ja-vocab-n4-yogoreru
+    type: vocab
+    level: N4
+    ja: 汚れる
+    reading: よごれる
+    zh: 脏
+    pos: 自動2
+    examples:
+      - ja: エプロンをしないと服が汚れます
+        zh: 不穿围裙的话衣服会弄脏
+  - id: ja-vocab-n4-hi
+    type: vocab
+    level: N4
+    ja: 火
+    reading: ひ
+    zh: 火
+    pos: 名
+    examples:
+      - ja: 火をつける
+        zh: 点火
+  - id: ja-vocab-n4-hanami
+    type: vocab
+    level: N4
+    ja: 花見
+    reading: はなみ
+    zh: 赏花，特指赏樱花
+    pos: 名
+    examples:
+      - ja: 花見に行く
+        zh: 去赏樱
+  - id: ja-vocab-n4-sugiru
+    type: vocab
+    level: N4
+    ja: 過ぎる
+    reading: すぎる
+    zh: 经过；超过；过分
+    pos: 自動2
+    examples:
+      - ja: 年月が過ぎる
+        zh: 岁月流逝
+  - id: ja-vocab-n4-kaijyou
+    type: vocab
+    level: N4
+    ja: 会場
+    reading: かいじょう
+    zh: 会场
+    pos: 名
+    examples:
+      - ja: 会場は人でいっぱいになりました
+        zh: 会场挤满了人
+  - id: ja-vocab-n4-mawaru
+    type: vocab
+    level: N4
+    ja: 回る
+    reading: まわる
+    zh: 旋转
+    pos: 自動1
+    examples:
+      - ja: 扇風機が回る
+        zh: 电风扇转动
+  - id: ja-vocab-n4-kowareru
+    type: vocab
+    level: N4
+    ja: 壊れる
+    reading: こわれる
+    zh: 坏，破碎；出故障
+    pos: 自動2
+    examples:
+      - ja: 地震で家が壊れた
+        zh: 因为地震房子倒塌了
+  - id: ja-vocab-n4-hiraku
+    type: vocab
+    level: N4
+    ja: 開く
+    reading: ひらく
+    zh: 开；开张
+    pos: 自他動1
+    examples:
+      - ja: 会議をひらく
+        zh: 召开会议
+  - id: ja-vocab-n4-tanoshimi
+    type: vocab
+    level: N4
+    ja: 楽しみ
+    reading: たのしみ
+    zh: 乐趣；期待
+    pos: 名・ナ形
+    examples:
+      - ja: 釣りを楽しみとする
+        zh: 以钓鱼为乐
+  - id: ja-vocab-n4-nareru
+    type: vocab
+    level: N4
+    ja: 慣れる
+    reading: なれる
+    zh: 习惯，适应；熟悉，熟练；（馴れる）动物亲近人类
+    pos: 自動2・補動
+    examples:
+      - ja: 新しい環境に慣れる
+        zh: 适应新环境
+  - id: ja-vocab-n4-kantan
+    type: vocab
+    level: N4
+    ja: 簡単
+    reading: かんたん
+    zh: 简单，简便
+    pos: ナ形
+    examples:
+      - ja: この料理はとても簡単です
+        zh: 这道菜很简单
+  - id: ja-vocab-n4-maniau
+    type: vocab
+    level: N4
+    ja: 間に合う
+    reading: まにあう
+    zh: 赶上，来得及
+    pos: 自動1
+    examples:
+      - ja: 電車に間に合う
+        zh: 赶上电车
+  - id: ja-vocab-n4-machigaeru
+    type: vocab
+    level: N4
+    ja: 間違える
+    reading: まちがえる
+    zh: 弄错，搞错
+    pos: 他動2
+    examples:
+      - ja: 部屋を間違える
+        zh: 弄错房间
+  - id: ja-vocab-n4-kankei
+    type: vocab
+    level: N4
+    ja: 関係
+    reading: かんけい
+    zh: 与……有关系；关系
+    pos: 名・自動3
+    examples:
+      - ja: この問題に関係する人
+        zh: 与这件事有关系的人
+  - id: ja-vocab-n4-omochya
+    type: vocab
+    level: N4
+    ja: おもちゃ
+    reading: おもちゃ
+    zh: 玩具；玩物
+    pos: 名
+    examples:
+      - ja: おもちゃの自動車
+        zh: 玩具汽车
+  - id: ja-vocab-n4-kiken
+    type: vocab
+    level: N4
+    ja: 危険
+    reading: きけん
+    zh: 危险
+    pos: 名・ナ形
+    examples:
+      - ja: 危険な実験
+        zh: 危险的实验
+  - id: ja-vocab-n4-yorokobu
+    type: vocab
+    level: N4
+    ja: 喜ぶ
+    reading: よろこぶ
+    zh: 欢喜，高兴；（「喜んで」の形で）欣然接受
+    pos: 他動1
+    examples:
+      - ja: 友だちの結婚を喜ぶ
+        zh: 为朋友的结婚感到高兴
+  - id: ja-vocab-n4-ureshii
+    type: vocab
+    level: N4
+    ja: うれしい
+    reading: うれしい
+    zh: 高兴的
+    pos: イ形
+    examples:
+      - ja: 彼に会えてうれしかった
+        zh: 很高兴见到他
+  - id: ja-vocab-n4-ki
+    type: vocab
+    level: N4
+    ja: 気
+    reading: き
+    zh: 气，空气；心情；性质
+    pos: 名
+    examples:
+      - ja: 山の気を胸いっぱい吸う
+        zh: 大口吸山里的新鲜空气
+  - id: ja-vocab-n4-kimochi
+    type: vocab
+    level: N4
+    ja: 気持ち
+    reading: きもち
+    zh: 心情，情绪；感觉；舒适（与否）
+    pos: 名
+    examples:
+      - ja: 気持ちがよい
+        zh: 心情舒畅
+  - id: ja-vocab-n4-kibun
+    type: vocab
+    level: N4
+    ja: 気分
+    reading: きぶん
+    zh: （短暂的）心情，情绪；气氛
+    pos: 名
+    examples:
+      - ja: 今日は最高にいい気分だよ
+        zh: 今天的心情好到极点
+  - id: ja-vocab-n4-gijyutsu
+    type: vocab
+    level: N4
+    ja: 技術
+    reading: ぎじゅつ
+    zh: 技术，工艺
+    pos: 名
+    examples:
+      - ja: 新しい技術を開発する
+        zh: 开发新技术
+  - id: ja-vocab-n4-kyaku
+    type: vocab
+    level: N4
+    ja: 客
+    reading: きゃく
+    zh: 客人，顾客
+    pos: 名
+    examples:
+      - ja: その店は若い客が多いです
+        zh: 那间店年轻的客人很多
+  - id: ja-vocab-n4-hisashiburi
+    type: vocab
+    level: N4
+    ja: 久しぶり
+    reading: ひさしぶり
+    zh: 久违
+    pos: 名・ナ形
+    examples:
+      - ja: お久しぶりです
+        zh: 好久不见
+  - id: ja-vocab-n4-kyuu
+    type: vocab
+    level: N4
+    ja: 急
+    reading: きゅう
+    zh: 突然的；紧急的；陡峭的，角度大的
+    pos: ナ形
+    examples:
+      - ja: 急な出来事
+        zh: 突发事件
+  - id: ja-vocab-n4-isogu
+    type: vocab
+    level: N4
+    ja: 急ぐ
+    reading: いそぐ
+    zh: 赶紧，着急
+    pos: 自他動1
+    examples:
+      - ja: 急いで出かける
+        zh: 急急忙忙出门
+  - id: ja-vocab-n4-odoroku
+    type: vocab
+    level: N4
+    ja: 驚く
+    reading: おどろく
+    zh: 吃惊，惊讶
+    pos: 自動1
+    examples:
+      - ja: 大声に驚く
+        zh: 因大声而吓一跳
+  - id: ja-vocab-n4-kinjyo
+    type: vocab
+    level: N4
+    ja: 近所
+    reading: きんじょ
+    zh: 近处，附近
+    pos: 名
+    examples:
+      - ja: 駅の近所に住む
+        zh: 住在车站附近
+  - id: ja-vocab-n4-nigai
+    type: vocab
+    level: N4
+    ja: 苦い
+    reading: にがい
+    zh: （味道）苦的；痛苦的
+    pos: イ形
+    examples:
+      - ja: 苦い薬を飲む
+        zh: 喝苦药
+  - id: ja-vocab-n4-guai
+    type: vocab
+    level: N4
+    ja: 具合
+    reading: ぐあい
+    zh: 健康状况；（机器）状态；情况，样子；方便
+    pos: 名
+    examples:
+      - ja: 今日は体の具合が悪いです
+        zh: 今天身体不舒服
+  - id: ja-vocab-n4-kuuki
+    type: vocab
+    level: N4
+    ja: 空気
+    reading: くうき
+    zh: 空气；气氛，氛围
+    pos: 名
+    examples:
+      - ja: ここは空気がきれいです
+        zh: 这里的空气很清新
+  - id: ja-vocab-n4-kuukou
+    type: vocab
+    level: N4
+    ja: 空港
+    reading: くうこう
+    zh: 机场
+    pos: 名
+    examples:
+      - ja: 国際空港
+        zh: 国际机场
+  - id: ja-vocab-n4-tamani
+    type: vocab
+    level: N4
+    ja: たまに
+    reading: たまに
+    zh: 偶尔
+    pos: 副
+    examples:
+      - ja: 彼はたまに料理をします
+        zh: 他偶尔会下厨
+  - id: ja-vocab-n4-kimi
+    type: vocab
+    level: N4
+    ja: 君
+    reading: きみ
+    zh: （称呼同辈或晚辈，男性用语）你
+    pos: 代
+    examples:
+      - ja: この本を君にあげます
+        zh: 这本书送给你
+  - id: ja-vocab-n4-katachi
+    type: vocab
+    level: N4
+    ja: 形
+    reading: かたち
+    zh: 形状；样式；形式
+    pos: 名
+    examples:
+      - ja: 形が変わる
+        zh: 变样；变形
+  - id: ja-vocab-n4-keisatsu
+    type: vocab
+    level: N4
+    ja: 警察
+    reading: けいさつ
+    zh: 警察；警局
+    pos: 名
+    examples:
+      - ja: 落としものを警察へ届ける
+        zh: 把拾到的东西交给警察
+  - id: ja-vocab-n4-mukaeru
+    type: vocab
+    level: N4
+    ja: 迎える
+    reading: むかえる
+    zh: 迎接；迎来
+    pos: 他動2
+    examples:
+      - ja: 駅で友を迎える
+        zh: 在车站迎接朋友
+  - id: ja-vocab-n4-kesshite
+    type: vocab
+    level: N4
+    ja: 決して
+    reading: けっして
+    zh: 决（不）……
+    pos: 副
+    examples:
+      - ja: 決して約束を忘れない
+        zh: 我决不会忘记约定的
+  - id: ja-vocab-n4-kimeru
+    type: vocab
+    level: N4
+    ja: 決める
+    reading: きめる
+    zh: 决定，规定；决心；断定
+    pos: 他動2
+    examples:
+      - ja: 決めた時間に来た
+        zh: 在约定时间来了
+  - id: ja-vocab-n4-chi
+    type: vocab
+    level: N4
+    ja: 血
+    reading: ち
+    zh: 血
+    pos: 名
+    examples:
+      - ja: 血だらけのセーター
+        zh: 满是血的毛衣
+  - id: ja-vocab-n4-tateru-e5bbba
+    type: vocab
+    level: N4
+    ja: 建てる
+    reading: たてる
+    zh: 盖，建造
+    pos: 他動2
+    examples:
+      - ja: 図書館を建てる
+        zh: 盖图书馆
+  - id: ja-vocab-n4-kenkyuu
+    type: vocab
+    level: N4
+    ja: 研究
+    reading: けんきゅう
+    zh: 研究
+    pos: 名・他動3
+    examples:
+      - ja: 彼は何年も地震の研究をしている
+        zh: 他研究地震已有多年
+  - id: ja-vocab-n4-mieru
+    type: vocab
+    level: N4
+    ja: 見える
+    reading: みえる
+    zh: 看得见；看起来是
+    pos: 自動2
+    examples:
+      - ja: ここから富士山が見える
+        zh: 这里看得到富士山
+  - id: ja-vocab-n4-mitsukaru
+    type: vocab
+    level: N4
+    ja: 見つかる
+    reading: みつかる
+    zh: 被找到；被发现
+    pos: 自動1
+    examples:
+      - ja: メガネが見つかりません
+        zh: 找不到眼镜
+  - id: ja-vocab-n4-mitsukeru
+    type: vocab
+    level: N4
+    ja: 見つける
+    reading: みつける
+    zh: 找到，发现
+    pos: 他動2
+    examples:
+      - ja: 新しい仕事を見つけました
+        zh: 找到新工作了
+  - id: ja-vocab-n4-genin
+    type: vocab
+    level: N4
+    ja: 原因
+    reading: げんいん
+    zh: （多用于不好的）原因
+    pos: 名・自動3
+    examples:
+      - ja: この事故の原因は何ですか
+        zh: 这起事故的原因是什么？
+  - id: ja-vocab-n4-mizuumi
+    type: vocab
+    level: N4
+    ja: 湖
+    reading: みずうみ
+    zh: 湖
+    pos: 名
+    examples:
+      - ja: 山の静かな湖
+        zh: 山中静谧的湖泊
+  - id: ja-vocab-n4-hikari
+    type: vocab
+    level: N4
+    ja: 光
+    reading: ひかり
+    zh: 光线，光明；希望
+    pos: 名
+    examples:
+      - ja: 木の間から光がさす
+        zh: 阳光从树木的间隙中洒落
+  - id: ja-vocab-n4-minato
+    type: vocab
+    level: N4
+    ja: 港
+    reading: みなと
+    zh: 港口，码头
+    pos: 名
+    examples:
+      - ja: 港に入る
+        zh: 入港
+  - id: ja-vocab-n4-kangaeru
+    type: vocab
+    level: N4
+    ja: 考える
+    reading: かんがえる
+    zh: 想，思考，研究
+    pos: 他動2
+    examples:
+      - ja: よく考えてください
+        zh: 请仔细想想
+  - id: ja-vocab-n4-okonau
+    type: vocab
+    level: N4
+    ja: 行う
+    reading: おこなう
+    zh: 举行，进行
+    pos: 他動1
+    examples:
+      - ja: 毎年、秋に運動会を行います
+        zh: 每年秋天都会举办运动会
+  - id: ja-vocab-n4-koukousei
+    type: vocab
+    level: N4
+    ja: 高校生
+    reading: こうこうせい
+    zh: 高中生
+    pos: 名
+    examples:
+      - ja: 私の弟は高校生です
+        zh: 我弟弟是高中生
+  - id: ja-vocab-n4-au
+    type: vocab
+    level: N4
+    ja: 合う
+    reading: あう
+    zh: 一致；合适；协调
+    pos: 自動1
+    examples:
+      - ja: 意見が合う
+        zh: 意见一致
+  - id: ja-vocab-n4-kondo
+    type: vocab
+    level: N4
+    ja: 今度
+    reading: こんど
+    zh: 这次或下次；最近，上次
+    pos: 名
+    examples:
+      - ja: 今度はどこに行きたいですか
+        zh: 下次想去哪里？
+  - id: ja-vocab-n4-konya
+    type: vocab
+    level: N4
+    ja: 今夜
+    reading: こんや
+    zh: 今晚
+    pos: 名
+    examples:
+      - ja: 今夜は月がとてもきれいです
+        zh: 今晚的月色很美
+  - id: ja-vocab-n4-saikin
+    type: vocab
+    level: N4
+    ja: 最近
+    reading: さいきん
+    zh: 近来，最近
+    pos: 名
+    examples:
+      - ja: 彼女は最近結婚した
+        zh: 她最近结婚了
+  - id: ja-vocab-n4-tsuma
+    type: vocab
+    level: N4
+    ja: 妻
+    reading: つま
+    zh: 妻子
+    pos: 名
+    examples:
+      - ja: 今日は妻の誕生日だ
+        zh: 今天是妻子的生日
+  - id: ja-vocab-n4-komakai
+    type: vocab
+    level: N4
+    ja: 細かい
+    reading: こまかい
+    zh: 细小的，零碎的；详细的
+    pos: イ形
+    examples:
+      - ja: 細かい砂
+        zh: 细沙
+  - id: ja-vocab-n4-nokoru
+    type: vocab
+    level: N4
+    ja: 残る
+    reading: のこる
+    zh: 剩下，留下
+    pos: 自動1
+    examples:
+      - ja: 料理がたくさん残りました
+        zh: 剩了很多菜
+  - id: ja-vocab-n4-zannen
+    type: vocab
+    level: N4
+    ja: 残念
+    reading: ざんねん
+    zh: 悔恨，懊悔；遗憾
+    pos: ナ形・名
+    examples:
+      - ja: 残念、まちがえた
+        zh: 真可惜，弄错了
+  - id: ja-vocab-n4-shikata
+    type: vocab
+    level: N4
+    ja: 仕方
+    reading: しかた
+    zh: 做法，方法
+    pos: 名
+    examples:
+      - ja: ファイルのダウンロードの仕方が分かりません
+        zh: 我不知道如何下载文件
+  - id: ja-vocab-n4-hajimeru
+    type: vocab
+    level: N4
+    ja: 始める
+    reading: はじめる
+    zh: 开始，开创；开始……
+    pos: 他動2
+    examples:
+      - ja: 授業を始める
+        zh: 开始上课
+  - id: ja-vocab-n4-ko
+    type: vocab
+    level: N4
+    ja: 子
+    reading: こ
+    zh: 孩子；小孩
+    pos: 名
+    examples:
+      - ja: 子を育てる
+        zh: 养育子女
+  - id: ja-vocab-n4-shi
+    type: vocab
+    level: N4
+    ja: 市
+    reading: し
+    zh: 市
+    pos: 名・造
+    examples:
+      - ja: 横浜市
+        zh: 横滨市
+  - id: ja-vocab-n4-shimin
+    type: vocab
+    level: N4
+    ja: 市民
+    reading: しみん
+    zh: 市民，城市居民
+    pos: 名
+    examples:
+      - ja: 横浜市民
+        zh: 横滨市民
+  - id: ja-vocab-n4-omoidasu
+    type: vocab
+    level: N4
+    ja: 思い出す
+    reading: おもいだす
+    zh: 想起，回忆起
+    pos: 他動1
+    examples:
+      - ja: 昔のことを思い出した
+        zh: 想起过去的事情
+  - id: ja-vocab-n4-eda
+    type: vocab
+    level: N4
+    ja: 枝
+    reading: えだ
+    zh: 树枝
+    pos: 名
+    examples:
+      - ja: サクラの枝を折るな
+        zh: 不要折樱花树枝
+  - id: ja-vocab-n4-tomeru
+    type: vocab
+    level: N4
+    ja: 止める
+    reading: とめる
+    zh: 使停下；制止
+    pos: 他動2
+    examples:
+      - ja: 車を止める
+        zh: 把车停下
+  - id: ja-vocab-n4-shiai
+    type: vocab
+    level: N4
+    ja: 試合
+    reading: しあい
+    zh: （体育的）比赛
+    pos: 名
+    examples:
+      - ja: 試合に勝つ
+        zh: 比赛胜利
+  - id: ja-vocab-n4-haishya
+    type: vocab
+    level: N4
+    ja: 歯医者
+    reading: はいしゃ
+    zh: 牙医
+    pos: 名
+    examples:
+      - ja: 歯医者にかかる
+        zh: 看牙医
+  - id: ja-vocab-n4-jimushyo
+    type: vocab
+    level: N4
+    ja: 事務所
+    reading: じむしょ
+    zh: 事务所，办事处
+    pos: 名
+    examples:
+      - ja: 法律事務所
+        zh: 律师事务所
+  - id: ja-vocab-n4-niru
+    type: vocab
+    level: N4
+    ja: 似る
+    reading: にる
+    zh: 相似，像
+    pos: 自動2
+    examples:
+      - ja: あのふたごはよく似ている
+        zh: 那对双胞胎长得真像
+  - id: ja-vocab-n4-ji
+    type: vocab
+    level: N4
+    ja: 字
+    reading: じ
+    zh: 字，文字
+    pos: 名
+    examples:
+      - ja: 字を書く
+        zh: 写字
+  - id: ja-vocab-n4-tera
+    type: vocab
+    level: N4
+    ja: 寺
+    reading: てら
+    zh: 寺庙，寺院
+    pos: 名
+    examples:
+      - ja: お寺参り
+        zh: 参拜寺院
+  - id: ja-vocab-n4-jidai
+    type: vocab
+    level: N4
+    ja: 時代
+    reading: じだい
+    zh: 时代，时期
+    pos: 名
+    examples:
+      - ja: 江戸時代
+        zh: 江户时代
+  - id: ja-vocab-n4-naoru
+    type: vocab
+    level: N4
+    ja: 治る
+    reading: なおる
+    zh: 病愈，痊愈
+    pos: 自動1
+    examples:
+      - ja: 病気が治る
+        zh: 疾病痊愈
+  - id: ja-vocab-n4-shippai
+    type: vocab
+    level: N4
+    ja: 失敗
+    reading: しっぱい
+    zh: 失败
+    pos: 名・自他動3
+    examples:
+      - ja: 実験に失敗する
+        zh: 实验失败
+  - id: ja-vocab-n4-utsusu
+    type: vocab
+    level: N4
+    ja: 写す
+    reading: うつす
+    zh: 抄；拍照
+    pos: 他動1
+    examples:
+      - ja: ノートを写す
+        zh: 抄笔记
+  - id: ja-vocab-n4-suteru
+    type: vocab
+    level: N4
+    ja: 捨てる
+    reading: すてる
+    zh: 扔掉；抛弃
+    pos: 他動2
+    examples:
+      - ja: ごみを捨てる
+        zh: 扔垃圾
+  - id: ja-vocab-n4-shyachyou
+    type: vocab
+    level: N4
+    ja: 社長
+    reading: しゃちょう
+    zh: 社长
+    pos: 名
+    examples:
+      - ja: おばは小さな会社の社長です
+        zh: 阿姨是小公司的社长
+  - id: ja-vocab-n4-tebukuro
+    type: vocab
+    level: N4
+    ja: 手袋
+    reading: てぶくろ
+    zh: 手套
+    pos: 名
+    examples:
+      - ja: 手袋をはめる
+        zh: 戴手套
+  - id: ja-vocab-n4-tetsudau
+    type: vocab
+    level: N4
+    ja: 手伝う
+    reading: てつだう
+    zh: 帮忙，协助
+    pos: 他動1
+    examples:
+      - ja: 家事を手伝う
+        zh: 帮忙做家务
+  - id: ja-vocab-n4-shyumi
+    type: vocab
+    level: N4
+    ja: 趣味
+    reading: しゅみ
+    zh: 爱好
+    pos: 名
+    examples:
+      - ja: 私の趣味はテニスとスキーです
+        zh: 我的爱好是网球和滑雪
+  - id: ja-vocab-n4-ukeru
+    type: vocab
+    level: N4
+    ja: 受ける
+    reading: うける
+    zh: 接受；遭受；参加（考试等）
+    pos: 他動2
+    examples:
+      - ja: ボールを受ける
+        zh: 接球
+  - id: ja-vocab-n4-mawari
+    type: vocab
+    level: N4
+    ja: 周り
+    reading: まわり
+    zh: 周围，四周；附近
+    pos: 名
+    examples:
+      - ja: 先生の周りに集まってください
+        zh: 请到老师身边集合
+  - id: ja-vocab-n4-hirou
+    type: vocab
+    level: N4
+    ja: 拾う
+    reading: ひろう
+    zh: 拾，捡；打出租车
+    pos: 他動1
+    examples:
+      - ja: 道で財布を拾った
+        zh: 在路上捡到钱包
+  - id: ja-vocab-n4-owari
+    type: vocab
+    level: N4
+    ja: 終わり
+    reading: おわり
+    zh: 终，末尾，结束
+    pos: 名
+    examples:
+      - ja: 夏休みももう終わりだ
+        zh: 暑假也已经结束了
+  - id: ja-vocab-n4-atsumeru
+    type: vocab
+    level: N4
+    ja: 集める
+    reading: あつめる
+    zh: 集合，集中，收集
+    pos: 他動2
+    examples:
+      - ja: 全校の生徒を集める
+        zh: 召集全校学生
+  - id: ja-vocab-n4-jyuushyo
+    type: vocab
+    level: N4
+    ja: 住所
+    reading: じゅうしょ
+    zh: 住址，地址
+    pos: 名
+    examples:
+      - ja: 荷物は会社の住所に送ってください
+        zh: 请将货物寄到公司地址
+  - id: ja-vocab-n4-jyuubun
+    type: vocab
+    level: N4
+    ja: 十分
+    reading: じゅうぶん
+    zh: 足够，充分，充足
+    pos: ナ形・副
+    examples:
+      - ja: お金はまだ十分あります
+        zh: 钱还够用
+  - id: ja-vocab-n4-katsu
+    type: vocab
+    level: N4
+    ja: 勝つ
+    reading: かつ
+    zh: 赢，胜
+    pos: 自動1
+    examples:
+      - ja: 試合に勝つ
+        zh: 赢得比赛
+  - id: ja-vocab-n4-shyourai
+    type: vocab
+    level: N4
+    ja: 将来
+    reading: しょうらい
+    zh: 将来，未来
+    pos: 名・副
+    examples:
+      - ja: 将来はパイロットになりたいです
+        zh: 将来我想当飞行员
+  - id: ja-vocab-n4-shyousetsu
+    type: vocab
+    level: N4
+    ja: 小説
+    reading: しょうせつ
+    zh: 小说
+    pos: 名
+    examples:
+      - ja: 私は月に３冊くらい小説を読みます
+        zh: 我每个月会看三本小说
+  - id: ja-vocab-n4-keshigomu
+    type: vocab
+    level: N4
+    ja: 消しゴム
+    reading: けしゴム
+    zh: 橡皮
+    pos: 名
+    examples:
+      - ja: 消しゴムで字を消す
+        zh: 用橡皮擦掉字迹
+  - id: ja-vocab-n4-yaku
+    type: vocab
+    level: N4
+    ja: 焼く
+    reading: やく
+    zh: 烤；烧
+    pos: 他動1
+    examples:
+      - ja: パンを焼く
+        zh: 烤面包
+  - id: ja-vocab-n4-shyoukai
+    type: vocab
+    level: N4
+    ja: 紹介
+    reading: しょうかい
+    zh: 介绍
+    pos: 名・他動3
+    examples:
+      - ja: 順番に自己紹介してください
+        zh: 请按顺序自我介绍一下
+  - id: ja-vocab-n4-norikaeru
+    type: vocab
+    level: N4
+    ja: 乗り換える
+    reading: のりかえる
+    zh: 换乘
+    pos: 自他動2
+    examples:
+      - ja: 東京駅で新幹線に乗り換える
+        zh: 在东京站换乘新干线
+  - id: ja-vocab-n4-baai
+    type: vocab
+    level: N4
+    ja: 場合
+    reading: ばあい
+    zh: 场合，时候，情形
+    pos: 名
+    examples:
+      - ja: わからない場合は私に聞いてください
+        zh: 有不懂的地方请问我
+  - id: ja-vocab-n4-bashyo
+    type: vocab
+    level: N4
+    ja: 場所
+    reading: ばしょ
+    zh: 场所，地方
+    pos: 名
+    examples:
+      - ja: 座る場所がない
+        zh: 没有坐的地方
+  - id: ja-vocab-n4-kazaru
+    type: vocab
+    level: N4
+    ja: 飾る
+    reading: かざる
+    zh: 装饰，装点
+    pos: 他動1
+    examples:
+      - ja: 部屋に花を飾る
+        zh: 在房间里装饰花朵
+  - id: ja-vocab-n4-shyokuryouhin
+    type: vocab
+    level: N4
+    ja: 食料品
+    reading: しょくりょうひん
+    zh: （特指主食之外的鱼肉类、蔬菜和水果等）食品
+    pos: 名
+    examples:
+      - ja: 食料品の買い出しに出かける
+        zh: 去采购食品
+  - id: ja-vocab-n4-nebou
+    type: vocab
+    level: N4
+    ja: 寝坊
+    reading: ねぼう
+    zh: 睡懒觉（的人）
+    pos: 名・ナ形・自動3
+    examples:
+      - ja: 今朝は寝坊しました
+        zh: 今天早上睡过头了
+  - id: ja-vocab-n4-mori
+    type: vocab
+    level: N4
+    ja: 森
+    reading: もり
+    zh: 森林
+    pos: 名
+    examples:
+      - ja: 森の動物たち
+        zh: 森林里的动物们
+  - id: ja-vocab-n4-fukai
+    type: vocab
+    level: N4
+    ja: 深い
+    reading: ふかい
+    zh: 深的；浓的；（程度）深的
+    pos: イ形
+    examples:
+      - ja: 雪が深く積もっている
+        zh: 雪积得很厚
+  - id: ja-vocab-n4-jinjya
+    type: vocab
+    level: N4
+    ja: 神社
+    reading: じんじゃ
+    zh: 神社
+    pos: 名
+    examples:
+      - ja: 神社に参る
+        zh: 参拜神社
+  - id: ja-vocab-n4-shinsetsu
+    type: vocab
+    level: N4
+    ja: 親切
+    reading: しんせつ
+    zh: 亲切，热情
+    pos: 名・ナ形
+    examples:
+      - ja: 親切に道を教える
+        zh: 热情地指路
+  - id: ja-vocab-n4-susumu
+    type: vocab
+    level: N4
+    ja: 進む
+    reading: すすむ
+    zh: 前进；进步；进展
+    pos: 自動1
+    examples:
+      - ja: 前へ進め
+        zh: 前进！
+  - id: ja-vocab-n4-jinkou
+    type: vocab
+    level: N4
+    ja: 人口
+    reading: じんこう
+    zh: 人口
+    pos: 名
+    examples:
+      - ja: 日本の人口は約1億2700万人だ
+        zh: 日本的人口约有一亿两千七百万
+  - id: ja-vocab-n4-tazuneru
+    type: vocab
+    level: N4
+    ja: 尋ねる
+    reading: たずねる
+    zh: 探索，查明；询问
+    pos: 他動2
+    examples:
+      - ja: 真相を尋ねる
+        zh: 查明真相
+  - id: ja-vocab-n4-suiei
+    type: vocab
+    level: N4
+    ja: 水泳
+    reading: すいえい
+    zh: 游泳
+    pos: 名・自動3
+    examples:
+      - ja: 水泳が得意だ
+        zh: 擅长游泳
+  - id: ja-vocab-n4-zehi
+    type: vocab
+    level: N4
+    ja: ぜひ
+    reading: ぜひ
+    zh: 务必，一定
+    pos: 副
+    examples:
+      - ja: ぜひ出席してください
+        zh: 请务必出席
+  - id: ja-vocab-n4-hoshi
+    type: vocab
+    level: N4
+    ja: 星
+    reading: ほし
+    zh: 星星；星号；明星
+    pos: 名
+    examples:
+      - ja: 星が光る
+        zh: 星星闪耀
+  - id: ja-vocab-n4-tadashii
+    type: vocab
+    level: N4
+    ja: 正しい
+    reading: ただしい
+    zh: 正确的；正当的；端正的
+    pos: イ形
+    examples:
+      - ja: 正しい答え
+        zh: 正确的回答
+  - id: ja-vocab-n4-ikiru
+    type: vocab
+    level: N4
+    ja: 生きる
+    reading: いきる
+    zh: 生存；生活
+    pos: 自動2
+    examples:
+      - ja: 百歳まで生きる
+        zh: 活到一百岁
+  - id: ja-vocab-n4-mukashi
+    type: vocab
+    level: N4
+    ja: 昔
+    reading: むかし
+    zh: 过去，以前
+    pos: 名
+    examples:
+      - ja: 昔のことを思い出した
+        zh: 想起了过去的事
+  - id: ja-vocab-n4-ishi
+    type: vocab
+    level: N4
+    ja: 石
+    reading: いし
+    zh: 石头，石子
+    pos: 名
+    examples:
+      - ja: 私は石につまずいた
+        zh: 我被石头绊倒了
+  - id: ja-vocab-n4-setsumei
+    type: vocab
+    level: N4
+    ja: 説明
+    reading: せつめい
+    zh: 说明，解释
+    pos: 名・他動3
+    examples:
+      - ja: わかりやすい説明
+        zh: 简明易懂的说明
+  - id: ja-vocab-n4-sen
+    type: vocab
+    level: N4
+    ja: 線
+    reading: せん
+    zh: 线，线条
+    pos: 名
+    examples:
+      - ja: 線を引く
+        zh: 画线
+  - id: ja-vocab-n4-sofu
+    type: vocab
+    level: N4
+    ja: 祖父
+    reading: そふ
+    zh: 祖父；外祖父
+    pos: 名
+    examples:
+      - ja: 祖父は元気です
+        zh: 爷爷很健康
+  - id: ja-vocab-n4-sobo
+    type: vocab
+    level: N4
+    ja: 祖母
+    reading: そぼ
+    zh: 祖母；外祖母
+    pos: 名
+    examples:
+      - ja: 祖母は京都で生まれました
+        zh: 祖母在京都出生
+  - id: ja-vocab-n4-fueru
+    type: vocab
+    level: N4
+    ja: 増える
+    reading: ふえる
+    zh: 增加，增多
+    pos: 自動2
+    examples:
+      - ja: この町は人口が増えた
+        zh: 这个城市的人口增加了
+  - id: ja-vocab-n4-okurimono
+    type: vocab
+    level: N4
+    ja: 贈り物
+    reading: おくりもの
+    zh: 礼物
+    pos: 名
+    examples:
+      - ja: すてきな贈り物をどうもありがとう
+        zh: 谢谢你送我这么棒的礼物
+  - id: ja-vocab-n4-tariru
+    type: vocab
+    level: N4
+    ja: 足りる
+    reading: たりる
+    zh: 足够；值得
+    pos: 自動2
+    examples:
+      - ja: 1万円あれば足りる
+        zh: 有一万日元就够了
+  - id: ja-vocab-n4-tsuzuku
+    type: vocab
+    level: N4
+    ja: 続く
+    reading: つづく
+    zh: 继续，持续；接连发生；接着，跟着
+    pos: 自動1
+    examples:
+      - ja: 雨の日が続く
+        zh: 连日下雨
+  - id: ja-vocab-n4-tsuzukeru
+    type: vocab
+    level: N4
+    ja: 続ける
+    reading: つづける
+    zh: 继续，连续
+    pos: 他動2
+    examples:
+      - ja: 会議を続ける
+        zh: 继续开会
+  - id: ja-vocab-n4-sotsugyou
+    type: vocab
+    level: N4
+    ja: 卒業
+    reading: そつぎょう
+    zh: 毕业
+    pos: 名・自動3
+    examples:
+      - ja: 私は去年、大学を卒業した
+        zh: 我去年从大学毕业
+  - id: ja-vocab-n4-daiji
+    type: vocab
+    level: N4
+    ja: 大事
+    reading: だいじ
+    zh: 重要；珍惜，保重；大事，重大问题
+    pos: 名・ナ形
+    examples:
+      - ja: 大事な用事
+        zh: 重要的事
+  - id: ja-vocab-n4-daitai
+    type: vocab
+    level: N4
+    ja: 大体
+    reading: だいたい
+    zh: 概要；大致；本来
+    pos: 名・副
+    examples:
+      - ja: 私は大体のことしか知らない
+        zh: 我只知道个大概
+  - id: ja-vocab-n4-dansei
+    type: vocab
+    level: N4
+    ja: 男性
+    reading: だんせい
+    zh: 男性
+    pos: 名
+    examples:
+      - ja: 男性専用
+        zh: 男性专用
+  - id: ja-vocab-n4-shiraseru
+    type: vocab
+    level: N4
+    ja: 知らせる
+    reading: しらせる
+    zh: 通知
+    pos: 他動2
+    examples:
+      - ja: 面接の結果を知らせる
+        zh: 通知面试结果
+  - id: ja-vocab-n4-hazukashii
+    type: vocab
+    level: N4
+    ja: 恥ずかしい
+    reading: はずかしい
+    zh: 害羞的，难为情的，惭愧的
+    pos: イ形
+    examples:
+      - ja: 先生にほめられて、恥ずかしい
+        zh: 因为被老师表扬而害羞
+  - id: ja-vocab-n4-okureru
+    type: vocab
+    level: N4
+    ja: 遅れる
+    reading: おくれる
+    zh: 迟到；进展慢
+    pos: 自動2
+    examples:
+      - ja: 授業に遅れる
+        zh: 上课迟到
+  - id: ja-vocab-n4-kimono
+    type: vocab
+    level: N4
+    ja: 着物
+    reading: きもの
+    zh: 和服
+    pos: 名
+    examples:
+      - ja: 着物の着付けを習う
+        zh: 学习穿和服
+  - id: ja-vocab-n4-hiruyasumi
+    type: vocab
+    level: N4
+    ja: 昼休み
+    reading: ひるやすみ
+    zh: 午休
+    pos: 名
+    examples:
+      - ja: 昼休みは12時から1時までの1時間です
+        zh: 午休为十二点至一点的一小时
+  - id: ja-vocab-n4-chyuui
+    type: vocab
+    level: N4
+    ja: 注意
+    reading: ちゅうい
+    zh: 注意，留神；提醒，警告
+    pos: 名・自他動3
+    examples:
+      - ja: 足元に注意してください
+        zh: 请注意脚下安全
+  - id: ja-vocab-n4-mushi
+    type: vocab
+    level: N4
+    ja: 虫
+    reading: むし
+    zh: 虫子
+    pos: 名
+    examples:
+      - ja: 網で虫を捕まえる
+        zh: 用网捉昆虫
+  - id: ja-vocab-n4-shiraberu
+    type: vocab
+    level: N4
+    ja: 調べる
+    reading: しらべる
+    zh: 查，调查
+    pos: 他動2
+    examples:
+      - ja: 電話番号を調べる
+        zh: 查找电话号码
+  - id: ja-vocab-n4-naosu
+    type: vocab
+    level: N4
+    ja: 直す
+    reading: なおす
+    zh: 修改，改正；重新做
+    pos: 他動1
+    examples:
+      - ja: ミスを直す
+        zh: 改正错误
+  - id: ja-vocab-n4-naoru-e79bb4
+    type: vocab
+    level: N4
+    ja: 直る
+    reading: なおる
+    zh: 改正；修好
+    pos: 自動1
+    examples:
+      - ja: 文章のまちがいが直る
+        zh: 修正了文中的错误
+  - id: ja-vocab-n4-kayou
+    type: vocab
+    level: N4
+    ja: 通う
+    reading: かよう
+    zh: 来往，往返
+    pos: 自動1
+    examples:
+      - ja: 学校に通う
+        zh: 上学
+  - id: ja-vocab-n4-tooru
+    type: vocab
+    level: N4
+    ja: 通る
+    reading: とおる
+    zh: 通过，走过，穿过；合格；得到承认
+    pos: 自動1
+    examples:
+      - ja: 家の前を通る
+        zh: 经过家门口
+  - id: ja-vocab-n4-tenin
+    type: vocab
+    level: N4
+    ja: 店員
+    reading: てんいん
+    zh: 店员
+    pos: 名
+    examples:
+      - ja: デパートの店員
+        zh: 百货公司店员
+  - id: ja-vocab-n4-ten
+    type: vocab
+    level: N4
+    ja: 点
+    reading: てん
+    zh: 点；标点；分数；方面；……件
+    pos: 名・接尾
+    examples:
+      - ja: 文に点を打つ
+        zh: 给句子打上标点
+  - id: ja-vocab-n4-tochyuu
+    type: vocab
+    level: N4
+    ja: 途中
+    reading: とちゅう
+    zh: 途中；中途
+    pos: 名
+    examples:
+      - ja: 途中で彼に会う
+        zh: 在半路上遇到他
+  - id: ja-vocab-n4-tsugou
+    type: vocab
+    level: N4
+    ja: 都合
+    reading: つごう
+    zh: 方便（与否）；情况
+    pos: 名
+    examples:
+      - ja: 明日は都合が悪い
+        zh: 明天不方便
+  - id: ja-vocab-n4-okoru
+    type: vocab
+    level: N4
+    ja: 怒る
+    reading: おこる
+    zh: 发怒；骂，训斥
+    pos: 自動1
+    examples:
+      - ja: 悪口を言われて怒る
+        zh: 被说坏话而生气
+  - id: ja-vocab-n4-taoreru
+    type: vocab
+    level: N4
+    ja: 倒れる
+    reading: たおれる
+    zh: 绊倒，倒下
+    pos: 自動2
+    examples:
+      - ja: 地震で家が倒れた
+        zh: 因为地震，房子倒塌了
+  - id: ja-vocab-n4-shima
+    type: vocab
+    level: N4
+    ja: 島
+    reading: しま
+    zh: 岛，岛屿
+    pos: 名
+    examples:
+      - ja: 日本は島国です
+        zh: 日本是岛国
+  - id: ja-vocab-n4-nageru
+    type: vocab
+    level: N4
+    ja: 投げる
+    reading: なげる
+    zh: 扔，投；提出；放弃
+    pos: 他動2
+    examples:
+      - ja: ボールを投げる
+        zh: 扔球
+  - id: ja-vocab-n4-nusumu
+    type: vocab
+    level: N4
+    ja: 盗む
+    reading: ぬすむ
+    zh: 偷盗，偷窃
+    pos: 他動1
+    examples:
+      - ja: お金を盗む
+        zh: 偷钱
+  - id: ja-vocab-n4-yu
+    type: vocab
+    level: N4
+    ja: 湯
+    reading: ゆ
+    zh: 开水，热水；洗澡水；温泉
+    pos: 名
+    examples:
+      - ja: お湯を沸かす
+        zh: 烧水
+  - id: ja-vocab-n4-nigeru
+    type: vocab
+    level: N4
+    ja: 逃げる
+    reading: にげる
+    zh: 逃跑；逃避
+    pos: 自動2
+    examples:
+      - ja: 外国に逃げる
+        zh: 逃往国外
+  - id: ja-vocab-n4-ugoku
+    type: vocab
+    level: N4
+    ja: 動く
+    reading: うごく
+    zh: 动，活动，开动；移动；动摇
+    pos: 自動1
+    examples:
+      - ja: エンジンが動かなくなった
+        zh: 发动机停了
+  - id: ja-vocab-n4-doubutsuen
+    type: vocab
+    level: N4
+    ja: 動物園
+    reading: どうぶつえん
+    zh: 动物园
+    pos: 名
+    examples:
+      - ja: 昨日子供たちと動物園に行きました
+        zh: 昨天和孩子们去了动物园
+  - id: ja-vocab-n4-tokuni
+    type: vocab
+    level: N4
+    ja: 特に
+    reading: とくに
+    zh: 特别
+    pos: 副
+    examples:
+      - ja: 今年の冬は特に寒い
+        zh: 今年的冬天特別冷
+  - id: ja-vocab-n4-tokkyuu
+    type: vocab
+    level: N4
+    ja: 特急
+    reading: とっきゅう
+    zh: 火速；特快列车
+    pos: 名
+    examples:
+      - ja: 特急でお願いします
+        zh: 麻烦尽快
+  - id: ja-vocab-n4-tokubetsu
+    type: vocab
+    level: N4
+    ja: 特別
+    reading: とくべつ
+    zh: 特别，特殊
+    pos: ナ形・副・名
+    examples:
+      - ja: あなたは私にとって特別な人です
+        zh: 你对我来说是很特别的人
+  - id: ja-vocab-n4-todokeru
+    type: vocab
+    level: N4
+    ja: 届ける
+    reading: とどける
+    zh: 送，送到；申报
+    pos: 他動2
+    examples:
+      - ja: これを彼に届けてください
+        zh: 请把这个寄给他
+  - id: ja-vocab-n4-nikki
+    type: vocab
+    level: N4
+    ja: 日記
+    reading: にっき
+    zh: 日记
+    pos: 名
+    examples:
+      - ja: 日記をつける
+        zh: 写日记
+  - id: ja-vocab-n4-netsu
+    type: vocab
+    level: N4
+    ja: 熱
+    reading: ねつ
+    zh: 热度；发烧
+    pos: 名
+    examples:
+      - ja: 熱を加える
+        zh: 加热
+  - id: ja-vocab-n4-uriba
+    type: vocab
+    level: N4
+    ja: 売り場
+    reading: うりば
+    zh: 卖场，柜台
+    pos: 名
+    examples:
+      - ja: くつ売り場はどこですか
+        zh: 请问鞋子卖场在哪里？
+  - id: ja-vocab-n4-tomaru
+    type: vocab
+    level: N4
+    ja: 泊まる
+    reading: とまる
+    zh: 住宿；（船）靠岸
+    pos: 自動1
+    examples:
+      - ja: ホテルに泊まる
+        zh: 住宾馆
+  - id: ja-vocab-n4-hantai
+    type: vocab
+    level: N4
+    ja: 反対
+    reading: はんたい
+    zh: 相反；反对
+    pos: 名・ナ形・自動3
+    examples:
+      - ja: 反対の方向
+        zh: 相反方向
+  - id: ja-vocab-n4-kanashii
+    type: vocab
+    level: N4
+    ja: 悲しい
+    reading: かなしい
+    zh: 悲伤的，伤心的
+    pos: イ形
+    examples:
+      - ja: 愛犬が死んで、とても悲しかった
+        zh: 爱犬过世了，我非常难过
+  - id: ja-vocab-n4-kuraberu
+    type: vocab
+    level: N4
+    ja: 比べる
+    reading: くらべる
+    zh: 比较，对照
+    pos: 他動2
+    examples:
+      - ja: 昔と今を比べる
+        zh: 今昔对比
+  - id: ja-vocab-n4-utsukushii
+    type: vocab
+    level: N4
+    ja: 美しい
+    reading: うつくしい
+    zh: 美丽的；美好的
+    pos: イ形
+    examples:
+      - ja: 美しい景色
+        zh: 美丽的风景
+  - id: ja-vocab-n4-bijyutsukan
+    type: vocab
+    level: N4
+    ja: 美術館
+    reading: びじゅつかん
+    zh: 美术馆
+    pos: 名
+    examples:
+      - ja: 美術館の休館日
+        zh: 美术馆的休馆日
+  - id: ja-vocab-n4-kanarazu
+    type: vocab
+    level: N4
+    ja: 必ず
+    reading: かならず
+    zh: 一定，必定
+    pos: 副
+    examples:
+      - ja: 7時までに必ず来てください
+        zh: 请务必七点之前来
+  - id: ja-vocab-n4-hitsuyou
+    type: vocab
+    level: N4
+    ja: 必要
+    reading: ひつよう
+    zh: 必要，必需
+    pos: 名・ナ形
+    examples:
+      - ja: 私にはたくさんのお金が必要だ
+        zh: 我需要很多钱
+  - id: ja-vocab-n4-shinamono
+    type: vocab
+    level: N4
+    ja: 品物
+    reading: しなもの
+    zh: 商品
+    pos: 名
+    examples:
+      - ja: その店はいろいろな品物を売っている
+        zh: 那家店卖着各种各样的东西
+  - id: ja-vocab-n4-fuben
+    type: vocab
+    level: N4
+    ja: 不便
+    reading: ふべん
+    zh: 不便，不方便
+    pos: 名・ナ形
+    examples:
+      - ja: 私の家は駅から遠くて不便です
+        zh: 我家离车站很远，很不方便
+  - id: ja-vocab-n4-tsuku
+    type: vocab
+    level: N4
+    ja: 付く
+    reading: つく
+    zh: 附着，沾上；跟随
+    pos: 自動1
+    examples:
+      - ja: 靴に泥が付いています
+        zh: 鞋子上沾了泥巴
+  - id: ja-vocab-n4-kowai
+    type: vocab
+    level: N4
+    ja: 怖い
+    reading: こわい
+    zh: 可怕的，令人害怕的
+    pos: イ形
+    examples:
+      - ja: 怖い顔をする
+        zh: 脸上显出可怕的表情
+  - id: ja-vocab-n4-futsuu
+    type: vocab
+    level: N4
+    ja: 普通
+    reading: ふつう
+    zh: 一般，普通
+    pos: 名・ナ形・副
+    examples:
+      - ja: 普通の人
+        zh: 一般人
+  - id: ja-vocab-n4-buchyou
+    type: vocab
+    level: N4
+    ja: 部長
+    reading: ぶちょう
+    zh: 部长，处长
+    pos: 名
+    examples:
+      - ja: 営業部長
+        zh: 营销处处长
+  - id: ja-vocab-n4-fukuzatsu
+    type: vocab
+    level: N4
+    ja: 複雑
+    reading: ふくざつ
+    zh: 复杂
+    pos: 名・ナ形
+    examples:
+      - ja: このプログラムはとても複雑です
+        zh: 这个程序非常复杂
+  - id: ja-vocab-n4-harau
+    type: vocab
+    level: N4
+    ja: 払う
+    reading: はらう
+    zh: 支付；拂去
+    pos: 他動1
+    examples:
+      - ja: 電気代を払う
+        zh: 支付电费
+  - id: ja-vocab-n4-bunka
+    type: vocab
+    level: N4
+    ja: 文化
+    reading: ぶんか
+    zh: 文化
+    pos: 名
+    examples:
+      - ja: 日本文化
+        zh: 日本文化
+  - id: ja-vocab-n4-kikoeru
+    type: vocab
+    level: N4
+    ja: 聞こえる
+    reading: きこえる
+    zh: 听得见，听到；听起来觉得……
+    pos: 自動2
+    examples:
+      - ja: 何も聞こえない
+        zh: 什么也听不见
+  - id: ja-vocab-n4-kome
+    type: vocab
+    level: N4
+    ja: 米
+    reading: こめ
+    zh: 稻米，大米
+    pos: 名
+    examples:
+      - ja: 米をとぐ
+        zh: 淘米
+  - id: ja-vocab-n4-kabe
+    type: vocab
+    level: N4
+    ja: 壁
+    reading: かべ
+    zh: 墙壁；障碍，隔阂
+    pos: 名
+    examples:
+      - ja: 壁に絵が掛かっている
+        zh: 墙上挂着画
+  - id: ja-vocab-n4-betsu
+    type: vocab
+    level: N4
+    ja: 別
+    reading: べつ
+    zh: 区别；另外，除外
+    pos: 名・ナ形・造
+    examples:
+      - ja: 男女別
+        zh: 按性别
+  - id: ja-vocab-n4-wakareru
+    type: vocab
+    level: N4
+    ja: 別れる
+    reading: わかれる
+    zh: 离别；分手，离婚
+    pos: 自動2
+    examples:
+      - ja: 駅で友だちと別れました
+        zh: 在车站和朋友道别
+  - id: ja-vocab-n4-hen
+    type: vocab
+    level: N4
+    ja: 変
+    reading: へん
+    zh: 奇怪，异常
+    pos: ナ形・名
+    examples:
+      - ja: 変な音が聞こえます
+        zh: 听到了奇怪的声音
+  - id: ja-vocab-n4-kaeru
+    type: vocab
+    level: N4
+    ja: 変える
+    reading: かえる
+    zh: 改变，变更
+    pos: 他動2
+    examples:
+      - ja: 旅行の日程を変えました
+        zh: 变更了旅行的行程
+  - id: ja-vocab-n4-kawaru
+    type: vocab
+    level: N4
+    ja: 変わる
+    reading: かわる
+    zh: 改变，变化；不同寻常；［他動］更换座位、住址、所属单位等
+    pos: 自他動1
+    examples:
+      - ja: 信号が青に変わりました
+        zh: 信号灯变绿了
+  - id: ja-vocab-n4-katazukeru
+    type: vocab
+    level: N4
+    ja: 片付ける
+    reading: かたづける
+    zh: 收拾好，整理好；处理好
+    pos: 他動2
+    examples:
+      - ja: 本を片付ける
+        zh: 整理书
+  - id: ja-vocab-n4-henji
+    type: vocab
+    level: N4
+    ja: 返事
+    reading: へんじ
+    zh: 答应，回答，回信
+    pos: 名・自動3
+    examples:
+      - ja: いくら呼んでも返事がない
+        zh: 不管怎么叫都没有回应
+  - id: ja-vocab-n4-tsutsumu
+    type: vocab
+    level: N4
+    ja: 包む
+    reading: つつむ
+    zh: 包；包围，笼罩
+    pos: 他動1
+    examples:
+      - ja: プレゼントをきれいな紙で包みました
+        zh: 用漂亮的纸把礼物包起来了
+  - id: ja-vocab-n4-tazuneru-e8a8aa
+    type: vocab
+    level: N4
+    ja: 訪ねる
+    reading: たずねる
+    zh: 访问，拜访
+    pos: 他動2
+    examples:
+      - ja: 友だちの家を訪ねる
+        zh: 拜访朋友的家
+  - id: ja-vocab-n4-nakunaru
+    type: vocab
+    level: N4
+    ja: 亡くなる
+    reading: なくなる
+    zh: 亡故，去世
+    pos: 自動1
+    examples:
+      - ja: おととい、昔の友人が亡くなった
+        zh: 前天，一位老友过世了
+  - id: ja-vocab-n4-wasuremono
+    type: vocab
+    level: N4
+    ja: 忘れ物
+    reading: わすれもの
+    zh: 遗忘的东西，遗失品
+    pos: 名
+    examples:
+      - ja: 忘れ物はありませんか
+        zh: 有没有忘掉的东西？
+  - id: ja-vocab-n4-aji
+    type: vocab
+    level: N4
+    ja: 味
+    reading: あじ
+    zh: 味道；趣味
+    pos: 名
+    examples:
+      - ja: この料理は味が薄い
+        zh: 这道料理味道很淡
+  - id: ja-vocab-n4-nemui
+    type: vocab
+    level: N4
+    ja: 眠い
+    reading: ねむい
+    zh: 有睡意的，犯困的
+    pos: イ形
+    examples:
+      - ja: 春は眠い季節だ
+        zh: 春天是让人犯困的季节
+  - id: ja-vocab-n4-nemuru
+    type: vocab
+    level: N4
+    ja: 眠る
+    reading: ねむる
+    zh: 睡着，睡觉；长眠；闲置
+    pos: 自動1
+    examples:
+      - ja: 昨日は8時間眠りました
+        zh: 昨天睡了八小时
+  - id: ja-vocab-n4-nakunaru-e784a1
+    type: vocab
+    level: N4
+    ja: 無くなる
+    reading: なくなる
+    zh: 丢失；用完；消失
+    pos: 自動1
+    examples:
+      - ja: 財布が無くなる
+        zh: 遗失钱包
+  - id: ja-vocab-n4-muri
+    type: vocab
+    level: N4
+    ja: 無理
+    reading: むり
+    zh: 不合理；勉强，难以办到；强行
+    pos: 名・ナ形・自動3
+    examples:
+      - ja: 無理しないでください
+        zh: 请不要勉强
+  - id: ja-vocab-n4-modoru
+    type: vocab
+    level: N4
+    ja: 戻る
+    reading: もどる
+    zh: 回来，返回；恢复
+    pos: 自動1
+    examples:
+      - ja: ゆうべ遅く家に戻った
+        zh: 昨晚很晚才回的家
+  - id: ja-vocab-n4-yakusoku
+    type: vocab
+    level: N4
+    ja: 約束
+    reading: やくそく
+    zh: 约定；规则
+    pos: 名・他動3
+    examples:
+      - ja: 彼女とデートの約束をした
+        zh: 和她约好了约会
+  - id: ja-vocab-n4-yasashii
+    type: vocab
+    level: N4
+    ja: 優しい
+    reading: やさしい
+    zh: 温柔的，体贴的；优美的
+    pos: イ形
+    examples:
+      - ja: 彼はとても優しい人です
+        zh: 他是个非常温柔的人
+  - id: ja-vocab-n4-yotei
+    type: vocab
+    level: N4
+    ja: 予定
+    reading: よてい
+    zh: 预定，计划
+    pos: 名・他動3
+    examples:
+      - ja: 今日の予定を教えてください
+        zh: 请告诉我今天的安排
+  - id: ja-vocab-n4-yoyaku
+    type: vocab
+    level: N4
+    ja: 予約
+    reading: よやく
+    zh: 预约，预订
+    pos: 名・他動3
+    examples:
+      - ja: レストランを予約しました
+        zh: 预定了餐厅
+  - id: ja-vocab-n4-you
+    type: vocab
+    level: N4
+    ja: 用
+    reading: よう
+    zh: 事情；用途，……用
+    pos: 名・接尾
+    examples:
+      - ja: 用が済む
+        zh: 事情办完
+  - id: ja-vocab-n4-youi
+    type: vocab
+    level: N4
+    ja: 用意
+    reading: ようい
+    zh: 准备，预备
+    pos: 名・他動3
+    examples:
+      - ja: 用意、ドン
+        zh: 预备，跑！
+  - id: ja-vocab-n4-youji
+    type: vocab
+    level: N4
+    ja: 用事
+    reading: ようじ
+    zh: （必须做的）事，事情
+    pos: 名
+    examples:
+      - ja: 急に用事ができた
+        zh: 有急事
+  - id: ja-vocab-n4-riyou
+    type: vocab
+    level: N4
+    ja: 利用
+    reading: りよう
+    zh: 利用，使用
+    pos: 名・他動3
+    examples:
+      - ja: サービスを利用する
+        zh: 享用服务
+  - id: ja-vocab-n4-riyuu
+    type: vocab
+    level: N4
+    ja: 理由
+    reading: りゆう
+    zh: 理由；借口
+    pos: 名
+    examples:
+      - ja: 遅れた理由を教えてください
+        zh: 请告诉我迟到的理由
+  - id: ja-vocab-n4-ura
+    type: vocab
+    level: N4
+    ja: 裏
+    reading: うら
+    zh: 背面；内幕，背后
+    pos: 名
+    examples:
+      - ja: 会社の裏に公園があります
+        zh: 公司后面有公园
+  - id: ja-vocab-n4-rusu
+    type: vocab
+    level: N4
+    ja: 留守
+    reading: るす
+    zh: 不在家
+    pos: 名
+    examples:
+      - ja: 家を留守にする
+        zh: 不在家
+  - id: ja-vocab-n4-ryokan
+    type: vocab
+    level: N4
+    ja: 旅館
+    reading: りょかん
+    zh: 日式宾馆
+    pos: 名
+    examples:
+      - ja: 京都では旅館に泊まりました
+        zh: 在京都住了旅馆
+  - id: ja-vocab-n4-ryouhou
+    type: vocab
+    level: N4
+    ja: 両方
+    reading: りょうほう
+    zh: 两者，双方
+    pos: 名
+    examples:
+      - ja: チョコレートとケーキを両方ください
+        zh: 请给我巧克力和蛋糕
+  - id: ja-vocab-n4-chikara
+    type: vocab
+    level: N4
+    ja: 力
+    reading: ちから
+    zh: 力气；精力；能力；效力；权力
+    pos: 名
+    examples:
+      - ja: 力がある
+        zh: 有力量
+  - id: ja-vocab-n4-tatoeba
+    type: vocab
+    level: N4
+    ja: 例えば
+    reading: たとえば
+    zh: 例如，假设
+    pos: 副
+    examples:
+      - ja: 例えば、Ankiを使って日本語を学ぶことができます
+        zh: 比如说，可以用Anki学习日语
+  - id: ja-vocab-n4-rekishi
+    type: vocab
+    level: N4
+    ja: 歴史
+    reading: れきし
+    zh: 历史
+    pos: 名
+    examples:
+      - ja: 私は歴史に興味があります
+        zh: 我对历史很有兴趣
+  - id: ja-vocab-n4-renraku
+    type: vocab
+    level: N4
+    ja: 連絡
+    reading: れんらく
+    zh: 联系，联络
+    pos: 名・自他動3
+    examples:
+      - ja: 先生にメールで連絡をする
+        zh: 用电子邮件和老师联络
+  - id: ja-vocab-n4-ude
+    type: vocab
+    level: N4
+    ja: 腕
+    reading: うで
+    zh: 手臂；本领，技能
+    pos: 名
+    examples:
+      - ja: 腕を組む
+        zh: 抱臂
+  - id: ja-vocab-n4-e382a8e382b9e382
+    type: vocab
+    level: N4
+    ja: エスカレーター
+    reading: escalator
+    zh: 电动扶梯
+    pos: 名
+    examples:
+      - ja: エスカレーターに乗る
+        zh: 乘坐电动扶梯
+  - id: ja-vocab-n4-kaigan
+    type: vocab
+    level: N4
+    ja: 海岸
+    reading: かいがん
+    zh: 海岸，海边
+    pos: 名
+    examples:
+      - ja: 海岸を散歩しましょう
+        zh: 我们去海边散步吧
+  - id: ja-vocab-n4-yoru
+    type: vocab
+    level: N4
+    ja: 寄る
+    reading: よる
+    zh: 靠近；途中经过；聚集
+    pos: 自動1
+    examples:
+      - ja: もっとそばへお寄りください
+        zh: 请再靠近一些
+  - id: ja-vocab-n4-kyuukou
+    type: vocab
+    level: N4
+    ja: 急行
+    reading: きゅうこう
+    zh: 急赴，急忙赶去；快车
+    pos: 名・自動3
+    examples:
+      - ja: 現場に急行する
+        zh: 奔赴现场
+  - id: ja-vocab-n4-kyouiku
+    type: vocab
+    level: N4
+    ja: 教育
+    reading: きょういく
+    zh: 教育，教养
+    pos: 名・他動3
+    examples:
+      - ja: 私はアメリカで教育を受けた
+        zh: 我是在美国受的教育
+  - id: ja-vocab-n4-keshiki
+    type: vocab
+    level: N4
+    ja: 景色
+    reading: けしき
+    zh: 景色，风景
+    pos: 名
+    examples:
+      - ja: とてもいい景色だね
+        zh: 风景真不错啊！
+  - id: ja-vocab-n4-jiyuu
+    type: vocab
+    level: N4
+    ja: 自由
+    reading: じゆう
+    zh: 自由
+    pos: 名・ナ形
+    examples:
+      - ja: 言論の自由
+        zh: 言论自由
+  - id: ja-vocab-n4-ayamaru
+    type: vocab
+    level: N4
+    ja: 謝る
+    reading: あやまる
+    zh: 道歉，谢罪
+    pos: 自他動1
+    examples:
+      - ja: 頭を下げて謝る
+        zh: 低头认错
+  - id: ja-vocab-n4-uketsuke
+    type: vocab
+    level: N4
+    ja: 受付
+    reading: うけつけ
+    zh: 受理；传达室，问讯处
+    pos: 名
+    examples:
+      - ja: 受付は9時からです
+        zh: 受理时间从9点开始
+  - id: ja-vocab-n4-sawaru
+    type: vocab
+    level: N4
+    ja: 触る
+    reading: さわる
+    zh: 碰触，接触
+    pos: 自動1
+    examples:
+      - ja: 絵に触らないでください
+        zh: 请勿触摸画作
+  - id: ja-vocab-n4-mezurashii
+    type: vocab
+    level: N4
+    ja: 珍しい
+    reading: めずらしい
+    zh: 少见的，稀罕的
+    pos: イ形
+    examples:
+      - ja: 珍しい体験
+        zh: 难得的体验
+  - id: ja-vocab-n4-boueki
+    type: vocab
+    level: N4
+    ja: 貿易
+    reading: ぼうえき
+    zh: 贸易
+    pos: 名・自動3
+    examples:
+      - ja: 貿易会社
+        zh: 贸易公司
+  - id: ja-vocab-n4-shin
+    type: vocab
+    level: N4
+    ja: 心
+    reading: しん
+    zh: ……心
+    pos: 名・造
+    examples:
+      - ja: 好奇心
+        zh: 好奇心
+  - id: ja-vocab-n4-hakobu
+    type: vocab
+    level: N4
+    ja: 運ぶ
+    reading: はこぶ
+    zh: 搬运；来，去；进展
+    pos: 自他動1
+    examples:
+      - ja: いすを２階に運んでください
+        zh: 请把椅子搬到二楼
+  - id: ja-vocab-n4-tashika
+    type: vocab
+    level: N4
+    ja: 確か
+    reading: たしか
+    zh: 确实；好像
+    pos: ナ形・副
+    examples:
+      - ja: 確かに私がしました
+        zh: 确实是我做的
+  - id: ja-vocab-n4-yakunitatsu
+    type: vocab
+    level: N4
+    ja: 役に立つ
+    reading: やくにたつ
+    zh: 有用处，有帮助
+    pos: 成句
+    examples:
+      - ja: 私は人々の役に立ちたいと思っています
+        zh: 我想帮助人们

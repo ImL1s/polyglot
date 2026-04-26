@@ -1,0 +1,1254 @@
+# N2 语法点种子库
+# 来源：人工整理（参考 tanos.co.uk/jlpt/jlpt2/grammar/ 公开 N2 语法点列表）
+# 用户后续 review/扩充。覆盖最常考 ~120 项。
+concepts:
+  - id: ja-grammar-n2-koto-da
+    type: grammar
+    level: N2
+    ja: 〜ことだ
+    reading: ことだ
+    zh: 应该……、最好……（劝告/建议，强烈语气）
+    pos: 文末表現
+    examples:
+      - ja: 健康のためには、毎日運動することだ。
+        zh: 为了健康，最好每天运动。
+  - id: ja-grammar-n2-koto-ni-naru
+    type: grammar
+    level: N2
+    ja: 〜ことになる
+    reading: ことになる
+    zh: 决定（被动决定）……、（结果）变成……
+    pos: 文末表現
+    examples:
+      - ja: 来月、東京へ転勤することになりました。
+        zh: 下个月将调往东京。
+  - id: ja-grammar-n2-koto-ni-suru
+    type: grammar
+    level: N2
+    ja: 〜ことにする
+    reading: ことにする
+    zh: 决定（主观决定）……
+    pos: 文末表現
+    examples:
+      - ja: 毎朝走ることにした。
+        zh: 我决定每天早上跑步。
+  - id: ja-grammar-n2-koto-ka
+    type: grammar
+    level: N2
+    ja: 〜ことか
+    reading: ことか
+    zh: 多么……啊（感叹）
+    pos: 文末表現
+    examples:
+      - ja: あの時、どんなに嬉しかったことか。
+        zh: 那时候是多么高兴啊。
+  - id: ja-grammar-n2-koto-mo-nai
+    type: grammar
+    level: N2
+    ja: 〜こともない
+    reading: こともない
+    zh: 没必要……、用不着……
+    pos: 文末表現
+    examples:
+      - ja: そんなに心配することもないよ。
+        zh: 用不着那么担心。
+  - id: ja-grammar-n2-mono-da
+    type: grammar
+    level: N2
+    ja: 〜ものだ
+    reading: ものだ
+    zh: 本来就……、理应……（普遍真理 / 感慨）
+    pos: 文末表現
+    examples:
+      - ja: 子供は遊びたがるものだ。
+        zh: 小孩本来就爱玩。
+  - id: ja-grammar-n2-mono-ka
+    type: grammar
+    level: N2
+    ja: 〜ものか
+    reading: ものか
+    zh: 怎么会……（强烈否定）
+    pos: 文末表現
+    examples:
+      - ja: あいつに負けるものか。
+        zh: 我才不会输给他呢。
+  - id: ja-grammar-n2-mono-no
+    type: grammar
+    level: N2
+    ja: 〜ものの
+    reading: ものの
+    zh: 虽然……但是……
+    pos: 接続助詞
+    examples:
+      - ja: 約束したものの、行く気はない。
+        zh: 虽说约好了，但不想去。
+  - id: ja-grammar-n2-mono-nara
+    type: grammar
+    level: N2
+    ja: 〜ものなら
+    reading: ものなら
+    zh: 如果能……的话（多含期望/犹豫）
+    pos: 接続助詞
+    examples:
+      - ja: 帰れるものなら、すぐ国へ帰りたい。
+        zh: 要是能回去，真想立刻回国。
+  - id: ja-grammar-n2-mono-de-wa-nai
+    type: grammar
+    level: N2
+    ja: 〜ものではない
+    reading: ものではない
+    zh: 不应该……（劝告/常识）
+    pos: 文末表現
+    examples:
+      - ja: 食事中に大声を出すものではない。
+        zh: 用餐中不该大声喧哗。
+  - id: ja-grammar-n2-wake-da
+    type: grammar
+    level: N2
+    ja: 〜わけだ
+    reading: わけだ
+    zh: 难怪……、怪不得……（合乎情理的结论）
+    pos: 文末表現
+    examples:
+      - ja: 一年留学していたのか。日本語が上手なわけだ。
+        zh: 你留学过一年啊，难怪日语这么好。
+  - id: ja-grammar-n2-wake-ga-nai
+    type: grammar
+    level: N2
+    ja: 〜わけがない
+    reading: わけがない
+    zh: 不可能……（绝对否定）
+    pos: 文末表現
+    examples:
+      - ja: 彼が嘘をつくわけがない。
+        zh: 他不可能撒谎。
+  - id: ja-grammar-n2-wake-de-wa-nai
+    type: grammar
+    level: N2
+    ja: 〜わけではない
+    reading: わけではない
+    zh: 并不是……（部分否定）
+    pos: 文末表現
+    examples:
+      - ja: 嫌いなわけではないが、あまり食べたくない。
+        zh: 并不是讨厌，只是不太想吃。
+  - id: ja-grammar-n2-wake-ni-wa-ikanai
+    type: grammar
+    level: N2
+    ja: 〜わけにはいかない
+    reading: わけにはいかない
+    zh: 不能（不允许）……
+    pos: 文末表現
+    examples:
+      - ja: 病気だが、休むわけにはいかない。
+        zh: 虽然病了，但不能休息。
+  - id: ja-grammar-n2-bakari-de-naku
+    type: grammar
+    level: N2
+    ja: 〜ばかりでなく
+    reading: ばかりでなく
+    zh: 不仅……而且……
+    pos: 接続表現
+    examples:
+      - ja: 子供ばかりでなく大人も楽しめる。
+        zh: 不仅小孩，大人也能享受。
+  - id: ja-grammar-n2-bakari-ni
+    type: grammar
+    level: N2
+    ja: 〜ばかりに
+    reading: ばかりに
+    zh: 就是因为……（导致不好结果）
+    pos: 接続助詞
+    examples:
+      - ja: 油断したばかりに、試験に落ちた。
+        zh: 就因为疏忽大意，考试没考上。
+  - id: ja-grammar-n2-bakari-ka
+    type: grammar
+    level: N2
+    ja: 〜ばかりか
+    reading: ばかりか
+    zh: 不仅……连……都……
+    pos: 接続表現
+    examples:
+      - ja: 雨ばかりか、風まで強くなってきた。
+        zh: 不仅下雨，连风都大起来了。
+  - id: ja-grammar-n2-dake-de-naku
+    type: grammar
+    level: N2
+    ja: 〜だけでなく
+    reading: だけでなく
+    zh: 不仅……还……
+    pos: 接続表現
+    examples:
+      - ja: 英語だけでなく、フランス語も話せる。
+        zh: 不仅会英语，还会法语。
+  - id: ja-grammar-n2-dake-ni
+    type: grammar
+    level: N2
+    ja: 〜だけに
+    reading: だけに
+    zh: 正因为……所以……
+    pos: 接続表現
+    examples:
+      - ja: ベテランだけに、判断が早い。
+        zh: 正因为是老手，判断很快。
+  - id: ja-grammar-n2-dake-atte
+    type: grammar
+    level: N2
+    ja: 〜だけあって
+    reading: だけあって
+    zh: 不愧是……（与之相称）
+    pos: 接続表現
+    examples:
+      - ja: 元プロだけあって、フォームが綺麗だ。
+        zh: 不愧是前职业选手，姿势很标准。
+  - id: ja-grammar-n2-tabi-ni
+    type: grammar
+    level: N2
+    ja: 〜たびに
+    reading: たびに
+    zh: 每次……
+    pos: 接続表現
+    examples:
+      - ja: 故郷に帰るたびに、母の料理が食べたくなる。
+        zh: 每次回老家，都想吃妈妈做的菜。
+  - id: ja-grammar-n2-totan-ni
+    type: grammar
+    level: N2
+    ja: 〜とたん（に）
+    reading: とたんに
+    zh: 一……就……（突然发生）
+    pos: 接続表現
+    examples:
+      - ja: ドアを開けたとたん、犬が飛び出してきた。
+        zh: 一开门，狗就跑了出来。
+  - id: ja-grammar-n2-uchi-ni
+    type: grammar
+    level: N2
+    ja: 〜うちに
+    reading: うちに
+    zh: 趁……的时候……
+    pos: 接続表現
+    examples:
+      - ja: 若いうちに、いろんな経験をしたほうがいい。
+        zh: 趁年轻多积累一些经验比较好。
+  - id: ja-grammar-n2-nai-uchi-ni
+    type: grammar
+    level: N2
+    ja: 〜ないうちに
+    reading: ないうちに
+    zh: 趁还没……的时候
+    pos: 接続表現
+    examples:
+      - ja: 暗くならないうちに帰ろう。
+        zh: 趁天还没黑回家吧。
+  - id: ja-grammar-n2-jou
+    type: grammar
+    level: N2
+    ja: 〜上（じょう）
+    reading: じょう
+    zh: 在……方面
+    pos: 接尾
+    examples:
+      - ja: 法律上の問題はない。
+        zh: 法律上没有问题。
+  - id: ja-grammar-n2-saichuu
+    type: grammar
+    level: N2
+    ja: 〜最中（に）
+    reading: さいちゅうに
+    zh: 正在……的时候
+    pos: 名詞句
+    examples:
+      - ja: 会議の最中に電話が鳴った。
+        zh: 正在开会时电话响了。
+  - id: ja-grammar-n2-kagiri
+    type: grammar
+    level: N2
+    ja: 〜限り
+    reading: かぎり
+    zh: 只要……、在……范围内
+    pos: 接続表現
+    examples:
+      - ja: 私が知っている限り、彼は誠実だ。
+        zh: 据我所知，他很诚实。
+  - id: ja-grammar-n2-nai-kagiri
+    type: grammar
+    level: N2
+    ja: 〜ない限り
+    reading: ないかぎり
+    zh: 只要不……
+    pos: 接続表現
+    examples:
+      - ja: 雨が降らない限り、試合は続行する。
+        zh: 只要不下雨，比赛就继续。
+  - id: ja-grammar-n2-ni-kagitte
+    type: grammar
+    level: N2
+    ja: 〜に限って
+    reading: にかぎって
+    zh: 偏偏……（往往伴随意外/不便）
+    pos: 接続表現
+    examples:
+      - ja: 急いでいる時に限って電車が遅れる。
+        zh: 偏偏赶时间的时候电车就晚点。
+  - id: ja-grammar-n2-ni-totte
+    type: grammar
+    level: N2
+    ja: 〜にとって
+    reading: にとって
+    zh: 对……来说
+    pos: 接続表現
+    examples:
+      - ja: 私にとって、家族が一番大切だ。
+        zh: 对我来说，家人最重要。
+  - id: ja-grammar-n2-ni-tsuite
+    type: grammar
+    level: N2
+    ja: 〜について
+    reading: について
+    zh: 关于……
+    pos: 接続表現
+    examples:
+      - ja: この件について話し合おう。
+        zh: 我们就这件事谈一下吧。
+  - id: ja-grammar-n2-ni-kanshite
+    type: grammar
+    level: N2
+    ja: 〜に関して
+    reading: にかんして
+    zh: 关于……（书面 / 正式）
+    pos: 接続表現
+    examples:
+      - ja: 環境問題に関して講演する。
+        zh: 就环境问题发表演讲。
+  - id: ja-grammar-n2-ni-yotte
+    type: grammar
+    level: N2
+    ja: 〜によって
+    reading: によって
+    zh: 由……、根据……、因……
+    pos: 接続表現
+    examples:
+      - ja: 結果は人によって違う。
+        zh: 结果因人而异。
+  - id: ja-grammar-n2-ni-yoreba
+    type: grammar
+    level: N2
+    ja: 〜によれば
+    reading: によれば
+    zh: 据……所说
+    pos: 接続表現
+    examples:
+      - ja: 天気予報によれば、明日は晴れるそうだ。
+        zh: 据天气预报，明天会晴天。
+  - id: ja-grammar-n2-ni-tomonatte
+    type: grammar
+    level: N2
+    ja: 〜に伴って
+    reading: にともなって
+    zh: 随着……
+    pos: 接続表現
+    examples:
+      - ja: 経済成長に伴って、生活水準も向上した。
+        zh: 随着经济增长，生活水平也提高了。
+  - id: ja-grammar-n2-ni-shitagatte
+    type: grammar
+    level: N2
+    ja: 〜に従って
+    reading: にしたがって
+    zh: 随着……、按照……
+    pos: 接続表現
+    examples:
+      - ja: 年を取るに従って、体力が落ちた。
+        zh: 随着年龄增长，体力下降了。
+  - id: ja-grammar-n2-ni-tsurete
+    type: grammar
+    level: N2
+    ja: 〜につれて
+    reading: につれて
+    zh: 随着……（自然的伴随变化）
+    pos: 接続表現
+    examples:
+      - ja: 高度が上がるにつれて、気温が下がる。
+        zh: 随着海拔升高，气温下降。
+  - id: ja-grammar-n2-ni-taishite
+    type: grammar
+    level: N2
+    ja: 〜に対して
+    reading: にたいして
+    zh: 对于……（对象 / 对照）
+    pos: 接続表現
+    examples:
+      - ja: 子供に対して優しい先生だ。
+        zh: 是个对孩子很温柔的老师。
+  - id: ja-grammar-n2-ni-hanshite
+    type: grammar
+    level: N2
+    ja: 〜に反して
+    reading: にはんして
+    zh: 与……相反
+    pos: 接続表現
+    examples:
+      - ja: 予想に反して、彼が勝った。
+        zh: 出乎预料，他赢了。
+  - id: ja-grammar-n2-ni-kuwaete
+    type: grammar
+    level: N2
+    ja: 〜に加えて
+    reading: にくわえて
+    zh: 加上……、再加上……
+    pos: 接続表現
+    examples:
+      - ja: 雨に加えて、風も強くなった。
+        zh: 不仅下雨，风也大起来了。
+  - id: ja-grammar-n2-ni-motozuite
+    type: grammar
+    level: N2
+    ja: 〜に基づいて
+    reading: にもとづいて
+    zh: 基于……
+    pos: 接続表現
+    examples:
+      - ja: 事実に基づいて報告する。
+        zh: 基于事实进行报告。
+  - id: ja-grammar-n2-ni-okeru
+    type: grammar
+    level: N2
+    ja: 〜における
+    reading: における
+    zh: 在……（场所/范围）的（书面）
+    pos: 接続表現
+    examples:
+      - ja: 現代社会における問題。
+        zh: 现代社会中的问题。
+  - id: ja-grammar-n2-ni-oite
+    type: grammar
+    level: N2
+    ja: 〜において
+    reading: において
+    zh: 在……、于……（书面）
+    pos: 接続表現
+    examples:
+      - ja: 大学において講義が行われる。
+        zh: 讲座在大学举行。
+  - id: ja-grammar-n2-ni-saishite
+    type: grammar
+    level: N2
+    ja: 〜に際して
+    reading: にさいして
+    zh: 在……之际
+    pos: 接続表現
+    examples:
+      - ja: 卒業に際して、一言申し上げる。
+        zh: 在毕业之际，谨表数言。
+  - id: ja-grammar-n2-ni-atatte
+    type: grammar
+    level: N2
+    ja: 〜にあたって
+    reading: にあたって
+    zh: 在（重要场合）……之际
+    pos: 接続表現
+    examples:
+      - ja: 開会にあたって、皆様にご挨拶申し上げます。
+        zh: 在开幕之际，向各位致辞。
+  - id: ja-grammar-n2-ni-saki-datte
+    type: grammar
+    level: N2
+    ja: 〜に先立って
+    reading: にさきだって
+    zh: 在……之前（先于）
+    pos: 接続表現
+    examples:
+      - ja: 試合に先立って、選手紹介が行われた。
+        zh: 比赛之前进行了选手介绍。
+  - id: ja-grammar-n2-ni-tsuki
+    type: grammar
+    level: N2
+    ja: 〜につき
+    reading: につき
+    zh: 因为……（书面）
+    pos: 接続表現
+    examples:
+      - ja: 工事中につき、ご迷惑をおかけします。
+        zh: 因施工中，给您带来不便。
+  - id: ja-grammar-n2-no-moto-de
+    type: grammar
+    level: N2
+    ja: 〜のもとで
+    reading: のもとで
+    zh: 在……之下
+    pos: 接続表現
+    examples:
+      - ja: 名医のもとで治療を受ける。
+        zh: 在名医的治疗下接受治疗。
+  - id: ja-grammar-n2-omote
+    type: grammar
+    level: N2
+    ja: 〜抜きで
+    reading: ぬきで
+    zh: 没有……、撇开……
+    pos: 接続表現
+    examples:
+      - ja: 冗談抜きで言うと、危ない。
+        zh: 撇开玩笑不说，很危险。
+  - id: ja-grammar-n2-nuki-ni-shite
+    type: grammar
+    level: N2
+    ja: 〜抜きにして
+    reading: ぬきにして
+    zh: 撇开……不谈
+    pos: 接続表現
+    examples:
+      - ja: 給料の話は抜きにして、夢を語ろう。
+        zh: 工资的事先放一边，谈谈梦想吧。
+  - id: ja-grammar-n2-omoidasenai
+    type: grammar
+    level: N2
+    ja: 〜つつ
+    reading: つつ
+    zh: 一边……一边……（书面）
+    pos: 接続表現
+    examples:
+      - ja: 音楽を聴きつつ勉強する。
+        zh: 一边听音乐一边学习。
+  - id: ja-grammar-n2-tsutsu-aru
+    type: grammar
+    level: N2
+    ja: 〜つつある
+    reading: つつある
+    zh: 正在……（持续中）
+    pos: 文末表現
+    examples:
+      - ja: 経済は回復しつつある。
+        zh: 经济正在恢复。
+  - id: ja-grammar-n2-tsutsumo
+    type: grammar
+    level: N2
+    ja: 〜つつも
+    reading: つつも
+    zh: 虽然……但是……
+    pos: 接続表現
+    examples:
+      - ja: 悪いと知りつつもやってしまった。
+        zh: 明知不好还是做了。
+  - id: ja-grammar-n2-nagara-mo
+    type: grammar
+    level: N2
+    ja: 〜ながらも
+    reading: ながらも
+    zh: 虽然……但是……
+    pos: 接続表現
+    examples:
+      - ja: 子供ながらもしっかりしている。
+        zh: 虽然还是孩子，但很可靠。
+  - id: ja-grammar-n2-yara-yara
+    type: grammar
+    level: N2
+    ja: 〜やら〜やら
+    reading: やらやら
+    zh: 又是……又是……
+    pos: 並立助詞
+    examples:
+      - ja: 涙やら笑顔やらで複雑な気分だ。
+        zh: 又哭又笑，心情复杂。
+  - id: ja-grammar-n2-toka-toka
+    type: grammar
+    level: N2
+    ja: 〜とか〜とか
+    reading: とかとか
+    zh: ……或者……（举例）
+    pos: 並立助詞
+    examples:
+      - ja: ラーメンとかうどんとか、麺類が好きだ。
+        zh: 拉面也好乌冬也好，喜欢面食。
+  - id: ja-grammar-n2-dano-dano
+    type: grammar
+    level: N2
+    ja: 〜だの〜だの
+    reading: だのだの
+    zh: ……啦……啦（含轻微负面）
+    pos: 並立助詞
+    examples:
+      - ja: 高いだのまずいだの、文句ばかり言う。
+        zh: 又嫌贵又嫌难吃，光抱怨。
+  - id: ja-grammar-n2-tomo
+    type: grammar
+    level: N2
+    ja: 〜とも
+    reading: とも
+    zh: 即使……也……、当然
+    pos: 接続表現
+    examples:
+      - ja: 何があろうとも、諦めない。
+        zh: 不管发生什么都不放弃。
+  - id: ja-grammar-n2-temo-dou-shiyou-mo-nai
+    type: grammar
+    level: N2
+    ja: 〜てもどうしようもない
+    reading: てもどうしようもない
+    zh: 即使……也无济于事
+    pos: 文末表現
+    examples:
+      - ja: 今さら後悔してもどうしようもない。
+        zh: 事到如今后悔也没用。
+  - id: ja-grammar-n2-zaru-o-enai
+    type: grammar
+    level: N2
+    ja: 〜ざるを得ない
+    reading: ざるをえない
+    zh: 不得不……
+    pos: 文末表現
+    examples:
+      - ja: 規則だから、従わざるを得ない。
+        zh: 因为是规定，不得不遵守。
+  - id: ja-grammar-n2-nai-wake-ni-wa-ikanai
+    type: grammar
+    level: N2
+    ja: 〜ないわけにはいかない
+    reading: ないわけにはいかない
+    zh: 不能不……
+    pos: 文末表現
+    examples:
+      - ja: 上司に頼まれたら、引き受けないわけにはいかない。
+        zh: 上司拜托了，不能不接受。
+  - id: ja-grammar-n2-zu-ni-wa-irarenai
+    type: grammar
+    level: N2
+    ja: 〜ずにはいられない
+    reading: ずにはいられない
+    zh: 忍不住……
+    pos: 文末表現
+    examples:
+      - ja: 美しい景色を見て、感動せずにはいられない。
+        zh: 看到美景，忍不住感动。
+  - id: ja-grammar-n2-nai-de-wa-irarenai
+    type: grammar
+    level: N2
+    ja: 〜ないではいられない
+    reading: ないではいられない
+    zh: 忍不住……
+    pos: 文末表現
+    examples:
+      - ja: 笑わないではいられなかった。
+        zh: 忍不住笑了出来。
+  - id: ja-grammar-n2-nakute-wa-naranai
+    type: grammar
+    level: N2
+    ja: 〜なくてはならない
+    reading: なくてはならない
+    zh: 必须……
+    pos: 文末表現
+    examples:
+      - ja: 明日までに提出しなくてはならない。
+        zh: 必须明天之前提交。
+  - id: ja-grammar-n2-beki-da
+    type: grammar
+    level: N2
+    ja: 〜べきだ
+    reading: べきだ
+    zh: 应该……
+    pos: 文末表現
+    examples:
+      - ja: 約束は守るべきだ。
+        zh: 约定应该遵守。
+  - id: ja-grammar-n2-bekki-de-wa-nai
+    type: grammar
+    level: N2
+    ja: 〜べきではない
+    reading: べきではない
+    zh: 不应该……
+    pos: 文末表現
+    examples:
+      - ja: 嘘をつくべきではない。
+        zh: 不应该撒谎。
+  - id: ja-grammar-n2-koto-naku
+    type: grammar
+    level: N2
+    ja: 〜ことなく
+    reading: ことなく
+    zh: 不……地、毫无……地（书面）
+    pos: 接続表現
+    examples:
+      - ja: 休むことなく走り続けた。
+        zh: 不停歇地一路跑下去。
+  - id: ja-grammar-n2-mama
+    type: grammar
+    level: N2
+    ja: 〜まま
+    reading: まま
+    zh: 保持……的状态
+    pos: 接続表現
+    examples:
+      - ja: 靴を履いたまま部屋に入った。
+        zh: 穿着鞋就进了房间。
+  - id: ja-grammar-n2-kke
+    type: grammar
+    level: N2
+    ja: 〜っけ
+    reading: っけ
+    zh: 来着？（回想确认）
+    pos: 終助詞
+    examples:
+      - ja: 君の名前、何だっけ。
+        zh: 你叫什么名字来着？
+  - id: ja-grammar-n2-tte
+    type: grammar
+    level: N2
+    ja: 〜って
+    reading: って
+    zh: 听说……、所谓……（口语）
+    pos: 引用助詞
+    examples:
+      - ja: 田中さんは引っ越したって。
+        zh: 听说田中搬家了。
+  - id: ja-grammar-n2-toiu
+    type: grammar
+    level: N2
+    ja: 〜という
+    reading: という
+    zh: 叫做……、所谓……
+    pos: 引用表現
+    examples:
+      - ja: 富士山という山がある。
+        zh: 有座山叫富士山。
+  - id: ja-grammar-n2-toiunoha-toiu-koto-da
+    type: grammar
+    level: N2
+    ja: 〜というのは〜ということだ
+    reading: というのはということだ
+    zh: 所谓……就是……（解释）
+    pos: 説明表現
+    examples:
+      - ja: 卒業というのは、新しい出発ということだ。
+        zh: 所谓毕业，就是新的开始。
+  - id: ja-grammar-n2-toiu-koto-wa
+    type: grammar
+    level: N2
+    ja: 〜ということは
+    reading: ということは
+    zh: 也就是说……
+    pos: 接続表現
+    examples:
+      - ja: 雨が降っているということは、試合は中止だ。
+        zh: 下雨了，也就是说比赛取消。
+  - id: ja-grammar-n2-toiu-yori
+    type: grammar
+    level: N2
+    ja: 〜というより
+    reading: というより
+    zh: 与其说……不如说……
+    pos: 接続表現
+    examples:
+      - ja: 暑いというより、蒸し暑い。
+        zh: 与其说热，不如说闷热。
+  - id: ja-grammar-n2-toha-kagiranai
+    type: grammar
+    level: N2
+    ja: 〜とは限らない
+    reading: とはかぎらない
+    zh: 不一定……
+    pos: 文末表現
+    examples:
+      - ja: 高いものが必ずしも良いとは限らない。
+        zh: 贵的不一定就好。
+  - id: ja-grammar-n2-ni-chigainai
+    type: grammar
+    level: N2
+    ja: 〜に違いない
+    reading: にちがいない
+    zh: 一定是……（确信推断）
+    pos: 文末表現
+    examples:
+      - ja: あの人は犯人に違いない。
+        zh: 那个人一定是犯人。
+  - id: ja-grammar-n2-osoraku
+    type: grammar
+    level: N2
+    ja: 〜恐れがある
+    reading: おそれがある
+    zh: 有……的危险/可能（消极）
+    pos: 文末表現
+    examples:
+      - ja: 台風が上陸する恐れがある。
+        zh: 台风有可能登陆。
+  - id: ja-grammar-n2-okashii
+    type: grammar
+    level: N2
+    ja: 〜かねない
+    reading: かねない
+    zh: 有可能……（消极）
+    pos: 文末表現
+    examples:
+      - ja: そんなことを言ったら、誤解されかねない。
+        zh: 说那种话有可能被误解。
+  - id: ja-grammar-n2-kaneru
+    type: grammar
+    level: N2
+    ja: 〜かねる
+    reading: かねる
+    zh: 难以……、不能……（委婉）
+    pos: 文末表現
+    examples:
+      - ja: その質問にはお答えしかねます。
+        zh: 那个问题恕难回答。
+  - id: ja-grammar-n2-gachi
+    type: grammar
+    level: N2
+    ja: 〜がち
+    reading: がち
+    zh: 容易……、往往……
+    pos: 接尾
+    examples:
+      - ja: 冬は風邪をひきがちだ。
+        zh: 冬天容易感冒。
+  - id: ja-grammar-n2-gimi
+    type: grammar
+    level: N2
+    ja: 〜気味
+    reading: ぎみ
+    zh: 有点……的样子
+    pos: 接尾
+    examples:
+      - ja: 風邪気味で頭が重い。
+        zh: 有点感冒，头沉沉的。
+  - id: ja-grammar-n2-mitai-da
+    type: grammar
+    level: N2
+    ja: 〜みたいだ
+    reading: みたいだ
+    zh: 好像……（口语）
+    pos: 文末表現
+    examples:
+      - ja: 雨が降っているみたいだ。
+        zh: 好像在下雨。
+  - id: ja-grammar-n2-rashii
+    type: grammar
+    level: N2
+    ja: 〜らしい
+    reading: らしい
+    zh: 像……、有……特征
+    pos: 接尾
+    examples:
+      - ja: 春らしい暖かい日だ。
+        zh: 是个像春天的暖和日子。
+  - id: ja-grammar-n2-ppoi
+    type: grammar
+    level: N2
+    ja: 〜っぽい
+    reading: っぽい
+    zh: 容易……、有……倾向
+    pos: 接尾
+    examples:
+      - ja: 子供っぽい言い方だ。
+        zh: 这种说法很孩子气。
+  - id: ja-grammar-n2-ki-ga-suru
+    type: grammar
+    level: N2
+    ja: 〜気がする
+    reading: きがする
+    zh: 觉得……、有……感觉
+    pos: 文末表現
+    examples:
+      - ja: 何か忘れている気がする。
+        zh: 总觉得忘了什么。
+  - id: ja-grammar-n2-fuu-ni
+    type: grammar
+    level: N2
+    ja: 〜ふうに
+    reading: ふうに
+    zh: 像……那样
+    pos: 接続表現
+    examples:
+      - ja: そんなふうに考えてはいけない。
+        zh: 不能那样想。
+  - id: ja-grammar-n2-omoware-no
+    type: grammar
+    level: N2
+    ja: 〜と思われる
+    reading: とおもわれる
+    zh: 被认为……（书面）
+    pos: 文末表現
+    examples:
+      - ja: 影響は大きいと思われる。
+        zh: 被认为影响很大。
+  - id: ja-grammar-n2-mae-ni
+    type: grammar
+    level: N2
+    ja: 〜前に
+    reading: まえに
+    zh: 在……之前
+    pos: 接続表現
+    examples:
+      - ja: 寝る前に歯を磨く。
+        zh: 睡前刷牙。
+  - id: ja-grammar-n2-ato-de
+    type: grammar
+    level: N2
+    ja: 〜後で
+    reading: あとで
+    zh: 在……之后
+    pos: 接続表現
+    examples:
+      - ja: 食事の後でコーヒーを飲む。
+        zh: 饭后喝咖啡。
+  - id: ja-grammar-n2-tara-saigo
+    type: grammar
+    level: N2
+    ja: 〜たら最後
+    reading: たらさいご
+    zh: 一旦……就……（不可挽回）
+    pos: 文末表現
+    examples:
+      - ja: 彼が怒ったら最後、誰も止められない。
+        zh: 他一发火，谁都止不住。
+  - id: ja-grammar-n2-shidai
+    type: grammar
+    level: N2
+    ja: 〜次第
+    reading: しだい
+    zh: ……之后立刻、视……而定
+    pos: 接続表現
+    examples:
+      - ja: 結果が分かり次第、お知らせします。
+        zh: 结果一出来就通知您。
+  - id: ja-grammar-n2-shidai-de
+    type: grammar
+    level: N2
+    ja: 〜次第で
+    reading: しだいで
+    zh: 取决于……
+    pos: 接続表現
+    examples:
+      - ja: 努力次第で結果は変わる。
+        zh: 结果取决于努力程度。
+  - id: ja-grammar-n2-uede
+    type: grammar
+    level: N2
+    ja: 〜上で
+    reading: うえで
+    zh: 在……之后
+    pos: 接続表現
+    examples:
+      - ja: よく考えた上で決めてください。
+        zh: 请仔细考虑后再决定。
+  - id: ja-grammar-n2-uewa
+    type: grammar
+    level: N2
+    ja: 〜上は
+    reading: うえは
+    zh: 既然……（决意/责任）
+    pos: 接続表現
+    examples:
+      - ja: 引き受けた上は、最後までやる。
+        zh: 既然接下了，就要做到最后。
+  - id: ja-grammar-n2-ijou-wa
+    type: grammar
+    level: N2
+    ja: 〜以上は
+    reading: いじょうは
+    zh: 既然……（既然如此）
+    pos: 接続表現
+    examples:
+      - ja: 約束した以上は、守るべきだ。
+        zh: 既然约定了，就该遵守。
+  - id: ja-grammar-n2-kara-ni-wa
+    type: grammar
+    level: N2
+    ja: 〜からには
+    reading: からには
+    zh: 既然……就……
+    pos: 接続表現
+    examples:
+      - ja: 日本に来たからには、文化を体験したい。
+        zh: 既然来了日本，就想体验文化。
+  - id: ja-grammar-n2-totte-mo
+    type: grammar
+    level: N2
+    ja: 〜にしても
+    reading: にしても
+    zh: 即使……也……、就算……
+    pos: 接続表現
+    examples:
+      - ja: 忙しいにしても、連絡くらいはできるはずだ。
+        zh: 就算再忙，至少也能联系一下吧。
+  - id: ja-grammar-n2-ni-shitemo-ni-shitemo
+    type: grammar
+    level: N2
+    ja: 〜にしても〜にしても
+    reading: にしてもにしても
+    zh: 不管……还是……
+    pos: 接続表現
+    examples:
+      - ja: 行くにしても行かないにしても、早く決めよう。
+        zh: 去也好不去也好，早点决定。
+  - id: ja-grammar-n2-ni-shite-wa
+    type: grammar
+    level: N2
+    ja: 〜にしては
+    reading: にしては
+    zh: 就……来说（出乎意料）
+    pos: 接続表現
+    examples:
+      - ja: 子供にしては、難しい言葉を使う。
+        zh: 作为小孩，用词挺难。
+  - id: ja-grammar-n2-ni-shite
+    type: grammar
+    level: N2
+    ja: 〜にして
+    reading: にして
+    zh: 在……（强调时间/状态）
+    pos: 接続表現
+    examples:
+      - ja: 80歳にしてマラソンに挑戦した。
+        zh: 80 岁了还挑战马拉松。
+  - id: ja-grammar-n2-ni-tomonai
+    type: grammar
+    level: N2
+    ja: 〜にともない
+    reading: にともない
+    zh: 伴随……（书面）
+    pos: 接続表現
+    examples:
+      - ja: 人口増加にともない、住宅問題が深刻化した。
+        zh: 随着人口增加，住房问题日益严重。
+  - id: ja-grammar-n2-no-kawari-ni
+    type: grammar
+    level: N2
+    ja: 〜の代わりに
+    reading: のかわりに
+    zh: 代替……
+    pos: 接続表現
+    examples:
+      - ja: 砂糖の代わりにハチミツを使う。
+        zh: 用蜂蜜代替糖。
+  - id: ja-grammar-n2-hanmen
+    type: grammar
+    level: N2
+    ja: 〜反面
+    reading: はんめん
+    zh: 一方面……另一方面……
+    pos: 接続表現
+    examples:
+      - ja: 仕事は楽しい反面、ストレスも多い。
+        zh: 工作有意思，但压力也大。
+  - id: ja-grammar-n2-ippou
+    type: grammar
+    level: N2
+    ja: 〜一方
+    reading: いっぽう
+    zh: 另一方面……、越来越……
+    pos: 接続表現
+    examples:
+      - ja: 物価は上がる一方だ。
+        zh: 物价不断上涨。
+  - id: ja-grammar-n2-toiu-ippou-de
+    type: grammar
+    level: N2
+    ja: 〜一方で
+    reading: いっぽうで
+    zh: 一方面……另一方面……
+    pos: 接続表現
+    examples:
+      - ja: 厳しい一方で、優しい一面もある。
+        zh: 一方面严格，另一方面也很温柔。
+  - id: ja-grammar-n2-kara-mite
+    type: grammar
+    level: N2
+    ja: 〜から見ると
+    reading: からみると
+    zh: 从……看来
+    pos: 接続表現
+    examples:
+      - ja: 結果から見ると、成功と言える。
+        zh: 从结果看，可以说成功了。
+  - id: ja-grammar-n2-kara-suruto
+    type: grammar
+    level: N2
+    ja: 〜からすると
+    reading: からすると
+    zh: 从……来判断
+    pos: 接続表現
+    examples:
+      - ja: 表情からすると、不満そうだ。
+        zh: 从表情看，似乎不满。
+  - id: ja-grammar-n2-kara-itte
+    type: grammar
+    level: N2
+    ja: 〜から言って
+    reading: からいって
+    zh: 从……来说
+    pos: 接続表現
+    examples:
+      - ja: 経験から言って、難しいだろう。
+        zh: 从经验来说，应该很难。
+  - id: ja-grammar-n2-no-katawara
+    type: grammar
+    level: N2
+    ja: 〜のかたわら
+    reading: のかたわら
+    zh: 一边……一边（兼职/兼顾）
+    pos: 接続表現
+    examples:
+      - ja: 仕事のかたわら、小説を書いている。
+        zh: 在工作之余写小说。
+  - id: ja-grammar-n2-keredomo
+    type: grammar
+    level: N2
+    ja: 〜けれども
+    reading: けれども
+    zh: 虽然……但是……
+    pos: 接続表現
+    examples:
+      - ja: 高いけれども、買う価値はある。
+        zh: 虽然贵，但值得买。
+  - id: ja-grammar-n2-tokoro-ga
+    type: grammar
+    level: N2
+    ja: 〜ところが
+    reading: ところが
+    zh: 然而……（出乎意料）
+    pos: 接続表現
+    examples:
+      - ja: 簡単だと思った。ところが、思ったより難しかった。
+        zh: 本以为简单，没想到比想象中难。
+  - id: ja-grammar-n2-tokoro-de
+    type: grammar
+    level: N2
+    ja: 〜ところで
+    reading: ところで
+    zh: 即使……也……（消极结果）
+    pos: 接続表現
+    examples:
+      - ja: 今さら謝ったところで、もう遅い。
+        zh: 事到如今再道歉也晚了。
+  - id: ja-grammar-n2-tokoro-wo
+    type: grammar
+    level: N2
+    ja: 〜ところを
+    reading: ところを
+    zh: 在……的时候（多伴随感谢/打扰）
+    pos: 接続表現
+    examples:
+      - ja: お忙しいところをありがとうございます。
+        zh: 百忙之中感谢您。
+  - id: ja-grammar-n2-yotei-da
+    type: grammar
+    level: N2
+    ja: 〜予定だ
+    reading: よていだ
+    zh: 预计……
+    pos: 文末表現
+    examples:
+      - ja: 来週、出張する予定だ。
+        zh: 下周预计出差。
+  - id: ja-grammar-n2-tsumori-da
+    type: grammar
+    level: N2
+    ja: 〜つもりだ
+    reading: つもりだ
+    zh: 打算……
+    pos: 文末表現
+    examples:
+      - ja: 今年は引っ越すつもりだ。
+        zh: 今年打算搬家。
+  - id: ja-grammar-n2-hazu-da
+    type: grammar
+    level: N2
+    ja: 〜はずだ
+    reading: はずだ
+    zh: 应该……（合理预期）
+    pos: 文末表現
+    examples:
+      - ja: 田中さんは今日来るはずだ。
+        zh: 田中今天应该会来。
+  - id: ja-grammar-n2-hazu-ga-nai
+    type: grammar
+    level: N2
+    ja: 〜はずがない
+    reading: はずがない
+    zh: 不可能……
+    pos: 文末表現
+    examples:
+      - ja: 彼が約束を忘れるはずがない。
+        zh: 他不可能忘记约定。
+  - id: ja-grammar-n2-hodo
+    type: grammar
+    level: N2
+    ja: 〜ほど
+    reading: ほど
+    zh: 越……越……、达到……程度
+    pos: 接続表現
+    examples:
+      - ja: 寝れば寝るほど眠くなる。
+        zh: 越睡越困。
+  - id: ja-grammar-n2-hodo-no-koto-de-wa-nai
+    type: grammar
+    level: N2
+    ja: 〜ほどのことではない
+    reading: ほどのことではない
+    zh: 不至于……、用不着……
+    pos: 文末表現
+    examples:
+      - ja: 大騒ぎするほどのことではない。
+        zh: 用不着大惊小怪。
+  - id: ja-grammar-n2-kurai
+    type: grammar
+    level: N2
+    ja: 〜くらい / 〜ぐらい
+    reading: くらい
+    zh: ……程度、像……一样
+    pos: 接続表現
+    examples:
+      - ja: 死ぬくらい疲れた。
+        zh: 累得要死。
+  - id: ja-grammar-n2-yara
+    type: grammar
+    level: N2
+    ja: 〜やら
+    reading: やら
+    zh: 不知是……（不确定）
+    pos: 終助詞
+    examples:
+      - ja: いつ着くやら分からない。
+        zh: 不知道什么时候到。
+  - id: ja-grammar-n2-doushiyou-mo-nai
+    type: grammar
+    level: N2
+    ja: 〜どうしようもない
+    reading: どうしようもない
+    zh: 没办法、无可奈何
+    pos: 文末表現
+    examples:
+      - ja: もうどうしようもない。
+        zh: 已经没办法了。
+  - id: ja-grammar-n2-mo-douzen-da
+    type: grammar
+    level: N2
+    ja: 〜も同然だ
+    reading: もどうぜんだ
+    zh: 等于……、和……一样
+    pos: 文末表現
+    examples:
+      - ja: あと一歩で完成も同然だ。
+        zh: 还差一步就等于完成了。
+  - id: ja-grammar-n2-koto-kara
+    type: grammar
+    level: N2
+    ja: 〜ことから
+    reading: ことから
+    zh: 因为……（理由）
+    pos: 接続表現
+    examples:
+      - ja: 桜が咲いていることから、春が来たと分かる。
+        zh: 樱花开了，可见春天来了。
+  - id: ja-grammar-n2-tame-ni
+    type: grammar
+    level: N2
+    ja: 〜ために
+    reading: ために
+    zh: 为了……、因为……
+    pos: 接続表現
+    examples:
+      - ja: 健康のために運動する。
+        zh: 为了健康去运动。
