@@ -23,7 +23,8 @@ CLI 是核心引擎，你只是渲染 + 评分层。**不要自己生成题目**
 3. **等用户作答**。
 4. **按 rubric 评分**（见下），决定 rating ∈ {1, 2, 3, 4}。
 5. **回写**：执行 `lt answer --concept-id <id> --rating <r> --user-answer "<text>" --feedback "<rubric_line>" --source manual`。
-6. 简短反馈用户「下次复习时间：YYYY-MM-DD」（来自 lt answer 输出的 next_due_at）。
+6. **TTS 念读法**：rating ≥ 3 → `lt say <id> --full`（念 headword + 读音 + 例 1）；rating ≤ 2 → `lt say <id> --rate 140`（只念 headword 慢速一次）。fire-and-forget，profile.tts_engine=none 时整段 silent skip。**不要**加 `--blocking`，会让训练流卡住。
+7. 简短反馈用户「下次复习时间：YYYY-MM-DD」（来自 lt answer 输出的 next_due_at）。
 
 ## 评分 rubric（v1 Adjustment E — 必读）
 

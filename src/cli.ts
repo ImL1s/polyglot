@@ -20,6 +20,8 @@ import { getNextDue, dueCount, getStats, listDueConcepts } from "./concepts.ts";
 import { importSeeds } from "./seeds.ts";
 import { isWithinWorkHours } from "./work-hours.ts";
 import { buildExplainPayload, cacheExplainFeedback, EXPLAIN_LIMITS } from "./explain.ts";
+import { speak, buildSpeakBundle, LANG_TO_VOICE } from "./tts.ts";
+import { getDb, rowToConcept, type ConceptRow } from "./db.ts";
 
 const program = new Command();
 program
@@ -462,6 +464,56 @@ program
       console.error(`warn: explain payload ${out.length} chars > budget ${EXPLAIN_LIMITS.PAYLOAD_CHAR_BUDGET}`);
     }
     console.log(out);
+  });
+
+program
+  .command("say")
+  .description("Speak a concept (or arbitrary text) via the configured TTS backend")
+  .argument("[conceptId]", "concept id; if omitted use --text")
+  .option("--text <text>", "speak arbitrary text instead of a concept")
+  .option("--lang <lang>", "language code (ja|ko|en|zh|es); default = profile.active_language")
+  .option("--rate <rate>", "word rate override (default profile.tts_rate)", (v) => parseInt(v, 10))
+  .option("--voice <voice>", "voice override (e.g. Kyoko); default = LANG_TO_VOICE[lang]")
+  .option("--full", "speak headword + reading + first example (default: headword only)")
+  .option("--blocking", "wait for the spawned process to exit (default: fire-and-forget)")
+  .option("--json", "emit a JSON result line describing what was spoken")
+  .action(async (conceptId: string | undefined, opts) => {
+    const profile = readProfile();
+    const lang = opts.lang ?? profile.active_language;
+
+    let text: string;
+    if (opts.text) {
+      text = opts.text;
+    } else if (conceptId) {
+      const row = getDb()
+        .query("SELECT * FROM concepts WHERE id = ?")
+        .get(conceptId) as ConceptRow | null;
+      if (!row) {
+        console.error(`concept not found: ${conceptId}`);
+        process.exit(2);
+      }
+      const concept = rowToConcept(row);
+      const bundle = buildSpeakBundle(concept);
+      if (!bundle) {
+        console.error(`concept has no speakable text: ${conceptId}`);
+        process.exit(2);
+      }
+      text = opts.full
+        ? [bundle.headword, bundle.reading, bundle.example].filter(Boolean).join("。")
+        : bundle.headword;
+    } else {
+      console.error("provide either <conceptId> or --text");
+      process.exit(2);
+    }
+
+    const result = await speak(text, lang, {
+      rate: opts.rate,
+      voice: opts.voice,
+      blocking: !!opts.blocking,
+    });
+    if (opts.json) {
+      console.log(JSON.stringify({ ok: true, language: lang, text, ...result }));
+    }
   });
 
 program

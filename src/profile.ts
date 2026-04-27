@@ -36,8 +36,13 @@ export interface Profile {
   respect_work_hours: boolean;
   // v3 D19g — immersion as continuous level (replaces v1 boolean immersion_default)
   immersion_level: number;
-  // Phase 1.2 placeholder — TTS engine selector
+  // Phase 1.2 (D13/D14) — TTS engine + per-trigger toggles + voice overrides.
   tts_engine: string;
+  tts_rate: number;
+  tts_on_answer_correct: boolean;
+  tts_on_answer_wrong: boolean;
+  tts_listen_mode: boolean;
+  tts_voice_overrides: Record<string, string>;
   // Phase 1.1a — active_language gate (which language is currently being studied)
   active_language: string;
   // Phase 1.1a (D12) — per-language progression. Top-level level/target are
@@ -66,6 +71,11 @@ export const DEFAULT_PROFILE: Profile = {
   respect_work_hours: true,
   immersion_level: 0,
   tts_engine: "macos",
+  tts_rate: 180,
+  tts_on_answer_correct: true,
+  tts_on_answer_wrong: true,
+  tts_listen_mode: true,
+  tts_voice_overrides: {},
   active_language: "ja",
   per_language: {
     ja: { level: "N3", target: "N2", weak_areas: ["grammar", "kanji"] },
