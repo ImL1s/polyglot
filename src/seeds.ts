@@ -7,13 +7,19 @@ import { SEEDS_DIR } from "./paths.ts";
 interface RawSeed {
   id: string;
   type: "vocab" | "grammar" | "kanji" | "expression";
-  level: "N5" | "N4" | "N3" | "N2" | "N1";
+  level: string;
   ja: string;
   reading?: string;
   zh: string;
   examples?: { ja: string; zh: string }[];
   tags?: string[];
   pos?: string;
+  language?: string;
+}
+
+interface RawSeedFile {
+  language?: string;
+  concepts?: RawSeed[];
 }
 
 export interface ImportSummary {
@@ -37,16 +43,18 @@ export function importSeeds(extraDir?: string): ImportSummary {
   const db = getDb();
   const now = Date.now();
   const upsert = db.prepare(
-    `INSERT INTO concepts (id, type, level, ja, reading, zh, examples, tags, pos, created_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `INSERT INTO concepts (id, type, level, ja, reading, zh, examples, tags, pos, created_at, language)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT(id) DO UPDATE SET
        type=excluded.type, level=excluded.level, ja=excluded.ja, reading=excluded.reading,
-       zh=excluded.zh, examples=excluded.examples, tags=excluded.tags, pos=excluded.pos`,
+       zh=excluded.zh, examples=excluded.examples, tags=excluded.tags, pos=excluded.pos,
+       language=excluded.language`,
   );
 
   for (const f of files) {
     const raw = readFileSync(f, "utf-8");
-    const parsed = YAML.parse(raw);
+    const parsed = YAML.parse(raw) as RawSeedFile | RawSeed[] | null;
+    const fileLanguage = !Array.isArray(parsed) ? parsed?.language : undefined;
     const seeds: RawSeed[] = Array.isArray(parsed) ? parsed : (parsed?.concepts ?? []);
     for (const s of seeds) {
       if (!s.id || !s.ja || !s.zh) {
@@ -54,6 +62,7 @@ export function importSeeds(extraDir?: string): ImportSummary {
         continue;
       }
       const existed = db.query("SELECT 1 FROM concepts WHERE id = ?").get(s.id);
+      const language = s.language ?? fileLanguage ?? "ja";
       upsert.run(
         s.id,
         s.type,
@@ -65,6 +74,7 @@ export function importSeeds(extraDir?: string): ImportSummary {
         s.tags ? JSON.stringify(s.tags) : null,
         s.pos ?? null,
         now,
+        language,
       );
       if (existed) summary.updated++;
       else summary.inserted++;

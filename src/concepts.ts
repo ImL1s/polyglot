@@ -5,15 +5,17 @@ export interface NextOptions {
   type?: "vocab" | "grammar" | "kanji" | "expression";
   level?: string;
   difficulty?: "easy" | "hard";
+  language?: string;
 }
 
 export function getNextDue(opts: NextOptions = {}): ConceptOut | null {
   const db = getDb();
   const profile = readProfile();
+  const lang = opts.language ?? profile.active_language;
   const now = Date.now();
 
-  const wherePieces: string[] = ["r.due_at <= ?"];
-  const params: unknown[] = [now];
+  const wherePieces: string[] = ["r.due_at <= ?", "c.language = ?"];
+  const params: unknown[] = [now, lang];
 
   const allowedLevels = filterLevels(profile, opts);
   if (allowedLevels.length) {
@@ -35,8 +37,8 @@ export function getNextDue(opts: NextOptions = {}): ConceptOut | null {
 
   if (dueRow) return rowToConcept(dueRow);
 
-  if (todayNewIntroducedCount() >= profile.daily_new_count) return null;
-  return pickNewConcept(opts, allowedLevels);
+  if (todayNewIntroducedCount(lang) >= profile.daily_new_count) return null;
+  return pickNewConcept(opts, allowedLevels, lang);
 }
 
 function filterLevels(profile: Profile, opts: NextOptions): string[] {
@@ -52,15 +54,15 @@ function filterLevels(profile: Profile, opts: NextOptions): string[] {
   return levelsInLearningRange(profile);
 }
 
-function todayNewIntroducedCount(): number {
+function todayNewIntroducedCount(language: string): number {
   const db = getDb();
   const since = startOfTodayMs();
   const row = db
     .query(
-      `SELECT COUNT(*) AS n FROM reviews
-       WHERE last_review IS NULL AND due_at >= ? AND due_at < ?`,
+      `SELECT COUNT(*) AS n FROM reviews r JOIN concepts c ON c.id = r.concept_id
+       WHERE r.last_review IS NULL AND r.due_at >= ? AND r.due_at < ? AND c.language = ?`,
     )
-    .get(since, since + 24 * 3600 * 1000) as { n: number };
+    .get(since, since + 24 * 3600 * 1000, language) as { n: number };
   return row.n ?? 0;
 }
 
@@ -70,10 +72,10 @@ function startOfTodayMs(now: Date = new Date()): number {
   return d.getTime();
 }
 
-function pickNewConcept(opts: NextOptions, allowedLevels: string[]): ConceptOut | null {
+function pickNewConcept(opts: NextOptions, allowedLevels: string[], language: string): ConceptOut | null {
   const db = getDb();
-  const wherePieces: string[] = ["r.concept_id IS NULL"];
-  const params: unknown[] = [];
+  const wherePieces: string[] = ["r.concept_id IS NULL", "c.language = ?"];
+  const params: unknown[] = [language];
   if (allowedLevels.length) {
     wherePieces.push(`c.level IN (${allowedLevels.map(() => "?").join(",")})`);
     params.push(...allowedLevels);
@@ -92,25 +94,48 @@ function pickNewConcept(opts: NextOptions, allowedLevels: string[]): ConceptOut 
   return row ? rowToConcept(row) : null;
 }
 
-export function dueCount(): number {
+export function dueCount(language?: string): number {
   const db = getDb();
+  const lang = language ?? readProfile().active_language;
   const row = db
-    .query("SELECT COUNT(*) AS n FROM reviews WHERE due_at <= ?")
-    .get(Date.now()) as { n: number };
+    .query(
+      `SELECT COUNT(*) AS n FROM reviews r JOIN concepts c ON c.id = r.concept_id
+       WHERE r.due_at <= ? AND c.language = ?`,
+    )
+    .get(Date.now(), lang) as { n: number };
   return row.n ?? 0;
 }
 
-export function getStats() {
+export function getStats(language?: string) {
   const db = getDb();
+  const lang = language ?? readProfile().active_language;
   const today = startOfTodayMs();
-  const totalConcepts = (db.query("SELECT COUNT(*) AS n FROM concepts").get() as { n: number }).n;
-  const introduced = (db.query("SELECT COUNT(*) AS n FROM reviews").get() as { n: number }).n;
-  const due = dueCount();
+  const totalConcepts = (
+    db.query("SELECT COUNT(*) AS n FROM concepts WHERE language = ?").get(lang) as { n: number }
+  ).n;
+  const introduced = (
+    db
+      .query(
+        "SELECT COUNT(*) AS n FROM reviews r JOIN concepts c ON c.id = r.concept_id WHERE c.language = ?",
+      )
+      .get(lang) as { n: number }
+  ).n;
+  const due = dueCount(lang);
   const todayAttempts = (
-    db.query("SELECT COUNT(*) AS n FROM attempts WHERE created_at >= ?").get(today) as { n: number }
+    db
+      .query(
+        `SELECT COUNT(*) AS n FROM attempts a JOIN concepts c ON c.id = a.concept_id
+         WHERE a.created_at >= ? AND c.language = ?`,
+      )
+      .get(today, lang) as { n: number }
   ).n;
   const todayCorrect = (
-    db.query("SELECT COUNT(*) AS n FROM attempts WHERE created_at >= ? AND rating >= 3").get(today) as { n: number }
+    db
+      .query(
+        `SELECT COUNT(*) AS n FROM attempts a JOIN concepts c ON c.id = a.concept_id
+         WHERE a.created_at >= ? AND a.rating >= 3 AND c.language = ?`,
+      )
+      .get(today, lang) as { n: number }
   ).n;
   const accuracy = todayAttempts > 0 ? todayCorrect / todayAttempts : 0;
 
@@ -119,11 +144,13 @@ export function getStats() {
       `SELECT c.level, COUNT(*) AS n,
               SUM(CASE WHEN r.concept_id IS NOT NULL THEN 1 ELSE 0 END) AS introduced
        FROM concepts c LEFT JOIN reviews r ON r.concept_id = c.id
+       WHERE c.language = ?
        GROUP BY c.level`,
     )
-    .all() as { level: string; n: number; introduced: number }[];
+    .all(lang) as { level: string; n: number; introduced: number }[];
 
   return {
+    language: lang,
     total_concepts: totalConcepts,
     introduced,
     due_now: due,
@@ -134,13 +161,14 @@ export function getStats() {
   };
 }
 
-export function listDueConcepts(limit = 50): ConceptOut[] {
+export function listDueConcepts(limit = 50, language?: string): ConceptOut[] {
   const db = getDb();
+  const lang = language ?? readProfile().active_language;
   const rows = db
     .query(
       `SELECT c.* FROM reviews r JOIN concepts c ON c.id = r.concept_id
-       WHERE r.due_at <= ? ORDER BY r.due_at ASC LIMIT ?`,
+       WHERE r.due_at <= ? AND c.language = ? ORDER BY r.due_at ASC LIMIT ?`,
     )
-    .all(Date.now(), limit) as ConceptRow[];
+    .all(Date.now(), lang, limit) as ConceptRow[];
   return rows.map(rowToConcept);
 }

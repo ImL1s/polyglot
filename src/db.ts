@@ -61,6 +61,16 @@ function migrate(db: Database) {
     CREATE INDEX IF NOT EXISTS idx_attempts_concept ON attempts(concept_id, created_at DESC);
     CREATE INDEX IF NOT EXISTS idx_concepts_level_type ON concepts(level, type);
   `);
+
+  migrateConceptsLanguage(db);
+}
+
+function migrateConceptsLanguage(db: Database) {
+  const cols = db.query("PRAGMA table_info(concepts)").all() as { name: string }[];
+  if (cols.some((c) => c.name === "language")) return;
+  db.exec("ALTER TABLE concepts ADD COLUMN language TEXT NOT NULL DEFAULT 'ja'");
+  db.exec("UPDATE concepts SET language = 'ja' WHERE language IS NULL OR language = ''");
+  db.exec("CREATE INDEX IF NOT EXISTS idx_concepts_language ON concepts(language)");
 }
 
 export interface ConceptRow {
@@ -74,6 +84,7 @@ export interface ConceptRow {
   tags: string | null;
   pos: string | null;
   created_at: number;
+  language: string;
 }
 
 export interface ReviewRow {
@@ -99,6 +110,7 @@ export interface ConceptOut {
   examples: { ja: string; zh: string }[];
   tags: string[];
   pos: string | null;
+  language: string;
 }
 
 export function rowToConcept(r: ConceptRow): ConceptOut {
@@ -112,5 +124,6 @@ export function rowToConcept(r: ConceptRow): ConceptOut {
     examples: r.examples ? JSON.parse(r.examples) : [],
     tags: r.tags ? JSON.parse(r.tags) : [],
     pos: r.pos,
+    language: r.language ?? "ja",
   };
 }

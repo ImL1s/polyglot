@@ -7,7 +7,14 @@ import { Database } from "bun:sqlite";
 
 import { CONFIG_DIR, IMMERSION_FLAG, LOG_FILE, DB_FILE } from "./paths.ts";
 import { runDoctor, formatReport } from "./doctor.ts";
-import { readProfile, writeProfile, patchProfile, DEFAULT_PROFILE, type Profile } from "./profile.ts";
+import {
+  readProfile,
+  writeProfile,
+  patchProfile,
+  DEFAULT_PROFILE,
+  SUPPORTED_LANGUAGES,
+  type Profile,
+} from "./profile.ts";
 import { recordAnswer } from "./srs.ts";
 import { getNextDue, dueCount, getStats, listDueConcepts } from "./concepts.ts";
 import { importSeeds } from "./seeds.ts";
@@ -175,6 +182,43 @@ function parseValue(raw: string): unknown {
   }
   return v;
 }
+
+const language = program
+  .command("language")
+  .description("Manage active study language (multi-language schema)");
+
+language
+  .command("list")
+  .description("List supported languages, marking the active one")
+  .option("--json", "JSON output")
+  .action((opts) => {
+    const profile = readProfile();
+    const items = SUPPORTED_LANGUAGES.map((l) => ({ language: l, active: l === profile.active_language }));
+    if (opts.json) {
+      console.log(JSON.stringify(items));
+      return;
+    }
+    for (const i of items) {
+      console.log(`${i.active ? "* " : "  "}${i.language}`);
+    }
+  });
+
+language
+  .command("switch <lang>")
+  .description("Switch active language. Persists per_language[lang] if missing.")
+  .action((lang: string) => {
+    if (!SUPPORTED_LANGUAGES.includes(lang)) {
+      console.error(`unsupported language: ${lang}. Supported: ${SUPPORTED_LANGUAGES.join(", ")}`);
+      process.exit(2);
+    }
+    const cur = readProfile();
+    const per = { ...cur.per_language };
+    if (!per[lang]) {
+      per[lang] = { level: cur.level, target: cur.target, weak_areas: cur.weak_areas };
+    }
+    const next = patchProfile({ active_language: lang, per_language: per });
+    console.log(JSON.stringify({ ok: true, active_language: next.active_language }));
+  });
 
 program
   .command("immersion")
@@ -389,6 +433,34 @@ program
       }
     }
     console.log(JSON.stringify({ ok: true, restored_from: src, db: DB_FILE }));
+  });
+
+program
+  .command("explain")
+  .description("Pull a concept + recent attempts as JSON for the LLM to render 5-section teaching")
+  .argument("<conceptId>", "concept id to explain")
+  .option("--json", "JSON output (default; flag kept for symmetry with other commands)")
+  .option("--cache <feedback>", "append feedback as [explain] cache to the most recent attempt")
+  .action((conceptId: string, opts) => {
+    if (opts.cache !== undefined) {
+      const ok = cacheExplainFeedback(conceptId, opts.cache);
+      console.log(JSON.stringify({ ok, concept_id: conceptId }));
+      return;
+    }
+    const payload = buildExplainPayload(conceptId);
+    if (!payload) {
+      console.error(`concept not found: ${conceptId}`);
+      process.exit(2);
+    }
+    const out = JSON.stringify(payload);
+    if (out.length > EXPLAIN_LIMITS.PAYLOAD_CHAR_BUDGET) {
+      // payload exceeds the 8K char budget despite per-attempt truncation; this
+      // can happen if examples/tags/zh on the concept itself are unusually
+      // long. We still emit but warn so callers can flag prompts that may bust
+      // the LLM context window.
+      console.error(`warn: explain payload ${out.length} chars > budget ${EXPLAIN_LIMITS.PAYLOAD_CHAR_BUDGET}`);
+    }
+    console.log(out);
   });
 
 program
