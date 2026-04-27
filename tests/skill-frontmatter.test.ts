@@ -4,7 +4,7 @@ import { join } from "node:path";
 import YAML from "yaml";
 
 const SKILLS_DIR = join(import.meta.dir, "..", "skills");
-const REQUIRED = ["lt", "lt-setup", "lt-review", "lt-on", "lt-off"];
+const REQUIRED = ["lt", "lt-setup", "lt-review", "lt-on", "lt-off", "lt-mix"];
 
 interface Frontmatter {
   name: string;
@@ -22,7 +22,7 @@ function parseFrontmatter(path: string): Frontmatter {
 }
 
 describe("skills/*.skill.md frontmatter", () => {
-  test("all 5 required skill files exist", () => {
+  test("all required skill files exist (6)", () => {
     const files = readdirSync(SKILLS_DIR).filter((f) => f.endsWith(".skill.md")).sort();
     expect(files).toEqual(REQUIRED.map((n) => `${n}.skill.md`).sort());
   });
