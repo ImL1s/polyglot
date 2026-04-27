@@ -1,0 +1,306 @@
+# JLPT N2 mock test bank.
+#
+# Schema is mock_questions table (separate from concepts table). Loaded only
+# when seed-import is called with --include-mock; default seed-import skips
+# files matching mock-*.yaml so mocks never enter FSRS scheduling.
+#
+# 30 questions across 4 types (vocab/grammar/listening/reading). Used by
+# `lt mock-test --count 30 [--type all|vocab|grammar|listening|reading]` to
+# random-sample and for `lt ambient-validate` to compare answer accuracy
+# between concepts with ambient_exposures count >= 7 vs < 7 (Adjustment K1).
+#
+# Each entry: id (ja-mock-n2-{type}-{idx zero-padded 3}), level, type,
+# question, choices (4), correct (0-indexed), explanation.
+language: ja
+mock: true
+questions:
+  # ========== VOCAB (10 questions) ==========
+  - id: ja-mock-n2-vocab-001
+    level: N2
+    type: vocab
+    question: 「彼は会議で <u>率直</u> な意見を述べた。」の「率直」の読み方として最も適切なものは？
+    choices: ["そっちょく", "そっとく", "りつちょく", "りっとく"]
+    correct: 0
+    explanation: 「率直（そっちょく）」は「ありのまま、遠慮しない」という意味の N2 頻出語。
+  - id: ja-mock-n2-vocab-002
+    level: N2
+    type: vocab
+    question: 「景気が <u>低迷</u> している。」の「低迷」の意味は？
+    choices: ["勢いがない状態が続くこと", "急激に下がること", "ゆっくり上がること", "予想外に伸びること"]
+    correct: 0
+    explanation: 「低迷」は経済・成績が振るわず、停滞している状態。N2 ビジネス語。
+  - id: ja-mock-n2-vocab-003
+    level: N2
+    type: vocab
+    question: 「彼の説明には <u>矛盾</u> がある。」と最も近い意味の語は？
+    choices: ["つじつまが合わない", "間違いが多い", "わかりにくい", "古い情報"]
+    correct: 0
+    explanation: 「矛盾」は前後で言うことが食い違うこと、つじつまが合わないこと。
+  - id: ja-mock-n2-vocab-004
+    level: N2
+    type: vocab
+    question: 「彼女は <u>謙虚</u> な人だ。」の「謙虚」の対義語として最も適切なものは？
+    choices: ["高慢", "正直", "冷静", "親切"]
+    correct: 0
+    explanation: 「謙虚」（控えめ）⇔「高慢」（おごり高ぶる）。N2 性格語ペア。
+  - id: ja-mock-n2-vocab-005
+    level: N2
+    type: vocab
+    question: 「事故の原因を <u>究明</u> する。」の「究明」の意味として正しいものは？
+    choices: ["徹底的に調べて明らかにすること", "予想すること", "報告すること", "解決策を提案すること"]
+    correct: 0
+    explanation: 「究明」は「物事を深く調べて真相を明らかにすること」。「解明」と類義語。
+  - id: ja-mock-n2-vocab-006
+    level: N2
+    type: vocab
+    question: 「彼の発言は議論を <u>誘発</u> した。」の「誘発」の意味は？
+    choices: ["引き起こすこと", "終わらせること", "繰り返すこと", "避けること"]
+    correct: 0
+    explanation: 「誘発」は「ある事柄が原因となって別の事柄を引き起こすこと」。
+  - id: ja-mock-n2-vocab-007
+    level: N2
+    type: vocab
+    question: 「彼の意見は <u>妥当</u> だと思う。」の「妥当」と最も近い意味の語は？
+    choices: ["適切", "新鮮", "面白い", "強烈"]
+    correct: 0
+    explanation: 「妥当」は「適切で道理にかなっている」。N2 評価語。
+  - id: ja-mock-n2-vocab-008
+    level: N2
+    type: vocab
+    question: 「彼女は <u>慎重</u> に判断した。」の「慎重」の対義語は？
+    choices: ["軽率", "活発", "勇敢", "冷淡"]
+    correct: 0
+    explanation: 「慎重」（注意深い）⇔「軽率」（軽はずみ）。N2 行動語ペア。
+  - id: ja-mock-n2-vocab-009
+    level: N2
+    type: vocab
+    question: 「最近、物価が <u>高騰</u> している。」の「高騰」の意味は？
+    choices: ["値段が大きく上がること", "値段が下がること", "値段が安定すること", "需要が増えること"]
+    correct: 0
+    explanation: 「高騰」は「物価・株価が急に大きく上がること」。N2 経済語。
+  - id: ja-mock-n2-vocab-010
+    level: N2
+    type: vocab
+    question: 「<u>一概に</u> 否定できない問題だ。」の「一概に」の意味として最も適切なものは？
+    choices: ["ひとまとめにして", "すぐに", "まったく", "もう一度"]
+    correct: 0
+    explanation: 「一概に」は「同じように、ひとまとめにして」。後ろに「〜できない」を伴う典型 N2 副詞。
+
+  # ========== GRAMMAR (10 questions) ==========
+  - id: ja-mock-n2-grammar-001
+    level: N2
+    type: grammar
+    question: 「努力して （　） こそ、目標は達成できる。」に入る最も適切なものは？
+    choices: ["はじめて", "わけで", "つもりで", "ものの"]
+    correct: 0
+    explanation: 「Vて はじめて」は「Vて、その時にやっと」N2 必出。「こそ」と呼応も可だが文脈で「はじめて」が最自然。
+  - id: ja-mock-n2-grammar-002
+    level: N2
+    type: grammar
+    question: 「読めば （　） 、内容が理解できないだろう。」
+    choices: ["読むほど", "読んで以来", "読まないことには", "読んだうえで"]
+    correct: 2
+    explanation: 「Vないことには」=「Vしなければ〜ない」前提条件の N2 文型。後ろは必ず否定。
+  - id: ja-mock-n2-grammar-003
+    level: N2
+    type: grammar
+    question: 「彼の話は信じ （　） だ。」
+    choices: ["がたい", "やすい", "ぬく", "きる"]
+    correct: 0
+    explanation: 「Vます形 がたい」=「Vしにくい」N2 文型。「信じがたい」で「信じることが難しい」。
+  - id: ja-mock-n2-grammar-004
+    level: N2
+    type: grammar
+    question: 「天気予報 （　） 、明日は雨らしい。」
+    choices: ["によると", "において", "について", "に対して"]
+    correct: 0
+    explanation: 「N によると」=「情報源」N2 必出。「N において」は場所/状況、「に対して」は対象。
+  - id: ja-mock-n2-grammar-005
+    level: N2
+    type: grammar
+    question: 「努力した （　） 、成功した。」
+    choices: ["かいがあって", "ばかりに", "あげく", "ところで"]
+    correct: 0
+    explanation: 「Vた かいがあって」=「Vしたおかげで結果が良い」N2 因果文型。
+  - id: ja-mock-n2-grammar-006
+    level: N2
+    type: grammar
+    question: 「子ども （　） 、その答えはわかるはずだ。」
+    choices: ["でさえ", "にしても", "ばかりに", "として"]
+    correct: 0
+    explanation: 「N でさえ」=「N でも〜」極端な例で他は当然の意。N2 必出。
+  - id: ja-mock-n2-grammar-007
+    level: N2
+    type: grammar
+    question: 「会議の途中で帰る （　） いかない。」
+    choices: ["わけには", "ことには", "ものには", "ほどには"]
+    correct: 0
+    explanation: 「V る わけにはいかない」=「Vすることはできない（事情があり）」N2 必出。
+  - id: ja-mock-n2-grammar-008
+    level: N2
+    type: grammar
+    question: 「あの人は本当に来る （　）。」
+    choices: ["ものか", "ものだ", "ものだから", "ものなら"]
+    correct: 0
+    explanation: 「V る ものか」=「絶対 V しない / V する はずがない」強い否定の N2 文末。
+  - id: ja-mock-n2-grammar-009
+    level: N2
+    type: grammar
+    question: 「彼女は美しい （　） 、頭もいい。」
+    choices: ["うえに", "うちに", "うえで", "ばかりに"]
+    correct: 0
+    explanation: 「い形 / な形 うえに」=「〜だけでなく、さらに〜」追加の N2 文型。
+  - id: ja-mock-n2-grammar-010
+    level: N2
+    type: grammar
+    question: 「頑張った （　） 、合格できなかった。」
+    choices: ["ものの", "ものだから", "もので", "ものを"]
+    correct: 0
+    explanation: 「V た ものの」=「Vしたが、期待と異なる結果」逆接 N2 文型。
+
+  # ========== LISTENING (5 questions, encoded as text-based scenario) ==========
+  - id: ja-mock-n2-listening-001
+    level: N2
+    type: listening
+    question: |
+      （会議室で）
+      A：来週の会議、予定通り月曜日の午後でいいですか。
+      B：すみません、月曜日は出張なので、火曜日の午前中にしてもらえますか。
+      A：火曜日の午前中ですね。わかりました。
+      質問：会議はいつになりましたか。
+    choices: ["月曜日の午後", "月曜日の午前", "火曜日の午前", "火曜日の午後"]
+    correct: 2
+    explanation: B の「火曜日の午前中にしてもらえますか」を A が承諾した。N2 聴解 typical 直接質問。
+  - id: ja-mock-n2-listening-002
+    level: N2
+    type: listening
+    question: |
+      （電話で）
+      女：もしもし、来週の旅行のことなんだけど、京都じゃなくて奈良に変えない？
+      男：奈良？京都の方が見どころが多いって言ってたじゃない。
+      女：でも奈良のほうが空いてるかなと思って。
+      男：うーん、人混みが嫌なら奈良もありかな。
+      質問：二人はどこに行くことになりましたか。
+    choices: ["京都", "奈良", "まだ決まっていない", "両方"]
+    correct: 2
+    explanation: 男の「もありかな」は曖昧な同意で、決定したとは言えない。N2 聴解 trap：表面の同意に騙されない。
+  - id: ja-mock-n2-listening-003
+    level: N2
+    type: listening
+    question: |
+      （職場で）
+      上司：この資料、明日の朝までに作っといてくれる？
+      部下：えっと、今日は他にも仕事があって…
+      上司：そうか。じゃあ、明日の昼まででいいよ。
+      質問：部下はいつまでに資料を作ればいいですか。
+    choices: ["今日中", "明日の朝", "明日の昼", "明後日"]
+    correct: 2
+    explanation: 上司が「明日の昼まででいいよ」と最終的に譲歩した。N2 聴解：会話の最後の決定が答え。
+  - id: ja-mock-n2-listening-004
+    level: N2
+    type: listening
+    question: |
+      （駅で）
+      男：あれ、終電もう出ちゃった？
+      女：うん、5 分前に出たよ。タクシー乗る？
+      男：タクシーは高いから、ネットカフェで朝まで過ごそうかな。
+      女：私はタクシーで帰る。
+      質問：男の人はこれからどうしますか。
+    choices: ["終電に乗る", "タクシーで帰る", "ネットカフェに行く", "歩いて帰る"]
+    correct: 2
+    explanation: 男は「ネットカフェで朝まで過ごそうかな」と決めた。N2 聴解：自分の選択を述べる。
+  - id: ja-mock-n2-listening-005
+    level: N2
+    type: listening
+    question: |
+      （レストランで）
+      店員：ご注文はお決まりですか。
+      客：このセットメニューにします。あ、サラダはドレッシング抜きでお願いします。
+      店員：かしこまりました。お飲み物は？
+      客：水で。
+      質問：客は何を頼みましたか。
+    choices: ["セットメニューとサラダ", "セットメニュー（ドレッシングなし）と水", "サラダとコーヒー", "セットメニューとビール"]
+    correct: 1
+    explanation: セット + ドレッシング抜きサラダは含まれる + 飲み物は水。N2 聴解 detail 拾い。
+
+  # ========== READING (5 questions, short passage + comprehension) ==========
+  - id: ja-mock-n2-reading-001
+    level: N2
+    type: reading
+    question: |
+      【本文】
+      最近、若者の間で「ミニマリスト」という生き方が注目されている。必要最小限の物だけで暮らす考え方だ。
+      物が少ないと掃除も楽で、引っ越しも簡単になる。お金もたまりやすい。一方で、来客時に座布団が足りない、
+      災害時の備蓄が不足するなどのデメリットもある。バランスが重要だ。
+      質問：筆者の考えとして最も適切なものは？
+    choices:
+      - "ミニマリストは誰にでも勧められる生き方だ"
+      - "ミニマリストには利点と欠点があり、バランスが必要だ"
+      - "ミニマリストはデメリットの方が多い"
+      - "ミニマリストは若者だけのものだ"
+    correct: 1
+    explanation: 最後の「バランスが重要だ」が筆者の主張。N2 読解：結論は最後の段落の最後の文に出ることが多い。
+  - id: ja-mock-n2-reading-002
+    level: N2
+    type: reading
+    question: |
+      【本文】
+      日本の電車は時間に正確だと言われる。1 分の遅れでも謝罪のアナウンスが流れる。これは外国人観光客に
+      とって驚きであり、信頼の証でもある。しかし、その正確さの裏には、運転士やスタッフの大きなプレッシャー
+      があることを忘れてはならない。
+      質問：筆者は何を言いたいのか？
+    choices:
+      - "日本の電車は世界一正確だ"
+      - "電車の正確さは観光客に好評だ"
+      - "電車の正確さの陰には現場の負担がある"
+      - "1 分の遅れでも問題視するのは行き過ぎだ"
+    correct: 2
+    explanation: 「裏には」「忘れてはならない」が筆者の強調点。N2 読解 trap：表面の事実より「しかし」以降を読む。
+  - id: ja-mock-n2-reading-003
+    level: N2
+    type: reading
+    question: |
+      【本文】
+      在宅勤務が広がるにつれ、運動不足を訴える人が増えている。通勤の徒歩や階段の上り下りがなくなり、
+      一日中座っている人が多い。これに対し、企業は朝のオンライン体操や歩数目標を設定するなど、
+      対策を始めている。
+      質問：在宅勤務で起きている問題と、その対策の組み合わせとして正しいものは？
+    choices:
+      - "問題：運動不足／対策：オンライン体操・歩数目標"
+      - "問題：通勤時間／対策：在宅勤務"
+      - "問題：階段の上り下り／対策：エレベーター設置"
+      - "問題：オンライン会議／対策：対面会議"
+    correct: 0
+    explanation: 「運動不足」=問題、「オンライン体操や歩数目標」=対策の対応関係。N2 読解 typical paired-cause-action。
+  - id: ja-mock-n2-reading-004
+    level: N2
+    type: reading
+    question: |
+      【本文】
+      AI 翻訳の精度が急速に上がっている。日常会話やビジネスメールならほぼ完璧に訳せる。しかし、文学作品や
+      詩のような文化的なニュアンスを含む文章では、まだ人間の翻訳家にかなわない。AI と人間がそれぞれの
+      得意分野で活躍する時代だと言える。
+      質問：筆者の意見と合うものは？
+    choices:
+      - "AI 翻訳は完璧で、人間の翻訳家は不要になる"
+      - "AI 翻訳と人間の翻訳家は得意分野が異なり、共存する"
+      - "AI 翻訳はまだ実用に足りない"
+      - "翻訳は人間が行うべきだ"
+    correct: 1
+    explanation: 「それぞれの得意分野で活躍する」=共存の主張。N2 読解：両論併記からの中間結論。
+  - id: ja-mock-n2-reading-005
+    level: N2
+    type: reading
+    question: |
+      【本文】
+      子供の遊び場としての公園が、近年、利用ルールに縛られすぎているという指摘がある。「ボール禁止」
+      「大声禁止」「自転車禁止」のように、何でも禁止する風潮は、子供の成長にとってマイナスではないか。
+      多少の騒音や危険は、子供が社会性や判断力を身につけるために必要な経験ではないだろうか。
+      質問：筆者の主張として最も近いものは？
+    choices:
+      - "公園のルールはもっと厳しくすべきだ"
+      - "禁止事項を増やすことで子供の安全が守られる"
+      - "ある程度の自由は子供の成長に必要だ"
+      - "公園は大人のための場所だ"
+    correct: 2
+    explanation: 「多少の騒音や危険は…必要な経験」が筆者主張の核。N2 読解：rhetorical question で意見を表現。
