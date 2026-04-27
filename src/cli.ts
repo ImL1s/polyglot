@@ -220,7 +220,13 @@ language
   .description("Switch active language. Persists per_language[lang] if missing.")
   .action((lang: string) => {
     if (!SUPPORTED_LANGUAGES.includes(lang)) {
-      console.error(`unsupported language: ${lang}. Supported: ${SUPPORTED_LANGUAGES.join(", ")}`);
+      if (lang === "en") {
+        console.error(
+          `en is a mix-only language — set mix_language via lt config mix_language=en, then use lt mix 50 for bilingual ambient. Supported active languages: ${SUPPORTED_LANGUAGES.join(", ")}`,
+        );
+      } else {
+        console.error(`unsupported language: ${lang}. Supported: ${SUPPORTED_LANGUAGES.join(", ")}`);
+      }
       process.exit(2);
     }
     const cur = readProfile();

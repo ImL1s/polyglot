@@ -56,26 +56,26 @@ describe("check-prompt-version — baseline pass", () => {
 });
 
 describe("check-prompt-version — drift detection", () => {
-  test("skill bumped to v2 but hook still v1 → error", () => {
+  test("skill bumped to v3 but hook still v2 → error", () => {
     const skillSnap = snapshot(SKILL);
     try {
-      writeFileSync(SKILL, skillSnap.replace(/prompt_version: v1/, "prompt_version: v2"), "utf-8");
+      writeFileSync(SKILL, skillSnap.replace(/prompt_version: v2/, "prompt_version: v3"), "utf-8");
       const r = check();
       expect(r.ok).toBe(false);
       const merged = r.errors.join("\n");
-      expect(merged).toContain("lt-mix.skill.md prompt_version=v2");
-      expect(merged).toContain("AMBIENT_PROMPT_VERSION=v1");
+      expect(merged).toContain("lt-mix.skill.md prompt_version=v3");
+      expect(merged).toContain("AMBIENT_PROMPT_VERSION=v2");
     } finally {
       restore(SKILL, skillSnap);
     }
   });
 
-  test("hook bumped to v3 but skill still v1 → error", () => {
+  test("hook bumped to v3 but skill still v2 → error", () => {
     const hookSnap = snapshot(HOOK);
     try {
       writeFileSync(
         HOOK,
-        hookSnap.replace(/AMBIENT_PROMPT_VERSION = "v1"/, 'AMBIENT_PROMPT_VERSION = "v3"'),
+        hookSnap.replace(/AMBIENT_PROMPT_VERSION = "v2"/, 'AMBIENT_PROMPT_VERSION = "v3"'),
         "utf-8",
       );
       const r = check();
@@ -90,10 +90,10 @@ describe("check-prompt-version — drift detection", () => {
     const skillSnap = snapshot(SKILL);
     const hookSnap = snapshot(HOOK);
     try {
-      writeFileSync(SKILL, skillSnap.replace(/prompt_version: v1/, "prompt_version: v2"), "utf-8");
+      writeFileSync(SKILL, skillSnap.replace(/prompt_version: v2/, "prompt_version: v3"), "utf-8");
       writeFileSync(
         HOOK,
-        hookSnap.replace(/AMBIENT_PROMPT_VERSION = "v1"/, 'AMBIENT_PROMPT_VERSION = "v2"'),
+        hookSnap.replace(/AMBIENT_PROMPT_VERSION = "v2"/, 'AMBIENT_PROMPT_VERSION = "v3"'),
         "utf-8",
       );
       const r = check();
@@ -104,10 +104,10 @@ describe("check-prompt-version — drift detection", () => {
     }
   });
 
-  test("malformed prompt_version (e.g. v1.0.0) → error", () => {
+  test("malformed prompt_version (e.g. v2.0.0) → error", () => {
     const skillSnap = snapshot(SKILL);
     try {
-      writeFileSync(SKILL, skillSnap.replace(/prompt_version: v1/, "prompt_version: v1.0.0"), "utf-8");
+      writeFileSync(SKILL, skillSnap.replace(/prompt_version: v2/, "prompt_version: v2.0.0"), "utf-8");
       const r = check();
       expect(r.ok).toBe(false);
       expect(r.errors.join("\n")).toContain("does not match vN or vN.M pattern");
@@ -119,7 +119,7 @@ describe("check-prompt-version — drift detection", () => {
   test("missing prompt_version → error", () => {
     const skillSnap = snapshot(SKILL);
     try {
-      writeFileSync(SKILL, skillSnap.replace(/^prompt_version: v1\s*\n/m, ""), "utf-8");
+      writeFileSync(SKILL, skillSnap.replace(/^prompt_version: v2\s*\n/m, ""), "utf-8");
       const r = check();
       expect(r.ok).toBe(false);
       expect(r.errors.join("\n")).toContain("missing or unparseable prompt_version frontmatter");
@@ -137,5 +137,61 @@ describe("hashImmersionTemplates — drift fingerprint", () => {
 
   test("hash is deterministic across calls", () => {
     expect(hashImmersionTemplates()).toBe(hashImmersionTemplates());
+  });
+});
+
+// ---------------------------------------------------------------------------
+// US-011: drift-guard mutation tests
+// ---------------------------------------------------------------------------
+
+const IMMERSION_FILE = join(import.meta.dir, "..", "src", "utils", "immersion.ts");
+
+function withMutatedImmersion<T>(mutator: (raw: string) => string, fn: () => T): T {
+  const original = readFileSync(IMMERSION_FILE, "utf-8");
+  try {
+    writeFileSync(IMMERSION_FILE, mutator(original));
+    return fn();
+  } finally {
+    writeFileSync(IMMERSION_FILE, original);
+  }
+}
+
+describe("hashImmersionTemplates — mutation drift guard (US-011)", () => {
+  test("U9: mutating LANGUAGE_PACKS.en.exampleAmbient changes hash", () => {
+    const baseline = hashImmersionTemplates();
+    const mutated = withMutatedImmersion(
+      (raw) => raw.replace(
+        /exampleAmbient: "「这个 bug 已经修了（fixed it：搞定了）。」"/,
+        'exampleAmbient: "「测试修改 (mutated for U9)。」"',
+      ),
+      () => hashImmersionTemplates(),
+    );
+    expect(mutated).not.toBe(baseline);
+    expect(mutated).toMatch(/^[0-9a-f]{12}$/);
+  });
+
+  test("U10: deleting LANGUAGE_PACKS block throws", () => {
+    expect(() =>
+      withMutatedImmersion(
+        (raw) => raw.replace(/const LANGUAGE_PACKS[\s\S]*?\n\};/m, "// LANGUAGE_PACKS removed for U10"),
+        () => hashImmersionTemplates(),
+      ),
+    ).toThrow(/LANGUAGE_PACKS/);
+  });
+
+  test("U10b: stripping [沉浸 marker from template literals throws", () => {
+    expect(() =>
+      withMutatedImmersion(
+        (raw) => raw.replace(/\[沉浸/g, "[REMOVED"),
+        () => hashImmersionTemplates(),
+      ),
+    ).toThrow(/沉浸/);
+  });
+
+  test("U11: baseline hash is 12 hex chars (deterministic on unmodified source)", () => {
+    const h1 = hashImmersionTemplates();
+    const h2 = hashImmersionTemplates();
+    expect(h1).toBe(h2);
+    expect(h1).toMatch(/^[0-9a-f]{12}$/);
   });
 });

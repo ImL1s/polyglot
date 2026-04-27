@@ -59,10 +59,25 @@ export function hashImmersionTemplates(): string {
   } catch {
     return "";
   }
+
+  // Path 1: [沉浸-prefixed backtick template literals.
   const matches = raw.match(/`[^`]*\[沉浸[^`]*`/g) ?? [];
-  const normalized = matches.map((s) => s.replace(/\s+/g, " ").trim()).sort().join("\n");
-  if (!normalized) return "";
-  return createHash("sha256").update(normalized).digest("hex").slice(0, 12);
+  const templateNormalized = matches.map((s) => s.replace(/\s+/g, " ").trim()).sort().join("\n");
+  if (!templateNormalized) {
+    throw new Error("hashImmersionTemplates: no [沉浸 templates matched");
+  }
+
+  // Path 2: Full LANGUAGE_PACKS object body.
+  const langPacksMatch = raw.match(/const LANGUAGE_PACKS[\s\S]*?\n\};/m);
+  const langPacksNormalized = langPacksMatch
+    ? langPacksMatch[0].replace(/\s+/g, " ").trim()
+    : "";
+  if (!langPacksNormalized) {
+    throw new Error("hashImmersionTemplates: LANGUAGE_PACKS block not found");
+  }
+
+  const combined = templateNormalized + "\n---\n" + langPacksNormalized;
+  return createHash("sha256").update(combined).digest("hex").slice(0, 12);
 }
 
 export function check(): CheckResult {
@@ -115,7 +130,7 @@ function main() {
     for (const e of r.errors) console.error(`prompt-version: ${e}`);
     process.exit(1);
   }
-  const tplHash = hashImmersionTemplates() || "n/a";
+  const tplHash = hashImmersionTemplates();
   console.log(`prompt-version: ok (${SKILLS_DIR}, immersion templates sha256=${tplHash})`);
 }
 

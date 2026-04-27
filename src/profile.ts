@@ -45,6 +45,10 @@ export interface Profile {
   tts_voice_overrides: Record<string, string>;
   // Phase 1.1a — active_language gate (which language is currently being studied)
   active_language: string;
+  // v4 — hook-level override for which LANGUAGE_PACK the ambient mix prompt
+  // renders. null means "use active_language" (fall through). Set to e.g. "en"
+  // for English ambient flavour while still studying Japanese as active_language.
+  mix_language: string | null;
   // Phase 1.1a (D12) — per-language progression. Top-level level/target are
   // retained as v1 mirror of per_language[active_language] for back-compat.
   per_language: Record<string, PerLanguage>;
@@ -77,6 +81,7 @@ export const DEFAULT_PROFILE: Profile = {
   tts_listen_mode: true,
   tts_voice_overrides: {},
   active_language: "ja",
+  mix_language: null,
   per_language: {
     ja: { level: "N3", target: "N2", weak_areas: ["grammar", "kanji"] },
   },

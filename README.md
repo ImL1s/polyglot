@@ -83,16 +83,19 @@ Practice without breaking flow. You're already in Claude Code / Codex / Gemini a
 - `src/utils/code-context.ts` — `looksLikeCodeContext()` whitelist for hooks.
 - `src/ambient.ts` — `ambient_exposures` engine: 80/20 mastered/weak vocab pool
   + 90-day retention + `archiveExposures` cumulative-count rollup.
-- `src/tts.ts` — `speak(text, lang)` with 3 backends (macos `say` / `edge-tts` /
-  none) + LANG_TO_VOICE + LANG_TO_VOICE_EDGE.
+- `src/tts.ts` — macOS `say` + edge-tts backend; voice mappings for ja, ko,
+  en, zh, es. `en` is a mix-only language (ambient flavour via `mix_language`,
+  not a full `active_language` with progression scale).
 - `src/listening.ts` — `gradeListeningAnswer()` (katakana → hiragana fold + edit
   distance rubric).
 - `src/explain.ts` — `buildExplainPayload()` + `cacheExplainFeedback()` for the
   5 段教学 verbose mode (token budget 8K input / 1500 char output).
 - `src/mock.ts` — mock-N2 sandbox (separate `mock_questions` + `mock_attempts`
   tables) + `runAmbientValidate` (binomial test, K1 self-falsification).
-- `src/doctor.ts` — 8-check install health (settings.json hooks, lt binary,
-  bun version, profile/db, legacy symlink, launchd plists, schema consistency).
+- `src/doctor.ts` — 9-check install health (settings.json hooks, lt binary,
+  bun version, profile/db, legacy symlink, launchd plists, schema consistency,
+  `mix_lang_seeds`). The `mix_lang_seeds` check fires only when
+  `profile.mix_language` is set (info-level).
 
 **Data**:
 
@@ -311,8 +314,9 @@ fields are optional; `lt setup` writes sensible defaults.
 | `tts_on_answer_wrong`            | bool                          | `true`        | Auto-`lt say` (slow rate 140) after rating ≤ 2                                |
 | `tts_listen_mode`                | bool                          | `true`        | Enable `lt next --type listening` flow                                        |
 | `tts_voice_overrides`            | map `lang → voice`            | `{}`          | e.g. `{ja: Otoya, ko: Yuna}` to override LANG_TO_VOICE                        |
-| `active_language`                | `ja\|ko`                      | `ja`          | Single active language; FSRS + hooks + stats scoped to this                   |
+| `active_language`                | `ja\|ko`                      | `ja`          | Single active language; FSRS + hooks + stats scoped to this. `en` available as `mix_language` only |
 | `per_language`                   | map `lang → {level, target, weak_areas}` | auto-migrated from v1 top-level | Per-language overrides; `lt language switch <lang>` flips `active_language` |
+| `mix_language`                   | `string \| null`              | `null`        | Override language for ambient mix prompts. `null` = use `active_language`. Set `en` for English ambient flavour via `lt config mix_language=en`. Reset with `lt config mix_language=null`. |
 
 Examples:
 
@@ -351,14 +355,14 @@ Notes:
 
 ## 8. Troubleshooting (`lt doctor`)
 
-`lt doctor` runs 8 health checks (settings.json hooks, `lt` binary, `bun`
+`lt doctor` runs 9 health checks (settings.json hooks, `lt` binary, `bun`
 version, profile / reviews.db, legacy `~/.config/jp-trainer/` symlink,
-launchd plists, hook schema consistency). Exit code: `0` clean, `1` warnings,
+launchd plists, hook schema consistency, mix_language seed pool). Exit code: `0` clean, `1` warnings,
 `2` critical. Add `--json` for machine-readable output.
 
 ```bash
 $ lt doctor
-lt doctor — 8 checks (7 ok, 0 warn, 1 error)
+lt doctor — 9 checks (8 ok, 0 warn, 1 error)
   [ok] lt_bin: lt binary at /Users/you/.local/bin/lt
   [err] bun: bun is not on PATH
   [ok] profile: profile.yaml present
@@ -367,7 +371,10 @@ lt doctor — 8 checks (7 ok, 0 warn, 1 error)
   [ok] user_settings: 3/3 polyglot-hooks events wired in user settings
   [ok] launchd_daily: daily-push plist present
   [ok] launchd_backup: daily-backup plist present
+  [ok] mix_lang_seeds: mix_language en has 236 seed concepts
 ```
+
+Note: the `mix_lang_seeds` line only appears when `mix_language` is configured in `profile.yaml`. When `mix_language` is `null`, this check is skipped.
 
 For symptoms not surfaced by `doctor`:
 
@@ -405,6 +412,7 @@ lt restore --from /abs/path/to/some.bak          # or restore from any snapshot
 | 1.2    | macOS `say` TTS backend (5 voices) · `lt say` · `lt next --type listening` + `lt grade-listening` 假名听写 | **Done** (v0.2.0)                                     |
 | 1.3    | `lt explain` 5 段教学 + 答错自动调 · edge-tts Linux fallback · mock-N2 题库 + `lt mock-test` + `lt ambient-validate` (binomial p<0.05 K1 自我证伪) | **Done** (v0.2.0)                                     |
 | 1.1b.x | 30-day dogfood window: run `lt ambient-validate` after 30 days of immersion_level > 0 to verify ambient mix improves retention | Pending real-world data                               |
+| 1.4    | English mix-only: Subtlex-US top-200 seed pool + `mix_language` hook wire + drift-guard hardening (LANGUAGE_PACKS body now hashed, fail-closed on both regex paths) | **Done** (v0.2.1) |
 
 The full plan with tradeoffs and decision logs lives in
 [`docs/ralplan-planner-v4.md`](docs/ralplan-planner-v4.md) (planner) and
@@ -446,7 +454,7 @@ In Codex / Gemini, type `/lt` and the snippet drives the same loop.
 | `lt install-cron`                                             | (Re-)install the macOS launchd daily-push plist                    |
 | `lt logs [--tail N] [--event NAME]`                           | Tail NDJSON event log                                              |
 | `lt restore --from Mon\|Tue\|…\|Sun\|/abs/path`               | Restore `reviews.db` from rolling backup (atomic mv via `.tmp`)    |
-| `lt doctor [--json]`                                          | 8-check install health (exit 0/1/2 = ok/warn/critical)             |
+| `lt doctor [--json]`                                          | 9-check install health (exit 0/1/2 = ok/warn/critical; `mix_lang_seeds` is info-only) |
 
 ### Multi-language (Phase 1.1a)
 
@@ -454,6 +462,7 @@ In Codex / Gemini, type `/lt` and the snippet drives the same loop.
 |----------------------------------------|---------------------------------------------------------------------|
 | `lt language list`                     | List supported languages (`* ja` marks active)                      |
 | `lt language switch <ja\|ko>`          | Flip `active_language`; FSRS scope follows                          |
+| `lt config mix_language=en`            | Set ambient mix language independently of `active_language` (en mix-only) |
 
 ### Ambient mix-language (Phase 1.1b)
 
@@ -531,6 +540,9 @@ prompt_version drift detection (skill ↔ hook double-sided)
 `tts-edge` LANG_TO_VOICE_EDGE
 (`tests/{explain,mock-test,ambient-validate,tts-edge}.test.ts`).
 
+**Phase 1.4** — English mix-only wire + drift-guard hardening
+(`tests/{en-mix-wire,prompt-version-cross}.test.ts`).
+
 `tests/e2e/full-flow.test.ts` is the canonical regression: spawns `lt` against
 an isolated `HOME=$(mktemp -d)` and asserts on real CLI output (no mocks) for
 `setup → seed-import → next → answer → stats → review → due-count → logs`.
@@ -555,7 +567,7 @@ polyglot/
 │   ├── listening.ts              # gradeListeningAnswer kana fold + edit distance (1.2)
 │   ├── explain.ts                # 5 段教学 payload + cache (Phase 1.3)
 │   ├── mock.ts                   # mock-N2 + ambient-validate binomial (Phase 1.3)
-│   ├── doctor.ts                 # 8-check install health
+│   ├── doctor.ts                 # 9-check install health
 │   └── utils/
 │       ├── code-context.ts       # looksLikeCodeContext whitelist
 │       └── immersion.ts          # buildImmersionPrompt 5 档 × 3 LANGUAGE_PACKS
@@ -563,6 +575,7 @@ polyglot/
 │   ├── n{2,3,4,5}-vocab.yaml     # 6195 ja cards
 │   ├── n2-grammar.yaml           # ja N2 grammar
 │   ├── ko-topik{1,2}-vocab.yaml  # 970 ko cards (Phase 1.1a)
+│   ├── en-subtlex-top200.yaml    # Subtlex-US frequency top-200 English (mix-only)
 │   └── mock-n2.yaml              # 30 mock-N2 questions (Phase 1.3)
 ├── skills/                       # 6 Claude Code skills
 │   ├── lt.skill.md               # main entry + rubric

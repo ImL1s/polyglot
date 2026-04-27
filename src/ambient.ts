@@ -75,9 +75,37 @@ export function getMixVocab(language: string, opts: MixVocabOptions = {}): MixVo
     )
     .all(language, STATE_REVIEW, masteredCutoffMs, masteredTarget) as RawVocab[];
 
-  // Graceful skip: empty mastered pool → return [] so hook logs ambient_skip
-  // instead of synthesising an exposure with weak-only words.
-  if (masteredRows.length === 0) return [];
+  // Graceful skip: empty mastered pool → check whether ANY review rows exist
+  // for this language. If zero (e.g., mix-only languages like en with no FSRS
+  // history), fall back to a random sample from the concepts table directly.
+  // Preserves Krashen i+1 semantics for studied languages — only kicks in for
+  // never-studied languages.
+  if (masteredRows.length === 0) {
+    const reviewCount = (db
+      .query(
+        `SELECT COUNT(*) AS n
+         FROM reviews r JOIN concepts c ON c.id = r.concept_id
+         WHERE c.language = ?`,
+      )
+      .get(language) as { n: number }).n;
+
+    if (reviewCount > 0) {
+      // Studied language but no mastered words yet — preserve original
+      // graceful-skip behavior so the hook logs ambient_skip.
+      return [];
+    }
+
+    // Mix-only language fallback: random sample from concepts table.
+    const fallbackRows = db
+      .query(
+        `SELECT id, ja, reading, zh
+         FROM concepts WHERE language = ?
+         ORDER BY RANDOM() LIMIT ?`,
+      )
+      .all(language, limit) as RawVocab[];
+
+    return fallbackRows.map(toMixVocabItem);
+  }
 
   const weakRows = weakTarget > 0
     ? (db

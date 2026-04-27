@@ -32,7 +32,7 @@ interface LanguagePack {
   exampleFull2: string;       // second few-shot for level >= 1.0
 }
 
-const LANGUAGE_PACKS: Record<string, LanguagePack> = {
+export const LANGUAGE_PACKS: Record<string, LanguagePack> = {
   ja: {
     name: "日文",
     readingHint: "furigana 假名注音",

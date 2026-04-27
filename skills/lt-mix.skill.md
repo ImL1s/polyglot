@@ -1,7 +1,7 @@
 ---
 name: lt-mix
 description: "调整 ambient 混入强度 (lt mix 0/10/25/50/100)"
-prompt_version: v1
+prompt_version: v2
 prompt_max_tokens: 250
 trigger:
   - "/lt-mix"

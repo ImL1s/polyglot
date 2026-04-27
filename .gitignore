@@ -5,4 +5,5 @@ dist/
 .DS_Store
 .env
 ~/.config/jp-trainer/
+.omc/
 

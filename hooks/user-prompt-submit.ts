@@ -31,7 +31,7 @@ import {
 // `prompt_version`. The check-prompt-version.ts CI hook fails the commit if
 // the two diverge. Every NDJSON ambient_inject event carries this value so
 // post-hoc dogfood analysis can split runs by template revision.
-export const AMBIENT_PROMPT_VERSION = "v1";
+export const AMBIENT_PROMPT_VERSION = "v2";
 
 interface PromptPayload {
   user_message?: string;
@@ -76,6 +76,10 @@ async function main() {
       process.exit(0);
     }
 
+    // logical OR, not nullish coalescing — empty string treated as unset
+    // (closes lt config mix_language= trap where parseValue("") returns "")
+    const mixLang = profile.mix_language || profile.active_language;
+
     const lines: string[] = [];
     const label = getLanguageLabel(profile.active_language);
 
@@ -101,7 +105,7 @@ async function main() {
     let mixVocab: MixVocabItem[] = [];
     if (!isCode && effectiveLevel > 0 && effectiveLevel < 1.0) {
       try {
-        const r = runLt(["mix-vocab", "--limit", "15"]);
+        const r = runLt(["mix-vocab", "--limit", "15", "--language", mixLang]);
         if (r.code === 0 && r.stdout.trim()) {
           mixVocab = JSON.parse(r.stdout) as MixVocabItem[];
         }
@@ -116,6 +120,7 @@ async function main() {
           event: "ambient_skip",
           reason: "empty_pool",
           language: profile.active_language,
+          mix_language: mixLang,
           immersion_level: effectiveLevel,
           prompt_version: AMBIENT_PROMPT_VERSION,
         });
@@ -123,7 +128,7 @@ async function main() {
     }
 
     const immersionLine = buildImmersionPrompt(
-      { level: effectiveLevel, language: profile.active_language, isCode },
+      { level: effectiveLevel, language: mixLang, isCode },
       mixVocab,
     );
     if (immersionLine) {
@@ -141,6 +146,7 @@ async function main() {
           immersion_level: effectiveLevel,
           vocab_count: mixVocab.length,
           language: profile.active_language,
+          mix_language: mixLang,
           prompt_version: AMBIENT_PROMPT_VERSION,
         });
       } else if (effectiveLevel >= 1.0) {
@@ -151,6 +157,7 @@ async function main() {
           immersion_level: effectiveLevel,
           vocab_count: 0,
           language: profile.active_language,
+          mix_language: mixLang,
           prompt_version: AMBIENT_PROMPT_VERSION,
         });
       }

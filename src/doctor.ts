@@ -3,10 +3,13 @@ import { spawnSync } from "node:child_process";
 import { join } from "node:path";
 import { homedir } from "node:os";
 import { CONFIG_DIR, DB_FILE, PROFILE_FILE } from "./paths.ts";
+import { Database } from "bun:sqlite";
+import YAML from "yaml";
+import { LANGUAGE_PACKS } from "./utils/immersion.ts";
 
 export interface DoctorCheck {
   id: string;
-  level: "ok" | "warn" | "error";
+  level: "ok" | "info" | "warn" | "error";
   msg: string;
   details?: unknown;
 }
@@ -14,6 +17,7 @@ export interface DoctorCheck {
 export interface DoctorReport {
   exit_code: 0 | 1 | 2;
   ok: number;
+  info: number;
   warn: number;
   error: number;
   checks: DoctorCheck[];
@@ -194,23 +198,78 @@ export function runDoctor(env: DoctorEnv = {}): DoctorReport {
     checks.push({ id: "launchd_backup", level: "warn", msg: `daily-backup plist missing — run install.sh to register` });
   }
 
+  // 9. mix_lang_seeds — only emitted when mix_language is set (info-level)
+  const profilePathForHome = join(home, ".config", "polyglot", "profile.yaml");
+  let mixLang: string | null = null;
+  if (existsSync(profilePathForHome)) {
+    try {
+      const parsed = YAML.parse(readFileSync(profilePathForHome, "utf-8")) as Record<string, unknown>;
+      const val = parsed?.mix_language;
+      if (typeof val === "string" && val.trim().length > 0) {
+        mixLang = val.trim();
+      }
+    } catch {
+      // unreadable profile — skip
+    }
+  }
+  if (mixLang !== null) {
+    if (!(mixLang in LANGUAGE_PACKS)) {
+      checks.push({
+        id: "mix_lang_seeds",
+        level: "info",
+        msg: `mix_language=${mixLang} has no LANGUAGE_PACKS template — ambient prompt will fall back to ja`,
+      });
+    } else {
+      const dbPathForHome = join(home, ".config", "polyglot", "reviews.db");
+      let seedCount = 0;
+      if (existsSync(dbPathForHome)) {
+        try {
+          const tmpDb = new Database(dbPathForHome);
+          const row = tmpDb.query<{ n: number }, [string]>(
+            "SELECT COUNT(*) AS n FROM concepts WHERE language = ?",
+          ).get(mixLang);
+          tmpDb.close();
+          seedCount = row?.n ?? 0;
+        } catch {
+          // DB unreadable — treat as 0
+        }
+      }
+      checks.push(seedCount === 0
+        ? {
+            id: "mix_lang_seeds",
+            level: "info",
+            msg: `mix_language=${mixLang} but no seed concepts found — run lt seed-import`,
+          }
+        : {
+            id: "mix_lang_seeds",
+            level: "ok",
+            msg: `mix_language ${mixLang} has ${seedCount} seed concepts`,
+          });
+    }
+  }
+
   let okCount = 0;
+  let infoCount = 0;
   let warnCount = 0;
   let errCount = 0;
   for (const c of checks) {
     if (c.level === "ok") okCount++;
+    else if (c.level === "info") infoCount++;
     else if (c.level === "warn") warnCount++;
     else errCount++;
   }
   const exit_code: 0 | 1 | 2 = errCount > 0 ? 2 : warnCount > 0 ? 1 : 0;
-  return { exit_code, ok: okCount, warn: warnCount, error: errCount, checks };
+  return { exit_code, ok: okCount, info: infoCount, warn: warnCount, error: errCount, checks };
 }
 
 export function formatReport(r: DoctorReport): string {
   const lines: string[] = [];
-  lines.push(`lt doctor — ${r.checks.length} checks (${r.ok} ok, ${r.warn} warn, ${r.error} error)`);
+  const parts = [`${r.ok} ok`];
+  if (r.info > 0) parts.push(`${r.info} info`);
+  parts.push(`${r.warn} warn`, `${r.error} error`);
+  lines.push(`lt doctor — ${r.checks.length} checks (${parts.join(", ")})`);
   for (const c of r.checks) {
-    const tag = c.level === "ok" ? "[ok]" : c.level === "warn" ? "[warn]" : "[err]";
+    const tag = c.level === "ok" ? "[ok]" : c.level === "info" ? "[info]" : c.level === "warn" ? "[warn]" : "[err]";
     lines.push(`  ${tag} ${c.id}: ${c.msg}`);
   }
   if (r.exit_code === 0) lines.push("all clear ✓");

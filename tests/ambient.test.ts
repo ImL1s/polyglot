@@ -175,6 +175,28 @@ describe("ambient.getMixVocab — 80/20 mastered/weak pool", () => {
     }
     expect(getMixVocab("ja", { limit: 15 }).length).toBe(12);
   });
+
+  test("getMixVocab returns random sample when language has no FSRS reviews (mix-only fallback)", () => {
+    // Insert 5 en concepts, zero reviews for 'en'.
+    for (let i = 0; i < 5; i++) {
+      seedConcept(db, `en${i}`, "en");
+    }
+    // Ensure 'ja' has some reviews to confirm filter doesn't bleed across languages.
+    seedConcept(db, "j0", "ja");
+    seedReview(db, "j0", { state: 2, stability: MASTERED_THRESHOLD_MS + MS_PER_DAY });
+
+    const out = getMixVocab("en", { limit: 3 });
+    expect(out.length).toBe(3);
+    expect(out.every((v) => v.id.startsWith("en"))).toBe(true);
+    expect(out.every((v) => typeof v.id === "string" && typeof v.ja === "string" && typeof v.zh === "string")).toBe(true);
+  });
+
+  test("getMixVocab returns [] for studied language with no mastered words (not mix-only fallback)", () => {
+    // 'ja' has reviews but none are mastered → should still return [] (existing behavior).
+    seedConcept(db, "c1");
+    seedReview(db, "c1", { state: 1, stability: MS_PER_DAY }); // Learning, not mastered
+    expect(getMixVocab("ja", { limit: 15 })).toEqual([]);
+  });
 });
 
 describe("ambient.logAmbientExposures", () => {
