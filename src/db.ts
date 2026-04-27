@@ -57,9 +57,34 @@ function migrate(db: Database) {
       created_at   INTEGER NOT NULL
     );
 
+    -- Phase 1.1b D19d / Adj-G: ambient mix exposure log + archive.
+    -- 'language' is denormalized from concepts.language so cross-language
+    -- analytics doesn't need a JOIN; concept_id stays the FK.
+    CREATE TABLE IF NOT EXISTS ambient_exposures (
+      id           INTEGER PRIMARY KEY AUTOINCREMENT,
+      concept_id   TEXT NOT NULL REFERENCES concepts(id),
+      language     TEXT NOT NULL DEFAULT 'ja',
+      source       TEXT NOT NULL DEFAULT 'mix',
+      created_at   INTEGER NOT NULL
+    );
+
+    -- Compacted archive populated by 'lt ambient-clean' (cumulative_count
+    -- per concept_id). PK (concept_id, archived_at) so multiple monthly
+    -- archive batches accumulate without conflict.
+    CREATE TABLE IF NOT EXISTS ambient_exposures_archive (
+      concept_id       TEXT NOT NULL,
+      language         TEXT NOT NULL DEFAULT 'ja',
+      cumulative_count INTEGER NOT NULL,
+      archived_at      INTEGER NOT NULL,
+      PRIMARY KEY (concept_id, archived_at)
+    );
+
     CREATE INDEX IF NOT EXISTS idx_reviews_due ON reviews(due_at);
     CREATE INDEX IF NOT EXISTS idx_attempts_concept ON attempts(concept_id, created_at DESC);
     CREATE INDEX IF NOT EXISTS idx_concepts_level_type ON concepts(level, type);
+    CREATE INDEX IF NOT EXISTS idx_ambient_concept ON ambient_exposures(concept_id, created_at DESC);
+    CREATE INDEX IF NOT EXISTS idx_ambient_lang_created ON ambient_exposures(language, created_at DESC);
+    CREATE INDEX IF NOT EXISTS idx_ambient_archive_lang ON ambient_exposures_archive(language);
   `);
 
   migrateConceptsLanguage(db);

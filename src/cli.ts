@@ -24,6 +24,13 @@ import { speak, buildSpeakBundle, LANG_TO_VOICE } from "./tts.ts";
 import { gradeListeningAnswer } from "./listening.ts";
 import { getDb, rowToConcept, type ConceptRow } from "./db.ts";
 import { PRESET_INT_TO_FLOAT, isPresetInt } from "./utils/immersion.ts";
+import {
+  getMixVocab,
+  logAmbientExposures,
+  cleanOldExposures,
+  archiveExposures,
+  getAmbientStats,
+} from "./ambient.ts";
 
 const program = new Command();
 program
@@ -319,6 +326,95 @@ program
     console.log(`immersion: ${f > 0 ? "on" : "off"} (level=${f})`);
   });
 
+// Phase 1.1b D19b/d/Adj-G — ambient mix engine + exposure log + retention.
+program
+  .command("mix-vocab")
+  .description("Sample 80% mastered + 20% weak vocab pool for ambient mix prompt (Phase 1.1b D19b)")
+  .option("--limit <n>", "max items returned", (v) => parseInt(v, 10), 15)
+  .option("--language <lang>", "override profile.active_language")
+  .option("--mastered-ratio <r>", "0..1 share of mastered words", parseFloat, 0.8)
+  .option("--json", "JSON output (default)", true)
+  .action((opts) => {
+    const profile = readProfile();
+    const lang = (opts.language as string | undefined) ?? profile.active_language;
+    const items = getMixVocab(lang, {
+      limit: opts.limit,
+      masteredRatio: opts.masteredRatio,
+    });
+    console.log(JSON.stringify(items));
+  });
+
+program
+  .command("ambient-log")
+  .description("Record ambient exposure for a comma-separated list of concept ids (used by hook)")
+  .requiredOption("--concepts <csv>", "concept_id1,concept_id2,...")
+  .option("--language <lang>", "override profile.active_language")
+  .option("--source <s>", "log source label", "mix")
+  .action((opts) => {
+    const profile = readProfile();
+    const lang = (opts.language as string | undefined) ?? profile.active_language;
+    const ids = (opts.concepts as string).split(",").map((s) => s.trim()).filter(Boolean);
+    const n = logAmbientExposures(ids, lang, opts.source);
+    console.log(JSON.stringify({ ok: true, inserted: n, language: lang }));
+  });
+
+program
+  .command("ambient-clean")
+  .description("Archive then delete ambient_exposures rows older than --keep-days (default 90)")
+  .option("--keep-days <n>", "retention window (days)", (v) => parseInt(v, 10), 90)
+  .option("--json", "JSON output")
+  .action((opts) => {
+    const cutoff = Date.now() - Math.max(0, opts.keepDays) * 24 * 3600 * 1000;
+    const archived = archiveExposures(cutoff);
+    const deleted = cleanOldExposures(cutoff);
+    appendFileSync(
+      LOG_FILE,
+      JSON.stringify({
+        ts: Date.now(),
+        event: "ambient_cleaned",
+        keep_days: opts.keepDays,
+        archived_concepts: archived,
+        deleted,
+      }) + "\n",
+      "utf-8",
+    );
+    if (opts.json) {
+      console.log(JSON.stringify({ ok: true, archived_concepts: archived, deleted, keep_days: opts.keepDays }));
+    } else {
+      console.log(`ambient-clean: archived ${archived} concept groups, deleted ${deleted} rows (keep ${opts.keepDays} days)`);
+    }
+  });
+
+program
+  .command("ambient-stats")
+  .description("Show ambient mix exposure stats for the active language (D19e)")
+  .option("--language <lang>", "override profile.active_language")
+  .option("--top <n>", "show top N concepts", (v) => parseInt(v, 10), 5)
+  .option("--json", "JSON output")
+  .action((opts) => {
+    const profile = readProfile();
+    const lang = (opts.language as string | undefined) ?? profile.active_language;
+    const stats = getAmbientStats(lang, opts.top);
+    if (opts.json) {
+      console.log(JSON.stringify(stats));
+      return;
+    }
+    console.log(`Ambient mix stats — ${lang}`);
+    console.log(`  live exposures:     ${stats.live_count}`);
+    console.log(`  archived exposures: ${stats.archived_count}`);
+    console.log(`  total:              ${stats.total}`);
+    console.log(`  unique concepts:    ${stats.unique_concepts}`);
+    if (stats.total === 0) {
+      // Critic Independent #4 — diagnostic line for "0 暴露"
+      console.log("  (本周 0 次暴露 — 原因可能：mastered 词库未积累 / mix 已关闭 / 触发未达概率)");
+    } else {
+      console.log("  top concepts:");
+      for (const t of stats.top_concepts) {
+        console.log(`    ${t.ja} (${t.zh}) — ${t.n}`);
+      }
+    }
+  });
+
 program
   .command("inject-decide")
   .description("Probabilistic decision for hooks. Exits 0 if should inject, 1 otherwise")
@@ -354,9 +450,16 @@ program
   .command("seed-import")
   .description("Import seed concepts from data/seeds and ~/.config/polyglot/seeds")
   .option("--dir <dir>", "additional dir to scan")
-  .action((opts) => {
+  .option("--include-mock", "also import mock-*.yaml files into mock_questions table")
+  .action(async (opts) => {
     const summary = importSeeds(opts.dir);
-    console.log(JSON.stringify(summary, null, 2));
+    if (opts.includeMock) {
+      const { importMockSeeds } = await import("./mock.ts");
+      const mockSummary = importMockSeeds(opts.dir);
+      console.log(JSON.stringify({ ...summary, mock: mockSummary }, null, 2));
+    } else {
+      console.log(JSON.stringify(summary, null, 2));
+    }
   });
 
 program
@@ -611,6 +714,93 @@ program
     }
     const grade = gradeListeningAnswer(opts.userAnswer, concept.reading);
     console.log(JSON.stringify({ ok: true, concept_id: concept.id, ...grade }));
+  });
+
+program
+  .command("mock-test")
+  .description("Sample N mock-test questions (default 30) and stream them as JSON for the LLM to administer")
+  .option("--count <n>", "how many to sample", (v) => parseInt(v, 10), 30)
+  .option("--type <type>", "all | vocab | grammar | listening | reading", "all")
+  .option("--level <level>", "level filter (default N2)", "N2")
+  .option("--language <lang>", "language filter (default ja)", "ja")
+  .option("--json", "JSON output (default)")
+  .action(async (opts) => {
+    const { pickMockQuestions } = await import("./mock.ts");
+    const questions = pickMockQuestions({
+      count: opts.count,
+      type: opts.type,
+      level: opts.level,
+      language: opts.language,
+    });
+    if (questions.length === 0) {
+      console.error("no mock questions found — run `lt seed-import --include-mock` first");
+      process.exit(2);
+    }
+    console.log(JSON.stringify({ count: questions.length, questions }));
+  });
+
+program
+  .command("mock-record")
+  .description("Persist one mock-test answer (called by the skill after the LLM grades a single question)")
+  .requiredOption("--question-id <id>", "mock question id")
+  .requiredOption("--user-choice <n>", "0-3", (v) => parseInt(v, 10))
+  .requiredOption("--correct <c>", "1 if user-choice matches the question's correct idx, else 0", (v) => parseInt(v, 10))
+  .action(async (opts) => {
+    const { recordMockAnswer } = await import("./mock.ts");
+    recordMockAnswer({
+      questionId: opts.questionId,
+      userChoice: opts.userChoice,
+      isCorrect: opts.correct === 1,
+    });
+    console.log(JSON.stringify({ ok: true }));
+  });
+
+program
+  .command("mock-report")
+  .description("Aggregate score for the most-recent mock-test session (last 24h by default)")
+  .option("--window-hours <n>", "look-back window in hours", (v) => parseInt(v, 10), 24)
+  .action(async (opts) => {
+    const { buildMockReport } = await import("./mock.ts");
+    const db = getDb();
+    const since = Date.now() - opts.windowHours * 3600 * 1000;
+    // Pull rows + their question types so by_type aggregation works without
+    // re-querying mock_questions in a loop.
+    const rows = db
+      .query(
+        `SELECT ma.question_id, ma.is_correct, ma.user_choice, ma.created_at, mq.type
+           FROM mock_attempts ma
+           LEFT JOIN mock_questions mq ON mq.id = ma.question_id
+          WHERE ma.created_at >= ?
+          ORDER BY ma.created_at ASC`,
+      )
+      .all(since) as {
+        question_id: string;
+        is_correct: number;
+        user_choice: number;
+        created_at: number;
+        type: string | null;
+      }[];
+    const results = rows.map((r) => ({
+      question_id: r.question_id,
+      type: r.type ?? "unknown",
+      user_choice: r.user_choice,
+      is_correct: r.is_correct === 1,
+      created_at: r.created_at,
+    }));
+    const report = buildMockReport(results);
+    console.log(JSON.stringify(report, null, 2));
+  });
+
+program
+  .command("ambient-validate")
+  .description("Adjustment K1: binomial test of mock-test accuracy — high (≥7 ambient exposures) vs low. Outputs JSON.")
+  .option("--window-days <n>", "look-back window in days (default 30)", (v) => parseInt(v, 10), 30)
+  .option("--threshold <n>", "exposure count cutoff between high/low groups (default 7)", (v) => parseInt(v, 10), 7)
+  .action(async (opts) => {
+    const { runAmbientValidate } = await import("./mock.ts");
+    const report = runAmbientValidate({ windowDays: opts.windowDays, highThreshold: opts.threshold });
+    console.log(JSON.stringify(report, null, 2));
+    if (report.status === "no_table") process.exit(2);
   });
 
 program
