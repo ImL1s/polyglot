@@ -59,9 +59,32 @@ CLI 是核心引擎，你只是渲染 + 评分层。**不要自己生成题目**
 - 用户说「复习 / 看一下今天有什么」→ 改走 `/lt-review` skill
 - 用户说「我学到哪了」→ `lt stats` 直接展示
 
+## 答错自动讲解（rating ≤ 2）
+
+回写 `lt answer` 之后，如果 rating ≤ 2，**立刻**为同一 concept 触发讲解：
+
+1. 跑 `lt explain <concept_id>`，拿回 JSON（含 `concept` / `recent_attempts` / `stats`）。
+2. 按下面 5 段模板出讲解（每段一行小标题 + 1-3 句解释，**总长 ≤ 1500 字**）：
+   1. **词源 / 字源**：日语含汉字时拆字 + 词根；纯假名词写来源（汉字本字 / 外来语来源）
+   2. **近义词对比**：同 level（如 N3）内意思相近的 1-2 词，列差异
+   3. **语法变形**：动词列基本形 + ます形 + て形 + た形 + 否定；形容词列い/な + 否定 + 过去；其他词型给典型搭配
+   4. **典型错误**：从 `recent_attempts` 中 `rating == 1` 的 `user_answer` 找 pattern，没数据就写「首次答错，留意 X」
+   5. **JLPT/TOPIK 出题套路**：这个词在该 level 常考的 trap（汉字读音陷阱 / 近义混淆 / 助词搭配）
+3. 输出后跑 `lt explain <concept_id> --cache "<5 段拼接成的纯文本，≤ 1500 字>"` 把讲解写进 `attempts.llm_feedback`，下次复习同 concept 时能拿到上一次的讲解上下文。
+
+## 用户显式 `/lt explain <id>`
+
+用户输入「/lt explain <id>」「讲一下 <id>」「展开 <id>」时，跳过抽题，直接走上面的 5 段流程（rating 阈值不再适用）。
+
+## 讲解 token 预算（硬约束）
+
+- input: `lt explain` 输出 JSON 已经截断到 ≤ 8000 字符（attempts ≤ 5 条 / user_answer ≤ 200 字 / llm_feedback ≤ 500 字）
+- output: 你的 5 段讲解 ≤ 1500 字。超过就压缩，**不要**省段（5 段必须齐）。
+
 ## 不要做的事
 
 - 不要自己编题（必须 `lt next`）
 - 不要给 rating 时加注释或合并 rubric（必须正好引用一行）
 - 不要写 `--source` 之外的 enum（manual / stop-hook / post-tool / cron / review）
-- 不要超过 250 tokens 输出（prompt_max_tokens 上限）
+- 不要超过 250 tokens 输出（prompt_max_tokens 上限），讲解段落例外（≤ 1500 字）
+- 讲解时不要跳过 `lt explain --cache` 回写步骤（缓存断了下次复习就看不到上次讲解）

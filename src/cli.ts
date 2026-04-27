@@ -19,6 +19,7 @@ import { recordAnswer } from "./srs.ts";
 import { getNextDue, dueCount, getStats, listDueConcepts } from "./concepts.ts";
 import { importSeeds } from "./seeds.ts";
 import { isWithinWorkHours } from "./work-hours.ts";
+import { buildExplainPayload, cacheExplainFeedback, EXPLAIN_LIMITS } from "./explain.ts";
 
 const program = new Command();
 program
