@@ -354,11 +354,12 @@ lt restore --from /abs/path/to/some.bak          # or restore from any snapshot
 
 | Phase  | Tasks                                              | Status                                                |
 |--------|----------------------------------------------------|-------------------------------------------------------|
-| 1.0    | Core CLI · seeds · skills · hooks · install.sh · README | **Done.** `lt doctor` (Task 27) is the last loose end. |
-| 1.1a   | Multi-language schema · Korean (TOPIK) seeds · multi-lang hooks | Not started                                           |
-| 1.1b   | `immersion_level` 5 档 · ambient mix-language engine · prompt versioning · 30-day dogfood validation | Not started                                           |
-| 1.2    | macOS `say` TTS backend · `/lt listen` listening drill | Not started                                           |
-| 1.3    | `/lt explain` verbose mode · edge-tts Linux fallback · mock-test | Not started                                           |
+| 1.0    | Core CLI · seeds · skills · hooks · install.sh · README · `lt doctor` | **Done** (v0.1.0)                                     |
+| 1.1a   | Multi-language schema · Korean TOPIK seeds (~970) · multi-lang hooks | **Done** (v0.2.0)                                     |
+| 1.1b   | `immersion_level` 5 档 (0/0.10/0.25/0.50/1.0) · ambient_exposures + `lt ambient-clean` 90 天 retention · `lt mix-vocab` 80/20 mastered/weak pool · prompt_version CI | **Done** (v0.2.0)                                     |
+| 1.2    | macOS `say` TTS backend (5 voices) · `lt say` · `lt next --type listening` + `lt grade-listening` 假名听写 | **Done** (v0.2.0)                                     |
+| 1.3    | `lt explain` 5 段教学 + 答错自动调 · edge-tts Linux fallback · mock-N2 题库 + `lt mock-test` + `lt ambient-validate` (binomial p<0.05 K1 自我证伪) | **Done** (v0.2.0)                                     |
+| 1.1b.x | 30-day dogfood window: run `lt ambient-validate` after 30 days of immersion_level > 0 to verify ambient mix improves retention | Pending real-world data                               |
 
 The full plan with tradeoffs and decision logs lives in
 [`docs/ralplan-planner-v4.md`](docs/ralplan-planner-v4.md) (planner) and
