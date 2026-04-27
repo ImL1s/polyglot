@@ -93,9 +93,40 @@ if [ -f "$HOME/.config/polyglot/profile.yaml" ]; then
   fi
 fi
 
-# 9. daily backup launchd (Critic fix #2)
+# 8.5. Linux: offer to install edge-tts (D13 Linux fallback for TTS).
+#      macOS users skip this whole block — the `say` binary is built-in.
+if [ "$(uname -s)" = "Linux" ]; then
+  log "Linux detected — checking edge-tts (Python TTS fallback for D13)"
+  if ! command -v edge-tts >/dev/null 2>&1; then
+    if command -v pipx >/dev/null 2>&1; then
+      log "installing edge-tts via pipx"
+      pipx install edge-tts || warn "pipx install edge-tts failed — install manually: pipx install edge-tts"
+    elif command -v pip3 >/dev/null 2>&1; then
+      log "installing edge-tts via pip3 --user"
+      pip3 install --user edge-tts || warn "pip3 install --user edge-tts failed — install manually"
+    else
+      warn "neither pipx nor pip3 found. Install Python 3.8+ then run: pipx install edge-tts"
+      warn "Without edge-tts, lt will silent-skip TTS on Linux (D13 fallback)."
+    fi
+  else
+    log "edge-tts already installed: $(command -v edge-tts)"
+  fi
+
+  # Auto-set tts_engine=edge in profile if user is on Linux and didn't override.
+  if [ -f "$HOME/.config/polyglot/profile.yaml" ]; then
+    if grep -q "^tts_engine: macos" "$HOME/.config/polyglot/profile.yaml"; then
+      log "rewriting profile.tts_engine: macos → edge (Linux default)"
+      # use sed -i.bak for portability across GNU/BSD; remove backup after.
+      sed -i.bak 's/^tts_engine: macos/tts_engine: edge/' "$HOME/.config/polyglot/profile.yaml" || true
+      rm -f "$HOME/.config/polyglot/profile.yaml.bak"
+    fi
+  fi
+fi
+
+# 9. daily backup launchd (Critic fix #2). macOS-only — Linux users should
+#    set up an equivalent cron entry manually.
 PLIST="$HOME/Library/LaunchAgents/com.polyglot.daily-backup.plist"
-if [ ! -f "$PLIST" ]; then
+if [ "$(uname -s)" = "Darwin" ] && [ ! -f "$PLIST" ]; then
   cat > "$PLIST" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">

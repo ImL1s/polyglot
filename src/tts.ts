@@ -14,6 +14,25 @@ export const LANG_TO_VOICE: Record<string, string> = {
   es: "Mónica",
 };
 
+// edge-tts neural voices per language. These are Microsoft Edge's free TTS
+// service voices accessed via the python `edge-tts` package — used as Linux
+// fallback when macOS `say` isn't available. Voices picked for clarity at
+// learner-friendly pace; users can override via profile.tts_voice_overrides.
+//
+// All four are female speakers, native pronunciation. Update freely; edge-tts
+// `--list-voices` can be run to discover alternatives.
+export const LANG_TO_VOICE_EDGE: Record<string, string> = {
+  ja: "ja-JP-NanamiNeural",
+  ko: "ko-KR-SunHiNeural",
+  en: "en-US-JennyNeural",
+  zh: "zh-CN-XiaoxiaoNeural",
+  es: "es-ES-ElviraNeural",
+};
+
+export function getEdgeVoice(language: string): string | undefined {
+  return LANG_TO_VOICE_EDGE[language];
+}
+
 export type TtsEngine = "macos" | "edge" | "none";
 
 export interface SpeakOptions {
@@ -66,15 +85,17 @@ function defaultSpawn(cmd: string[]): SpawnHandle {
 }
 
 /**
- * Resolve the voice for a language. Profile.tts_voice_overrides[lang] wins
- * over the built-in LANG_TO_VOICE table so users can swap to a preferred
- * accent (e.g. en → "Daniel" instead of "Samantha") without code changes.
+ * Resolve the voice for a language + engine. Profile.tts_voice_overrides[lang]
+ * wins over the built-in tables so users can swap to a preferred accent
+ * without code changes. Falls back to LANG_TO_VOICE_EDGE for engine='edge'
+ * and LANG_TO_VOICE for engine='macos' (the original macOS table).
  */
-function resolveVoice(language: string, override?: string): string | undefined {
+function resolveVoice(language: string, engine: string, override?: string): string | undefined {
   if (override) return override;
   const profile = readProfile();
   const overrides = (profile as { tts_voice_overrides?: Record<string, string> }).tts_voice_overrides;
   if (overrides && overrides[language]) return overrides[language];
+  if (engine === "edge") return LANG_TO_VOICE_EDGE[language];
   return LANG_TO_VOICE[language];
 }
 
@@ -102,7 +123,7 @@ export async function speak(
     return { engine: "none", spawned: false, reason: "engine-none" };
   }
 
-  const voice = resolveVoice(language, opts.voice);
+  const voice = resolveVoice(language, engine, opts.voice);
   if (!voice) {
     logEvent({ event: "tts_skip", reason: "unsupported-language", language, engine });
     return { engine, spawned: false, reason: "unsupported-language" };

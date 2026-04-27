@@ -135,6 +135,37 @@ curl -fsSL https://raw.githubusercontent.com/<owner>/<repo>/main/install.sh | ba
 For a manual install (no curl), see [`install.sh`](install.sh) — every step is
 plain bash.
 
+### Linux fallback (TTS — `edge-tts`)
+
+macOS users get TTS for free via the bundled `say` binary (Kyoko / Yuna /
+Samantha / Tingting voices). Linux has no equivalent, so `install.sh`
+transparently switches you to **edge-tts**, a Python wrapper around Microsoft
+Edge's free neural TTS service. The installer:
+
+1. Detects `uname -s = Linux`.
+2. Tries to install `edge-tts` via `pipx install edge-tts` (preferred) or
+   `pip3 install --user edge-tts` (fallback).
+3. If neither is available, prints a manual command and continues — TTS will
+   silent-skip (D13 fail-safe), the CLI keeps working.
+4. Rewrites `profile.tts_engine: macos` → `tts_engine: edge` in your profile
+   so all `lt say` / answer-side TTS uses edge-tts.
+
+Voice mapping (override via `profile.tts_voice_overrides[lang]`):
+
+| language | edge-tts voice         |
+|----------|------------------------|
+| `ja`     | `ja-JP-NanamiNeural`   |
+| `ko`     | `ko-KR-SunHiNeural`    |
+| `en`     | `en-US-JennyNeural`    |
+| `zh`     | `zh-CN-XiaoxiaoNeural` |
+
+Run `edge-tts --list-voices | grep ja-JP` to discover alternatives. To opt out
+entirely set `tts_engine: none` in `profile.yaml`.
+
+> The launchd-based daily backup plist (step 9 of `install.sh`) is macOS-only.
+> Linux users should add a cron entry hitting `scripts/daily-backup.sh` daily
+> if they want the same rolling backup.
+
 **Where things live after install**:
 
 | Path                                             | What                                                   |
