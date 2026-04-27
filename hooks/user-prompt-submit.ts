@@ -19,7 +19,7 @@ import { shouldThrottle, recordInject } from "./lib/limiter.ts";
 import { readProfile, type Profile } from "../src/profile.ts";
 import { IMMERSION_FLAG } from "../src/paths.ts";
 import { looksLikeCodeContext } from "../src/utils/code-context.ts";
-import { buildImmersionPrompt } from "../src/utils/immersion.ts";
+import { buildImmersionPrompt, getLanguageLabel } from "../src/utils/immersion.ts";
 
 interface PromptPayload {
   user_message?: string;
@@ -28,15 +28,15 @@ interface PromptPayload {
   is_new_session?: boolean;
 }
 
-function detectDueOnSessionStart(): string | null {
+function detectDueOnSessionStart(label: string): string | null {
   const { stdout, code } = runLt(["due-count"]);
   if (code !== 0) return null;
   const n = parseInt(stdout.trim(), 10);
   if (!Number.isFinite(n) || n <= 0) return null;
-  return `[日语训练] 今日待复习 ${n} 题。可用 /lt 抽题，或 lt next --json 获取下一道。`;
+  return `[${label} 训练] 今日待复习 ${n} 题。可用 /lt 抽题，或 lt next --json 获取下一道。`;
 }
 
-function detectChineseReversePrompt(userMessage: string, profile: Profile): string | null {
+function detectChineseReversePrompt(userMessage: string, profile: Profile, label: string): string | null {
   if (!userMessage || profile.cn_probe_rate <= 0) return null;
   // Route through runLt with --text so we don't have to pipe stdin (and don't
   // depend on bun being on PATH for the dev fallback).
@@ -45,7 +45,7 @@ function detectChineseReversePrompt(userMessage: string, profile: Profile): stri
     if (r.code !== 0) return null;
     const cnLine = (r.stdout || "").trim();
     if (!cnLine) return null;
-    return `[日语训练 反问] 顺手让用户做日语翻译练习：把这句中文「${cnLine}」翻译成日语，先让用户自己答，错了再讲解。`;
+    return `[${label} 训练 反问] 顺手让用户做${label}翻译练习：把这句中文「${cnLine}」翻译成${label}，先让用户自己答，错了再讲解。`;
   } catch {
     return null;
   }
@@ -65,9 +65,10 @@ async function main() {
     }
 
     const lines: string[] = [];
+    const label = getLanguageLabel(profile.active_language);
 
     if (payload.is_new_session) {
-      const dueLine = detectDueOnSessionStart();
+      const dueLine = detectDueOnSessionStart(label);
       if (dueLine) lines.push(dueLine);
     }
 
@@ -86,7 +87,7 @@ async function main() {
     });
     if (immersionLine) lines.push(immersionLine);
 
-    const cnLine = detectChineseReversePrompt(userMessage, profile);
+    const cnLine = detectChineseReversePrompt(userMessage, profile, label);
     if (cnLine) lines.push(cnLine);
 
     if (lines.length === 0) {

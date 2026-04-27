@@ -26,20 +26,20 @@ describe("buildImmersionPrompt — four branches (Critic Q5)", () => {
     const out = buildImmersionPrompt({ level: 0.1, language: "ja", isCode: false });
     expect(out).not.toBeNull();
     expect(out).toContain("[沉浸 mix lv=0.10]");
-    expect(out).toContain("至多 1 个 ja");
+    expect(out).toContain("至多 1 个 日文 (ja)");
     expect(out).toContain("括号内加注音");
   });
 
   test("level=0.25 → ambient mix, limit=3", () => {
     const out = buildImmersionPrompt({ level: 0.25, language: "ja", isCode: false });
     expect(out).not.toBeNull();
-    expect(out).toContain("至多 3 个 ja");
+    expect(out).toContain("至多 3 个 日文 (ja)");
   });
 
   test("level=0.49 → still ambient mix branch (limit=5)", () => {
     const out = buildImmersionPrompt({ level: 0.49, language: "ja", isCode: false });
     expect(out).not.toBeNull();
-    expect(out).toContain("至多 5 个 ja");
+    expect(out).toContain("至多 5 个 日文 (ja)");
     expect(out).not.toContain("双语句法");
   });
 
@@ -47,7 +47,7 @@ describe("buildImmersionPrompt — four branches (Critic Q5)", () => {
     const out = buildImmersionPrompt({ level: 0.5, language: "ja", isCode: false });
     expect(out).not.toBeNull();
     expect(out).toContain("[沉浸 lv=0.50 双语句法]");
-    expect(out).toContain("短句尾部用一句完整的 ja");
+    expect(out).toContain("短句尾部用一句完整的 日文 (ja)");
     expect(out).toContain("中文翻译");
     expect(out).not.toContain("至多");
   });

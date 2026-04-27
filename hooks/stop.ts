@@ -12,6 +12,7 @@ import { runLt, emitContext } from "./lib/hook-utils.ts";
 import { safeFail, logEvent } from "./lib/common.ts";
 import { shouldThrottle, recordInject } from "./lib/limiter.ts";
 import { readProfile } from "../src/profile.ts";
+import { getLanguageLabel } from "../src/utils/immersion.ts";
 
 interface ConceptRow {
   id: string;
@@ -46,8 +47,9 @@ async function main() {
       safeFail("stop_hook_json_parse_failed");
     }
     const reading = concept.reading ? `（${concept.reading}）` : "";
+    const label = getLanguageLabel(profile.active_language);
     const ctx =
-      `[日语训练] 出题：[${concept.level}/${concept.type}] ${concept.ja}${reading} — ${concept.zh}\n` +
+      `[${label} 训练] 出题：[${concept.level}/${concept.type}] ${concept.ja}${reading} — ${concept.zh}\n` +
       `让用户先尝试回答（中文释义/造句/读音），然后用 lt answer --concept-id ${concept.id} --rating <1-4> --feedback "<rubric line>" --source stop-hook 记录评分。`;
     recordInject();
     logEvent({ event: "stop_hook_inject", concept_id: concept.id });

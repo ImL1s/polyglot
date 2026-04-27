@@ -13,6 +13,7 @@ import { runLt, emitContext, readHookPayload } from "./lib/hook-utils.ts";
 import { safeFail, logEvent } from "./lib/common.ts";
 import { shouldThrottle, recordInject } from "./lib/limiter.ts";
 import { readProfile } from "../src/profile.ts";
+import { getLanguageLabel } from "../src/utils/immersion.ts";
 
 interface PostToolPayload {
   tool_name?: string;
@@ -56,8 +57,9 @@ async function main() {
       safeFail("post_tool_hook_json_parse_failed");
     }
     const reading = concept.reading ? `（${concept.reading}）` : "";
+    const label = getLanguageLabel(profile.active_language);
     const ctx =
-      `[日语训练 单词卡] 趁刚才工具运行的间隙过一道单词：` +
+      `[${label} 训练 单词卡] 趁刚才工具运行的间隙过一道单词：` +
       `[${concept.level}/${concept.type}] ${concept.ja}${reading} — ${concept.zh}\n` +
       `让用户先回答释义/造句，再用 lt answer --concept-id ${concept.id} --rating <1-4> --source post-tool 记录。`;
     emitContext("PostToolUse", ctx);
