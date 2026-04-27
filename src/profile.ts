@@ -197,7 +197,20 @@ export function writeProfile(p: Profile): void {
   writeFileSync(PROFILE_FILE, YAML.stringify(p), "utf-8");
 }
 
+function validateProfilePatch(patch: Partial<Profile>): void {
+  if ("mix_language" in patch) {
+    const v = patch.mix_language;
+    if (v !== null && typeof v !== "string") {
+      throw new Error(
+        `mix_language must be a string language code or null; got ${typeof v} ${JSON.stringify(v)}. ` +
+          `Try: lt config mix_language=en | ko | null`,
+      );
+    }
+  }
+}
+
 export function patchProfile(patch: Partial<Profile>): Profile {
+  validateProfilePatch(patch);
   const cur = readProfile();
   const next = { ...cur, ...patch };
   writeProfile(next);

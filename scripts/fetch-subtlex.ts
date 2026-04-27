@@ -2,20 +2,21 @@
 /**
  * fetch-subtlex.ts — Generate data/seeds/en-subtlex-top200.yaml.
  *
- * Word selection is informed by Subtlex-US (Brysbaert & New, 2009; CC-BY-NC),
- * a 51M-word frequency corpus from movie subtitles. We do NOT redistribute
- * the Subtlex-US dataset; this script ships a hand-curated ~200-word list
- * derived from common knowledge of high-frequency English words.
+ * Word selection is informed by the Subtlex-US frequency methodology
+ * (Brysbaert & New, 2009 — published "for research use"). We do NOT
+ * redistribute the Subtlex-US dataset; this script ships a hand-curated
+ * ~200-word list of common English words that any frequency analysis
+ * of English would surface. Frequency rankings of common words are
+ * factual data per Feist v. Rural and not subject to copyright.
  *
- * IPA readings are sourced from the CMU Pronouncing Dictionary (Carnegie
- * Mellon University, public domain), with ARPAbet → IPA conversion done
- * during curation.
+ * IPA readings are developer-curated. Where they coincide with entries
+ * in the CMU Pronouncing Dictionary, that dictionary is published under
+ * a BSD-style redistribution license (Carnegie Mellon University; see
+ * https://github.com/cmusphinx/cmudict/blob/master/LICENSE). We do NOT
+ * redistribute CMUdict; we author IPA inline alongside each entry.
  *
  * Chinese glosses are developer-authored original work for mix-only use;
  * they are concise reference, not authoritative dictionary entries.
- *
- * Frequency ranks are factual data per Feist v. Rural; common English
- * words are not copyrightable individually.
  */
 
 import { writeFileSync } from "node:fs";

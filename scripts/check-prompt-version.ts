@@ -51,33 +51,31 @@ function readHookPromptVersion(): string | null {
   }
 }
 
-/** Hash the immersion branch template strings to detect silent prompt edits. */
+/**
+ * Hash the entire normalized content of src/utils/immersion.ts to detect
+ * silent prompt edits. The hash now covers the WHOLE immersion.ts file
+ * (LANGUAGE_PACKS, buildImmersionPrompt body, vocabHint, branch
+ * concatenations, helpers). Comments are stripped so doc-only edits don't
+ * bump the hash; whitespace is collapsed so reformatting doesn't either.
+ * Any string-literal or code edit will change the hash.
+ */
 export function hashImmersionTemplates(): string {
-  let raw = "";
+  let raw: string;
   try {
     raw = readFileSync(IMMERSION_FILE, "utf-8");
   } catch {
-    return "";
+    return ""; // file-read failure is keep-as-is acceptable (main() handles missing file)
   }
-
-  // Path 1: [沉浸-prefixed backtick template literals.
-  const matches = raw.match(/`[^`]*\[沉浸[^`]*`/g) ?? [];
-  const templateNormalized = matches.map((s) => s.replace(/\s+/g, " ").trim()).sort().join("\n");
-  if (!templateNormalized) {
-    throw new Error("hashImmersionTemplates: no [沉浸 templates matched");
+  // Normalize: strip block + line comments, collapse whitespace.
+  const stripped = raw
+    .replace(/\/\*[\s\S]*?\*\//g, "") // /* block comments */
+    .replace(/\/\/.*$/gm, "")         // // line comments
+    .replace(/\s+/g, " ")             // collapse whitespace
+    .trim();
+  if (!stripped) {
+    throw new Error("hashImmersionTemplates: immersion.ts is empty after normalization");
   }
-
-  // Path 2: Full LANGUAGE_PACKS object body.
-  const langPacksMatch = raw.match(/const LANGUAGE_PACKS[\s\S]*?\n\};/m);
-  const langPacksNormalized = langPacksMatch
-    ? langPacksMatch[0].replace(/\s+/g, " ").trim()
-    : "";
-  if (!langPacksNormalized) {
-    throw new Error("hashImmersionTemplates: LANGUAGE_PACKS block not found");
-  }
-
-  const combined = templateNormalized + "\n---\n" + langPacksNormalized;
-  return createHash("sha256").update(combined).digest("hex").slice(0, 12);
+  return createHash("sha256").update(stripped).digest("hex").slice(0, 12);
 }
 
 export function check(): CheckResult {

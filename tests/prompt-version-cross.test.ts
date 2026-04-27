@@ -170,22 +170,53 @@ describe("hashImmersionTemplates — mutation drift guard (US-011)", () => {
     expect(mutated).toMatch(/^[0-9a-f]{12}$/);
   });
 
-  test("U10: deleting LANGUAGE_PACKS block throws", () => {
-    expect(() =>
-      withMutatedImmersion(
-        (raw) => raw.replace(/const LANGUAGE_PACKS[\s\S]*?\n\};/m, "// LANGUAGE_PACKS removed for U10"),
-        () => hashImmersionTemplates(),
-      ),
-    ).toThrow(/LANGUAGE_PACKS/);
+  test("U10: deleting LANGUAGE_PACKS block changes hash", () => {
+    const baseline = hashImmersionTemplates();
+    const mutated = withMutatedImmersion(
+      (raw) => raw.replace(/const LANGUAGE_PACKS[\s\S]*?\n\};/m, "// LANGUAGE_PACKS removed for U10"),
+      () => hashImmersionTemplates(),
+    );
+    expect(mutated).not.toBe(baseline);
+    expect(mutated).toMatch(/^[0-9a-f]{12}$/);
   });
 
-  test("U10b: stripping [沉浸 marker from template literals throws", () => {
-    expect(() =>
-      withMutatedImmersion(
-        (raw) => raw.replace(/\[沉浸/g, "[REMOVED"),
-        () => hashImmersionTemplates(),
-      ),
-    ).toThrow(/沉浸/);
+  test("U10b: stripping [沉浸 marker from template literals changes hash", () => {
+    const baseline = hashImmersionTemplates();
+    const mutated = withMutatedImmersion(
+      (raw) => raw.replace(/\[沉浸/g, "[REMOVED"),
+      () => hashImmersionTemplates(),
+    );
+    expect(mutated).not.toBe(baseline);
+    expect(mutated).toMatch(/^[0-9a-f]{12}$/);
+  });
+
+  test("U10c: mutating vocabHint substring changes hash", () => {
+    const baseline = hashImmersionTemplates();
+    const mutated = withMutatedImmersion(
+      (raw) => raw.replace("优先从以下已学词清单中选词", "MUTATED_FOR_U10c"),
+      () => hashImmersionTemplates(),
+    );
+    expect(mutated).not.toBe(baseline);
+  });
+
+  test("U10d: mutating buildImmersionPrompt branch literal changes hash", () => {
+    const baseline = hashImmersionTemplates();
+    const mutated = withMutatedImmersion(
+      // from the level < 0.5 branch return at ~line 128
+      (raw) => raw.replace("不替换代码/变量名/命令名/文件路径；如果替换后理解困难就跳过。", "MUTATED_FOR_U10d"),
+      () => hashImmersionTemplates(),
+    );
+    expect(mutated).not.toBe(baseline);
+  });
+
+  test("hashImmersionTemplates throws if file is empty after normalization", () => {
+    const original = readFileSync(IMMERSION_FILE, "utf-8");
+    try {
+      writeFileSync(IMMERSION_FILE, "// only comments\n");
+      expect(() => hashImmersionTemplates()).toThrow(/empty/);
+    } finally {
+      writeFileSync(IMMERSION_FILE, original);
+    }
   });
 
   test("U11: baseline hash is 12 hex chars (deterministic on unmodified source)", () => {

@@ -33,6 +33,12 @@ import {
 // post-hoc dogfood analysis can split runs by template revision.
 export const AMBIENT_PROMPT_VERSION = "v2";
 
+// Bumps when the NDJSON ambient_inject / ambient_skip event field set
+// changes. Distinct from AMBIENT_PROMPT_VERSION (prompt-observable content
+// version). v1 was pre-mix_language shape; v2 added the mix_language and
+// event_schema_version fields together (Phase 1.4).
+export const NDJSON_EVENT_SCHEMA_VERSION = 2;
+
 interface PromptPayload {
   user_message?: string;
   session_id?: string;
@@ -123,6 +129,7 @@ async function main() {
           mix_language: mixLang,
           immersion_level: effectiveLevel,
           prompt_version: AMBIENT_PROMPT_VERSION,
+          event_schema_version: NDJSON_EVENT_SCHEMA_VERSION,
         });
       }
     }
@@ -148,6 +155,7 @@ async function main() {
           language: profile.active_language,
           mix_language: mixLang,
           prompt_version: AMBIENT_PROMPT_VERSION,
+          event_schema_version: NDJSON_EVENT_SCHEMA_VERSION,
         });
       } else if (effectiveLevel >= 1.0) {
         // Full immersion still gets logged for prompt_version tracking even
@@ -159,6 +167,7 @@ async function main() {
           language: profile.active_language,
           mix_language: mixLang,
           prompt_version: AMBIENT_PROMPT_VERSION,
+          event_schema_version: NDJSON_EVENT_SCHEMA_VERSION,
         });
       }
     }

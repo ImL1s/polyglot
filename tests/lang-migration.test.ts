@@ -3,7 +3,7 @@ import { Database } from "bun:sqlite";
 import { mkdtempSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
-import { migrateProfile, DEFAULT_PROFILE, type Profile } from "../src/profile.ts";
+import { migrateProfile, DEFAULT_PROFILE, patchProfile, readProfile, type Profile } from "../src/profile.ts";
 
 describe("migrateProfile (pure)", () => {
   test("v1 raw with top-level level + no per_language → backfills per_language[active_language]", () => {
@@ -86,6 +86,47 @@ describe("migrateProfile (pure)", () => {
     // the v1-mirror path is skipped — defaults still seed ja so it's not lost).
     expect(profile.per_language.ko.level).toBe("TOPIK2");
     expect(profile.per_language.ja).toBeDefined();
+  });
+});
+
+describe("patchProfile mix_language validation", () => {
+  test("patchProfile rejects mix_language=true", () => {
+    expect(() => patchProfile({ mix_language: true as any })).toThrow(/mix_language/);
+  });
+
+  test("patchProfile rejects mix_language=1", () => {
+    expect(() => patchProfile({ mix_language: 1 as any })).toThrow(/mix_language/);
+  });
+
+  test("patchProfile rejects mix_language=['en']", () => {
+    expect(() => patchProfile({ mix_language: ["en"] as any })).toThrow(/mix_language/);
+  });
+
+  test("patchProfile accepts mix_language='en'", () => {
+    const before = readProfile();
+    try {
+      expect(() => patchProfile({ mix_language: "en" })).not.toThrow();
+    } finally {
+      patchProfile(before);
+    }
+  });
+
+  test("patchProfile accepts mix_language=null", () => {
+    const before = readProfile();
+    try {
+      expect(() => patchProfile({ mix_language: null })).not.toThrow();
+    } finally {
+      patchProfile(before);
+    }
+  });
+
+  test("patchProfile accepts mix_language='' (Layer 1 OR catches empty at hook)", () => {
+    const before = readProfile();
+    try {
+      expect(() => patchProfile({ mix_language: "" })).not.toThrow();
+    } finally {
+      patchProfile(before);
+    }
   });
 });
 

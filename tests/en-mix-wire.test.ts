@@ -71,6 +71,20 @@ describe("en mix-only — unit/regression guards", () => {
     expect(src).toContain("mix_language");
   });
 
+  test("U5b: hook source declares NDJSON_EVENT_SCHEMA_VERSION constant + uses it in event emits", () => {
+    const src = readFileSync(HOOK_FILE, "utf-8");
+    // Constant must be declared and exported
+    expect(src).toContain("NDJSON_EVENT_SCHEMA_VERSION");
+    expect(src).toMatch(/export\s+const\s+NDJSON_EVENT_SCHEMA_VERSION\s*=\s*\d+/);
+    // Must appear at least 4 times: once for the export + 3 event emit sites
+    // (ambient_skip + ambient_inject vocab branch + ambient_inject full branch)
+    const occurrences = (src.match(/NDJSON_EVENT_SCHEMA_VERSION/g) ?? []).length;
+    expect(occurrences).toBeGreaterThanOrEqual(4);
+    // Each event emit site must reference the constant via event_schema_version key
+    const eventFieldOccurrences = (src.match(/event_schema_version:\s*NDJSON_EVENT_SCHEMA_VERSION/g) ?? []).length;
+    expect(eventFieldOccurrences).toBeGreaterThanOrEqual(3);
+  });
+
   test("U6: hook source does NOT contain hardcoded \"en\" outside comments", () => {
     const src = readFileSync(HOOK_FILE, "utf-8");
     // Strip line comments before searching for "en" literal
