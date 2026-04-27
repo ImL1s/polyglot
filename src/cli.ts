@@ -21,6 +21,7 @@ import { importSeeds } from "./seeds.ts";
 import { isWithinWorkHours } from "./work-hours.ts";
 import { buildExplainPayload, cacheExplainFeedback, EXPLAIN_LIMITS } from "./explain.ts";
 import { speak, buildSpeakBundle, LANG_TO_VOICE } from "./tts.ts";
+import { gradeListeningAnswer } from "./listening.ts";
 import { getDb, rowToConcept, type ConceptRow } from "./db.ts";
 import { PRESET_INT_TO_FLOAT, isPresetInt } from "./utils/immersion.ts";
 
@@ -50,7 +51,7 @@ program
   .description("Pick the next concept to practice")
   .option("--json", "output JSON")
   .option("--quiet", "suppress error output if nothing due")
-  .option("--type <type>", "vocab | grammar | kanji | expression")
+  .option("--type <type>", "vocab | grammar | kanji | expression | listening")
   .option("--level <level>", "N5 | N4 | N3 | N2 | N1")
   .option("--difficulty <d>", "easy | hard")
   .action((opts) => {

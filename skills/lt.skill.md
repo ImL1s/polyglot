@@ -54,6 +54,20 @@ CLI 是核心引擎，你只是渲染 + 评分层。**不要自己生成题目**
 - `rating_2_hard`：表达正确但场景模糊，OR 场景对但表达不地道
 - `rating_1_again`：表达不会用或用错场景
 
+## 听力 drill（D15）
+
+用户说「听力 / 听写 / listen / listening」→ 走听力流程（`lt next --type listening` 抽 vocab 题且 `reading != null`）：
+
+1. 抽题：`lt next --type listening --json`。
+2. **不要**显示 `concept.ja` 和 `concept.reading` 给用户。立刻 `lt say <id> --blocking`（同步播完再继续，不然用户没听到声音就要回答）。
+3. 提示「请写假名（hiragana 或 katakana）」，等用户作答。
+4. 评分：`lt grade-listening --concept-id <id> --user-answer "<用户输入>" --json`，CLI 返回 `{rating, rubric, normalized_user, normalized_expected, exact_match}`。**直接采用** CLI 给的 rating（不要自己改），rubric 也按 CLI 输出引用。
+   - 评分规则（参考，CLI 内置）：完全匹配 → `rating_4_easy`；编辑距离 1 → `rating_2_hard`（D15 规定 mismatch 起跳 2）；空答案或距离 ≥ 2 → `rating_1_again`。
+5. 回写：`lt answer --concept-id <id> --rating <r> --user-answer "<text>" --feedback "<rubric>" --source manual`。
+6. 反馈用户：显示 `concept.ja`（汉字）+ `concept.reading`（标准读音）+ `concept.zh`（中文释义），让用户看到正确答案。
+
+不需要走 step 6 的 TTS 自动念（因为 step 2 已经念过了）。
+
 ## 沉浸 / 复习子命令
 
 - 用户说「沉浸 on / off」→ `lt immersion on` 或 `lt immersion off`

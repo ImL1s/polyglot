@@ -1,11 +1,32 @@
 import { getDb, rowToConcept, type ConceptOut, type ConceptRow } from "./db.ts";
 import { levelsInLearningRange, readProfile, type Profile } from "./profile.ts";
 
+export type ConceptType = "vocab" | "grammar" | "kanji" | "expression";
+// `listening` is a virtual drill type, not a stored concept.type. When
+// requested, getNextDue samples from the vocab pool (constrained to rows that
+// have a non-null reading so kana matching can score the answer). The
+// returned ConceptOut keeps its real `type: "vocab"` — the skill
+// distinguishes drill mode by remembering the original opts.type.
+export type RequestType = ConceptType | "listening";
+
 export interface NextOptions {
-  type?: "vocab" | "grammar" | "kanji" | "expression";
+  type?: RequestType;
   level?: string;
   difficulty?: "easy" | "hard";
   language?: string;
+}
+
+interface TypeFilter {
+  sql: string;
+  params: unknown[];
+}
+
+function buildTypeFilter(type?: RequestType): TypeFilter | null {
+  if (!type) return null;
+  if (type === "listening") {
+    return { sql: "c.type = ? AND c.reading IS NOT NULL AND c.reading != ''", params: ["vocab"] };
+  }
+  return { sql: "c.type = ?", params: [type] };
 }
 
 export function getNextDue(opts: NextOptions = {}): ConceptOut | null {
@@ -22,9 +43,10 @@ export function getNextDue(opts: NextOptions = {}): ConceptOut | null {
     wherePieces.push(`c.level IN (${allowedLevels.map(() => "?").join(",")})`);
     params.push(...allowedLevels);
   }
-  if (opts.type) {
-    wherePieces.push("c.type = ?");
-    params.push(opts.type);
+  const typeFilter = buildTypeFilter(opts.type);
+  if (typeFilter) {
+    wherePieces.push(typeFilter.sql);
+    params.push(...typeFilter.params);
   }
 
   const dueRow = db
@@ -80,9 +102,10 @@ function pickNewConcept(opts: NextOptions, allowedLevels: string[], language: st
     wherePieces.push(`c.level IN (${allowedLevels.map(() => "?").join(",")})`);
     params.push(...allowedLevels);
   }
-  if (opts.type) {
-    wherePieces.push("c.type = ?");
-    params.push(opts.type);
+  const typeFilter = buildTypeFilter(opts.type);
+  if (typeFilter) {
+    wherePieces.push(typeFilter.sql);
+    params.push(...typeFilter.params);
   }
   const row = db
     .query(
