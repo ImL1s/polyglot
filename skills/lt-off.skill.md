@@ -1,24 +1,24 @@
 ---
 name: lt-off
-description: "关闭沉浸模式 (Phase 1.0: lt immersion off; Phase 1.1b 后改 lt mix 0)"
-prompt_version: v1
+description: "关闭沉浸 (lt mix 0)"
+prompt_version: v2
 prompt_max_tokens: 250
 trigger:
   - "/lt-off"
   - "/jp-off"
 ---
 
-# /lt-off — 沉浸关
+# /lt-off — 沉浸全关
 
-## Phase 1.0 行为
+## 行为
 
-执行 `lt immersion off` → 删 `immersion.flag`。stop-hook 回到默认 inject_rate（profile.inject_rate, 默认 0.10）。
+执行 `lt mix 0` → 写 `profile.immersion_level=0` + 删 `immersion.flag`。`user-prompt-submit` hook 不再注入沉浸/混入 prompt。stop-hook 仍按 `profile.inject_rate` 概率注题。
 
-简短回复：「沉浸关。回到普通节奏，hook 仍按 inject_rate 概率注题。`/lt-on` 重开。」
+简短回复：「沉浸关（mix=0）。回到普通节奏，hook 仍按 inject_rate 概率注题。`/lt-on` 全开 / `lt mix 25` 偶尔混入。」
 
-## Phase 1.1b 之后
+## fallback
 
-改调 `lt mix 0`（mix=0 表示无沉浸）。fallback 同 `/lt-on`：unknown command 时回 `lt immersion off`。
+如果 `lt mix --help` 报「unknown command」，回 `lt immersion off`。
 
 ## 不要做的事
 

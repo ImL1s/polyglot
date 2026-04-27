@@ -33,7 +33,8 @@ describe("skills/*.skill.md frontmatter", () => {
       expect(fm.name).toBe(name);
       expect(typeof fm.description).toBe("string");
       expect(fm.description.length).toBeGreaterThan(0);
-      expect(fm.prompt_version).toBe("v1");
+      // prompt_version bumps each time the template changes (Adj-I) — accept any vN/vN.M
+      expect(fm.prompt_version).toMatch(/^v\d+(\.\d+)?$/);
       expect(fm.prompt_max_tokens).toBe(250);
       // every skill must list the lt-prefixed slash command in its trigger
       expect(Array.isArray(fm.trigger)).toBe(true);

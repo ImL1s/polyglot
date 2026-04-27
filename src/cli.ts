@@ -22,6 +22,7 @@ import { isWithinWorkHours } from "./work-hours.ts";
 import { buildExplainPayload, cacheExplainFeedback, EXPLAIN_LIMITS } from "./explain.ts";
 import { speak, buildSpeakBundle, LANG_TO_VOICE } from "./tts.ts";
 import { getDb, rowToConcept, type ConceptRow } from "./db.ts";
+import { PRESET_INT_TO_FLOAT, isPresetInt } from "./utils/immersion.ts";
 
 const program = new Command();
 program
@@ -223,25 +224,98 @@ language
     console.log(JSON.stringify({ ok: true, active_language: next.active_language }));
   });
 
+// Phase 1.1b — `lt mix <preset>` is the canonical entrypoint for setting
+// immersion_level. `lt immersion <state>` is kept as an alias for the v1.0
+// /lt-on / /lt-off skill contract (on=100, off=0, status reads profile).
+//
+// Both commands write profile.immersion_level. The legacy IMMERSION_FLAG
+// file is kept in sync (created when level>0, removed when level=0) so the
+// hook fallback in user-prompt-submit.ts still honors /lt-on from older
+// installs that haven't migrated yet.
+function applyImmersionLevel(levelFloat: number): { ok: true; level: number } {
+  patchProfile({ immersion_level: levelFloat });
+  if (!existsSync(CONFIG_DIR)) mkdirSync(CONFIG_DIR, { recursive: true });
+  if (levelFloat > 0) {
+    writeFileSync(IMMERSION_FLAG, String(Date.now()), "utf-8");
+  } else if (existsSync(IMMERSION_FLAG)) {
+    unlinkSync(IMMERSION_FLAG);
+  }
+  return { ok: true, level: levelFloat };
+}
+
 program
-  .command("immersion")
-  .description("toggle immersion mode flag")
-  .argument("<state>", "on | off | toggle | status")
-  .action((state: string) => {
-    const exists = existsSync(IMMERSION_FLAG);
-    if (state === "status") {
-      console.log(exists ? "on" : "off");
+  .command("mix")
+  .description("Set ambient mix-language level. Accepts presets 0/10/25/50/100, status, or --custom <0-100>")
+  .argument("[preset]", "0 | 10 | 25 | 50 | 100 | status")
+  .option("--custom <n>", "escape hatch — write any 0-100 value (not recommended)", parseFloat)
+  .action((preset: string | undefined, opts: { custom?: number }) => {
+    if (opts.custom !== undefined) {
+      if (!Number.isFinite(opts.custom) || opts.custom < 0 || opts.custom > 100) {
+        console.error(`--custom expects a number 0-100, got: ${opts.custom}`);
+        process.exit(2);
+      }
+      const f = opts.custom / 100;
+      const r = applyImmersionLevel(f);
+      console.log(JSON.stringify({ ...r, custom: true }));
       return;
     }
-    const wantOn = state === "on" || (state === "toggle" && !exists);
-    if (wantOn) {
-      if (!existsSync(CONFIG_DIR)) mkdirSync(CONFIG_DIR, { recursive: true });
-      writeFileSync(IMMERSION_FLAG, String(Date.now()), "utf-8");
-      console.log("immersion: on");
-    } else {
-      if (exists) unlinkSync(IMMERSION_FLAG);
-      console.log("immersion: off");
+    if (!preset || preset === "status") {
+      const cur = readProfile().immersion_level;
+      console.log(JSON.stringify({ immersion_level: cur }));
+      return;
     }
+    const n = Number.parseInt(preset, 10);
+    if (!Number.isFinite(n) || !isPresetInt(n)) {
+      console.error(
+        `lt mix expects 0 / 10 / 25 / 50 / 100 (got: ${preset}). ` +
+        `Use \`lt mix --custom ${preset}\` to bypass (not recommended — LLM behaviour ` +
+        `is only well-defined at the five preset anchors).`,
+      );
+      process.exit(2);
+    }
+    const f = PRESET_INT_TO_FLOAT[n];
+    const r = applyImmersionLevel(f);
+    console.log(JSON.stringify(r));
+  });
+
+program
+  .command("immersion")
+  .description("Set immersion level (alias for `lt mix`). Accepts on / off / 0 / 10 / 25 / 50 / 100 / status / toggle")
+  .argument("<state>", "on | off | 0 | 10 | 25 | 50 | 100 | status | toggle")
+  .action((state: string) => {
+    if (state === "status") {
+      const cur = readProfile().immersion_level;
+      console.log(cur > 0 ? "on" : "off");
+      return;
+    }
+    if (state === "toggle") {
+      const cur = readProfile().immersion_level;
+      const next = cur > 0 ? 0 : 1.0;
+      const r = applyImmersionLevel(next);
+      console.log(`immersion: ${r.level > 0 ? "on" : "off"}`);
+      return;
+    }
+    if (state === "on") {
+      applyImmersionLevel(1.0);
+      console.log("immersion: on");
+      return;
+    }
+    if (state === "off") {
+      applyImmersionLevel(0);
+      console.log("immersion: off");
+      return;
+    }
+    const n = Number.parseInt(state, 10);
+    if (!Number.isFinite(n) || !isPresetInt(n)) {
+      console.error(
+        `lt immersion expects on/off/toggle/status or 0/10/25/50/100 (got: ${state}). ` +
+        `Use \`lt mix --custom ${state}\` for non-preset values.`,
+      );
+      process.exit(2);
+    }
+    const f = PRESET_INT_TO_FLOAT[n];
+    applyImmersionLevel(f);
+    console.log(`immersion: ${f > 0 ? "on" : "off"} (level=${f})`);
   });
 
 program
@@ -514,6 +588,28 @@ program
     if (opts.json) {
       console.log(JSON.stringify({ ok: true, language: lang, text, ...result }));
     }
+  });
+
+program
+  .command("grade-listening")
+  .description("Score a kana answer against a concept's reading (listening drill, D15)")
+  .requiredOption("--concept-id <id>", "concept id to score against")
+  .requiredOption("--user-answer <text>", "user's kana input")
+  .action((opts) => {
+    const row = getDb()
+      .query("SELECT * FROM concepts WHERE id = ?")
+      .get(opts.conceptId) as ConceptRow | null;
+    if (!row) {
+      console.error(`concept not found: ${opts.conceptId}`);
+      process.exit(2);
+    }
+    const concept = rowToConcept(row);
+    if (!concept.reading) {
+      console.error(`concept has no reading; not eligible for listening drill: ${opts.conceptId}`);
+      process.exit(2);
+    }
+    const grade = gradeListeningAnswer(opts.userAnswer, concept.reading);
+    console.log(JSON.stringify({ ok: true, concept_id: concept.id, ...grade }));
   });
 
 program
