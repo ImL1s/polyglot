@@ -1,0 +1,3152 @@
+language: ko
+concepts:
+  - id: ko-vocab-topik2-sahoe
+    type: vocab
+    level: TOPIK2
+    ja: 사회
+    reading: sahoe
+    zh: 社会
+    pos: 명
+  - id: ko-vocab-topik2-jeongchi
+    type: vocab
+    level: TOPIK2
+    ja: 정치
+    reading: jeongchi
+    zh: 政治
+    pos: 명
+  - id: ko-vocab-topik2-gyeongje
+    type: vocab
+    level: TOPIK2
+    ja: 경제
+    reading: gyeongje
+    zh: 经济
+    pos: 명
+  - id: ko-vocab-topik2-munhwa
+    type: vocab
+    level: TOPIK2
+    ja: 문화
+    reading: munhwa
+    zh: 文化
+    pos: 명
+  - id: ko-vocab-topik2-yeogsa
+    type: vocab
+    level: TOPIK2
+    ja: 역사
+    reading: yeogsa
+    zh: 历史
+    pos: 명
+  - id: ko-vocab-topik2-gyoyug
+    type: vocab
+    level: TOPIK2
+    ja: 교육
+    reading: gyoyug
+    zh: 教育
+    pos: 명
+  - id: ko-vocab-topik2-gwahag
+    type: vocab
+    level: TOPIK2
+    ja: 과학
+    reading: gwahag
+    zh: 科学
+    pos: 명
+  - id: ko-vocab-topik2-gisul
+    type: vocab
+    level: TOPIK2
+    ja: 기술
+    reading: gisul
+    zh: 技术
+    pos: 명
+  - id: ko-vocab-topik2-yesul
+    type: vocab
+    level: TOPIK2
+    ja: 예술
+    reading: yesul
+    zh: 艺术
+    pos: 명
+  - id: ko-vocab-topik2-jonggyo
+    type: vocab
+    level: TOPIK2
+    ja: 종교
+    reading: jonggyo
+    zh: 宗教
+    pos: 명
+  - id: ko-vocab-topik2-beob
+    type: vocab
+    level: TOPIK2
+    ja: 법
+    reading: beob
+    zh: 法律
+    pos: 명
+  - id: ko-vocab-topik2-jeongbu
+    type: vocab
+    level: TOPIK2
+    ja: 정부
+    reading: jeongbu
+    zh: 政府
+    pos: 명
+  - id: ko-vocab-topik2-nara
+    type: vocab
+    level: TOPIK2
+    ja: 나라
+    reading: nara
+    zh: 国家
+    pos: 명
+  - id: ko-vocab-topik2-gugmin
+    type: vocab
+    level: TOPIK2
+    ja: 국민
+    reading: gugmin
+    zh: 国民
+    pos: 명
+  - id: ko-vocab-topik2-simin
+    type: vocab
+    level: TOPIK2
+    ja: 시민
+    reading: simin
+    zh: 市民
+    pos: 명
+  - id: ko-vocab-topik2-gugje
+    type: vocab
+    level: TOPIK2
+    ja: 국제
+    reading: gugje
+    zh: 国际
+    pos: 명
+  - id: ko-vocab-topik2-segye
+    type: vocab
+    level: TOPIK2
+    ja: 세계
+    reading: segye
+    zh: 世界
+    pos: 명
+  - id: ko-vocab-topik2-hwangyeong
+    type: vocab
+    level: TOPIK2
+    ja: 환경
+    reading: hwangyeong
+    zh: 环境
+    pos: 명
+  - id: ko-vocab-topik2-jayeon
+    type: vocab
+    level: TOPIK2
+    ja: 자연
+    reading: jayeon
+    zh: 自然
+    pos: 명
+  - id: ko-vocab-topik2-hwangyeongoyeom
+    type: vocab
+    level: TOPIK2
+    ja: 환경오염
+    reading: hwangyeongoyeom
+    zh: 环境污染
+    pos: 명
+  - id: ko-vocab-topik2-jigu
+    type: vocab
+    level: TOPIK2
+    ja: 지구
+    reading: jigu
+    zh: 地球
+    pos: 명
+  - id: ko-vocab-topik2-uju
+    type: vocab
+    level: TOPIK2
+    ja: 우주
+    reading: uju
+    zh: 宇宙
+    pos: 명
+  - id: ko-vocab-topik2-mirae
+    type: vocab
+    level: TOPIK2
+    ja: 미래
+    reading: mirae
+    zh: 未来
+    pos: 명
+  - id: ko-vocab-topik2-gwageo
+    type: vocab
+    level: TOPIK2
+    ja: 과거
+    reading: gwageo
+    zh: 过去
+    pos: 명
+  - id: ko-vocab-topik2-hyeonjae
+    type: vocab
+    level: TOPIK2
+    ja: 현재
+    reading: hyeonjae
+    zh: 现在
+    pos: 명
+  - id: ko-vocab-topik2-sidae
+    type: vocab
+    level: TOPIK2
+    ja: 시대
+    reading: sidae
+    zh: 时代
+    pos: 명
+  - id: ko-vocab-topik2-sedae
+    type: vocab
+    level: TOPIK2
+    ja: 세대
+    reading: sedae
+    zh: 世代
+    pos: 명
+  - id: ko-vocab-topik2-jeontong
+    type: vocab
+    level: TOPIK2
+    ja: 전통
+    reading: jeontong
+    zh: 传统
+    pos: 명
+  - id: ko-vocab-topik2-hyeondae
+    type: vocab
+    level: TOPIK2
+    ja: 현대
+    reading: hyeondae
+    zh: 现代
+    pos: 명
+  - id: ko-vocab-topik2-baljeon
+    type: vocab
+    level: TOPIK2
+    ja: 발전
+    reading: baljeon
+    zh: 发展
+    pos: 명
+  - id: ko-vocab-topik2-byeonhwa
+    type: vocab
+    level: TOPIK2
+    ja: 변화
+    reading: byeonhwa
+    zh: 变化
+    pos: 명
+  - id: ko-vocab-topik2-seongjang
+    type: vocab
+    level: TOPIK2
+    ja: 성장
+    reading: seongjang
+    zh: 成长
+    pos: 명
+  - id: ko-vocab-topik2-hyangsang
+    type: vocab
+    level: TOPIK2
+    ja: 향상
+    reading: hyangsang
+    zh: 提升
+    pos: 명
+  - id: ko-vocab-topik2-seonggong
+    type: vocab
+    level: TOPIK2
+    ja: 성공
+    reading: seonggong
+    zh: 成功
+    pos: 명
+  - id: ko-vocab-topik2-silpae
+    type: vocab
+    level: TOPIK2
+    ja: 실패
+    reading: silpae
+    zh: 失败
+    pos: 명
+  - id: ko-vocab-topik2-gihoe
+    type: vocab
+    level: TOPIK2
+    ja: 기회
+    reading: gihoe
+    zh: 机会
+    pos: 명
+  - id: ko-vocab-topik2-dojeon
+    type: vocab
+    level: TOPIK2
+    ja: 도전
+    reading: dojeon
+    zh: 挑战
+    pos: 명
+  - id: ko-vocab-topik2-noryeog
+    type: vocab
+    level: TOPIK2
+    ja: 노력
+    reading: noryeog
+    zh: 努力
+    pos: 명
+  - id: ko-vocab-topik2-mogpyo
+    type: vocab
+    level: TOPIK2
+    ja: 목표
+    reading: mogpyo
+    zh: 目标
+    pos: 명
+  - id: ko-vocab-topik2-gyehoeg
+    type: vocab
+    level: TOPIK2
+    ja: 계획
+    reading: gyehoeg
+    zh: 计划
+    pos: 명
+  - id: ko-vocab-topik2-bangbeob
+    type: vocab
+    level: TOPIK2
+    ja: 방법
+    reading: bangbeob
+    zh: 方法
+    pos: 명
+  - id: ko-vocab-topik2-gyeolgwa
+    type: vocab
+    level: TOPIK2
+    ja: 결과
+    reading: gyeolgwa
+    zh: 结果
+    pos: 명
+  - id: ko-vocab-topik2-wonin
+    type: vocab
+    level: TOPIK2
+    ja: 원인
+    reading: wonin
+    zh: 原因
+    pos: 명
+  - id: ko-vocab-topik2-iyu
+    type: vocab
+    level: TOPIK2
+    ja: 이유
+    reading: iyu
+    zh: 理由
+    pos: 명
+  - id: ko-vocab-topik2-yeonghyang
+    type: vocab
+    level: TOPIK2
+    ja: 영향
+    reading: yeonghyang
+    zh: 影响
+    pos: 명
+  - id: ko-vocab-topik2-hyogwa
+    type: vocab
+    level: TOPIK2
+    ja: 효과
+    reading: hyogwa
+    zh: 效果
+    pos: 명
+  - id: ko-vocab-topik2-uimi
+    type: vocab
+    level: TOPIK2
+    ja: 의미
+    reading: uimi
+    zh: 意义
+    pos: 명
+  - id: ko-vocab-topik2-gachi
+    type: vocab
+    level: TOPIK2
+    ja: 가치
+    reading: gachi
+    zh: 价值
+    pos: 명
+  - id: ko-vocab-topik2-jungyoseong
+    type: vocab
+    level: TOPIK2
+    ja: 중요성
+    reading: jungyoseong
+    zh: 重要性
+    pos: 명
+  - id: ko-vocab-topik2-pilyoseong
+    type: vocab
+    level: TOPIK2
+    ja: 필요성
+    reading: pilyoseong
+    zh: 必要性
+    pos: 명
+  - id: ko-vocab-topik2-gwangye
+    type: vocab
+    level: TOPIK2
+    ja: 관계
+    reading: gwangye
+    zh: 关系
+    pos: 명
+  - id: ko-vocab-topik2-yeongyeol
+    type: vocab
+    level: TOPIK2
+    ja: 연결
+    reading: yeongyeol
+    zh: 连接
+    pos: 명
+  - id: ko-vocab-topik2-gwansim
+    type: vocab
+    level: TOPIK2
+    ja: 관심
+    reading: gwansim
+    zh: 关心
+    pos: 명
+  - id: ko-vocab-topik2-heungmi
+    type: vocab
+    level: TOPIK2
+    ja: 흥미
+    reading: heungmi
+    zh: 兴趣
+    pos: 명
+  - id: ko-vocab-topik2-chwimi
+    type: vocab
+    level: TOPIK2
+    ja: 취미
+    reading: chwimi
+    zh: 爱好
+    pos: 명
+  - id: ko-vocab-topik2-seubgwan
+    type: vocab
+    level: TOPIK2
+    ja: 습관
+    reading: seubgwan
+    zh: 习惯
+    pos: 명
+  - id: ko-vocab-topik2-seonggyeog
+    type: vocab
+    level: TOPIK2
+    ja: 성격
+    reading: seonggyeog
+    zh: 性格
+    pos: 명
+  - id: ko-vocab-topik2-seongpum
+    type: vocab
+    level: TOPIK2
+    ja: 성품
+    reading: seongpum
+    zh: 品性
+    pos: 명
+  - id: ko-vocab-topik2-taedo
+    type: vocab
+    level: TOPIK2
+    ja: 태도
+    reading: taedo
+    zh: 态度
+    pos: 명
+  - id: ko-vocab-topik2-uigyeon
+    type: vocab
+    level: TOPIK2
+    ja: 의견
+    reading: uigyeon
+    zh: 意见
+    pos: 명
+  - id: ko-vocab-topik2-saenggag
+    type: vocab
+    level: TOPIK2
+    ja: 생각
+    reading: saenggag
+    zh: 想法
+    pos: 명
+  - id: ko-vocab-topik2-gamjeong
+    type: vocab
+    level: TOPIK2
+    ja: 감정
+    reading: gamjeong
+    zh: 感情
+    pos: 명
+  - id: ko-vocab-topik2-neukkim
+    type: vocab
+    level: TOPIK2
+    ja: 느낌
+    reading: neukkim
+    zh: 感觉
+    pos: 명
+  - id: ko-vocab-topik2-gibun
+    type: vocab
+    level: TOPIK2
+    ja: 기분
+    reading: gibun
+    zh: 心情
+    pos: 명
+  - id: ko-vocab-topik2-maeum
+    type: vocab
+    level: TOPIK2
+    ja: 마음
+    reading: maeum
+    zh: 心
+    pos: 명
+  - id: ko-vocab-topik2-jeongsin
+    type: vocab
+    level: TOPIK2
+    ja: 정신
+    reading: jeongsin
+    zh: 精神
+    pos: 명
+  - id: ko-vocab-topik2-yeonghon
+    type: vocab
+    level: TOPIK2
+    ja: 영혼
+    reading: yeonghon
+    zh: 灵魂
+    pos: 명
+  - id: ko-vocab-topik2-kkum
+    type: vocab
+    level: TOPIK2
+    ja: 꿈
+    reading: kkum
+    zh: 梦/梦想
+    pos: 명
+  - id: ko-vocab-topik2-huimang
+    type: vocab
+    level: TOPIK2
+    ja: 희망
+    reading: huimang
+    zh: 希望
+    pos: 명
+  - id: ko-vocab-topik2-jeolmang
+    type: vocab
+    level: TOPIK2
+    ja: 절망
+    reading: jeolmang
+    zh: 绝望
+    pos: 명
+  - id: ko-vocab-topik2-gidae
+    type: vocab
+    level: TOPIK2
+    ja: 기대
+    reading: gidae
+    zh: 期待
+    pos: 명
+  - id: ko-vocab-topik2-geogjeong
+    type: vocab
+    level: TOPIK2
+    ja: 걱정
+    reading: geogjeong
+    zh: 担心
+    pos: 명
+  - id: ko-vocab-topik2-bulan
+    type: vocab
+    level: TOPIK2
+    ja: 불안
+    reading: bulan
+    zh: 不安
+    pos: 명
+  - id: ko-vocab-topik2-duryeoum
+    type: vocab
+    level: TOPIK2
+    ja: 두려움
+    reading: duryeoum
+    zh: 恐惧
+    pos: 명
+  - id: ko-vocab-topik2-haengbog
+    type: vocab
+    level: TOPIK2
+    ja: 행복
+    reading: haengbog
+    zh: 幸福
+    pos: 명
+  - id: ko-vocab-topik2-bulhaeng
+    type: vocab
+    level: TOPIK2
+    ja: 불행
+    reading: bulhaeng
+    zh: 不幸
+    pos: 명
+  - id: ko-vocab-topik2-manjog
+    type: vocab
+    level: TOPIK2
+    ja: 만족
+    reading: manjog
+    zh: 满足
+    pos: 명
+  - id: ko-vocab-topik2-bulman
+    type: vocab
+    level: TOPIK2
+    ja: 불만
+    reading: bulman
+    zh: 不满
+    pos: 명
+  - id: ko-vocab-topik2-seuteureseu
+    type: vocab
+    level: TOPIK2
+    ja: 스트레스
+    reading: seuteureseu
+    zh: 压力
+    pos: 명
+  - id: ko-vocab-topik2-jigeob
+    type: vocab
+    level: TOPIK2
+    ja: 직업
+    reading: jigeob
+    zh: 职业
+    pos: 명
+  - id: ko-vocab-topik2-chwijig
+    type: vocab
+    level: TOPIK2
+    ja: 취직
+    reading: chwijig
+    zh: 就业
+    pos: 명
+  - id: ko-vocab-topik2-chwieob
+    type: vocab
+    level: TOPIK2
+    ja: 취업
+    reading: chwieob
+    zh: 就业
+    pos: 명
+  - id: ko-vocab-topik2-ijig
+    type: vocab
+    level: TOPIK2
+    ja: 이직
+    reading: ijig
+    zh: 跳槽
+    pos: 명
+  - id: ko-vocab-topik2-toejig
+    type: vocab
+    level: TOPIK2
+    ja: 퇴직
+    reading: toejig
+    zh: 退休
+    pos: 명
+  - id: ko-vocab-topik2-seungjin
+    type: vocab
+    level: TOPIK2
+    ja: 승진
+    reading: seungjin
+    zh: 升职
+    pos: 명
+  - id: ko-vocab-topik2-wolgeub
+    type: vocab
+    level: TOPIK2
+    ja: 월급
+    reading: wolgeub
+    zh: 月薪
+    pos: 명
+  - id: ko-vocab-topik2-yeonbong
+    type: vocab
+    level: TOPIK2
+    ja: 연봉
+    reading: yeonbong
+    zh: 年薪
+    pos: 명
+  - id: ko-vocab-topik2-boneoseu
+    type: vocab
+    level: TOPIK2
+    ja: 보너스
+    reading: boneoseu
+    zh: 奖金
+    pos: 명
+  - id: ko-vocab-topik2-gyeyag
+    type: vocab
+    level: TOPIK2
+    ja: 계약
+    reading: gyeyag
+    zh: 合同
+    pos: 명
+  - id: ko-vocab-topik2-hoeui
+    type: vocab
+    level: TOPIK2
+    ja: 회의
+    reading: hoeui
+    zh: 会议
+    pos: 명
+  - id: ko-vocab-topik2-balpyo
+    type: vocab
+    level: TOPIK2
+    ja: 발표
+    reading: balpyo
+    zh: 发表
+    pos: 명
+  - id: ko-vocab-topik2-bogo
+    type: vocab
+    level: TOPIK2
+    ja: 보고
+    reading: bogo
+    zh: 报告
+    pos: 명
+  - id: ko-vocab-topik2-jaryo
+    type: vocab
+    level: TOPIK2
+    ja: 자료
+    reading: jaryo
+    zh: 资料
+    pos: 명
+  - id: ko-vocab-topik2-munseo
+    type: vocab
+    level: TOPIK2
+    ja: 문서
+    reading: munseo
+    zh: 文件
+    pos: 명
+  - id: ko-vocab-topik2-peurojegteu
+    type: vocab
+    level: TOPIK2
+    ja: 프로젝트
+    reading: peurojegteu
+    zh: 项目
+    pos: 명
+  - id: ko-vocab-topik2-eobmu
+    type: vocab
+    level: TOPIK2
+    ja: 업무
+    reading: eobmu
+    zh: 业务
+    pos: 명
+  - id: ko-vocab-topik2-buseo
+    type: vocab
+    level: TOPIK2
+    ja: 부서
+    reading: buseo
+    zh: 部门
+    pos: 명
+  - id: ko-vocab-topik2-dongryo
+    type: vocab
+    level: TOPIK2
+    ja: 동료
+    reading: dongryo
+    zh: 同事
+    pos: 명
+  - id: ko-vocab-topik2-bujang
+    type: vocab
+    level: TOPIK2
+    ja: 부장
+    reading: bujang
+    zh: 部长
+    pos: 명
+  - id: ko-vocab-topik2-timjang
+    type: vocab
+    level: TOPIK2
+    ja: 팀장
+    reading: timjang
+    zh: 组长
+    pos: 명
+  - id: ko-vocab-topik2-sajang
+    type: vocab
+    level: TOPIK2
+    ja: 사장
+    reading: sajang
+    zh: 社长
+    pos: 명
+  - id: ko-vocab-topik2-jigwon
+    type: vocab
+    level: TOPIK2
+    ja: 직원
+    reading: jigwon
+    zh: 员工
+    pos: 명
+  - id: ko-vocab-topik2-joleob
+    type: vocab
+    level: TOPIK2
+    ja: 졸업
+    reading: joleob
+    zh: 毕业
+    pos: 명
+  - id: ko-vocab-topik2-ibhag
+    type: vocab
+    level: TOPIK2
+    ja: 입학
+    reading: ibhag
+    zh: 入学
+    pos: 명
+  - id: ko-vocab-topik2-jeongong
+    type: vocab
+    level: TOPIK2
+    ja: 전공
+    reading: jeongong
+    zh: 专业
+    pos: 명
+  - id: ko-vocab-topik2-hagnyeon
+    type: vocab
+    level: TOPIK2
+    ja: 학년
+    reading: hagnyeon
+    zh: 年级
+    pos: 명
+  - id: ko-vocab-topik2-haggi
+    type: vocab
+    level: TOPIK2
+    ja: 학기
+    reading: haggi
+    zh: 学期
+    pos: 명
+  - id: ko-vocab-topik2-sueob
+    type: vocab
+    level: TOPIK2
+    ja: 수업
+    reading: sueob
+    zh: 课程
+    pos: 명
+  - id: ko-vocab-topik2-gangui
+    type: vocab
+    level: TOPIK2
+    ja: 강의
+    reading: gangui
+    zh: 讲课
+    pos: 명
+  - id: ko-vocab-topik2-siheom
+    type: vocab
+    level: TOPIK2
+    ja: 시험
+    reading: siheom
+    zh: 考试
+    pos: 명
+  - id: ko-vocab-topik2-seongjeog
+    type: vocab
+    level: TOPIK2
+    ja: 성적
+    reading: seongjeog
+    zh: 成绩
+    pos: 명
+  - id: ko-vocab-topik2-jeomsu
+    type: vocab
+    level: TOPIK2
+    ja: 점수
+    reading: jeomsu
+    zh: 分数
+    pos: 명
+  - id: ko-vocab-topik2-gwaje
+    type: vocab
+    level: TOPIK2
+    ja: 과제
+    reading: gwaje
+    zh: 作业
+    pos: 명
+  - id: ko-vocab-topik2-sugje
+    type: vocab
+    level: TOPIK2
+    ja: 숙제
+    reading: sugje
+    zh: 作业
+    pos: 명
+  - id: ko-vocab-topik2-nonmun
+    type: vocab
+    level: TOPIK2
+    ja: 논문
+    reading: nonmun
+    zh: 论文
+    pos: 명
+  - id: ko-vocab-topik2-yeongu
+    type: vocab
+    level: TOPIK2
+    ja: 연구
+    reading: yeongu
+    zh: 研究
+    pos: 명
+  - id: ko-vocab-topik2-silheom
+    type: vocab
+    level: TOPIK2
+    ja: 실험
+    reading: silheom
+    zh: 实验
+    pos: 명
+  - id: ko-vocab-topik2-gyogwaseo
+    type: vocab
+    level: TOPIK2
+    ja: 교과서
+    reading: gyogwaseo
+    zh: 教科书
+    pos: 명
+  - id: ko-vocab-topik2-sajeon
+    type: vocab
+    level: TOPIK2
+    ja: 사전
+    reading: sajeon
+    zh: 字典
+    pos: 명
+  - id: ko-vocab-topik2-doseo
+    type: vocab
+    level: TOPIK2
+    ja: 도서
+    reading: doseo
+    zh: 图书
+    pos: 명
+  - id: ko-vocab-topik2-hagwon
+    type: vocab
+    level: TOPIK2
+    ja: 학원
+    reading: hagwon
+    zh: 补习班
+    pos: 명
+  - id: ko-vocab-topik2-yuhag
+    type: vocab
+    level: TOPIK2
+    ja: 유학
+    reading: yuhag
+    zh: 留学
+    pos: 명
+  - id: ko-vocab-topik2-janghaggeum
+    type: vocab
+    level: TOPIK2
+    ja: 장학금
+    reading: janghaggeum
+    zh: 奖学金
+    pos: 명
+  - id: ko-vocab-topik2-geongang
+    type: vocab
+    level: TOPIK2
+    ja: 건강
+    reading: geongang
+    zh: 健康
+    pos: 명
+  - id: ko-vocab-topik2-byeong
+    type: vocab
+    level: TOPIK2
+    ja: 병
+    reading: byeong
+    zh: 病
+    pos: 명
+  - id: ko-vocab-topik2-jeungsang
+    type: vocab
+    level: TOPIK2
+    ja: 증상
+    reading: jeungsang
+    zh: 症状
+    pos: 명
+  - id: ko-vocab-topik2-gamgi
+    type: vocab
+    level: TOPIK2
+    ja: 감기
+    reading: gamgi
+    zh: 感冒
+    pos: 명
+  - id: ko-vocab-topik2-yeol
+    type: vocab
+    level: TOPIK2
+    ja: 열
+    reading: yeol
+    zh: 发烧
+    pos: 명
+  - id: ko-vocab-topik2-gichim
+    type: vocab
+    level: TOPIK2
+    ja: 기침
+    reading: gichim
+    zh: 咳嗽
+    pos: 명
+  - id: ko-vocab-topik2-dutong
+    type: vocab
+    level: TOPIK2
+    ja: 두통
+    reading: dutong
+    zh: 头痛
+    pos: 명
+  - id: ko-vocab-topik2-baetal
+    type: vocab
+    level: TOPIK2
+    ja: 배탈
+    reading: baetal
+    zh: 腹泻
+    pos: 명
+  - id: ko-vocab-topik2-sangcheo
+    type: vocab
+    level: TOPIK2
+    ja: 상처
+    reading: sangcheo
+    zh: 伤口
+    pos: 명
+  - id: ko-vocab-topik2-chiryo
+    type: vocab
+    level: TOPIK2
+    ja: 치료
+    reading: chiryo
+    zh: 治疗
+    pos: 명
+  - id: ko-vocab-topik2-jinryo
+    type: vocab
+    level: TOPIK2
+    ja: 진료
+    reading: jinryo
+    zh: 诊疗
+    pos: 명
+  - id: ko-vocab-topik2-susul
+    type: vocab
+    level: TOPIK2
+    ja: 수술
+    reading: susul
+    zh: 手术
+    pos: 명
+  - id: ko-vocab-topik2-yag
+    type: vocab
+    level: TOPIK2
+    ja: 약
+    reading: yag
+    zh: 药
+    pos: 명
+  - id: ko-vocab-topik2-jusa
+    type: vocab
+    level: TOPIK2
+    ja: 주사
+    reading: jusa
+    zh: 打针
+    pos: 명
+  - id: ko-vocab-topik2-cheobang
+    type: vocab
+    level: TOPIK2
+    ja: 처방
+    reading: cheobang
+    zh: 处方
+    pos: 명
+  - id: ko-vocab-topik2-hwanja
+    type: vocab
+    level: TOPIK2
+    ja: 환자
+    reading: hwanja
+    zh: 患者
+    pos: 명
+  - id: ko-vocab-topik2-eunggeubsil
+    type: vocab
+    level: TOPIK2
+    ja: 응급실
+    reading: eunggeubsil
+    zh: 急救室
+    pos: 명
+  - id: ko-vocab-topik2-ibwon
+    type: vocab
+    level: TOPIK2
+    ja: 입원
+    reading: ibwon
+    zh: 住院
+    pos: 명
+  - id: ko-vocab-topik2-toewon
+    type: vocab
+    level: TOPIK2
+    ja: 퇴원
+    reading: toewon
+    zh: 出院
+    pos: 명
+  - id: ko-vocab-topik2-undong
+    type: vocab
+    level: TOPIK2
+    ja: 운동
+    reading: undong
+    zh: 运动
+    pos: 명
+  - id: ko-vocab-topik2-daieoteu
+    type: vocab
+    level: TOPIK2
+    ja: 다이어트
+    reading: daieoteu
+    zh: 减肥
+    pos: 명
+  - id: ko-vocab-topik2-seupocheu
+    type: vocab
+    level: TOPIK2
+    ja: 스포츠
+    reading: seupocheu
+    zh: 体育
+    pos: 명
+  - id: ko-vocab-topik2-chuggu
+    type: vocab
+    level: TOPIK2
+    ja: 축구
+    reading: chuggu
+    zh: 足球
+    pos: 명
+  - id: ko-vocab-topik2-yagu
+    type: vocab
+    level: TOPIK2
+    ja: 야구
+    reading: yagu
+    zh: 棒球
+    pos: 명
+  - id: ko-vocab-topik2-nonggu
+    type: vocab
+    level: TOPIK2
+    ja: 농구
+    reading: nonggu
+    zh: 篮球
+    pos: 명
+  - id: ko-vocab-topik2-baegu
+    type: vocab
+    level: TOPIK2
+    ja: 배구
+    reading: baegu
+    zh: 排球
+    pos: 명
+  - id: ko-vocab-topik2-taggu
+    type: vocab
+    level: TOPIK2
+    ja: 탁구
+    reading: taggu
+    zh: 乒乓球
+    pos: 명
+  - id: ko-vocab-topik2-teniseu
+    type: vocab
+    level: TOPIK2
+    ja: 테니스
+    reading: teniseu
+    zh: 网球
+    pos: 명
+  - id: ko-vocab-topik2-golpeu
+    type: vocab
+    level: TOPIK2
+    ja: 골프
+    reading: golpeu
+    zh: 高尔夫
+    pos: 명
+  - id: ko-vocab-topik2-suyeong
+    type: vocab
+    level: TOPIK2
+    ja: 수영
+    reading: suyeong
+    zh: 游泳
+    pos: 명
+  - id: ko-vocab-topik2-deungsan
+    type: vocab
+    level: TOPIK2
+    ja: 등산
+    reading: deungsan
+    zh: 登山
+    pos: 명
+  - id: ko-vocab-topik2-joging
+    type: vocab
+    level: TOPIK2
+    ja: 조깅
+    reading: joging
+    zh: 慢跑
+    pos: 명
+  - id: ko-vocab-topik2-yoga
+    type: vocab
+    level: TOPIK2
+    ja: 요가
+    reading: yoga
+    zh: 瑜伽
+    pos: 명
+  - id: ko-vocab-topik2-gyotong
+    type: vocab
+    level: TOPIK2
+    ja: 교통
+    reading: gyotong
+    zh: 交通
+    pos: 명
+  - id: ko-vocab-topik2-gyotongsago
+    type: vocab
+    level: TOPIK2
+    ja: 교통사고
+    reading: gyotongsago
+    zh: 交通事故
+    pos: 명
+  - id: ko-vocab-topik2-sinhodeung
+    type: vocab
+    level: TOPIK2
+    ja: 신호등
+    reading: sinhodeung
+    zh: 信号灯
+    pos: 명
+  - id: ko-vocab-topik2-hoengdanbodo
+    type: vocab
+    level: TOPIK2
+    ja: 횡단보도
+    reading: hoengdanbodo
+    zh: 人行横道
+    pos: 명
+  - id: ko-vocab-topik2-juchajang
+    type: vocab
+    level: TOPIK2
+    ja: 주차장
+    reading: juchajang
+    zh: 停车场
+    pos: 명
+  - id: ko-vocab-topik2-juyuso
+    type: vocab
+    level: TOPIK2
+    ja: 주유소
+    reading: juyuso
+    zh: 加油站
+    pos: 명
+  - id: ko-vocab-topik2-gosogdoro
+    type: vocab
+    level: TOPIK2
+    ja: 고속도로
+    reading: gosogdoro
+    zh: 高速公路
+    pos: 명
+  - id: ko-vocab-topik2-teoneol
+    type: vocab
+    level: TOPIK2
+    ja: 터널
+    reading: teoneol
+    zh: 隧道
+    pos: 명
+  - id: ko-vocab-topik2-gosogbeoseu
+    type: vocab
+    level: TOPIK2
+    ja: 고속버스
+    reading: gosogbeoseu
+    zh: 长途巴士
+    pos: 명
+  - id: ko-vocab-topik2-ktx
+    type: vocab
+    level: TOPIK2
+    ja: KTX
+    reading: KTX
+    zh: 高铁
+    pos: 명
+  - id: ko-vocab-topik2-chultoegeun
+    type: vocab
+    level: TOPIK2
+    ja: 출퇴근
+    reading: chultoegeun
+    zh: 上下班
+    pos: 명
+  - id: ko-vocab-topik2-gyotongkadeu
+    type: vocab
+    level: TOPIK2
+    ja: 교통카드
+    reading: gyotongkadeu
+    zh: 交通卡
+    pos: 명
+  - id: ko-vocab-topik2-seunggaeg
+    type: vocab
+    level: TOPIK2
+    ja: 승객
+    reading: seunggaeg
+    zh: 乘客
+    pos: 명
+  - id: ko-vocab-topik2-unjeonmyeonheo
+    type: vocab
+    level: TOPIK2
+    ja: 운전면허
+    reading: unjeonmyeonheo
+    zh: 驾照
+    pos: 명
+  - id: ko-vocab-topik2-bangsong
+    type: vocab
+    level: TOPIK2
+    ja: 방송
+    reading: bangsong
+    zh: 广播/电视台
+    pos: 명
+  - id: ko-vocab-topik2-nyuseu
+    type: vocab
+    level: TOPIK2
+    ja: 뉴스
+    reading: nyuseu
+    zh: 新闻
+    pos: 명
+  - id: ko-vocab-topik2-gisa
+    type: vocab
+    level: TOPIK2
+    ja: 기사
+    reading: gisa
+    zh: 报道
+    pos: 명
+  - id: ko-vocab-topik2-gwanggo
+    type: vocab
+    level: TOPIK2
+    ja: 광고
+    reading: gwanggo
+    zh: 广告
+    pos: 명
+  - id: ko-vocab-topik2-hongbo
+    type: vocab
+    level: TOPIK2
+    ja: 홍보
+    reading: hongbo
+    zh: 宣传
+    pos: 명
+  - id: ko-vocab-topik2-seonjeon
+    type: vocab
+    level: TOPIK2
+    ja: 선전
+    reading: seonjeon
+    zh: 宣传
+    pos: 명
+  - id: ko-vocab-topik2-jeongbo
+    type: vocab
+    level: TOPIK2
+    ja: 정보
+    reading: jeongbo
+    zh: 信息
+    pos: 명
+  - id: ko-vocab-topik2-tongsin
+    type: vocab
+    level: TOPIK2
+    ja: 통신
+    reading: tongsin
+    zh: 通信
+    pos: 명
+  - id: ko-vocab-topik2-inteones
+    type: vocab
+    level: TOPIK2
+    ja: 인터넷
+    reading: inteones
+    zh: 互联网
+    pos: 명
+  - id: ko-vocab-topik2-imeil
+    type: vocab
+    level: TOPIK2
+    ja: 이메일
+    reading: imeil
+    zh: 邮件
+    pos: 명
+  - id: ko-vocab-topik2-munja
+    type: vocab
+    level: TOPIK2
+    ja: 문자
+    reading: munja
+    zh: 短信
+    pos: 명
+  - id: ko-vocab-topik2-mesiji
+    type: vocab
+    level: TOPIK2
+    ja: 메시지
+    reading: mesiji
+    zh: 消息
+    pos: 명
+  - id: ko-vocab-topik2-aeb
+    type: vocab
+    level: TOPIK2
+    ja: 앱
+    reading: aeb
+    zh: 应用
+    pos: 명
+  - id: ko-vocab-topik2-peurogeuraem
+    type: vocab
+    level: TOPIK2
+    ja: 프로그램
+    reading: peurogeuraem
+    zh: 程序
+    pos: 명
+  - id: ko-vocab-topik2-sopeuteuweeo
+    type: vocab
+    level: TOPIK2
+    ja: 소프트웨어
+    reading: sopeuteuweeo
+    zh: 软件
+    pos: 명
+  - id: ko-vocab-topik2-hadeuweeo
+    type: vocab
+    level: TOPIK2
+    ja: 하드웨어
+    reading: hadeuweeo
+    zh: 硬件
+    pos: 명
+  - id: ko-vocab-topik2-deiteo
+    type: vocab
+    level: TOPIK2
+    ja: 데이터
+    reading: deiteo
+    zh: 数据
+    pos: 명
+  - id: ko-vocab-topik2-pail
+    type: vocab
+    level: TOPIK2
+    ja: 파일
+    reading: pail
+    zh: 文件
+    pos: 명
+  - id: ko-vocab-topik2-boan
+    type: vocab
+    level: TOPIK2
+    ja: 보안
+    reading: boan
+    zh: 安全
+    pos: 명
+  - id: ko-vocab-topik2-bimilbeonho
+    type: vocab
+    level: TOPIK2
+    ja: 비밀번호
+    reading: bimilbeonho
+    zh: 密码
+    pos: 명
+  - id: ko-vocab-topik2-gyejeong
+    type: vocab
+    level: TOPIK2
+    ja: 계정
+    reading: gyejeong
+    zh: 账户
+    pos: 명
+  - id: ko-vocab-topik2-hoewon
+    type: vocab
+    level: TOPIK2
+    ja: 회원
+    reading: hoewon
+    zh: 会员
+    pos: 명
+  - id: ko-vocab-topik2-gaib
+    type: vocab
+    level: TOPIK2
+    ja: 가입
+    reading: gaib
+    zh: 加入
+    pos: 명
+  - id: ko-vocab-topik2-taltoe
+    type: vocab
+    level: TOPIK2
+    ja: 탈퇴
+    reading: taltoe
+    zh: 退出
+    pos: 명
+  - id: ko-vocab-topik2-don
+    type: vocab
+    level: TOPIK2
+    ja: 돈
+    reading: don
+    zh: 钱
+    pos: 명
+  - id: ko-vocab-topik2-gabs
+    type: vocab
+    level: TOPIK2
+    ja: 값
+    reading: gabs
+    zh: 价格
+    pos: 명
+  - id: ko-vocab-topik2-gagyeog
+    type: vocab
+    level: TOPIK2
+    ja: 가격
+    reading: gagyeog
+    zh: 价格
+    pos: 명
+  - id: ko-vocab-topik2-yogeum
+    type: vocab
+    level: TOPIK2
+    ja: 요금
+    reading: yogeum
+    zh: 费用
+    pos: 명
+  - id: ko-vocab-topik2-biyong
+    type: vocab
+    level: TOPIK2
+    ja: 비용
+    reading: biyong
+    zh: 费用
+    pos: 명
+  - id: ko-vocab-topik2-segeum
+    type: vocab
+    level: TOPIK2
+    ja: 세금
+    reading: segeum
+    zh: 税
+    pos: 명
+  - id: ko-vocab-topik2-wolse
+    type: vocab
+    level: TOPIK2
+    ja: 월세
+    reading: wolse
+    zh: 月租
+    pos: 명
+  - id: ko-vocab-topik2-jeonse
+    type: vocab
+    level: TOPIK2
+    ja: 전세
+    reading: jeonse
+    zh: 全租
+    pos: 명
+  - id: ko-vocab-topik2-gwanribi
+    type: vocab
+    level: TOPIK2
+    ja: 관리비
+    reading: gwanribi
+    zh: 管理费
+    pos: 명
+  - id: ko-vocab-topik2-jeochug
+    type: vocab
+    level: TOPIK2
+    ja: 저축
+    reading: jeochug
+    zh: 储蓄
+    pos: 명
+  - id: ko-vocab-topik2-tuja
+    type: vocab
+    level: TOPIK2
+    ja: 투자
+    reading: tuja
+    zh: 投资
+    pos: 명
+  - id: ko-vocab-topik2-jusig
+    type: vocab
+    level: TOPIK2
+    ja: 주식
+    reading: jusig
+    zh: 股票
+    pos: 명
+  - id: ko-vocab-topik2-budongsan
+    type: vocab
+    level: TOPIK2
+    ja: 부동산
+    reading: budongsan
+    zh: 房地产
+    pos: 명
+  - id: ko-vocab-topik2-saeob
+    type: vocab
+    level: TOPIK2
+    ja: 사업
+    reading: saeob
+    zh: 事业/生意
+    pos: 명
+  - id: ko-vocab-topik2-hoesa
+    type: vocab
+    level: TOPIK2
+    ja: 회사
+    reading: hoesa
+    zh: 公司
+    pos: 명
+  - id: ko-vocab-topik2-gieob
+    type: vocab
+    level: TOPIK2
+    ja: 기업
+    reading: gieob
+    zh: 企业
+    pos: 명
+  - id: ko-vocab-topik2-saneob
+    type: vocab
+    level: TOPIK2
+    ja: 산업
+    reading: saneob
+    zh: 产业
+    pos: 명
+  - id: ko-vocab-topik2-muyeog
+    type: vocab
+    level: TOPIK2
+    ja: 무역
+    reading: muyeog
+    zh: 贸易
+    pos: 명
+  - id: ko-vocab-topik2-suchul
+    type: vocab
+    level: TOPIK2
+    ja: 수출
+    reading: suchul
+    zh: 出口
+    pos: 명
+  - id: ko-vocab-topik2-suib
+    type: vocab
+    level: TOPIK2
+    ja: 수입
+    reading: suib
+    zh: 进口
+    pos: 명
+  - id: ko-vocab-topik2-panmae
+    type: vocab
+    level: TOPIK2
+    ja: 판매
+    reading: panmae
+    zh: 销售
+    pos: 명
+  - id: ko-vocab-topik2-gumae
+    type: vocab
+    level: TOPIK2
+    ja: 구매
+    reading: gumae
+    zh: 购买
+    pos: 명
+  - id: ko-vocab-topik2-jumun
+    type: vocab
+    level: TOPIK2
+    ja: 주문
+    reading: jumun
+    zh: 订单
+    pos: 명
+  - id: ko-vocab-topik2-baedal
+    type: vocab
+    level: TOPIK2
+    ja: 배달
+    reading: baedal
+    zh: 送货
+    pos: 명
+  - id: ko-vocab-topik2-baesong
+    type: vocab
+    level: TOPIK2
+    ja: 배송
+    reading: baesong
+    zh: 配送
+    pos: 명
+  - id: ko-vocab-topik2-taegbae
+    type: vocab
+    level: TOPIK2
+    ja: 택배
+    reading: taegbae
+    zh: 快递
+    pos: 명
+  - id: ko-vocab-topik2-hwanbul
+    type: vocab
+    level: TOPIK2
+    ja: 환불
+    reading: hwanbul
+    zh: 退款
+    pos: 명
+  - id: ko-vocab-topik2-gyohwan
+    type: vocab
+    level: TOPIK2
+    ja: 교환
+    reading: gyohwan
+    zh: 交换/换货
+    pos: 명
+  - id: ko-vocab-topik2-halin
+    type: vocab
+    level: TOPIK2
+    ja: 할인
+    reading: halin
+    zh: 打折
+    pos: 명
+  - id: ko-vocab-topik2-seil
+    type: vocab
+    level: TOPIK2
+    ja: 세일
+    reading: seil
+    zh: 促销
+    pos: 명
+  - id: ko-vocab-topik2-yeongsujeung
+    type: vocab
+    level: TOPIK2
+    ja: 영수증
+    reading: yeongsujeung
+    zh: 收据
+    pos: 명
+  - id: ko-vocab-topik2-gyesanseo
+    type: vocab
+    level: TOPIK2
+    ja: 계산서
+    reading: gyesanseo
+    zh: 账单
+    pos: 명
+  - id: ko-vocab-topik2-gyeoljeonghada
+    type: vocab
+    level: TOPIK2
+    ja: 결정하다
+    reading: gyeoljeonghada
+    zh: 决定
+    pos: 동
+  - id: ko-vocab-topik2-seontaeghada
+    type: vocab
+    level: TOPIK2
+    ja: 선택하다
+    reading: seontaeghada
+    zh: 选择
+    pos: 동
+  - id: ko-vocab-topik2-junbihada
+    type: vocab
+    level: TOPIK2
+    ja: 준비하다
+    reading: junbihada
+    zh: 准备
+    pos: 동
+  - id: ko-vocab-topik2-gyehoeghada
+    type: vocab
+    level: TOPIK2
+    ja: 계획하다
+    reading: gyehoeghada
+    zh: 计划
+    pos: 동
+  - id: ko-vocab-topik2-jeonghada
+    type: vocab
+    level: TOPIK2
+    ja: 정하다
+    reading: jeonghada
+    zh: 决定
+    pos: 동
+  - id: ko-vocab-topik2-bakkuda
+    type: vocab
+    level: TOPIK2
+    ja: 바꾸다
+    reading: bakkuda
+    zh: 改变
+    pos: 동
+  - id: ko-vocab-topik2-neulda
+    type: vocab
+    level: TOPIK2
+    ja: 늘다
+    reading: neulda
+    zh: 增加
+    pos: 동
+  - id: ko-vocab-topik2-julda
+    type: vocab
+    level: TOPIK2
+    ja: 줄다
+    reading: julda
+    zh: 减少
+    pos: 동
+  - id: ko-vocab-topik2-neulrida
+    type: vocab
+    level: TOPIK2
+    ja: 늘리다
+    reading: neulrida
+    zh: 使增加
+    pos: 동
+  - id: ko-vocab-topik2-julida
+    type: vocab
+    level: TOPIK2
+    ja: 줄이다
+    reading: julida
+    zh: 使减少
+    pos: 동
+  - id: ko-vocab-topik2-olrida
+    type: vocab
+    level: TOPIK2
+    ja: 올리다
+    reading: olrida
+    zh: 上升/提高
+    pos: 동
+  - id: ko-vocab-topik2-naerida
+    type: vocab
+    level: TOPIK2
+    ja: 내리다
+    reading: naerida
+    zh: 下降
+    pos: 동
+  - id: ko-vocab-topik2-nopida
+    type: vocab
+    level: TOPIK2
+    ja: 높이다
+    reading: nopida
+    zh: 提高
+    pos: 동
+  - id: ko-vocab-topik2-najchuda
+    type: vocab
+    level: TOPIK2
+    ja: 낮추다
+    reading: najchuda
+    zh: 降低
+    pos: 동
+  - id: ko-vocab-topik2-baljeonhada
+    type: vocab
+    level: TOPIK2
+    ja: 발전하다
+    reading: baljeonhada
+    zh: 发展
+    pos: 동
+  - id: ko-vocab-topik2-seongjanghada
+    type: vocab
+    level: TOPIK2
+    ja: 성장하다
+    reading: seongjanghada
+    zh: 成长
+    pos: 동
+  - id: ko-vocab-topik2-byeonhada
+    type: vocab
+    level: TOPIK2
+    ja: 변하다
+    reading: byeonhada
+    zh: 变化
+    pos: 동
+  - id: ko-vocab-topik2-naajida
+    type: vocab
+    level: TOPIK2
+    ja: 나아지다
+    reading: naajida
+    zh: 好转
+    pos: 동
+  - id: ko-vocab-topik2-nappajida
+    type: vocab
+    level: TOPIK2
+    ja: 나빠지다
+    reading: nappajida
+    zh: 变坏
+    pos: 동
+  - id: ko-vocab-topik2-igida
+    type: vocab
+    level: TOPIK2
+    ja: 이기다
+    reading: igida
+    zh: 赢/战胜
+    pos: 동
+  - id: ko-vocab-topik2-jida
+    type: vocab
+    level: TOPIK2
+    ja: 지다
+    reading: jida
+    zh: 输/承担
+    pos: 동
+  - id: ko-vocab-topik2-seonggonghada
+    type: vocab
+    level: TOPIK2
+    ja: 성공하다
+    reading: seonggonghada
+    zh: 成功
+    pos: 동
+  - id: ko-vocab-topik2-silpaehada
+    type: vocab
+    level: TOPIK2
+    ja: 실패하다
+    reading: silpaehada
+    zh: 失败
+    pos: 동
+  - id: ko-vocab-topik2-dojeonhada
+    type: vocab
+    level: TOPIK2
+    ja: 도전하다
+    reading: dojeonhada
+    zh: 挑战
+    pos: 동
+  - id: ko-vocab-topik2-noryeoghada
+    type: vocab
+    level: TOPIK2
+    ja: 노력하다
+    reading: noryeoghada
+    zh: 努力
+    pos: 동
+  - id: ko-vocab-topik2-iruda
+    type: vocab
+    level: TOPIK2
+    ja: 이루다
+    reading: iruda
+    zh: 实现
+    pos: 동
+  - id: ko-vocab-topik2-dalseonghada
+    type: vocab
+    level: TOPIK2
+    ja: 달성하다
+    reading: dalseonghada
+    zh: 达成
+    pos: 동
+  - id: ko-vocab-topik2-gwangyehada
+    type: vocab
+    level: TOPIK2
+    ja: 관계하다
+    reading: gwangyehada
+    zh: 关联
+    pos: 동
+  - id: ko-vocab-topik2-gwanryeondoeda
+    type: vocab
+    level: TOPIK2
+    ja: 관련되다
+    reading: gwanryeondoeda
+    zh: 相关
+    pos: 동
+  - id: ko-vocab-topik2-chamyeohada
+    type: vocab
+    level: TOPIK2
+    ja: 참여하다
+    reading: chamyeohada
+    zh: 参与
+    pos: 동
+  - id: ko-vocab-topik2-chamgahada
+    type: vocab
+    level: TOPIK2
+    ja: 참가하다
+    reading: chamgahada
+    zh: 参加
+    pos: 동
+  - id: ko-vocab-topik2-moida
+    type: vocab
+    level: TOPIK2
+    ja: 모이다
+    reading: moida
+    zh: 聚集
+    pos: 동
+  - id: ko-vocab-topik2-moeuda
+    type: vocab
+    level: TOPIK2
+    ja: 모으다
+    reading: moeuda
+    zh: 收集
+    pos: 동
+  - id: ko-vocab-topik2-nanuda
+    type: vocab
+    level: TOPIK2
+    ja: 나누다
+    reading: nanuda
+    zh: 分
+    pos: 동
+  - id: ko-vocab-topik2-habchida
+    type: vocab
+    level: TOPIK2
+    ja: 합치다
+    reading: habchida
+    zh: 合并
+    pos: 동
+  - id: ko-vocab-topik2-yeongyeolhada
+    type: vocab
+    level: TOPIK2
+    ja: 연결하다
+    reading: yeongyeolhada
+    zh: 连接
+    pos: 동
+  - id: ko-vocab-topik2-kkeunhda
+    type: vocab
+    level: TOPIK2
+    ja: 끊다
+    reading: kkeunhda
+    zh: 切断/挂断
+    pos: 동
+  - id: ko-vocab-topik2-pyohyeonhada
+    type: vocab
+    level: TOPIK2
+    ja: 표현하다
+    reading: pyohyeonhada
+    zh: 表达
+    pos: 동
+  - id: ko-vocab-topik2-seolmyeonghada
+    type: vocab
+    level: TOPIK2
+    ja: 설명하다
+    reading: seolmyeonghada
+    zh: 说明
+    pos: 동
+  - id: ko-vocab-topik2-jujanghada
+    type: vocab
+    level: TOPIK2
+    ja: 주장하다
+    reading: jujanghada
+    zh: 主张
+    pos: 동
+  - id: ko-vocab-topik2-donguihada
+    type: vocab
+    level: TOPIK2
+    ja: 동의하다
+    reading: donguihada
+    zh: 同意
+    pos: 동
+  - id: ko-vocab-topik2-bandaehada
+    type: vocab
+    level: TOPIK2
+    ja: 반대하다
+    reading: bandaehada
+    zh: 反对
+    pos: 동
+  - id: ko-vocab-topik2-jijihada
+    type: vocab
+    level: TOPIK2
+    ja: 지지하다
+    reading: jijihada
+    zh: 支持
+    pos: 동
+  - id: ko-vocab-topik2-geojeolhada
+    type: vocab
+    level: TOPIK2
+    ja: 거절하다
+    reading: geojeolhada
+    zh: 拒绝
+    pos: 동
+  - id: ko-vocab-topik2-geobuhada
+    type: vocab
+    level: TOPIK2
+    ja: 거부하다
+    reading: geobuhada
+    zh: 拒绝
+    pos: 동
+  - id: ko-vocab-topik2-heoraghada
+    type: vocab
+    level: TOPIK2
+    ja: 허락하다
+    reading: heoraghada
+    zh: 允许
+    pos: 동
+  - id: ko-vocab-topik2-geumjihada
+    type: vocab
+    level: TOPIK2
+    ja: 금지하다
+    reading: geumjihada
+    zh: 禁止
+    pos: 동
+  - id: ko-vocab-topik2-gyeolhonhada
+    type: vocab
+    level: TOPIK2
+    ja: 결혼하다
+    reading: gyeolhonhada
+    zh: 结婚
+    pos: 동
+  - id: ko-vocab-topik2-ihonhada
+    type: vocab
+    level: TOPIK2
+    ja: 이혼하다
+    reading: ihonhada
+    zh: 离婚
+    pos: 동
+  - id: ko-vocab-topik2-chulsanhada
+    type: vocab
+    level: TOPIK2
+    ja: 출산하다
+    reading: chulsanhada
+    zh: 生产
+    pos: 동
+  - id: ko-vocab-topik2-taeeonada
+    type: vocab
+    level: TOPIK2
+    ja: 태어나다
+    reading: taeeonada
+    zh: 出生
+    pos: 동
+  - id: ko-vocab-topik2-jugda
+    type: vocab
+    level: TOPIK2
+    ja: 죽다
+    reading: jugda
+    zh: 死
+    pos: 동
+  - id: ko-vocab-topik2-gireuda
+    type: vocab
+    level: TOPIK2
+    ja: 기르다
+    reading: gireuda
+    zh: 养育
+    pos: 동
+  - id: ko-vocab-topik2-kiuda
+    type: vocab
+    level: TOPIK2
+    ja: 키우다
+    reading: kiuda
+    zh: 养大
+    pos: 동
+  - id: ko-vocab-topik2-isahada
+    type: vocab
+    level: TOPIK2
+    ja: 이사하다
+    reading: isahada
+    zh: 搬家
+    pos: 동
+  - id: ko-vocab-topik2-ijuhada
+    type: vocab
+    level: TOPIK2
+    ja: 이주하다
+    reading: ijuhada
+    zh: 迁移
+    pos: 동
+  - id: ko-vocab-topik2-ibsahada
+    type: vocab
+    level: TOPIK2
+    ja: 입사하다
+    reading: ibsahada
+    zh: 入职
+    pos: 동
+  - id: ko-vocab-topik2-toesahada
+    type: vocab
+    level: TOPIK2
+    ja: 퇴사하다
+    reading: toesahada
+    zh: 辞职
+    pos: 동
+  - id: ko-vocab-topik2-gaechoehada
+    type: vocab
+    level: TOPIK2
+    ja: 개최하다
+    reading: gaechoehada
+    zh: 举办
+    pos: 동
+  - id: ko-vocab-topik2-yeolrida
+    type: vocab
+    level: TOPIK2
+    ja: 열리다
+    reading: yeolrida
+    zh: 举行/被打开
+    pos: 동
+  - id: ko-vocab-topik2-jinhaenghada
+    type: vocab
+    level: TOPIK2
+    ja: 진행하다
+    reading: jinhaenghada
+    zh: 进行
+    pos: 동
+  - id: ko-vocab-topik2-sidohada
+    type: vocab
+    level: TOPIK2
+    ja: 시도하다
+    reading: sidohada
+    zh: 尝试
+    pos: 동
+  - id: ko-vocab-topik2-haegyeolhada
+    type: vocab
+    level: TOPIK2
+    ja: 해결하다
+    reading: haegyeolhada
+    zh: 解决
+    pos: 동
+  - id: ko-vocab-topik2-cheorihada
+    type: vocab
+    level: TOPIK2
+    ja: 처리하다
+    reading: cheorihada
+    zh: 处理
+    pos: 동
+  - id: ko-vocab-topik2-bunseoghada
+    type: vocab
+    level: TOPIK2
+    ja: 분석하다
+    reading: bunseoghada
+    zh: 分析
+    pos: 동
+  - id: ko-vocab-topik2-josahada
+    type: vocab
+    level: TOPIK2
+    ja: 조사하다
+    reading: josahada
+    zh: 调查
+    pos: 동
+  - id: ko-vocab-topik2-yeonguhada
+    type: vocab
+    level: TOPIK2
+    ja: 연구하다
+    reading: yeonguhada
+    zh: 研究
+    pos: 동
+  - id: ko-vocab-topik2-balgyeonhada
+    type: vocab
+    level: TOPIK2
+    ja: 발견하다
+    reading: balgyeonhada
+    zh: 发现
+    pos: 동
+  - id: ko-vocab-topik2-balmyeonghada
+    type: vocab
+    level: TOPIK2
+    ja: 발명하다
+    reading: balmyeonghada
+    zh: 发明
+    pos: 동
+  - id: ko-vocab-topik2-gaebalhada
+    type: vocab
+    level: TOPIK2
+    ja: 개발하다
+    reading: gaebalhada
+    zh: 开发
+    pos: 동
+  - id: ko-vocab-topik2-changjohada
+    type: vocab
+    level: TOPIK2
+    ja: 창조하다
+    reading: changjohada
+    zh: 创造
+    pos: 동
+  - id: ko-vocab-topik2-jejaghada
+    type: vocab
+    level: TOPIK2
+    ja: 제작하다
+    reading: jejaghada
+    zh: 制作
+    pos: 동
+  - id: ko-vocab-topik2-saengsanhada
+    type: vocab
+    level: TOPIK2
+    ja: 생산하다
+    reading: saengsanhada
+    zh: 生产
+    pos: 동
+  - id: ko-vocab-topik2-panmaehada
+    type: vocab
+    level: TOPIK2
+    ja: 판매하다
+    reading: panmaehada
+    zh: 销售
+    pos: 동
+  - id: ko-vocab-topik2-guibhada
+    type: vocab
+    level: TOPIK2
+    ja: 구입하다
+    reading: guibhada
+    zh: 购买
+    pos: 동
+  - id: ko-vocab-topik2-iyonghada
+    type: vocab
+    level: TOPIK2
+    ja: 이용하다
+    reading: iyonghada
+    zh: 利用
+    pos: 동
+  - id: ko-vocab-topik2-sayonghada
+    type: vocab
+    level: TOPIK2
+    ja: 사용하다
+    reading: sayonghada
+    zh: 使用
+    pos: 동
+  - id: ko-vocab-topik2-hwalyonghada
+    type: vocab
+    level: TOPIK2
+    ja: 활용하다
+    reading: hwalyonghada
+    zh: 活用
+    pos: 동
+  - id: ko-vocab-topik2-junsuhada
+    type: vocab
+    level: TOPIK2
+    ja: 준수하다
+    reading: junsuhada
+    zh: 遵守
+    pos: 동
+  - id: ko-vocab-topik2-jikida
+    type: vocab
+    level: TOPIK2
+    ja: 지키다
+    reading: jikida
+    zh: 遵守/保护
+    pos: 동
+  - id: ko-vocab-topik2-eogida
+    type: vocab
+    level: TOPIK2
+    ja: 어기다
+    reading: eogida
+    zh: 违反
+    pos: 동
+  - id: ko-vocab-topik2-wibanhada
+    type: vocab
+    level: TOPIK2
+    ja: 위반하다
+    reading: wibanhada
+    zh: 违反
+    pos: 동
+  - id: ko-vocab-topik2-balsaenghada
+    type: vocab
+    level: TOPIK2
+    ja: 발생하다
+    reading: balsaenghada
+    zh: 发生
+    pos: 동
+  - id: ko-vocab-topik2-ileonada
+    type: vocab
+    level: TOPIK2
+    ja: 일어나다
+    reading: ileonada
+    zh: 发生/起床
+    pos: 동
+  - id: ko-vocab-topik2-jeunggahada
+    type: vocab
+    level: TOPIK2
+    ja: 증가하다
+    reading: jeunggahada
+    zh: 增加
+    pos: 동
+  - id: ko-vocab-topik2-gamsohada
+    type: vocab
+    level: TOPIK2
+    ja: 감소하다
+    reading: gamsohada
+    zh: 减少
+    pos: 동
+  - id: ko-vocab-topik2-hyangsangdoeda
+    type: vocab
+    level: TOPIK2
+    ja: 향상되다
+    reading: hyangsangdoeda
+    zh: 提升
+    pos: 동
+  - id: ko-vocab-topik2-aghwadoeda
+    type: vocab
+    level: TOPIK2
+    ja: 악화되다
+    reading: aghwadoeda
+    zh: 恶化
+    pos: 동
+  - id: ko-vocab-topik2-gaeseondoeda
+    type: vocab
+    level: TOPIK2
+    ja: 개선되다
+    reading: gaeseondoeda
+    zh: 改善
+    pos: 동
+  - id: ko-vocab-topik2-hoeboghada
+    type: vocab
+    level: TOPIK2
+    ja: 회복하다
+    reading: hoeboghada
+    zh: 恢复
+    pos: 동
+  - id: ko-vocab-topik2-gangjohada
+    type: vocab
+    level: TOPIK2
+    ja: 강조하다
+    reading: gangjohada
+    zh: 强调
+    pos: 동
+  - id: ko-vocab-topik2-jijeoghada
+    type: vocab
+    level: TOPIK2
+    ja: 지적하다
+    reading: jijeoghada
+    zh: 指出
+    pos: 동
+  - id: ko-vocab-topik2-bipanhada
+    type: vocab
+    level: TOPIK2
+    ja: 비판하다
+    reading: bipanhada
+    zh: 批判
+    pos: 동
+  - id: ko-vocab-topik2-chingchanhada
+    type: vocab
+    level: TOPIK2
+    ja: 칭찬하다
+    reading: chingchanhada
+    zh: 称赞
+    pos: 동
+  - id: ko-vocab-topik2-wirohada
+    type: vocab
+    level: TOPIK2
+    ja: 위로하다
+    reading: wirohada
+    zh: 安慰
+    pos: 동
+  - id: ko-vocab-topik2-gyeogryeohada
+    type: vocab
+    level: TOPIK2
+    ja: 격려하다
+    reading: gyeogryeohada
+    zh: 鼓励
+    pos: 동
+  - id: ko-vocab-topik2-injeonghada
+    type: vocab
+    level: TOPIK2
+    ja: 인정하다
+    reading: injeonghada
+    zh: 承认
+    pos: 동
+  - id: ko-vocab-topik2-buinhada
+    type: vocab
+    level: TOPIK2
+    ja: 부인하다
+    reading: buinhada
+    zh: 否认
+    pos: 동
+  - id: ko-vocab-topik2-uisimhada
+    type: vocab
+    level: TOPIK2
+    ja: 의심하다
+    reading: uisimhada
+    zh: 怀疑
+    pos: 동
+  - id: ko-vocab-topik2-midda
+    type: vocab
+    level: TOPIK2
+    ja: 믿다
+    reading: midda
+    zh: 相信
+    pos: 동
+  - id: ko-vocab-topik2-huimanghada
+    type: vocab
+    level: TOPIK2
+    ja: 희망하다
+    reading: huimanghada
+    zh: 希望
+    pos: 동
+  - id: ko-vocab-topik2-barada
+    type: vocab
+    level: TOPIK2
+    ja: 바라다
+    reading: barada
+    zh: 希望
+    pos: 동
+  - id: ko-vocab-topik2-wonhada
+    type: vocab
+    level: TOPIK2
+    ja: 원하다
+    reading: wonhada
+    zh: 想要
+    pos: 동
+  - id: ko-vocab-topik2-gidaehada
+    type: vocab
+    level: TOPIK2
+    ja: 기대하다
+    reading: gidaehada
+    zh: 期待
+    pos: 동
+  - id: ko-vocab-topik2-huhoehada
+    type: vocab
+    level: TOPIK2
+    ja: 후회하다
+    reading: huhoehada
+    zh: 后悔
+    pos: 동
+  - id: ko-vocab-topik2-banseonghada
+    type: vocab
+    level: TOPIK2
+    ja: 반성하다
+    reading: banseonghada
+    zh: 反省
+    pos: 동
+  - id: ko-vocab-topik2-sagwahada
+    type: vocab
+    level: TOPIK2
+    ja: 사과하다
+    reading: sagwahada
+    zh: 道歉
+    pos: 동
+  - id: ko-vocab-topik2-yongseohada
+    type: vocab
+    level: TOPIK2
+    ja: 용서하다
+    reading: yongseohada
+    zh: 原谅
+    pos: 동
+  - id: ko-vocab-topik2-jayeonseureobda
+    type: vocab
+    level: TOPIK2
+    ja: 자연스럽다
+    reading: jayeonseureobda
+    zh: 自然
+    pos: 형
+  - id: ko-vocab-topik2-bujayeonseureobda
+    type: vocab
+    level: TOPIK2
+    ja: 부자연스럽다
+    reading: bujayeonseureobda
+    zh: 不自然
+    pos: 형
+  - id: ko-vocab-topik2-dangyeonhada
+    type: vocab
+    level: TOPIK2
+    ja: 당연하다
+    reading: dangyeonhada
+    zh: 理所当然
+    pos: 형
+  - id: ko-vocab-topik2-isanghada
+    type: vocab
+    level: TOPIK2
+    ja: 이상하다
+    reading: isanghada
+    zh: 奇怪
+    pos: 형
+  - id: ko-vocab-topik2-tturyeoshada
+    type: vocab
+    level: TOPIK2
+    ja: 뚜렷하다
+    reading: tturyeoshada
+    zh: 明显
+    pos: 형
+  - id: ko-vocab-topik2-huimihada
+    type: vocab
+    level: TOPIK2
+    ja: 희미하다
+    reading: huimihada
+    zh: 模糊
+    pos: 형
+  - id: ko-vocab-topik2-simhada
+    type: vocab
+    level: TOPIK2
+    ja: 심하다
+    reading: simhada
+    zh: 严重
+    pos: 형
+  - id: ko-vocab-topik2-gabyeobda
+    type: vocab
+    level: TOPIK2
+    ja: 가볍다
+    reading: gabyeobda
+    zh: 轻
+    pos: 형
+  - id: ko-vocab-topik2-mugeobda
+    type: vocab
+    level: TOPIK2
+    ja: 무겁다
+    reading: mugeobda
+    zh: 重
+    pos: 형
+  - id: ko-vocab-topik2-budeureobda
+    type: vocab
+    level: TOPIK2
+    ja: 부드럽다
+    reading: budeureobda
+    zh: 柔软
+    pos: 형
+  - id: ko-vocab-topik2-ttagttaghada
+    type: vocab
+    level: TOPIK2
+    ja: 딱딱하다
+    reading: ttagttaghada
+    zh: 硬
+    pos: 형
+  - id: ko-vocab-topik2-ganghada
+    type: vocab
+    level: TOPIK2
+    ja: 강하다
+    reading: ganghada
+    zh: 强
+    pos: 형
+  - id: ko-vocab-topik2-yaghada
+    type: vocab
+    level: TOPIK2
+    ja: 약하다
+    reading: yaghada
+    zh: 弱
+    pos: 형
+  - id: ko-vocab-topik2-teunteunhada
+    type: vocab
+    level: TOPIK2
+    ja: 튼튼하다
+    reading: teunteunhada
+    zh: 结实
+    pos: 형
+  - id: ko-vocab-topik2-yeonyaghada
+    type: vocab
+    level: TOPIK2
+    ja: 연약하다
+    reading: yeonyaghada
+    zh: 柔弱
+    pos: 형
+  - id: ko-vocab-topik2-hwaryeohada
+    type: vocab
+    level: TOPIK2
+    ja: 화려하다
+    reading: hwaryeohada
+    zh: 华丽
+    pos: 형
+  - id: ko-vocab-topik2-sobaghada
+    type: vocab
+    level: TOPIK2
+    ja: 소박하다
+    reading: sobaghada
+    zh: 朴素
+    pos: 형
+  - id: ko-vocab-topik2-hulryunghada
+    type: vocab
+    level: TOPIK2
+    ja: 훌륭하다
+    reading: hulryunghada
+    zh: 杰出
+    pos: 형
+  - id: ko-vocab-topik2-ttwieonada
+    type: vocab
+    level: TOPIK2
+    ja: 뛰어나다
+    reading: ttwieonada
+    zh: 卓越
+    pos: 형
+  - id: ko-vocab-topik2-yumyeonghada
+    type: vocab
+    level: TOPIK2
+    ja: 유명하다
+    reading: yumyeonghada
+    zh: 有名
+    pos: 형
+  - id: ko-vocab-topik2-ingiissda
+    type: vocab
+    level: TOPIK2
+    ja: 인기있다
+    reading: ingiissda
+    zh: 受欢迎
+    pos: 형
+  - id: ko-vocab-topik2-ingieobsda
+    type: vocab
+    level: TOPIK2
+    ja: 인기없다
+    reading: ingieobsda
+    zh: 不受欢迎
+    pos: 형
+  - id: ko-vocab-topik2-chinjeolhada
+    type: vocab
+    level: TOPIK2
+    ja: 친절하다
+    reading: chinjeolhada
+    zh: 亲切
+    pos: 형
+  - id: ko-vocab-topik2-bulchinjeolhada
+    type: vocab
+    level: TOPIK2
+    ja: 불친절하다
+    reading: bulchinjeolhada
+    zh: 不亲切
+    pos: 형
+  - id: ko-vocab-topik2-gyeomsonhada
+    type: vocab
+    level: TOPIK2
+    ja: 겸손하다
+    reading: gyeomsonhada
+    zh: 谦虚
+    pos: 형
+  - id: ko-vocab-topik2-geomanhada
+    type: vocab
+    level: TOPIK2
+    ja: 거만하다
+    reading: geomanhada
+    zh: 傲慢
+    pos: 형
+  - id: ko-vocab-topik2-seongsilhada
+    type: vocab
+    level: TOPIK2
+    ja: 성실하다
+    reading: seongsilhada
+    zh: 诚实/勤奋
+    pos: 형
+  - id: ko-vocab-topik2-geeureuda
+    type: vocab
+    level: TOPIK2
+    ja: 게으르다
+    reading: geeureuda
+    zh: 懒惰
+    pos: 형
+  - id: ko-vocab-topik2-bujireonhada
+    type: vocab
+    level: TOPIK2
+    ja: 부지런하다
+    reading: bujireonhada
+    zh: 勤奋
+    pos: 형
+  - id: ko-vocab-topik2-jeongjighada
+    type: vocab
+    level: TOPIK2
+    ja: 정직하다
+    reading: jeongjighada
+    zh: 正直
+    pos: 형
+  - id: ko-vocab-topik2-soljighada
+    type: vocab
+    level: TOPIK2
+    ja: 솔직하다
+    reading: soljighada
+    zh: 坦率
+    pos: 형
+  - id: ko-vocab-topik2-sunsuhada
+    type: vocab
+    level: TOPIK2
+    ja: 순수하다
+    reading: sunsuhada
+    zh: 纯粹
+    pos: 형
+  - id: ko-vocab-topik2-bogjabhada
+    type: vocab
+    level: TOPIK2
+    ja: 복잡하다
+    reading: bogjabhada
+    zh: 复杂
+    pos: 형
+  - id: ko-vocab-topik2-gandanhada
+    type: vocab
+    level: TOPIK2
+    ja: 간단하다
+    reading: gandanhada
+    zh: 简单
+    pos: 형
+  - id: ko-vocab-topik2-dansunhada
+    type: vocab
+    level: TOPIK2
+    ja: 단순하다
+    reading: dansunhada
+    zh: 单纯
+    pos: 형
+  - id: ko-vocab-topik2-jeonghwaghada
+    type: vocab
+    level: TOPIK2
+    ja: 정확하다
+    reading: jeonghwaghada
+    zh: 准确
+    pos: 형
+  - id: ko-vocab-topik2-bujeonghwaghada
+    type: vocab
+    level: TOPIK2
+    ja: 부정확하다
+    reading: bujeonghwaghada
+    zh: 不准确
+    pos: 형
+  - id: ko-vocab-topik2-hwagsilhada
+    type: vocab
+    level: TOPIK2
+    ja: 확실하다
+    reading: hwagsilhada
+    zh: 确实
+    pos: 형
+  - id: ko-vocab-topik2-bulhwagsilhada
+    type: vocab
+    level: TOPIK2
+    ja: 불확실하다
+    reading: bulhwagsilhada
+    zh: 不确定
+    pos: 형
+  - id: ko-vocab-topik2-bunmyeonghada
+    type: vocab
+    level: TOPIK2
+    ja: 분명하다
+    reading: bunmyeonghada
+    zh: 明确
+    pos: 형
+  - id: ko-vocab-topik2-aemaehada
+    type: vocab
+    level: TOPIK2
+    ja: 애매하다
+    reading: aemaehada
+    zh: 模糊
+    pos: 형
+  - id: ko-vocab-topik2-jasehada
+    type: vocab
+    level: TOPIK2
+    ja: 자세하다
+    reading: jasehada
+    zh: 详细
+    pos: 형
+  - id: ko-vocab-topik2-gandanhada-2
+    type: vocab
+    level: TOPIK2
+    ja: 간단하다
+    reading: gandanhada
+    zh: 简洁
+    pos: 형
+  - id: ko-vocab-topik2-pungbuhada
+    type: vocab
+    level: TOPIK2
+    ja: 풍부하다
+    reading: pungbuhada
+    zh: 丰富
+    pos: 형
+  - id: ko-vocab-topik2-bujoghada
+    type: vocab
+    level: TOPIK2
+    ja: 부족하다
+    reading: bujoghada
+    zh: 不足
+    pos: 형
+  - id: ko-vocab-topik2-chungbunhada
+    type: vocab
+    level: TOPIK2
+    ja: 충분하다
+    reading: chungbunhada
+    zh: 充分
+    pos: 형
+  - id: ko-vocab-topik2-gwahada
+    type: vocab
+    level: TOPIK2
+    ja: 과하다
+    reading: gwahada
+    zh: 过分
+    pos: 형
+  - id: ko-vocab-topik2-jeogdanghada
+    type: vocab
+    level: TOPIK2
+    ja: 적당하다
+    reading: jeogdanghada
+    zh: 适当
+    pos: 형
+  - id: ko-vocab-topik2-bujeogjeolhada
+    type: vocab
+    level: TOPIK2
+    ja: 부적절하다
+    reading: bujeogjeolhada
+    zh: 不适当
+    pos: 형
+  - id: ko-vocab-topik2-wanbyeoghada
+    type: vocab
+    level: TOPIK2
+    ja: 완벽하다
+    reading: wanbyeoghada
+    zh: 完美
+    pos: 형
+  - id: ko-vocab-topik2-bulwanjeonhada
+    type: vocab
+    level: TOPIK2
+    ja: 불완전하다
+    reading: bulwanjeonhada
+    zh: 不完整
+    pos: 형
+  - id: ko-vocab-topik2-wiheomhada
+    type: vocab
+    level: TOPIK2
+    ja: 위험하다
+    reading: wiheomhada
+    zh: 危险
+    pos: 형
+  - id: ko-vocab-topik2-anjeonhada
+    type: vocab
+    level: TOPIK2
+    ja: 안전하다
+    reading: anjeonhada
+    zh: 安全
+    pos: 형
+  - id: ko-vocab-topik2-pyeonhada
+    type: vocab
+    level: TOPIK2
+    ja: 편하다
+    reading: pyeonhada
+    zh: 舒适/方便
+    pos: 형
+  - id: ko-vocab-topik2-bulpyeonhada
+    type: vocab
+    level: TOPIK2
+    ja: 불편하다
+    reading: bulpyeonhada
+    zh: 不便
+    pos: 형
+  - id: ko-vocab-topik2-pyeonrihada
+    type: vocab
+    level: TOPIK2
+    ja: 편리하다
+    reading: pyeonrihada
+    zh: 方便
+    pos: 형
+  - id: ko-vocab-topik2-jayurobda
+    type: vocab
+    level: TOPIK2
+    ja: 자유롭다
+    reading: jayurobda
+    zh: 自由
+    pos: 형
+  - id: ko-vocab-topik2-dabdabhada
+    type: vocab
+    level: TOPIK2
+    ja: 답답하다
+    reading: dabdabhada
+    zh: 憋闷
+    pos: 형
+  - id: ko-vocab-topik2-oerobda
+    type: vocab
+    level: TOPIK2
+    ja: 외롭다
+    reading: oerobda
+    zh: 孤独
+    pos: 형
+  - id: ko-vocab-topik2-geuribda
+    type: vocab
+    level: TOPIK2
+    ja: 그립다
+    reading: geuribda
+    zh: 想念
+    pos: 형
+  - id: ko-vocab-topik2-bukkeureobda
+    type: vocab
+    level: TOPIK2
+    ja: 부끄럽다
+    reading: bukkeureobda
+    zh: 羞愧
+    pos: 형
+  - id: ko-vocab-topik2-changpihada
+    type: vocab
+    level: TOPIK2
+    ja: 창피하다
+    reading: changpihada
+    zh: 丢脸
+    pos: 형
+  - id: ko-vocab-topik2-nolrabda
+    type: vocab
+    level: TOPIK2
+    ja: 놀랍다
+    reading: nolrabda
+    zh: 惊讶
+    pos: 형
+  - id: ko-vocab-topik2-gunggeumhada
+    type: vocab
+    level: TOPIK2
+    ja: 궁금하다
+    reading: gunggeumhada
+    zh: 好奇
+    pos: 형
+  - id: ko-vocab-topik2-bureobda
+    type: vocab
+    level: TOPIK2
+    ja: 부럽다
+    reading: bureobda
+    zh: 羡慕
+    pos: 형
+  - id: ko-vocab-topik2-mianhada
+    type: vocab
+    level: TOPIK2
+    ja: 미안하다
+    reading: mianhada
+    zh: 抱歉
+    pos: 형
+  - id: ko-vocab-topik2-gomabda
+    type: vocab
+    level: TOPIK2
+    ja: 고맙다
+    reading: gomabda
+    zh: 感谢
+    pos: 형
+  - id: ko-vocab-topik2-simsimhada
+    type: vocab
+    level: TOPIK2
+    ja: 심심하다
+    reading: simsimhada
+    zh: 无聊
+    pos: 형
+  - id: ko-vocab-topik2-jiruhada
+    type: vocab
+    level: TOPIK2
+    ja: 지루하다
+    reading: jiruhada
+    zh: 枯燥
+    pos: 형
+  - id: ko-vocab-topik2-jaemiissda
+    type: vocab
+    level: TOPIK2
+    ja: 재미있다
+    reading: jaemiissda
+    zh: 有意思
+    pos: 형
+  - id: ko-vocab-topik2-heungmirobda
+    type: vocab
+    level: TOPIK2
+    ja: 흥미롭다
+    reading: heungmirobda
+    zh: 有趣
+    pos: 형
+  - id: ko-vocab-topik2-meosjida
+    type: vocab
+    level: TOPIK2
+    ja: 멋지다
+    reading: meosjida
+    zh: 帅气
+    pos: 형
+  - id: ko-vocab-topik2-areumdabda
+    type: vocab
+    level: TOPIK2
+    ja: 아름답다
+    reading: areumdabda
+    zh: 美丽
+    pos: 형
+  - id: ko-vocab-topik2-mosnada
+    type: vocab
+    level: TOPIK2
+    ja: 못나다
+    reading: mosnada
+    zh: 丑/差
+    pos: 형
+  - id: ko-vocab-topik2-deudieo
+    type: vocab
+    level: TOPIK2
+    ja: 드디어
+    reading: deudieo
+    zh: 终于
+    pos: 부사
+  - id: ko-vocab-topik2-gyeolgug
+    type: vocab
+    level: TOPIK2
+    ja: 결국
+    reading: gyeolgug
+    zh: 结果/最终
+    pos: 부사
+  - id: ko-vocab-topik2-machimnae
+    type: vocab
+    level: TOPIK2
+    ja: 마침내
+    reading: machimnae
+    zh: 终于
+    pos: 부사
+  - id: ko-vocab-topik2-kkeutkkaji
+    type: vocab
+    level: TOPIK2
+    ja: 끝까지
+    reading: kkeutkkaji
+    zh: 到底
+    pos: 부사
+  - id: ko-vocab-topik2-sasil
+    type: vocab
+    level: TOPIK2
+    ja: 사실
+    reading: sasil
+    zh: 其实
+    pos: 부사
+  - id: ko-vocab-topik2-siljero
+    type: vocab
+    level: TOPIK2
+    ja: 실제로
+    reading: siljero
+    zh: 实际上
+    pos: 부사
+  - id: ko-vocab-topik2-gyeolko
+    type: vocab
+    level: TOPIK2
+    ja: 결코
+    reading: gyeolko
+    zh: 绝对
+    pos: 부사
+  - id: ko-vocab-topik2-jeonhyeo
+    type: vocab
+    level: TOPIK2
+    ja: 전혀
+    reading: jeonhyeo
+    zh: 完全（不）
+    pos: 부사
+  - id: ko-vocab-topik2-jeoldae
+    type: vocab
+    level: TOPIK2
+    ja: 절대
+    reading: jeoldae
+    zh: 绝对
+    pos: 부사
+  - id: ko-vocab-topik2-gyeoldanko
+    type: vocab
+    level: TOPIK2
+    ja: 결단코
+    reading: gyeoldanko
+    zh: 断然
+    pos: 부사
+  - id: ko-vocab-topik2-domuji
+    type: vocab
+    level: TOPIK2
+    ja: 도무지
+    reading: domuji
+    zh: 完全（不）
+    pos: 부사
+  - id: ko-vocab-topik2-amuri
+    type: vocab
+    level: TOPIK2
+    ja: 아무리
+    reading: amuri
+    zh: 无论怎样
+    pos: 부사
+  - id: ko-vocab-topik2-birog
+    type: vocab
+    level: TOPIK2
+    ja: 비록
+    reading: birog
+    zh: 即使
+    pos: 부사
+  - id: ko-vocab-topik2-manyag
+    type: vocab
+    level: TOPIK2
+    ja: 만약
+    reading: manyag
+    zh: 如果
+    pos: 부사
+  - id: ko-vocab-topik2-amuteun
+    type: vocab
+    level: TOPIK2
+    ja: 아무튼
+    reading: amuteun
+    zh: 总之
+    pos: 부사
+  - id: ko-vocab-topik2-eojjaessdeun
+    type: vocab
+    level: TOPIK2
+    ja: 어쨌든
+    reading: eojjaessdeun
+    zh: 无论如何
+    pos: 부사
+  - id: ko-vocab-topik2-gedaga
+    type: vocab
+    level: TOPIK2
+    ja: 게다가
+    reading: gedaga
+    zh: 而且
+    pos: 부사
+  - id: ko-vocab-topik2-deoguna
+    type: vocab
+    level: TOPIK2
+    ja: 더구나
+    reading: deoguna
+    zh: 况且
+    pos: 부사
+  - id: ko-vocab-topik2-ppunman-anira
+    type: vocab
+    level: TOPIK2
+    ja: 뿐만 아니라
+    reading: ppunman anira
+    zh: 不仅
+    pos: 부사
+  - id: ko-vocab-topik2-ohiryeo
+    type: vocab
+    level: TOPIK2
+    ja: 오히려
+    reading: ohiryeo
+    zh: 反而
+    pos: 부사
+  - id: ko-vocab-topik2-geureomeuro
+    type: vocab
+    level: TOPIK2
+    ja: 그러므로
+    reading: geureomeuro
+    zh: 因此
+    pos: 접속
+  - id: ko-vocab-topik2-ttaraseo
+    type: vocab
+    level: TOPIK2
+    ja: 따라서
+    reading: ttaraseo
+    zh: 因此
+    pos: 접속
+  - id: ko-vocab-topik2-jeug
+    type: vocab
+    level: TOPIK2
+    ja: 즉
+    reading: jeug
+    zh: 即
+    pos: 접속
+  - id: ko-vocab-topik2-yereul-deulmyeon
+    type: vocab
+    level: TOPIK2
+    ja: 예를 들면
+    reading: yereul deulmyeon
+    zh: 例如
+    pos: 표현
+  - id: ko-vocab-topik2-teughi
+    type: vocab
+    level: TOPIK2
+    ja: 특히
+    reading: teughi
+    zh: 特别
+    pos: 부사
+  - id: ko-vocab-topik2-juro
+    type: vocab
+    level: TOPIK2
+    ja: 주로
+    reading: juro
+    zh: 主要
+    pos: 부사
+  - id: ko-vocab-topik2-daechero
+    type: vocab
+    level: TOPIK2
+    ja: 대체로
+    reading: daechero
+    zh: 大体上
+    pos: 부사
+  - id: ko-vocab-topik2-daebubun
+    type: vocab
+    level: TOPIK2
+    ja: 대부분
+    reading: daebubun
+    zh: 大部分
+    pos: 부사
+  - id: ko-vocab-topik2-jaju
+    type: vocab
+    level: TOPIK2
+    ja: 자주
+    reading: jaju
+    zh: 经常
+    pos: 부사
+  - id: ko-vocab-topik2-deumulge
+    type: vocab
+    level: TOPIK2
+    ja: 드물게
+    reading: deumulge
+    zh: 稀少
+    pos: 부사
+  - id: ko-vocab-topik2-dongsie
+    type: vocab
+    level: TOPIK2
+    ja: 동시에
+    reading: dongsie
+    zh: 同时
+    pos: 부사
+  - id: ko-vocab-topik2-jeomjeom
+    type: vocab
+    level: TOPIK2
+    ja: 점점
+    reading: jeomjeom
+    zh: 渐渐
+    pos: 부사
+  - id: ko-vocab-topik2-gabjagi
+    type: vocab
+    level: TOPIK2
+    ja: 갑자기
+    reading: gabjagi
+    zh: 突然
+    pos: 부사
+  - id: ko-vocab-topik2-mundeug
+    type: vocab
+    level: TOPIK2
+    ja: 문득
+    reading: mundeug
+    zh: 忽然
+    pos: 부사
+  - id: ko-vocab-topik2-uyeonhi
+    type: vocab
+    level: TOPIK2
+    ja: 우연히
+    reading: uyeonhi
+    zh: 偶然
+    pos: 부사
+  - id: ko-vocab-topik2-ilbureo
+    type: vocab
+    level: TOPIK2
+    ja: 일부러
+    reading: ilbureo
+    zh: 故意
+    pos: 부사
+  - id: ko-vocab-topik2-jeojeolro
+    type: vocab
+    level: TOPIK2
+    ja: 저절로
+    reading: jeojeolro
+    zh: 自动
+    pos: 부사
+  - id: ko-vocab-topik2-geudaero
+    type: vocab
+    level: TOPIK2
+    ja: 그대로
+    reading: geudaero
+    zh: 照原样
+    pos: 부사
+  - id: ko-vocab-topik2-imi
+    type: vocab
+    level: TOPIK2
+    ja: 이미
+    reading: imi
+    zh: 已经
+    pos: 부사
+  - id: ko-vocab-topik2-mag
+    type: vocab
+    level: TOPIK2
+    ja: 막
+    reading: mag
+    zh: 刚刚
+    pos: 부사
+  - id: ko-vocab-topik2-banggeum
+    type: vocab
+    level: TOPIK2
+    ja: 방금
+    reading: banggeum
+    zh: 刚才
+    pos: 부사
+  - id: ko-vocab-topik2-machim
+    type: vocab
+    level: TOPIK2
+    ja: 마침
+    reading: machim
+    zh: 正好
+    pos: 부사
