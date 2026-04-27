@@ -5,8 +5,12 @@
 > (FSRS-5 scheduling + concept DB); the LLM is the renderer + grader, anchored
 > to a strict rubric.
 
-JLPT N5–N2 vocab + N2 grammar seeds (~6195 cards) ship in-tree. Codex / Gemini
-integrations are first-class within their hook limitations — see [§3](#3-cross-tool-honest-framing).
+JLPT N5–N2 vocab + N2 grammar (~6195 cards) **and Korean TOPIK 1-2 (~970 cards)**
+ship in-tree (7165 total across `ja` + `ko`). Switch with `lt language switch ko`.
+TTS via macOS `say` or Linux `edge-tts`; listening drill, ambient mix-language
+(`lt mix 0/10/25/50/100`), mock-N2 self-test + `lt explain` 5 段教学 all in v0.2.0.
+Codex / Gemini integrations are first-class within their hook limitations — see
+[§3](#3-cross-tool-honest-framing).
 
 ---
 
@@ -63,22 +67,39 @@ Practice without breaking flow. You're already in Claude Code / Codex / Gemini a
 
 **Layers**:
 
-- `src/cli.ts` — commander entry; subcommands `setup` / `next` / `answer` /
-  `review` / `stats` / `seed-import` / `daily-push` / `install-cron` / `logs` /
-  `restore` / `config` / `immersion` / `inject-decide` / `detect-cn`.
+- `src/cli.ts` — commander entry; 25+ subcommands (see [§11](#11-useful-subcommands))
 - `src/srs.ts` — FSRS-5 wrapper around `ts-fsrs`. `recordAnswer()` runs
   `db.transaction()` for atomicity; busy_timeout + WAL pragmas in `src/db.ts`.
-- `src/concepts.ts` — `getNextDue`, `dueCount`, `getStats`, `listDueConcepts`.
-  Quota-aware (`profile.daily_new_count`).
-- `src/seeds.ts` — YAML → `concepts` table. Reads `data/seeds/*.yaml` (in-repo)
-  and `~/.config/polyglot/seeds/*.yaml` (user override).
-- `src/profile.ts` — typed profile loader + `patchProfile()` for `lt config`.
+- `src/concepts.ts` — `getNextDue`, `dueCount`, `getStats`, `listDueConcepts`,
+  language-scoped + quota-aware (`profile.daily_new_count`).
+- `src/seeds.ts` — YAML → `concepts` table (with `language` field). Reads
+  `data/seeds/*.yaml` (in-repo) and `~/.config/polyglot/seeds/*.yaml` (user).
+- `src/profile.ts` — typed profile loader + `patchProfile()` + `per_language`
+  migration (legacy v1 single fields → `per_language[active_language]`).
 - `src/paths.ts` — `~/.config/polyglot/` resolver with auto-migration from the
   legacy `~/.config/jp-trainer/` path.
+- `src/utils/immersion.ts` — `buildImmersionPrompt(level, language)` — 5 档
+  prompt template + LANGUAGE_PACKS (ja/ko/en).
+- `src/utils/code-context.ts` — `looksLikeCodeContext()` whitelist for hooks.
+- `src/ambient.ts` — `ambient_exposures` engine: 80/20 mastered/weak vocab pool
+  + 90-day retention + `archiveExposures` cumulative-count rollup.
+- `src/tts.ts` — `speak(text, lang)` with 3 backends (macos `say` / `edge-tts` /
+  none) + LANG_TO_VOICE + LANG_TO_VOICE_EDGE.
+- `src/listening.ts` — `gradeListeningAnswer()` (katakana → hiragana fold + edit
+  distance rubric).
+- `src/explain.ts` — `buildExplainPayload()` + `cacheExplainFeedback()` for the
+  5 段教学 verbose mode (token budget 8K input / 1500 char output).
+- `src/mock.ts` — mock-N2 sandbox (separate `mock_questions` + `mock_attempts`
+  tables) + `runAmbientValidate` (binomial test, K1 self-falsification).
+- `src/doctor.ts` — 8-check install health (settings.json hooks, lt binary,
+  bun version, profile/db, legacy symlink, launchd plists, schema consistency).
 
 **Data**:
 
-- `data/seeds/n{2,3,4,5}-vocab.yaml` + `n2-grammar.yaml` — 6195 cards in-tree.
+- `data/seeds/n{2,3,4,5}-vocab.yaml` + `n2-grammar.yaml` — 6195 ja cards in-tree.
+- `data/seeds/ko-topik{1,2}-vocab.yaml` — 970 ko cards (TOPIK 1-2).
+- `data/seeds/mock-n2.yaml` — 30 mock N2 questions (excluded from default
+  `seed-import`; included only via `--include-mock`).
 - `~/.config/polyglot/seeds/*.yaml` — user-added concepts (override / supplement).
 
 ---
@@ -112,8 +133,9 @@ Full rationale: [`docs/cross-tool-honest-framing.md`](docs/cross-tool-honest-fra
 ## 4. Install
 
 ```bash
-# One-liner (clones, bun install, builds lt, wires Claude Code skills + hooks):
-curl -fsSL https://raw.githubusercontent.com/<owner>/<repo>/main/install.sh | bash
+# Clone first, then run install.sh from the repo root (it expects the source tree):
+git clone https://github.com/ImL1s/polyglot.git ~/Documents/polyglot
+cd ~/Documents/polyglot && bash install.sh
 ```
 
 `install.sh` is the canonical entry point. It performs:
@@ -283,8 +305,14 @@ fields are optional; `lt setup` writes sensible defaults.
 | `do_not_disturb_until`           | int (ms timestamp) or `null`  | `null`        | Suppress all injections until this time                                       |
 | `respect_work_hours`             | bool                          | `true`        | Honor `work_hours` × `work_days`                                              |
 | `immersion_level`                | `0\|0.10\|0.25\|0.50\|1.00`   | `0`           | Mix-language ambient level (see [§7](#7-immersion_level-5-档))                  |
-| `tts_engine`                     | `macos\|edge\|none`           | `macos`       | Phase 1.2 TTS backend                                                         |
-| `active_language`                | `ja` (Phase 1.1a `ko`/`zh`)   | `ja`          | Single active language; FSRS scoped to this                                   |
+| `tts_engine`                     | `macos\|edge\|none`           | `macos`       | TTS backend; Linux installer auto-rewrites to `edge`                          |
+| `tts_rate`                       | int (words/min)               | `180`         | `say -r` rate                                                                 |
+| `tts_on_answer_correct`          | bool                          | `true`        | Auto-`lt say` after rating ≥ 3                                                |
+| `tts_on_answer_wrong`            | bool                          | `true`        | Auto-`lt say` (slow rate 140) after rating ≤ 2                                |
+| `tts_listen_mode`                | bool                          | `true`        | Enable `lt next --type listening` flow                                        |
+| `tts_voice_overrides`            | map `lang → voice`            | `{}`          | e.g. `{ja: Otoya, ko: Yuna}` to override LANG_TO_VOICE                        |
+| `active_language`                | `ja\|ko`                      | `ja`          | Single active language; FSRS + hooks + stats scoped to this                   |
+| `per_language`                   | map `lang → {level, target, weak_areas}` | auto-migrated from v1 top-level | Per-language overrides; `lt language switch <lang>` flips `active_language` |
 
 Examples:
 
@@ -323,8 +351,25 @@ Notes:
 
 ## 8. Troubleshooting (`lt doctor`)
 
-> `lt doctor` lands with Plan v4 Task 27 (in flight). Until then, the manual
-> checks below cover the same cases.
+`lt doctor` runs 8 health checks (settings.json hooks, `lt` binary, `bun`
+version, profile / reviews.db, legacy `~/.config/jp-trainer/` symlink,
+launchd plists, hook schema consistency). Exit code: `0` clean, `1` warnings,
+`2` critical. Add `--json` for machine-readable output.
+
+```bash
+$ lt doctor
+lt doctor — 8 checks (7 ok, 0 warn, 1 error)
+  [ok] lt_bin: lt binary at /Users/you/.local/bin/lt
+  [err] bun: bun is not on PATH
+  [ok] profile: profile.yaml present
+  [ok] db: reviews.db present
+  [ok] legacy_symlink: ~/.config/jp-trainer is a symlink (migration done)
+  [ok] user_settings: 3/3 polyglot-hooks events wired in user settings
+  [ok] launchd_daily: daily-push plist present
+  [ok] launchd_backup: daily-backup plist present
+```
+
+For symptoms not surfaced by `doctor`:
 
 | Symptom                                                                  | Check                                                                     | Fix                                                                                                       |
 |--------------------------------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
@@ -385,20 +430,60 @@ In Codex / Gemini, type `/lt` and the snippet drives the same loop.
 
 ## 11. Useful subcommands
 
-| Command                                               | Use                                              |
-|-------------------------------------------------------|--------------------------------------------------|
-| `lt next [--json]`                                    | Pick next concept (respects daily new quota)     |
-| `lt answer --concept-id ID --rating 1\|2\|3\|4 …`     | Record + reschedule (FSRS-5 transactional)       |
-| `lt review [--limit N]`                               | List concepts due now                            |
-| `lt due-count`                                        | Just the integer                                 |
-| `lt stats`                                            | Total / introduced / due / by-level breakdown    |
-| `lt config <key=value> …`                             | Read/update profile fields                       |
-| `lt immersion <0\|10\|25\|50\|100>`                   | Mix-language ambient level (Claude Code only)    |
-| `lt seed-import`                                      | Re-import `data/seeds/` + `~/.config/polyglot/seeds/` (idempotent upsert) |
-| `lt daily-push`                                       | Fire today's notification (called by launchd)    |
-| `lt install-cron`                                     | Install the macOS launchd plist                  |
-| `lt logs --event answer_recorded --tail 20`           | Tail NDJSON event log                            |
-| `lt restore --from Mon`                               | Restore reviews.db from `backup/reviews.db.bak.Mon` |
+### Core training (Phase 1.0)
+
+| Command                                                       | Use                                                                |
+|---------------------------------------------------------------|--------------------------------------------------------------------|
+| `lt setup [--force]`                                          | Write default `profile.yaml`                                       |
+| `lt next [--json] [--type vocab\|grammar\|kanji\|listening] [--level N5..N1\|TOPIK1..6] [--difficulty easy\|hard]` | Pick next concept (quota-aware, language-scoped) |
+| `lt answer --concept-id ID --rating 1\|2\|3\|4 [--user-answer S] [--feedback S] [--source manual\|hook\|cron\|review]` | Record + reschedule (FSRS-5 transactional) |
+| `lt review [--limit N] [--json]`                              | List concepts due now                                              |
+| `lt due-count`                                                | Just the integer                                                   |
+| `lt stats [--json]`                                           | Total / introduced / due / by-level (current `active_language`)    |
+| `lt config <key=value> …` / `lt config --show`                | Read/update profile fields                                         |
+| `lt seed-import [--include-mock]`                             | Re-import `data/seeds/` + `~/.config/polyglot/seeds/` (idempotent) |
+| `lt daily-push`                                               | Fire today's notification (called by launchd)                      |
+| `lt install-cron`                                             | (Re-)install the macOS launchd daily-push plist                    |
+| `lt logs [--tail N] [--event NAME]`                           | Tail NDJSON event log                                              |
+| `lt restore --from Mon\|Tue\|…\|Sun\|/abs/path`               | Restore `reviews.db` from rolling backup (atomic mv via `.tmp`)    |
+| `lt doctor [--json]`                                          | 8-check install health (exit 0/1/2 = ok/warn/critical)             |
+
+### Multi-language (Phase 1.1a)
+
+| Command                                | Use                                                                 |
+|----------------------------------------|---------------------------------------------------------------------|
+| `lt language list`                     | List supported languages (`* ja` marks active)                      |
+| `lt language switch <ja\|ko>`          | Flip `active_language`; FSRS scope follows                          |
+
+### Ambient mix-language (Phase 1.1b)
+
+| Command                                            | Use                                                       |
+|----------------------------------------------------|-----------------------------------------------------------|
+| `lt mix <0\|10\|25\|50\|100>` / `lt mix status`    | Set / read `immersion_level` 5 档                         |
+| `lt mix --custom <0-100>`                          | Escape hatch (always succeeds, maps to nearest tier)      |
+| `lt mix-vocab --limit N [--json]`                  | 80/20 mastered/weak vocab pool (used by hooks)            |
+| `lt ambient-log --concept-ids id1,id2 [--source S] [--session-id ID]` | Log an ambient exposure batch                |
+| `lt ambient-stats [--json]`                        | Top exposures + totals + diagnostic line                  |
+| `lt ambient-clean [--keep-days 90]`                | Archive rows older than N days into `ambient_exposures_archive` |
+| `lt immersion <on\|off\|toggle\|status\|0\|10\|…>` | v1 alias (delegates to `lt mix`)                          |
+
+### TTS + listening (Phase 1.2)
+
+| Command                                                                              | Use                                                  |
+|--------------------------------------------------------------------------------------|------------------------------------------------------|
+| `lt say <concept-id>` / `lt say --text "<text>" [--lang ja\|ko\|en\|zh\|es] [--rate N] [--voice V] [--full] [--blocking] [--json]` | Speak concept reading or arbitrary text (engine = `tts_engine`) |
+| `lt next --type listening`                                                           | Pick a listening drill (vocab with non-null `reading`) |
+| `lt grade-listening --concept-id ID --user-answer "<kana>"`                          | Score a listening attempt (kana fold + edit distance) |
+
+### Verbose explain + mock (Phase 1.3)
+
+| Command                                                                       | Use                                                              |
+|-------------------------------------------------------------------------------|------------------------------------------------------------------|
+| `lt explain <concept-id> [--json]`                                            | 5 段教学 payload (concept + 5 recent attempts + stats)            |
+| `lt mock-test --count N [--type vocab\|grammar\|listening\|reading] [--level N2] [--language ja]` | Pull N mock questions for a sit-down test       |
+| `lt mock-record --question-id Q --user-choice IDX --correct true\|false`     | Record a mock answer                                             |
+| `lt mock-report [--window-hours 24] [--json]`                                 | Aggregate mock score by type                                     |
+| `lt ambient-validate [--window-days 30] [--threshold 7] [--json]`             | K1 self-falsification: binomial test (p<0.05) on `≥7 exposures` vs `<7` over the window |
 
 ---
 
@@ -422,65 +507,91 @@ In Codex / Gemini, type `/lt` and the snippet drives the same loop.
 
 ## 13. Tests
 
-```
-$ bun test
-bun test v1.3.13
+`bun test` runs ~300 cases across the core CLI + Phase 1.1-1.3 surfaces.
 
- ✓ tests/cron-install.test.ts
- ✓ tests/e2e/full-flow.test.ts
- ✓ tests/fetch-jlpt-vocab.test.ts
- ✓ tests/hook-pre-gate.test.ts
- ✓ tests/immersion-wire.test.ts
- ✓ tests/install.test.ts
- ✓ tests/paths-migration.test.ts
- ✓ tests/seeds.test.ts
- ✓ tests/skill-frontmatter.test.ts
- ✓ tests/srs-transaction.test.ts
-```
+**Phase 1.0** — paths migration / SRS transaction atomicity / skill frontmatter
+/ cron-install / install.sh schema-aware merge / hook pre-gate / e2e full-flow
+(`tests/{paths-migration,srs-transaction,skill-frontmatter,cron-install,install,hook-pre-gate,e2e/full-flow,fetch-jlpt-vocab,seeds,immersion-wire}.test.ts`).
 
-Notable suites:
+**Phase 1.1a** — multi-language schema migration (legacy v1 → `per_language`),
+TOPIK seeds count by level, multi-lang hook label switching
+(`tests/{lang-migration,topik-seeds,multilang-hook,immersion-multilang}.test.ts`).
 
-- `tests/paths-migration.test.ts` — fresh / legacy / already-migrated /
-  idempotent paths cases.
-- `tests/srs-transaction.test.ts` — answer atomicity under simulated failure.
-- `tests/skill-frontmatter.test.ts` — every `skills/*.skill.md` has the
-  required `prompt_version` / `prompt_max_tokens` frontmatter.
-- `tests/cron-install.test.ts` — `renderPlist` substitution + Label
-  `com.polyglot.daily` + edge values.
-- `tests/install.test.ts` — install.sh schema-aware merge + 12.7 conflict detect.
-- `tests/e2e/full-flow.test.ts` — runs the README §5.1 quickstart against an
-  isolated `HOME=$(mktemp -d)`: setup → seed-import → next → answer → stats →
-  review. Asserts on real CLI output (no mocks).
+**Phase 1.1b** — `immersion_level` 5 档 prompt snapshots (incl. 0.50 双语句法),
+`lt mix` preset/custom CLI gate, ambient_exposures retention 200K-row archive,
+prompt_version drift detection (skill ↔ hook double-sided)
+(`tests/{immersion-050,lt-mix,ambient-clean,prompt-version}.test.ts`).
+
+**Phase 1.2** — TTS backend dispatch (macos / edge / none) + ENOENT silent skip
++ LANG_TO_VOICE + voice overrides; listening kana-fold + edit-distance rubric
+(`tests/{tts,listening}.test.ts`).
+
+**Phase 1.3** — `lt explain` payload + truncation + cache; mock-N2 selection
++ recording; `ambient-validate` binomial test (incl. p-value sanity);
+`tts-edge` LANG_TO_VOICE_EDGE
+(`tests/{explain,mock-test,ambient-validate,tts-edge}.test.ts`).
+
+`tests/e2e/full-flow.test.ts` is the canonical regression: spawns `lt` against
+an isolated `HOME=$(mktemp -d)` and asserts on real CLI output (no mocks) for
+`setup → seed-import → next → answer → stats → review → due-count → logs`.
 
 ---
 
 ## 14. Layout
 
 ```
-jp-trainer/
-├── src/                 # Bun TypeScript CLI
-│   ├── cli.ts           # commander entry (`lt`)
-│   ├── srs.ts           # FSRS-5 wrapper
-│   ├── concepts.ts      # next-due / quota / stats
-│   ├── seeds.ts         # YAML → concepts upsert
-│   ├── db.ts            # bun:sqlite + pragmas
-│   ├── paths.ts         # ~/.config/polyglot/ resolver + migration
-│   ├── profile.ts       # typed profile + patchProfile()
-│   └── work-hours.ts    # work_days × work_hours window check
-├── data/seeds/          # n{2,3,4,5}-vocab.yaml + n2-grammar.yaml (~6195 cards in-tree)
-├── skills/              # Claude Code skill stubs (lt / lt-setup / lt-on / lt-off / lt-review)
-├── hooks/               # Stop + UserPromptSubmit shell hooks
-├── codex/AGENTS.snippet.md     # Append to ~/.codex/AGENTS.md
-├── gemini/GEMINI.snippet.md    # Append to ~/.gemini/GEMINI.md
-├── templates/com.polyglot.daily.plist   # launchd plist template
-├── scripts/                    # daily-backup.sh + fetch-jlpt-vocab.ts
-├── install.sh                  # one-line installer
-├── tests/                      # bun:test
-│   └── e2e/                    # end-to-end flow tests
+polyglot/
+├── src/                          # Bun TypeScript CLI
+│   ├── cli.ts                    # commander entry (`lt` + `jp` alias)
+│   ├── srs.ts                    # FSRS-5 wrapper (atomic recordAnswer)
+│   ├── concepts.ts               # next-due / quota / stats (language-scoped)
+│   ├── seeds.ts                  # YAML → concepts upsert (with `language`)
+│   ├── db.ts                     # bun:sqlite + WAL pragmas + ambient_exposures + mock_*
+│   ├── paths.ts                  # ~/.config/polyglot/ resolver + jp-trainer migration
+│   ├── profile.ts                # typed profile + per_language migration
+│   ├── work-hours.ts             # work_days × work_hours window check
+│   ├── ambient.ts                # 80/20 vocab pool + retention + archive (Phase 1.1b)
+│   ├── tts.ts                    # macos/edge/none backends + LANG_TO_VOICE (Phase 1.2)
+│   ├── listening.ts              # gradeListeningAnswer kana fold + edit distance (1.2)
+│   ├── explain.ts                # 5 段教学 payload + cache (Phase 1.3)
+│   ├── mock.ts                   # mock-N2 + ambient-validate binomial (Phase 1.3)
+│   ├── doctor.ts                 # 8-check install health
+│   └── utils/
+│       ├── code-context.ts       # looksLikeCodeContext whitelist
+│       └── immersion.ts          # buildImmersionPrompt 5 档 × 3 LANGUAGE_PACKS
+├── data/seeds/
+│   ├── n{2,3,4,5}-vocab.yaml     # 6195 ja cards
+│   ├── n2-grammar.yaml           # ja N2 grammar
+│   ├── ko-topik{1,2}-vocab.yaml  # 970 ko cards (Phase 1.1a)
+│   └── mock-n2.yaml              # 30 mock-N2 questions (Phase 1.3)
+├── skills/                       # 6 Claude Code skills
+│   ├── lt.skill.md               # main entry + rubric
+│   ├── lt-setup.skill.md         # 7-question onboarding
+│   ├── lt-review.skill.md        # due-list drill
+│   ├── lt-mix.skill.md           # ambient mix-language (Phase 1.1b)
+│   ├── lt-on.skill.md            # alias for lt mix 100
+│   └── lt-off.skill.md           # alias for lt mix 0
+├── hooks/
+│   ├── stop.{sh,ts}              # post-turn ambient injection
+│   ├── user-prompt-submit.{sh,ts}# pre-turn immersion + cn probe + due reminder
+│   ├── post-tool-use.{sh,ts}     # long-running tool word-card injection
+│   └── lib/{common,limiter,hook-utils}.ts  # safeFail + Adj-F throttle + runLt helper
+├── codex/AGENTS.snippet.md       # Append to ~/.codex/AGENTS.md
+├── gemini/GEMINI.snippet.md      # Append to ~/.gemini/GEMINI.md
+├── templates/com.polyglot.daily.plist  # launchd plist template
+├── scripts/
+│   ├── daily-backup.sh           # sqlite3 .backup rolling Mon..Sun
+│   ├── fetch-jlpt-vocab.ts       # JLPT csv → seed yaml (with yōon slug)
+│   ├── fetch-topik-vocab.ts      # TOPIK 1-2 → seed yaml + hangul→romaja
+│   ├── install-hooks.mjs         # schema-aware ~/.claude/settings.json merge
+│   └── check-prompt-version.ts   # pre-commit hook: skill↔hook prompt drift
+├── install.sh                    # canonical installer
+├── tests/                        # bun:test (~300 cases, Phase 1.0–1.3)
+│   └── e2e/                      # end-to-end flow tests
 └── docs/
-    ├── cross-tool-honest-framing.md  # the §3 table + rationale
-    ├── design.md                     # high-level design
-    └── ralplan-{planner,architect,critic}-v*.md   # full RALPLAN-DR consensus history
+    ├── design.md                 # high-level design
+    ├── cross-tool-honest-framing.md  # §3 rationale
+    └── ralplan-{planner,architect,critic}-v*.md  # RALPLAN-DR consensus history
 ```
 
 ---
