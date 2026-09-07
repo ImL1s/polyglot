@@ -609,6 +609,10 @@ polyglot/
 
 ---
 
+## Support
+
+If this project saved you some time, you can [buy me a coffee](https://buymeacoffee.com/iml1s).
+
 ## 15. License
 
 TBD.
